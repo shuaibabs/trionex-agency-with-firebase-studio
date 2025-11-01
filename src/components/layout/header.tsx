@@ -25,7 +25,7 @@ export default function Header() {
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+    <header className="sticky top-0 z-50 w-full border-b border-primary/10 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container flex h-16 items-center">
         <Link href="/" className="mr-6 flex items-center">
           <Logo />
@@ -38,8 +38,8 @@ export default function Header() {
               key={href}
               href={href}
               className={cn(
-                'transition-colors hover:text-foreground/80',
-                pathname === href ? 'text-foreground' : 'text-foreground/60'
+                'transition-colors hover:text-primary glow-on-hover',
+                pathname === href ? 'text-primary' : 'text-foreground/60'
               )}
             >
               {label}

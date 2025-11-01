@@ -24,6 +24,7 @@ import { Badge } from '@/components/ui/badge';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { placeholderImages } from '@/lib/data';
 import { services, blogPosts, testimonials, clients } from '@/lib/data';
+import { cn } from '@/lib/utils';
 
 const heroImage = placeholderImages.find((img) => img.id === 'home-hero');
 const serviceIcons: { [key: string]: React.ElementType } = {
@@ -40,7 +41,7 @@ export default function Home() {
       <section className="relative w-full py-20 md:py-32 lg:py-40 bg-gradient-to-br from-background to-secondary/50 dark:from-background dark:to-secondary/20">
         <div className="container mx-auto grid grid-cols-1 items-center gap-8 px-4 text-center md:grid-cols-2 md:text-left">
           <div className="space-y-6">
-            <h1 className="font-headline text-4xl font-bold tracking-tighter text-primary sm:text-5xl md:text-6xl lg:text-7xl">
+            <h1 className="font-headline text-4xl font-bold tracking-tighter text-primary sm:text-5xl md:text-6xl lg:text-7xl glow-on-hover">
               Elevate Your Digital Presence
             </h1>
             <p className="max-w-[600px] text-lg text-muted-foreground md:text-xl">
@@ -118,7 +119,7 @@ export default function Home() {
               return (
                 <Card
                   key={service.id}
-                  className="transform transition-transform duration-300 hover:-translate-y-2 hover:shadow-xl"
+                  className={cn("transform transition-transform duration-300 hover:-translate-y-2 hover:shadow-xl card-glow-on-hover")}
                 >
                   <CardHeader className="items-center text-center">
                     <div className="mb-4 rounded-full bg-primary/10 p-4 text-primary">
@@ -246,7 +247,7 @@ export default function Home() {
             {blogPosts.slice(0, 3).map((post) => {
               const blogImage = placeholderImages.find(p => p.id === post.imageId);
               return (
-              <Card key={post.id} className="overflow-hidden group">
+              <Card key={post.id} className={cn("overflow-hidden group card-glow-on-hover")}>
                 <Link href={`/blog/${post.slug}`} className="block">
                   <div className="aspect-video relative">
                     {blogImage && <Image
