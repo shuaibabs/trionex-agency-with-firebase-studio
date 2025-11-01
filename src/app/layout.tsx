@@ -7,9 +7,9 @@ import { Toaster } from '@/components/ui/toaster';
 import { PageTransition } from '@/components/page-transition';
 
 export const metadata: Metadata = {
-  title: 'Trionex Digital - Marketing & Web Development Agency',
+  title: 'Trionex Tech - Marketing & Web Development Agency',
   description:
-    'Trionex Digital is a modern marketing and web development agency helping businesses grow with cutting-edge solutions.',
+    'Trionex Tech is a modern marketing and web development agency helping businesses grow with cutting-edge solutions.',
 };
 
 export default function RootLayout({

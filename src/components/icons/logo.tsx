@@ -6,9 +6,9 @@ export default function Logo({ className }: { className?: string }) {
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 150 25"
       className={cn('h-6 w-auto', className)}
-      aria-label="Trionex Digital Logo"
+      aria-label="Trionex Tech Logo"
     >
-      <title>Trionex Digital Logo</title>
+      <title>Trionex Tech Logo</title>
       <text
         x="0"
         y="20"
@@ -27,7 +27,7 @@ export default function Logo({ className }: { className?: string }) {
         fontWeight="500"
         fill="hsl(var(--foreground))"
       >
-        Digital
+        Tech
       </text>
     </svg>
   );

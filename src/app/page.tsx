@@ -313,7 +313,7 @@ export default function Home() {
             Ready to Start Your Project?
           </h2>
           <p className="mt-4 mb-8 max-w-2xl mx-auto text-lg text-primary-foreground/80">
-            Let&apos;s talk about how Trionex Digital can help you achieve your
+            Let&apos;s talk about how Trionex Tech can help you achieve your
             goals. Schedule a free consultation today.
           </p>
           <Button
