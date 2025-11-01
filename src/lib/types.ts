@@ -1,3 +1,4 @@
+
 export interface Service {
   id: string;
   title: string;
@@ -26,7 +27,7 @@ export interface CaseStudy {
   id: string;
   title: string;
   slug: string;
-  category: 'Web' | 'Ads' | 'SEO' | 'WordPress';
+  category: 'Web' | 'Ads' | 'SEO';
   shortDescription: string;
   challenge: string;
   solution: string;

@@ -12,8 +12,8 @@ import { Badge } from '@/components/ui/badge';
 import { motion } from 'framer-motion';
 
 
-type Category = 'All' | 'Web' | 'SEO';
-const categories: Category[] = ['All', 'Web', 'SEO'];
+type Category = 'All' | 'Web' | 'SEO' | 'Ads';
+const categories: Category[] = ['All', 'Web', 'SEO', 'Ads'];
 
 export default function PortfolioPage() {
   const [filter, setFilter] = useState<Category>('All');

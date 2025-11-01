@@ -1,3 +1,4 @@
+
 import type { Service, Package, CaseStudy, BlogPost, Testimonial, TeamMember, Client, PlaceholderImage } from './types';
 import placeholderData from './placeholder-images.json';
 
@@ -72,6 +73,91 @@ export const services: Service[] = [
     caseStudyIds: [],
     category: 'Web Development'
   },
+   {
+    id: 'real-estate-website-development',
+    slug: 'real-estate-website-development',
+    title: 'Real Estate Website Development',
+    shortDescription: 'Feature-rich websites for real estate agencies with property listings and search.',
+    longDescription: 'Feature-rich websites for real estate agencies with dynamic property listings, advanced search filters, and agent profiles.',
+    priceRange: '₹50,000 – ₹1,50,000',
+    scope: ['Property Listing Management', 'Advanced Search Filters', 'Agent Profiles', 'Lead Capture Forms', 'Map Integration'],
+    process: [
+        { step: 1, title: 'Discovery', description: 'Understand your agency’s brand and specific needs for property showcasing.' },
+        { step: 2, title: 'Design', description: 'Create an intuitive design that makes property searching easy and visually appealing.' },
+        { step: 3, title: 'Development', description: 'Build the website with a robust backend for managing listings and leads.' },
+        { step: 4, title: 'Launch', description: 'Deploy the site and provide training for your team to manage it effectively.' }
+    ],
+    caseStudyIds: [],
+    category: 'Web Development'
+  },
+    {
+    id: 'college-school-website-development',
+    slug: 'college-school-website-development',
+    title: 'College & School Website Development',
+    shortDescription: 'Informative and accessible websites for educational institutions.',
+    longDescription: 'Informative and accessible websites for educational institutions, featuring course details, event calendars, and admission forms.',
+    priceRange: '₹40,000 – ₹1,00,000',
+    scope: ['Course & Department Pages', 'Event Calendar', 'Admission Forms', 'Faculty Profiles', 'News & Announcements'],
+    process: [
+        { step: 1, title: 'Consultation', description: 'Gather requirements from stakeholders including administration, faculty, and students.' },
+        { step: 2, title: 'Design', description: 'Design a professional and easy-to-navigate website structure.' },
+        { step: 3, title: 'Development', description: 'Build the website with a content management system for easy updates.' },
+        { step: 4, title: 'Training & Launch', description: 'Train staff on how to manage content and launch the new website.' }
+    ],
+    caseStudyIds: [],
+    category: 'Web Development'
+  },
+  {
+    id: 'healthcare-clinic-website-development',
+    slug: 'healthcare-clinic-website-development',
+    title: 'Healthcare & Clinic Website Development',
+    shortDescription: 'HIPAA-compliant websites for doctors and clinics with appointment booking.',
+    longDescription: 'Professional, HIPAA-compliant websites for doctors and clinics, featuring appointment booking, service details, and patient resources.',
+    priceRange: '₹45,000 – ₹1,20,000',
+    scope: ['Appointment Booking System', 'Doctor Profiles', 'Patient Testimonials', 'Secure Contact Forms', 'Health Blog'],
+    process: [
+        { step: 1, title: 'Requirement Gathering', description: 'Understand the clinic’s specialities and patient communication needs, ensuring HIPAA compliance.' },
+        { step: 2, title: 'Design', description: 'Create a reassuring and professional design that builds patient trust.' },
+        { step: 3, title: 'Development', description: 'Develop the website with secure features for handling patient information.' },
+        { step: 4, title: 'Launch & Support', description: 'Deploy the website and provide ongoing support to ensure security and performance.' }
+    ],
+    caseStudyIds: [],
+    category: 'Web Development'
+  },
+  {
+    id: 'portfolio-personal-branding-websites',
+    slug: 'portfolio-personal-branding-websites',
+    title: 'Portfolio & Personal Branding Websites',
+    shortDescription: 'Stunning portfolio websites for creatives and professionals.',
+    longDescription: 'Stunning portfolio websites for artists, photographers, designers, and professionals to showcase their work and build a personal brand.',
+    priceRange: '₹15,000 – ₹40,000',
+    scope: ['Visual Gallery', 'About Me Page', 'Contact Form', 'Blog Integration', 'Responsive Design'],
+    process: [
+        { step: 1, title: 'Vision', description: 'Understand your personal brand and the story you want to tell with your work.' },
+        { step: 2, title: 'Design', description: 'Create a unique design that makes your work the star of the show.' },
+        { step: 3, title: 'Development', description: 'Build a pixel-perfect, fast-loading website to house your portfolio.' },
+        { step: 4, title: 'Launch', description: 'Go live and help you share your new portfolio with the world.' }
+    ],
+    caseStudyIds: [],
+    category: 'Web Development'
+  },
+   {
+    id: 'landing-page-design-development',
+    slug: 'landing-page-design-development',
+    title: 'Landing Page Design & Development',
+    shortDescription: 'High-converting landing pages for marketing campaigns and product launches.',
+    longDescription: 'High-converting landing pages for marketing campaigns and product launches, designed to maximize leads and sales.',
+    priceRange: '₹10,000 – ₹30,000',
+    scope: ['A/B Testing Variants', 'Lead Capture Form', 'Clear Call-to-Action', 'Fast Load Times', 'Analytics Integration'],
+    process: [
+        { step: 1, title: 'Goal Definition', description: 'Define the single, primary goal of the landing page (e.g., sign-up, purchase).' },
+        { step: 2, title: 'Design & Copy', description: 'Craft persuasive copy and a clean design that guides the user towards the goal.' },
+        { step: 3, title: 'Development', description: 'Build a lightning-fast, mobile-first landing page.' },
+        { step: 4, title: 'Optimize', description: 'Launch the page and use analytics and A/B testing to continuously improve conversion rates.' }
+    ],
+    caseStudyIds: [],
+    category: 'Web Development'
+  },
   {
     id: 'seo-optimization',
     slug: 'seo-optimization',
@@ -103,7 +189,7 @@ export const services: Service[] = [
         { step: 3, title: 'Optimization', description: 'We constantly monitor and tweak your campaigns to improve performance and lower costs.' },
         { step: 4, title: 'Reporting', description: 'You get clear, concise reports on what matters most: your ROI.' }
     ],
-    caseStudyIds: [],
+    caseStudyIds: ['case-study-5'],
     category: 'Digital Marketing'
   },
   {
@@ -120,7 +206,7 @@ export const services: Service[] = [
         { step: 3, title: 'Management', description: 'We schedule posts, engage with your audience, and monitor conversations.' },
         { step: 4, title: 'Growth', description: 'We analyze performance to refine the strategy and grow your following.' }
     ],
-    caseStudyIds: [],
+    caseStudyIds: ['case-study-6'],
     category: 'Digital Marketing'
   },
   {
@@ -243,6 +329,36 @@ export const caseStudies: CaseStudy[] = [
     ],
     imageId: 'portfolio-6'
   },
+  {
+    id: 'case-study-5',
+    slug: 'fashion-brand-ppc',
+    title: 'Scaling a Fashion Brand with Google Ads',
+    category: 'Ads',
+    shortDescription: 'Achieved a 5X Return on Ad Spend (ROAS) for a new fashion e-commerce store using targeted Google Shopping campaigns.',
+    challenge: 'A new online fashion brand wanted to drive sales and acquire customers quickly but had a limited marketing budget and low brand recognition.',
+    solution: 'We launched a series of highly targeted Google Shopping and Search campaigns focused on specific product categories and long-tail keywords. Ad copy was continuously A/B tested, and the product feed was optimized for maximum visibility.',
+    results: [
+      { metric: '5X', value: 'Return on Ad Spend (ROAS)', description: 'Generated ₹5 in revenue for every ₹1 spent on ads.' },
+      { metric: '50%', value: 'Decrease in Cost-per-Acquisition', description: 'Optimization led to more efficient customer acquisition over 3 months.' },
+      { metric: '150%', value: 'Increase in Website Traffic', description: 'Drove a significant volume of qualified buyers to the website.' },
+    ],
+    imageId: 'portfolio-3'
+  },
+  {
+    id: 'case-study-6',
+    slug: 'tech-startup-social-media',
+    title: 'Building a Community for a B2B Tech Startup',
+    category: 'Web',
+    shortDescription: 'Grew a B2B tech startup’s LinkedIn followers by 300% and generated qualified leads through strategic content marketing.',
+    challenge: 'A B2B SaaS startup had a groundbreaking product but struggled to reach and engage with its target audience of enterprise-level decision-makers on social media.',
+    solution: 'We developed a content strategy focused on LinkedIn, sharing valuable industry insights, case studies, and thought leadership articles. We engaged in industry-specific groups and built relationships with key influencers to amplify the brand\'s message.',
+    results: [
+      { metric: '300%', value: 'Follower Growth on LinkedIn', description: 'Organically grew their audience in six months.' },
+      { metric: '50+', value: 'Qualified Leads Generated', description: 'Directly from social media content and engagement.' },
+      { metric: 'Top 10%', value: 'Industry Engagement Rate', description: 'Achieved engagement rates well above the industry average.' },
+    ],
+    imageId: 'portfolio-4'
+  }
 ];
 
 export const blogPosts: BlogPost[] = [
@@ -295,7 +411,7 @@ export const testimonials: Testimonial[] = [
     id: '1',
     name: 'Rohan Sharma',
     title: 'Founder, LegalConnect',
-    quote: 'Trionex Digital delivered a website that perfectly captured our firm\'s professional image. The increase in client consultations through the site was immediate and impressive. A truly fantastic team.',
+    quote: 'Trionex Tech delivered a website that perfectly captured our firm\'s professional image. The increase in client consultations through the site was immediate and impressive. A truly fantastic team.',
     avatarId: 'avatar-2'
   },
   {
