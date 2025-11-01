@@ -3,7 +3,7 @@
 import { ArrowRight } from 'lucide-react';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Card, CardContent, CardHeader, CardTitle, CardFooter } from '@/components/ui/card';
 import { services } from '@/lib/data';
 import { motion } from 'framer-motion';
 
@@ -23,7 +23,7 @@ export default function ServicesPage() {
           <h1 className="font-headline text-4xl font-bold tracking-tighter text-primary sm:text-5xl md:text-6xl">
             Our Services
           </h1>
-          <p className="mt-4 max-w-2xl mx-auto text-lg text-muted-foreground">
+          <p className="mt-4 max-w-2xl mx-auto text-base md:text-lg text-muted-foreground">
             We provide a comprehensive suite of digital services to elevate your brand and accelerate your growth, from web development to digital marketing.
           </p>
         </div>
@@ -46,20 +46,22 @@ export default function ServicesPage() {
                   className="flex flex-col transform transition-transform duration-300 hover:-translate-y-2 hover:shadow-xl h-full"
                 >
                   <CardHeader>
-                    <CardTitle className="font-headline text-2xl">
+                    <CardTitle className="font-headline text-xl md:text-2xl">
                       {service.title}
                     </CardTitle>
                   </CardHeader>
-                  <CardContent className="flex-grow flex flex-col">
-                    <p className="text-muted-foreground mb-6 flex-grow">
+                  <CardContent className="flex-grow">
+                    <p className="text-muted-foreground mb-6 flex-grow text-sm md:text-base">
                       {service.shortDescription}
                     </p>
-                    <Button variant="outline" asChild className="w-full mt-auto">
-                      <Link href={`/services/${service.slug}`}>
-                        View Details <ArrowRight className="ml-2 h-4 w-4" />
-                      </Link>
-                    </Button>
                   </CardContent>
+                  <CardFooter>
+                    <Button variant="outline" asChild className="w-full mt-auto">
+                        <Link href={`/services/${service.slug}`}>
+                            View Details <ArrowRight className="ml-2 h-4 w-4" />
+                        </Link>
+                    </Button>
+                  </CardFooter>
                 </Card>
               </motion.div>
             ))}
@@ -84,20 +86,22 @@ export default function ServicesPage() {
                   className="flex flex-col transform transition-transform duration-300 hover:-translate-y-2 hover:shadow-xl h-full"
                   >
                   <CardHeader>
-                      <CardTitle className="font-headline text-2xl">
+                      <CardTitle className="font-headline text-xl md:text-2xl">
                       {service.title}
                       </CardTitle>
                   </CardHeader>
-                  <CardContent className="flex-grow flex flex-col">
-                      <p className="text-muted-foreground mb-6 flex-grow">
+                  <CardContent className="flex-grow">
+                      <p className="text-muted-foreground mb-6 flex-grow text-sm md:text-base">
                       {service.shortDescription}
                       </p>
-                      <Button variant="outline" asChild className="w-full mt-auto">
-                      <Link href={`/services/${service.slug}`}>
-                          View Details <ArrowRight className="ml-2 h-4 w-4" />
-                      </Link>
-                      </Button>
                   </CardContent>
+                  <CardFooter>
+                    <Button variant="outline" asChild className="w-full mt-auto">
+                        <Link href={`/services/${service.slug}`}>
+                            View Details <ArrowRight className="ml-2 h-4 w-4" />
+                        </Link>
+                    </Button>
+                  </CardFooter>
                   </Card>
               </motion.div>
             ))}
@@ -108,7 +112,3 @@ export default function ServicesPage() {
     </div>
   );
 }
-
-    
-
-    

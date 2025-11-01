@@ -86,24 +86,24 @@ export default function Home() {
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-2 gap-8 md:grid-cols-4">
             <div className="text-center">
-              <Users className="mx-auto h-12 w-12 text-primary" />
-              <p className="mt-2 text-3xl font-bold font-headline">150+</p>
-              <p className="text-muted-foreground">Happy Clients</p>
+              <Users className="mx-auto h-10 w-10 sm:h-12 sm:w-12 text-primary" />
+              <p className="mt-2 text-2xl sm:text-3xl font-bold font-headline">150+</p>
+              <p className="text-muted-foreground text-sm sm:text-base">Happy Clients</p>
             </div>
             <div className="text-center">
-              <Code className="mx-auto h-12 w-12 text-primary" />
-              <p className="mt-2 text-3xl font-bold font-headline">200+</p>
-              <p className="text-muted-foreground">Projects Completed</p>
+              <Code className="mx-auto h-10 w-10 sm:h-12 sm:w-12 text-primary" />
+              <p className="mt-2 text-2xl sm:text-3xl font-bold font-headline">200+</p>
+              <p className="text-muted-foreground text-sm sm:text-base">Projects Completed</p>
             </div>
             <div className="text-center">
-              <DollarSign className="mx-auto h-12 w-12 text-primary" />
-              <p className="mt-2 text-3xl font-bold font-headline">300%</p>
-              <p className="text-muted-foreground">Average ROI</p>
+              <DollarSign className="mx-auto h-10 w-10 sm:h-12 sm:w-12 text-primary" />
+              <p className="mt-2 text-2xl sm:text-3xl font-bold font-headline">300%</p>
+              <p className="text-muted-foreground text-sm sm:text-base">Average ROI</p>
             </div>
             <div className="text-center">
-              <BarChart className="mx-auto h-12 w-12 text-primary" />
-              <p className="mt-2 text-3xl font-bold font-headline">5+</p>
-              <p className="text-muted-foreground">Years of Experience</p>
+              <BarChart className="mx-auto h-10 w-10 sm:h-12 sm:w-12 text-primary" />
+              <p className="mt-2 text-2xl sm:text-3xl font-bold font-headline">5+</p>
+              <p className="text-muted-foreground text-sm sm:text-base">Years of Experience</p>
             </div>
           </div>
         </div>
@@ -117,7 +117,7 @@ export default function Home() {
             <h2 className="mt-2 font-headline text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
               Services We Offer
             </h2>
-            <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
+            <p className="mx-auto mt-4 max-w-2xl text-base md:text-lg text-muted-foreground">
               From crafting stunning websites to dominating search results, we have
               you covered.
             </p>
@@ -135,7 +135,7 @@ export default function Home() {
                   variants={cardVariants}
                 >
                   <Card
-                    className={cn("transform transition-transform duration-300 hover:-translate-y-2 hover:shadow-xl card-glow-on-hover h-full")}
+                    className={cn("transform transition-transform duration-300 hover:-translate-y-2 hover:shadow-xl card-glow-on-hover h-full flex flex-col")}
                   >
                     <CardHeader className="items-center text-center">
                       <div className="mb-4 rounded-full bg-primary/10 p-4 text-primary">
@@ -145,16 +145,18 @@ export default function Home() {
                         {service.title}
                       </CardTitle>
                     </CardHeader>
-                    <CardContent className="text-center">
-                      <p className="mb-4 text-muted-foreground">
+                    <CardContent className="text-center flex-grow">
+                      <p className="mb-4 text-muted-foreground text-sm md:text-base">
                         {service.shortDescription}
                       </p>
-                      <Button variant="ghost" asChild className="text-primary">
+                    </CardContent>
+                    <div className="p-6 pt-0">
+                      <Button variant="ghost" asChild className="text-primary w-full">
                         <Link href={`/services/${service.slug}`}>
                           Learn More <ArrowRight className="ml-2 h-4 w-4" />
                         </Link>
                       </Button>
-                    </CardContent>
+                    </div>
                   </Card>
                 </motion.div>
               );
@@ -166,7 +168,7 @@ export default function Home() {
       {/* Client Logos Section */}
       <section className="py-12 bg-background">
         <div className="container mx-auto px-4">
-          <h3 className="mb-8 text-center text-lg font-semibold text-muted-foreground">
+          <h3 className="mb-8 text-center text-base md:text-lg font-semibold text-muted-foreground">
             Trusted by leading companies worldwide
           </h3>
           <Carousel
@@ -180,14 +182,14 @@ export default function Home() {
               {clients.map((client) => {
                 const clientImage = placeholderImages.find(p => p.id === client.imageId);
                 return (
-                <CarouselItem key={client.id} className="basis-1/3 md:basis-1/4 lg:basis-1/6">
-                  <div className="p-1">
+                <CarouselItem key={client.id} className="basis-1/2 sm:basis-1/3 md:basis-1/4 lg:basis-1/6">
+                  <div className="p-1 flex justify-center">
                     {clientImage && <Image
                       src={clientImage.imageUrl}
                       alt={client.name}
                       width={150}
                       height={50}
-                      className="object-contain grayscale transition-all hover:grayscale-0"
+                      className="object-contain grayscale transition-all hover:grayscale-0 h-[50px] w-auto"
                       data-ai-hint={clientImage.imageHint}
                     />}
                   </div>
@@ -218,11 +220,11 @@ export default function Home() {
                 <CarouselItem key={testimonial.id}>
                   <Card className="border-0 bg-transparent shadow-none">
                     <CardContent className="p-6 text-center">
-                      <p className="mb-6 text-xl italic text-foreground">
+                      <p className="mb-6 text-lg md:text-xl italic text-foreground">
                         &quot;{testimonial.quote}&quot;
                       </p>
                       <div className="flex items-center justify-center">
-                        {avatarImage && <Avatar className="mr-4">
+                        {avatarImage && <Avatar className="mr-4 h-12 w-12">
                           <AvatarImage
                             src={avatarImage.imageUrl}
                             alt={testimonial.name}
@@ -242,8 +244,8 @@ export default function Home() {
                 </CarouselItem>
               )})}
             </CarouselContent>
-            <CarouselPrevious />
-            <CarouselNext />
+            <CarouselPrevious className="hidden sm:flex" />
+            <CarouselNext className="hidden sm:flex" />
           </Carousel>
         </div>
       </section>
@@ -256,7 +258,7 @@ export default function Home() {
             <h2 className="mt-2 font-headline text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
               From Our Blog
             </h2>
-            <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
+            <p className="mx-auto mt-4 max-w-2xl text-base md:text-lg text-muted-foreground">
               Stay ahead of the curve with our latest articles and insights.
             </p>
           </div>
@@ -270,10 +272,9 @@ export default function Home() {
                 whileInView="visible"
                 viewport={{ once: true, amount: 0.3 }}
                 transition={{ delay: i * 0.1, duration: 0.5 }}
-                variants={cardVariants}
               >
-                <Card key={post.id} className={cn("overflow-hidden group card-glow-on-hover h-full")}>
-                  <Link href={`/blog/${post.slug}`} className="block">
+                <Card key={post.id} className={cn("overflow-hidden group card-glow-on-hover h-full flex flex-col")}>
+                  <Link href={`/blog/${post.slug}`} className="block flex flex-col h-full">
                     <div className="aspect-video relative">
                       {blogImage && <Image
                         src={blogImage.imageUrl}
@@ -293,8 +294,8 @@ export default function Home() {
                         {post.title}
                       </CardTitle>
                     </CardHeader>
-                    <CardContent>
-                      <p className="text-muted-foreground line-clamp-2">
+                    <CardContent className="flex-grow">
+                      <p className="text-muted-foreground line-clamp-2 text-sm md:text-base">
                         {post.excerpt}
                       </p>
                     </CardContent>
@@ -312,7 +313,7 @@ export default function Home() {
           <h2 className="font-headline text-3xl font-bold sm:text-4xl">
             Ready to Start Your Project?
           </h2>
-          <p className="mt-4 mb-8 max-w-2xl mx-auto text-lg text-primary-foreground/80">
+          <p className="mt-4 mb-8 max-w-2xl mx-auto text-base md:text-lg text-primary-foreground/80">
             Let&apos;s talk about how Trionex Tech can help you achieve your
             goals. Schedule a free consultation today.
           </p>
@@ -331,7 +332,3 @@ export default function Home() {
     </div>
   );
 }
-
-    
-
-    

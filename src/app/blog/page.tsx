@@ -19,7 +19,7 @@ export default function BlogPage() {
           <h1 className="font-headline text-4xl font-bold tracking-tighter text-primary sm:text-5xl md:text-6xl">
             Our Blog
           </h1>
-          <p className="mt-4 max-w-2xl mx-auto text-lg text-muted-foreground">
+          <p className="mt-4 max-w-2xl mx-auto text-base md:text-lg text-muted-foreground">
             Insights, trends, and expert advice on digital marketing and web development.
           </p>
         </div>
@@ -36,8 +36,8 @@ export default function BlogPage() {
                 transition={{ delay: i * 0.1, duration: 0.5 }}
                 variants={cardVariants}
               >
-                <Card className="overflow-hidden group h-full">
-                  <Link href={`/blog/${post.slug}`} className="block">
+                <Card className="overflow-hidden group h-full flex flex-col">
+                  <Link href={`/blog/${post.slug}`} className="block h-full flex flex-col">
                     <div className="aspect-video relative">
                       {blogImage && (
                         <Image
@@ -59,8 +59,8 @@ export default function BlogPage() {
                         {post.title}
                       </CardTitle>
                     </CardHeader>
-                    <CardContent>
-                      <p className="text-muted-foreground line-clamp-3">
+                    <CardContent className="flex-grow">
+                      <p className="text-muted-foreground line-clamp-3 text-sm md:text-base">
                         {post.excerpt}
                       </p>
                     </CardContent>
@@ -78,7 +78,3 @@ export default function BlogPage() {
     </div>
   );
 }
-
-    
-
-    

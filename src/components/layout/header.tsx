@@ -3,7 +3,7 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Menu, X, LogOut } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
@@ -37,6 +37,15 @@ export default function Header() {
   const pathname = usePathname();
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
   const { user, isUserLoading } = useUser();
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 10);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const handleLogout = async () => {
     const auth = getAuth();
@@ -49,14 +58,14 @@ export default function Header() {
   };
 
   return (
-    <header className="sticky top-4 z-50 w-full px-4">
-      <div className="container flex h-16 items-center rounded-full border bg-background/95 backdrop-blur-sm supports-[backdrop-filter]:bg-background/60 shadow-lg px-6">
+    <header className={cn("sticky top-0 z-50 w-full transition-all duration-300", isScrolled ? 'py-2' : 'py-4' )}>
+      <div className="container flex h-16 items-center rounded-full border bg-background/95 backdrop-blur-sm supports-[backdrop-filter]:bg-background/60 shadow-lg px-4 sm:px-6">
         <Link href="/" className="mr-6 flex items-center">
           <Logo />
         </Link>
 
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex md:items-center md:gap-6 text-sm font-medium">
+        <nav className="hidden lg:flex lg:items-center lg:gap-6 text-sm font-medium">
           {navLinks.map(({ href, label }) => (
             <Link
               key={href}
@@ -121,7 +130,7 @@ export default function Header() {
           {/* Mobile Navigation */}
           <Sheet open={isMobileMenuOpen} onOpenChange={setMobileMenuOpen}>
             <SheetTrigger asChild>
-              <Button variant="ghost" size="icon" className="md:hidden">
+              <Button variant="ghost" size="icon" className="lg:hidden">
                 <Menu />
                 <span className="sr-only">Open menu</span>
               </Button>

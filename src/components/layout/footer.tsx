@@ -43,7 +43,7 @@ export default function Footer() {
     <footer className="bg-secondary/50 dark:bg-secondary/20 border-t">
       <div className="container mx-auto px-4">
         {/* Main Footer content */}
-        <div className="py-16 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-8">
+        <div className="py-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
             <div className="flex flex-col gap-4 md:col-span-2">
                 <Link href="/" aria-label="Back to homepage">
                     <Logo />
@@ -58,7 +58,7 @@ export default function Footer() {
                 </div>
             </div>
             {footerNavs.map((nav) => (
-              <div key={nav.label}>
+              <div key={nav.label} className="mt-8 sm:mt-0">
                 <h3 className="font-headline font-semibold text-foreground">{nav.label}</h3>
                 <ul className="mt-4 space-y-3">
                   {nav.items.map((item) => (
@@ -78,8 +78,8 @@ export default function Footer() {
 
         {/* Bottom Bar */}
         <div className="border-t py-6 flex flex-col sm:flex-row justify-between items-center text-sm text-muted-foreground">
-          <p>&copy; {new Date().getFullYear()} Trionex Tech. All rights reserved.</p>
-          <div className="flex items-center space-x-3 mt-4 sm:mt-0">
+          <p className="text-center sm:text-left">&copy; {new Date().getFullYear()} Trionex Tech. All rights reserved.</p>
+          <div className="flex items-center space-x-1 sm:space-x-3 mt-4 sm:mt-0">
               {socialLinks.map((link, i) => (
               <Button
                   key={i}

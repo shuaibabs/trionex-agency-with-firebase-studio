@@ -35,7 +35,7 @@ export default function PortfolioPage() {
           <h1 className="font-headline text-4xl font-bold tracking-tighter text-primary sm:text-5xl md:text-6xl">
             Our Work
           </h1>
-          <p className="mt-4 max-w-2xl mx-auto text-lg text-muted-foreground">
+          <p className="mt-4 max-w-2xl mx-auto text-base md:text-lg text-muted-foreground">
             Explore our portfolio of success stories and see how we've helped businesses like yours thrive.
           </p>
         </div>
@@ -46,6 +46,7 @@ export default function PortfolioPage() {
               key={category}
               variant={filter === category ? 'default' : 'outline'}
               onClick={() => setFilter(category)}
+              className="px-4 py-2 text-sm"
             >
               {category}
             </Button>
@@ -63,8 +64,9 @@ export default function PortfolioPage() {
                 viewport={{ once: true, amount: 0.3 }}
                 transition={{ delay: i * 0.1, duration: 0.5 }}
                 variants={cardVariants}
+                className="flex"
               >
-                <Card className="overflow-hidden group flex flex-col h-full">
+                <Card className="overflow-hidden group flex flex-col h-full w-full">
                   <Link href={`/portfolio/${study.slug}`} className="block h-full flex flex-col">
                     <div className="aspect-video relative">
                       {portfolioImage && (
@@ -84,16 +86,14 @@ export default function PortfolioPage() {
                         </CardTitle>
                     </CardHeader>
                     <CardContent className='flex-grow'>
-                      <p className="text-muted-foreground line-clamp-3">
+                      <p className="text-muted-foreground line-clamp-3 text-sm md:text-base">
                         {study.shortDescription}
                       </p>
                     </CardContent>
                     <CardFooter>
-                        <Button variant="link" asChild className='p-0 text-primary'>
-                            <span className="cursor-pointer">
-                                Read Case Study <ArrowRight className="ml-2 h-4 w-4" />
-                            </span>
-                        </Button>
+                        <span className="text-primary hover:underline flex items-center text-sm font-semibold">
+                            Read Case Study <ArrowRight className="ml-2 h-4 w-4" />
+                        </span>
                     </CardFooter>
                   </Link>
                 </Card>
@@ -105,7 +105,3 @@ export default function PortfolioPage() {
     </div>
   );
 }
-
-    
-
-    

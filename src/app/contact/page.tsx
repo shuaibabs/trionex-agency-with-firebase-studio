@@ -1,3 +1,4 @@
+
 'use client';
 
 import { zodResolver } from '@hookform/resolvers/zod';
@@ -89,7 +90,7 @@ export default function ContactPage() {
           <h1 className="font-headline text-4xl font-bold tracking-tighter text-primary sm:text-5xl md:text-6xl">
             Get in Touch
           </h1>
-          <p className="mt-4 max-w-2xl mx-auto text-lg text-muted-foreground">
+          <p className="mt-4 max-w-2xl mx-auto text-base md:text-lg text-muted-foreground">
             Have a project in mind or just want to say hello? We&apos;d love to
             hear from you.
           </p>
@@ -104,8 +105,8 @@ export default function ContactPage() {
                   <Mail className="h-6 w-6" />
                 </div>
                 <div>
-                  <h3 className="font-semibold">Email</h3>
-                  <a href="mailto:hello@trionex.tech" className="text-muted-foreground hover:text-primary">
+                  <h3 className="font-semibold text-lg">Email</h3>
+                  <a href="mailto:hello@trionex.tech" className="text-muted-foreground hover:text-primary text-sm sm:text-base">
                     hello@trionex.tech
                   </a>
                 </div>
@@ -115,8 +116,8 @@ export default function ContactPage() {
                   <Phone className="h-6 w-6" />
                 </div>
                 <div>
-                  <h3 className="font-semibold">Phone</h3>
-                  <a href="tel:+911234567890" className="text-muted-foreground hover:text-primary">
+                  <h3 className="font-semibold text-lg">Phone</h3>
+                  <a href="tel:+911234567890" className="text-muted-foreground hover:text-primary text-sm sm:text-base">
                     +91 12345 67890
                   </a>
                 </div>
@@ -126,8 +127,8 @@ export default function ContactPage() {
                   <MapPin className="h-6 w-6" />
                 </div>
                 <div>
-                  <h3 className="font-semibold">Office</h3>
-                  <p className="text-muted-foreground">
+                  <h3 className="font-semibold text-lg">Office</h3>
+                  <p className="text-muted-foreground text-sm sm:text-base">
                     123 Innovation Drive, Tech Park, <br />
                     Bengaluru, Karnataka 560100, India
                   </p>
@@ -211,7 +212,7 @@ export default function ContactPage() {
             {result && (
               <Card className="mt-8 bg-gradient-to-br from-secondary/30 to-background dark:from-secondary/20 dark:to-background">
                 <CardHeader>
-                  <CardTitle className="flex items-center gap-2 font-headline text-primary">
+                  <CardTitle className="flex items-center gap-2 font-headline text-primary text-xl md:text-2xl">
                     <Bot className="h-6 w-6" />
                     AI-Powered Routing Summary
                   </CardTitle>
@@ -219,7 +220,7 @@ export default function ContactPage() {
                 <CardContent className="space-y-4">
                   <div>
                     <h4 className="font-semibold">Inquiry Summary:</h4>
-                    <p className="text-muted-foreground italic">
+                    <p className="text-muted-foreground italic text-sm md:text-base">
                       &quot;{result.summary}&quot;
                     </p>
                   </div>
@@ -228,7 +229,7 @@ export default function ContactPage() {
                        <UserCheck className="h-5 w-5 text-green-500" />
                       Suggested Team Member:
                     </h4>
-                    <p className="text-foreground text-lg font-medium">{result.suggestedTeamMember}</p>
+                    <p className="text-foreground text-base md:text-lg font-medium">{result.suggestedTeamMember}</p>
                   </div>
                 </CardContent>
               </Card>

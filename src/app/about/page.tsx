@@ -54,11 +54,11 @@ export default function AboutPage() {
       {/* Hero Section */}
       <section className="relative w-full py-20 md:py-32">
         <div className="container mx-auto px-4 text-center">
-           <Badge variant="outline" className="text-lg py-1 px-4">Our Journey</Badge>
+           <Badge variant="outline" className="text-base py-1 px-4 sm:text-lg">Our Journey</Badge>
           <h1 className="font-headline text-4xl font-bold tracking-tighter text-primary sm:text-5xl md:text-6xl mt-4">
             Crafting Digital Excellence, Driving Real Growth
           </h1>
-          <p className="mt-6 max-w-3xl mx-auto text-lg text-muted-foreground md:text-xl">
+          <p className="mt-6 max-w-3xl mx-auto text-base text-muted-foreground md:text-xl">
             We&apos;re a passionate team of developers, designers, and marketers dedicated to building exceptional digital experiences that fuel success.
           </p>
         </div>
@@ -81,7 +81,7 @@ export default function AboutPage() {
       {/* Our Story Section */}
       <section className="py-16 sm:py-24 bg-secondary/50 dark:bg-secondary/20">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
             {ourStoryImage && (
                 <motion.div
                   initial="hidden"
@@ -105,10 +105,10 @@ export default function AboutPage() {
               <h2 className="mt-2 font-headline text-3xl font-bold tracking-tighter sm:text-4xl">
                 From a Spark to Synergy
               </h2>
-              <p className="mt-4 text-muted-foreground text-lg">
+              <p className="mt-4 text-muted-foreground text-base md:text-lg">
                 Founded in a small garage by a developer and a marketer, Trionex Tech was born from a simple idea: what if technology and creativity worked in perfect harmony? We saw businesses struggling with disconnected digital efforts—beautiful websites that nobody saw, and marketing campaigns that didn't convert.
               </p>
-              <p className="mt-4 text-muted-foreground text-lg">
+              <p className="mt-4 text-muted-foreground text-base md:text-lg">
                 We set out to build an agency that bridges that gap. Today, we are a full-service digital powerhouse, but our core mission remains the same: to be a true partner, creating synergistic solutions that deliver tangible results.
               </p>
             </div>
@@ -122,11 +122,11 @@ export default function AboutPage() {
           <div className="text-center mb-12">
             <Badge variant="outline">Our Compass</Badge>
             <h2 className="mt-2 font-headline text-3xl font-bold tracking-tighter sm:text-4xl">Our Mission & Values</h2>
-            <p className="mt-4 max-w-2xl mx-auto text-lg text-muted-foreground">
+            <p className="mt-4 max-w-2xl mx-auto text-base md:text-lg text-muted-foreground">
              Our mission is to empower businesses to thrive in the digital world through technology and creativity. These values guide every decision we make.
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {values.map((value, i) => (
               <motion.div
                   key={value.title}
@@ -155,7 +155,7 @@ export default function AboutPage() {
           <div className="text-center mb-12">
             <Badge variant="outline">Our Difference</Badge>
             <h2 className="mt-2 font-headline text-3xl font-bold tracking-tighter sm:text-4xl">Why Choose Trionex Tech?</h2>
-            <p className="mt-4 max-w-2xl mx-auto text-lg text-muted-foreground">
+            <p className="mt-4 max-w-2xl mx-auto text-base md:text-lg text-muted-foreground">
               We're more than just a vendor; we're your partner in growth.
             </p>
           </div>
@@ -174,7 +174,7 @@ export default function AboutPage() {
                   {reason.icon}
                 </div>
                 <h3 className="text-xl font-semibold font-headline">{reason.title}</h3>
-                <p className="mt-2 text-muted-foreground">{reason.description}</p>
+                <p className="mt-2 text-muted-foreground text-sm md:text-base">{reason.description}</p>
               </motion.div>
             ))}
           </div>
@@ -189,7 +189,7 @@ export default function AboutPage() {
             <h2 className="mt-2 font-headline text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
               Meet the Team
             </h2>
-            <p className="mt-4 max-w-2xl mx-auto text-lg text-muted-foreground">
+            <p className="mt-4 max-w-2xl mx-auto text-base md:text-lg text-muted-foreground">
               The architects of your digital success.
             </p>
           </div>
@@ -226,5 +226,3 @@ export default function AboutPage() {
     </div>
   );
 }
-
-    
