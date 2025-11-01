@@ -27,8 +27,8 @@ export default function Header() {
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <header className="sticky top-4 z-50 w-full">
-      <div className="container flex h-16 items-center rounded-full border bg-background/95 backdrop-blur-sm supports-[backdrop-filter]:bg-background/60 shadow-lg">
+    <header className="sticky top-4 z-50 w-full px-4">
+      <div className="container flex h-16 items-center rounded-full border bg-background/95 backdrop-blur-sm supports-[backdrop-filter]:bg-background/60 shadow-lg px-6">
         <Link href="/" className="mr-6 flex items-center">
           <Logo />
         </Link>
