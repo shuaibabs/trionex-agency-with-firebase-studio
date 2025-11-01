@@ -1,3 +1,166 @@
 {
-  "placeholderImages": []
+  "placeholderImages": [
+    {
+      "id": "home-hero",
+      "description": "Modern office collaboration scene",
+      "imageUrl": "https://images.unsplash.com/photo-1680459575585-390ed5cfcae0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxvZmZpY2UlMjBjb2xsYWJvcmF0aW9ufGVufDB8fHx8MTc2MjAxNjYxMnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "office collaboration"
+    },
+    {
+      "id": "about-hero",
+      "description": "Team of diverse professionals in a meeting",
+      "imageUrl": "https://images.unsplash.com/photo-1709715357510-b687304cee3a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHx0ZWFtJTIwbWVldGluZ3xlbnwwfHx8fDE3NjE5MzQ3NTh8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "team meeting"
+    },
+    {
+      "id": "service-web-dev",
+      "description": "Close-up of code on a screen",
+      "imageUrl": "https://images.unsplash.com/photo-1515879218367-8466d910aaa4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxjb2RlJTIwc2NyZWVufGVufDB8fHx8MTc2MTk0NTM2N3ww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "code screen"
+    },
+    {
+      "id": "service-seo",
+      "description": "Chart showing upward trend",
+      "imageUrl": "https://images.unsplash.com/photo-1577563682708-4f022ec774fb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxncm93dGglMjBjaGFydHxlbnwwfHx8fDE3NjE5ODkwMTF8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "growth chart"
+    },
+    {
+      "id": "service-ads",
+      "description": "Social media interface on a phone",
+      "imageUrl": "https://images.unsplash.com/photo-1579869847557-1f67382cc158?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxzb2NpYWwlMjBtZWRpYXxlbnwwfHx8fDE3NjE5ODUwNjR8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "social media"
+    },
+    {
+      "id": "service-content",
+      "description": "Person writing in a notebook",
+      "imageUrl": "https://images.unsplash.com/photo-1620136283251-878c03b5206c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8d3JpdGluZyUyMG5vdGVib29rfGVufDB8fHx8MTc2MTg5NTgxN3ww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "writing notebook"
+    },
+    {
+      "id": "portfolio-1",
+      "description": "Screenshot of a modern e-commerce website",
+      "imageUrl": "https://images.unsplash.com/photo-1563013544-824ae1b704d3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8ZWNvbW1lcmNlJTIwd2Vic2l0ZXxlbnwwfHx8fDE3NjIwMTYxMTV8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "ecommerce website"
+    },
+    {
+      "id": "portfolio-2",
+      "description": "Dashboard of an analytics platform",
+      "imageUrl": "https://images.unsplash.com/photo-1526628953301-3e589a6a8b74?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxhbmFseXRpY3MlMjBkYXNoYm9hcmR8ZW58MHx8fHwxNzYxOTYwMjg4fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "analytics dashboard"
+    },
+    {
+      "id": "portfolio-3",
+      "description": "Google search results page",
+      "imageUrl": "https://images.unsplash.com/photo-1477013743164-ffc3a5e556da?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxzZWFyY2glMjByZXN1bHRzfGVufDB8fHx8MTc2MTk3NDg1MXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "search results"
+    },
+    {
+      "id": "portfolio-4",
+      "description": "Mobile app interface design",
+      "imageUrl": "https://images.unsplash.com/photo-1761305135230-a626d3c8d0a5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8YXBwJTIwaW50ZXJmYWNlfGVufDB8fHx8MTc2MTkwOTk4MXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "app interface"
+    },
+    {
+      "id": "blog-1",
+      "description": "Abstract digital art",
+      "imageUrl": "https://images.unsplash.com/photo-1641984790242-d8aa477d306c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxkaWdpdGFsJTIwYXJ0fGVufDB8fHx8MTc2MjAxMDc1Mnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "digital art"
+    },
+    {
+      "id": "blog-2",
+      "description": "Person working on a laptop in a cafe",
+      "imageUrl": "https://images.unsplash.com/photo-1704770064557-416292d1f4bd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxsYXB0b3AlMjBjYWZlfGVufDB8fHx8MTc2MTk0ODM2Nnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "laptop cafe"
+    },
+    {
+      "id": "blog-3",
+      "description": "Neon sign with a motivational quote",
+      "imageUrl": "https://images.unsplash.com/photo-1504805572947-34fad45aed93?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxuZW9uJTIwc2lnbnxlbnwwfHx8fDE3NjIwMTY2MTJ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "neon sign"
+    },
+    {
+      "id": "blog-4",
+      "description": "A focused developer coding on a laptop.",
+      "imageUrl": "https://images.unsplash.com/photo-1719253479632-61b2fdc77a65?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxkZXZlbG9wZXIlMjBjb2Rpbmd8ZW58MHx8fHwxNzYxOTMxMzg1fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "developer coding"
+    },
+    {
+      "id": "avatar-1",
+      "description": "Portrait of a smiling woman",
+      "imageUrl": "https://images.unsplash.com/photo-1546961329-78bef0414d7c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHx3b21hbiUyMHBvcnRyYWl0fGVufDB8fHx8MTc2MTkwOTQyNXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "woman portrait"
+    },
+    {
+      "id": "avatar-2",
+      "description": "Portrait of a man with glasses",
+      "imageUrl": "https://images.unsplash.com/photo-1607031542107-f6f46b5d54e9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxtYW4lMjBwb3J0cmFpdHxlbnwwfHx8fDE3NjE5OTU4ODd8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "man portrait"
+    },
+    {
+      "id": "avatar-3",
+      "description": "Professional headshot of a person",
+      "imageUrl": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxwcm9mZXNzaW9uYWwlMjBoZWFkc2hvdHxlbnwwfHx8fDE3NjE5OTA0NjR8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "professional headshot"
+    },
+    {
+      "id": "avatar-4",
+      "description": "Headshot of a smiling professional woman",
+      "imageUrl": "https://images.unsplash.com/photo-1611432579699-484f7990b127?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHx3b21hbiUyMGhlYWRzaG90fGVufDB8fHx8MTc2MTkyNjA1MHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "woman headshot"
+    },
+    {
+      "id": "avatar-5",
+      "description": "Headshot of a confident man",
+      "imageUrl": "https://images.unsplash.com/photo-1588178454780-441fa5b99fa5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxtYW4lMjBoZWFkc2hvdHxlbnwwfHx8fDE3NjE5NTUxOTN8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "man headshot"
+    },
+    {
+      "id": "avatar-6",
+      "description": "Headshot of a creative professional",
+      "imageUrl": "https://images.unsplash.com/photo-1618202680402-45db7b399e0c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxjcmVhdGl2ZSUyMHByb2Zlc3Npb25hbHxlbnwwfHx8fDE3NjE5MzA4MTl8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "creative professional"
+    },
+    {
+      "id": "client-logo-1",
+      "description": "Generic tech company logo",
+      "imageUrl": "https://images.unsplash.com/photo-1569605803663-e9337d901ff9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHx0ZWNoJTIwbG9nb3xlbnwwfHx8fDE3NjIwMTY2MTJ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "tech logo"
+    },
+    {
+      "id": "client-logo-2",
+      "description": "Generic startup logo",
+      "imageUrl": "https://images.unsplash.com/photo-1669633971142-99954984ca8a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxzdGFydHVwJTIwbG9nb3xlbnwwfHx8fDE3NjE5MjY1ODl8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "startup logo"
+    },
+    {
+      "id": "client-logo-3",
+      "description": "Generic e-commerce logo",
+      "imageUrl": "https://images.unsplash.com/photo-1761044591049-5d549416a5df?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxlY29tbWVyY2UlMjBsb2dvfGVufDB8fHx8MTc2MjAwNzAwMHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "ecommerce logo"
+    },
+    {
+      "id": "client-logo-4",
+      "description": "Generic finance company logo",
+      "imageUrl": "https://images.unsplash.com/photo-1693801874720-05ae2c89ede1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxmaW5hbmNlJTIwbG9nb3xlbnwwfHx8fDE3NjE5ODAxMDB8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "finance logo"
+    },
+    {
+      "id": "client-logo-5",
+      "description": "Generic health brand logo",
+      "imageUrl": "https://images.unsplash.com/photo-1655565637301-8485235271ca?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxoZWFsdGglMjBsb2dvfGVufDB8fHx8MTc2MTkzNTYyOHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "health logo"
+    },
+    {
+      "id": "client-logo-6",
+      "description": "Generic travel company logo",
+      "imageUrl": "https://images.unsplash.com/photo-1697725077369-62bea3a8cb8c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHx0cmF2ZWwlMjBsb2dvfGVufDB8fHx8MTc2MjAxNjYxM3ww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "travel logo"
+    },
+    {
+      "id": "not-found",
+      "description": "A lost person looking at a map",
+      "imageUrl": "https://images.unsplash.com/photo-1495249346844-83e18c90a511?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxsb3N0JTIwbWFwfGVufDB8fHx8MTc2MjAxNjYxMnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "lost map"
+    }
+  ]
 }

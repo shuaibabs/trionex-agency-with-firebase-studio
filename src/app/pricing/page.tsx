@@ -1,0 +1,73 @@
+import Link from 'next/link';
+import { Button } from '@/components/ui/button';
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
+import { packages } from '@/lib/data';
+import { Check } from 'lucide-react';
+import { cn } from '@/lib/utils';
+
+export default function PricingPage() {
+  return (
+    <div className="py-16 sm:py-24 bg-background">
+      <div className="container mx-auto px-4">
+        <div className="text-center mb-12">
+          <h1 className="font-headline text-4xl font-bold tracking-tighter text-primary sm:text-5xl md:text-6xl">
+            Our Pricing Plans
+          </h1>
+          <p className="mt-4 max-w-2xl mx-auto text-lg text-muted-foreground">
+            Choose the perfect plan to fuel your growth. Simple, transparent pricing for businesses of all sizes.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 items-start">
+          {packages.map((pkg) => (
+            <Card key={pkg.id} className={cn(
+              "flex flex-col h-full",
+              pkg.isPopular ? 'border-primary ring-2 ring-primary shadow-lg' : ''
+            )}>
+              <CardHeader className="relative">
+                {pkg.isPopular && (
+                  <div className="absolute top-0 right-6 -mt-3">
+                    <div className="bg-primary text-primary-foreground text-xs font-semibold px-3 py-1 rounded-full">
+                      POPULAR
+                    </div>
+                  </div>
+                )}
+                <CardTitle className="font-headline">{pkg.title}</CardTitle>
+                <CardDescription>{pkg.description}</CardDescription>
+                <div className="flex items-baseline pt-4">
+                  <span className="text-4xl font-bold font-headline">
+                    {pkg.price.startsWith('Custom') ? '' : '₹'}
+                    {pkg.price}
+                  </span>
+                  <span className="text-sm text-muted-foreground">{pkg.pricePeriod}</span>
+                </div>
+              </CardHeader>
+              <CardContent className="flex-grow">
+                <ul className="space-y-3">
+                  {pkg.features.map((feature, i) => (
+                    <li key={i} className="flex items-start">
+                      <Check className="h-5 w-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" />
+                      <span className="text-muted-foreground">{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+              </CardContent>
+              <CardFooter>
+                <Button asChild className="w-full" variant={pkg.isPopular ? 'default' : 'outline'}>
+                  <Link href="/contact">{pkg.ctaText}</Link>
+                </Button>
+              </CardFooter>
+            </Card>
+          ))}
+        </div>
+        <div className="text-center mt-16">
+          <h3 className="font-headline text-2xl font-bold">Need a custom solution?</h3>
+          <p className="text-muted-foreground mt-2">We offer tailored enterprise plans. Let's discuss your unique requirements.</p>
+          <Button asChild className="mt-4">
+            <Link href="/contact">Schedule a Call</Link>
+          </Button>
+        </div>
+      </div>
+    </div>
+  );
+}
