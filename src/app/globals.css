@@ -104,32 +104,21 @@
     @apply border-border;
   }
   body {
-    @apply antialiased;
+    @apply bg-background text-foreground;
     font-family: 'Inter', sans-serif;
   }
 
-  .animated-background {
-    background-size: 200% 200%;
+  body.animated-background {
+    background-size: 400% 400%;
     animation: animated-gradient 15s ease infinite;
   }
 
-  .light .animated-background {
-    background-image: linear-gradient(
-      -45deg,
-      hsl(var(--background)),
-      hsl(var(--secondary)),
-      hsl(var(--background))
-    );
+  .light body.animated-background {
+     background-image: linear-gradient(-45deg, #ffffff, #f1f5f9, #ffffff, #e2e8f0);
   }
 
-  .dark .animated-background {
-    background-image: linear-gradient(
-      -45deg,
-      hsl(var(--primary) / 0.05),
-      hsl(var(--background)),
-      hsl(var(--background)),
-      hsl(var(--primary) / 0.05)
-    );
+  .dark body.animated-background {
+    background-image: linear-gradient(-45deg, hsl(var(--primary) / 0.05), hsl(var(--background)), hsl(var(--background)), hsl(var(--primary) / 0.05));
   }
 }
 

@@ -27,15 +27,14 @@ export default function RootLayout({
           rel="stylesheet"
         />
       </head>
-      <body className="antialiased">
+      <body className="animated-background">
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
           enableSystem
           disableTransitionOnChange
         >
-          <div className="relative flex min-h-screen flex-col bg-background text-foreground">
-            <div className="animated-background absolute inset-0 -z-10" />
+          <div className="relative flex min-h-screen flex-col">
             <Header />
             <main className="flex-grow">
                <PageTransition>{children}</PageTransition>
