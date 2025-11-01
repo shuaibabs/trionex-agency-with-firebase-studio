@@ -17,7 +17,7 @@ import { Textarea } from '@/components/ui/textarea';
 import { Mail, Phone, MapPin, Loader2, Bot, UserCheck } from 'lucide-react';
 import { useState } from 'react';
 import type { SummarizeContactFormSubmissionOutput } from '@/ai/flows/summarize-contact-form-submissions';
-import { summarizeSubmissionAction } from './actions';
+import { summarizeSubmissionAction } from '@/app/contact/actions';
 import { useToast } from '@/hooks/use-toast';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 
