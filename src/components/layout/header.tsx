@@ -40,8 +40,8 @@ export default function Header() {
               key={href}
               href={href}
               className={cn(
-                'transition-colors hover:text-primary glow-on-hover',
-                pathname === href ? 'text-primary' : 'text-foreground/60'
+                'transition-colors hover:text-primary nav-link-glow',
+                pathname === href ? 'text-primary font-semibold' : 'text-foreground/60'
               )}
             >
               {label}
