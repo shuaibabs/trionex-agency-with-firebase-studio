@@ -1,7 +1,6 @@
 
 'use client';
 
-import Image from 'next/image';
 import Link from 'next/link';
 import {
   ArrowRight,
@@ -27,9 +26,8 @@ import { placeholderImages } from '@/lib/data';
 import { services, blogPosts, testimonials, clients } from '@/lib/data';
 import { cn } from '@/lib/utils';
 import { motion } from 'framer-motion';
-
-
-const heroImage = placeholderImages.find((img) => img.id === 'home-hero');
+import Image from 'next/image';
+import FuturisticAnimation from '@/components/futuristic-animation';
 
 const serviceIcons: { [key: string]: React.ElementType } = {
   'business-website-development': Code,
@@ -37,11 +35,19 @@ const serviceIcons: { [key: string]: React.ElementType } = {
   'ppc-advertising': BarChart,
   'content-marketing': PenTool,
   'ecommerce-website': Code,
-  'social-media-marketing': Users
+  'social-media-marketing': Users,
+  'real-estate-website-development': Code,
+  'college-school-website-development': Code,
+  'healthcare-clinic-website-development': Code,
+  'portfolio-personal-branding-websites': Code,
+  'startup-mvp-development': Code,
+  'landing-page-design-development': Code,
 };
 
 export default function Home() {
-  const featuredServices = services.filter(s => ['business-website-development', 'seo-optimization', 'ppc-advertising', 'ecommerce-website'].includes(s.id));
+  const featuredServices = services.filter(s => 
+    ['business-website-development', 'seo-optimization', 'ecommerce-website', 'custom-web-application'].includes(s.id)
+  );
   const cardVariants = {
     hidden: { opacity: 0, y: 20 },
     visible: { opacity: 1, y: 0 },
@@ -69,17 +75,8 @@ export default function Home() {
               </Button>
             </div>
           </div>
-          <div className="relative h-64 w-full max-w-lg mx-auto md:h-96">
-            {heroImage && (
-              <Image
-                src={heroImage.imageUrl}
-                alt={heroImage.description}
-                fill
-                className="rounded-lg object-cover shadow-2xl"
-                data-ai-hint={heroImage.imageHint}
-                priority
-              />
-            )}
+          <div className="relative h-64 w-full max-w-lg mx-auto md:h-96 flex items-center justify-center">
+            <FuturisticAnimation />
           </div>
         </div>
       </section>
@@ -334,5 +331,3 @@ export default function Home() {
     </div>
   );
 }
-
-    

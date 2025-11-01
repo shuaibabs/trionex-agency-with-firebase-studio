@@ -1,12 +1,6 @@
 {
   "placeholderImages": [
     {
-      "id": "home-hero",
-      "description": "Modern office collaboration scene",
-      "imageUrl": "https://images.unsplash.com/photo-1680459575585-390ed5cfcae0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxvZmZpY2UlMjBjb2xsYWJvcmF0aW9ufGVufDB8fHx8MTc2MjAxNjYxMnww&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "office collaboration"
-    },
-    {
       "id": "about-hero",
       "description": "Team of diverse professionals in a meeting",
       "imageUrl": "https://images.unsplash.com/photo-1709715357510-b687304cee3a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHx0ZWFtJTIwbWVldGluZ3xlbnwwfHx8fDE3NjE5MzQ3NTh8MA&ixlib=rb-4.1.0&q=80&w=1080",
