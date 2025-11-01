@@ -1,13 +1,21 @@
+
+'use client';
 import { ArrowRight } from 'lucide-react';
 import Link from 'next/link';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { services } from '@/lib/data';
+import { motion } from 'framer-motion';
+
 
 export default function ServicesPage() {
   const webDevServices = services.filter(s => s.category === 'Web Development');
   const marketingServices = services.filter(s => s.category === 'Digital Marketing');
+  const cardVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0 },
+  };
 
   return (
     <div className="py-16 sm:py-24 bg-background">
@@ -25,27 +33,36 @@ export default function ServicesPage() {
         <section className="mb-20">
           <h2 className="font-headline text-3xl font-bold tracking-tight mb-8 text-center sm:text-4xl">Web Development Solutions</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {webDevServices.map((service) => (
-              <Card
+            {webDevServices.map((service, i) => (
+              <motion.div
                 key={service.id}
-                className="flex flex-col transform transition-transform duration-300 hover:-translate-y-2 hover:shadow-xl"
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.5 }}
+                transition={{ delay: i * 0.1, duration: 0.5 }}
+                variants={cardVariants}
+                className="h-full"
               >
-                <CardHeader>
-                  <CardTitle className="font-headline text-2xl">
-                    {service.title}
-                  </CardTitle>
-                </CardHeader>
-                <CardContent className="flex-grow flex flex-col">
-                  <p className="text-muted-foreground mb-6 flex-grow">
-                    {service.shortDescription}
-                  </p>
-                  <Button variant="outline" asChild className="w-full mt-auto">
-                    <Link href={`/services/${service.slug}`}>
-                      View Details <ArrowRight className="ml-2 h-4 w-4" />
-                    </Link>
-                  </Button>
-                </CardContent>
-              </Card>
+                <Card
+                  className="flex flex-col transform transition-transform duration-300 hover:-translate-y-2 hover:shadow-xl h-full"
+                >
+                  <CardHeader>
+                    <CardTitle className="font-headline text-2xl">
+                      {service.title}
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent className="flex-grow flex flex-col">
+                    <p className="text-muted-foreground mb-6 flex-grow">
+                      {service.shortDescription}
+                    </p>
+                    <Button variant="outline" asChild className="w-full mt-auto">
+                      <Link href={`/services/${service.slug}`}>
+                        View Details <ArrowRight className="ml-2 h-4 w-4" />
+                      </Link>
+                    </Button>
+                  </CardContent>
+                </Card>
+              </motion.div>
             ))}
           </div>
         </section>
@@ -54,27 +71,36 @@ export default function ServicesPage() {
         <section>
           <h2 className="font-headline text-3xl font-bold tracking-tight mb-8 text-center sm:text-4xl">Digital Marketing Services</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {marketingServices.map((service) => (
-              <Card
+            {marketingServices.map((service, i) => (
+               <motion.div
                 key={service.id}
-                className="flex flex-col transform transition-transform duration-300 hover:-translate-y-2 hover:shadow-xl"
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.5 }}
+                transition={{ delay: i * 0.1, duration: 0.5 }}
+                variants={cardVariants}
+                className="h-full"
               >
-                <CardHeader>
-                  <CardTitle className="font-headline text-2xl">
-                    {service.title}
-                  </CardTitle>
-                </CardHeader>
-                <CardContent className="flex-grow flex flex-col">
-                  <p className="text-muted-foreground mb-6 flex-grow">
-                    {service.shortDescription}
-                  </p>
-                  <Button variant="outline" asChild className="w-full mt-auto">
-                    <Link href={`/services/${service.slug}`}>
-                      View Details <ArrowRight className="ml-2 h-4 w-4" />
-                    </Link>
-                  </Button>
-                </CardContent>
-              </Card>
+                <Card
+                  className="flex flex-col transform transition-transform duration-300 hover:-translate-y-2 hover:shadow-xl h-full"
+                >
+                  <CardHeader>
+                    <CardTitle className="font-headline text-2xl">
+                      {service.title}
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent className="flex-grow flex flex-col">
+                    <p className="text-muted-foreground mb-6 flex-grow">
+                      {service.shortDescription}
+                    </p>
+                    <Button variant="outline" asChild className="w-full mt-auto">
+                      <Link href={`/services/${service.slug}`}>
+                        View Details <ArrowRight className="ml-2 h-4 w-4" />
+                      </Link>
+                    </Button>
+                  </CardContent>
+                </Card>
+              </motion.div>
             ))}
           </div>
         </section>
@@ -83,3 +109,5 @@ export default function ServicesPage() {
     </div>
   );
 }
+
+    

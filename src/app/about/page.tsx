@@ -1,10 +1,13 @@
 
+'use client';
+
 import Image from 'next/image';
 import { Card, CardContent } from '@/components/ui/card';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Badge } from '@/components/ui/badge';
 import { placeholderImages, team } from '@/lib/data';
 import { CheckCircle, TrendingUp, Handshake, Users, Lightbulb, Target } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 const aboutHeroImage = placeholderImages.find((img) => img.id === 'about-hero');
 const ourStoryImage = placeholderImages.find((img) => img.id === 'our-story');
@@ -41,6 +44,11 @@ const whyChooseUs = [
 
 
 export default function AboutPage() {
+  const cardVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0 },
+  };
+  
   return (
     <div className="bg-background">
       {/* Hero Section */}
@@ -75,7 +83,14 @@ export default function AboutPage() {
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             {ourStoryImage && (
-                <div className="relative aspect-square rounded-lg overflow-hidden shadow-lg transform transition-transform duration-500 hover:scale-105">
+                <motion.div
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true, amount: 0.3 }}
+                  variants={cardVariants}
+                  transition={{ duration: 0.5 }}
+                  className="relative aspect-square rounded-lg overflow-hidden shadow-lg transform transition-transform duration-500 hover:scale-105"
+                >
                     <Image
                         src={ourStoryImage.imageUrl}
                         alt={ourStoryImage.description}
@@ -83,7 +98,7 @@ export default function AboutPage() {
                         className="object-cover"
                         data-ai-hint={ourStoryImage.imageHint}
                     />
-                </div>
+                </motion.div>
             )}
             <div>
               <Badge variant="outline">Our Story</Badge>
@@ -112,14 +127,23 @@ export default function AboutPage() {
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {values.map((value) => (
-              <Card key={value.title} className="text-center p-6 transform transition-transform duration-300 hover:-translate-y-2 hover:shadow-xl">
-                 <div className="mb-4 inline-block rounded-full bg-primary/10 p-4">
-                    {value.icon}
-                  </div>
-                <h3 className="font-headline text-xl font-semibold">{value.title}</h3>
-                <p className="mt-2 text-sm text-muted-foreground">{value.description}</p>
-              </Card>
+            {values.map((value, i) => (
+              <motion.div
+                  key={value.title}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true, amount: 0.5 }}
+                  transition={{ delay: i * 0.1, duration: 0.5 }}
+                  variants={cardVariants}
+                >
+                <Card className="text-center p-6 transform transition-transform duration-300 hover:-translate-y-2 hover:shadow-xl h-full">
+                  <div className="mb-4 inline-block rounded-full bg-primary/10 p-4">
+                      {value.icon}
+                    </div>
+                  <h3 className="font-headline text-xl font-semibold">{value.title}</h3>
+                  <p className="mt-2 text-sm text-muted-foreground">{value.description}</p>
+                </Card>
+              </motion.div>
             ))}
           </div>
         </div>
@@ -136,14 +160,22 @@ export default function AboutPage() {
             </p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-            {whyChooseUs.map((reason) => (
-              <div key={reason.title} className="p-6 rounded-lg flex flex-col items-center text-center">
+            {whyChooseUs.map((reason, i) => (
+              <motion.div 
+                key={reason.title} 
+                className="p-6 rounded-lg flex flex-col items-center text-center"
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.5 }}
+                transition={{ delay: i * 0.1, duration: 0.5 }}
+                variants={cardVariants}
+              >
                 <div className="bg-primary/10 p-4 rounded-full text-primary mb-4">
                   {reason.icon}
                 </div>
                 <h3 className="text-xl font-semibold font-headline">{reason.title}</h3>
                 <p className="mt-2 text-muted-foreground">{reason.description}</p>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>
@@ -162,22 +194,31 @@ export default function AboutPage() {
             </p>
           </div>
           <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
-            {team.map((member) => {
+            {team.map((member, i) => {
               const avatarImage = placeholderImages.find(p => p.id === member.avatarId);
               return (
-              <Card key={member.id} className="text-center transform transition-transform duration-300 hover:shadow-2xl hover:scale-105">
-                <CardContent className="p-6">
-                  {avatarImage && (
-                    <Avatar className="w-24 h-24 mx-auto mb-4 border-4 border-secondary hover:border-primary transition-colors">
-                      <AvatarImage src={avatarImage.imageUrl} alt={member.name} data-ai-hint={avatarImage.imageHint} />
-                      <AvatarFallback>{member.name.substring(0, 2)}</AvatarFallback>
-                    </Avatar>
-                  )}
-                  <h3 className="font-headline text-xl font-semibold">{member.name}</h3>
-                  <p className="text-primary font-medium">{member.role}</p>
-                  <p className="mt-2 text-sm text-muted-foreground">{member.bio}</p>
-                </CardContent>
-              </Card>
+              <motion.div
+                key={member.id}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.5 }}
+                transition={{ delay: i * 0.1, duration: 0.5 }}
+                variants={cardVariants}
+              >
+                <Card className="text-center transform transition-transform duration-300 hover:shadow-2xl hover:scale-105 h-full">
+                  <CardContent className="p-6">
+                    {avatarImage && (
+                      <Avatar className="w-24 h-24 mx-auto mb-4 border-4 border-secondary hover:border-primary transition-colors">
+                        <AvatarImage src={avatarImage.imageUrl} alt={member.name} data-ai-hint={avatarImage.imageHint} />
+                        <AvatarFallback>{member.name.substring(0, 2)}</AvatarFallback>
+                      </Avatar>
+                    )}
+                    <h3 className="font-headline text-xl font-semibold">{member.name}</h3>
+                    <p className="text-primary font-medium">{member.role}</p>
+                    <p className="mt-2 text-sm text-muted-foreground">{member.bio}</p>
+                  </CardContent>
+                </Card>
+              </motion.div>
             )})}
           </div>
         </div>
@@ -185,3 +226,5 @@ export default function AboutPage() {
     </div>
   );
 }
+
+    

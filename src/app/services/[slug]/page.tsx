@@ -1,4 +1,5 @@
 
+'use client';
 import { notFound } from 'next/navigation';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -7,12 +8,7 @@ import { Badge } from '@/components/ui/badge';
 import { Card, CardContent, CardHeader, CardTitle, CardFooter, CardDescription } from '@/components/ui/card';
 import { Check, ArrowRight, Wallet } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-
-export async function generateStaticParams() {
-  return services.map((service) => ({
-    slug: service.slug,
-  }));
-}
+import { motion } from 'framer-motion';
 
 export default function ServiceDetailPage({ params }: { params: { slug: string } }) {
   const service = services.find((s) => s.slug === params.slug);
@@ -24,6 +20,11 @@ export default function ServiceDetailPage({ params }: { params: { slug: string }
   const relatedCaseStudies = caseStudies.filter(cs => service.caseStudyIds.includes(cs.id));
   const serviceImageId = `service-${service.id.substring(0,10)}`;
   const serviceImage = placeholderImages.find(p => p.id === serviceImageId);
+  
+  const cardVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0 },
+  };
 
   return (
     <div className="py-16 sm:py-24">
@@ -47,10 +48,19 @@ export default function ServiceDetailPage({ params }: { params: { slug: string }
               <h2 className="font-headline text-2xl font-bold mb-4">What's Included</h2>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {service.scope.map((item, index) => (
-                  <div key={index} className="flex items-center gap-3 bg-secondary/50 dark:bg-secondary/20 p-4 rounded-lg">
-                    <Check className="h-5 w-5 text-primary flex-shrink-0" />
-                    <span>{item}</span>
-                  </div>
+                  <motion.div
+                    key={index}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true, amount: 0.5 }}
+                    transition={{ delay: index * 0.1, duration: 0.5 }}
+                    variants={cardVariants}
+                  >
+                    <div className="flex items-center gap-3 bg-secondary/50 dark:bg-secondary/20 p-4 rounded-lg h-full">
+                      <Check className="h-5 w-5 text-primary flex-shrink-0" />
+                      <span>{item}</span>
+                    </div>
+                  </motion.div>
                 ))}
               </div>
             </section>
@@ -59,8 +69,16 @@ export default function ServiceDetailPage({ params }: { params: { slug: string }
             <section>
               <h2 className="font-headline text-2xl font-bold mb-6">Our Process</h2>
               <div className="space-y-8 relative before:absolute before:inset-0 before:ml-5 before:h-full before:w-0.5 before:bg-border before:-translate-x-px">
-                {service.process.map((step) => (
-                  <div key={step.step} className="relative flex items-start">
+                {service.process.map((step, index) => (
+                   <motion.div
+                    key={step.step}
+                    className="relative flex items-start"
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true, amount: 0.5 }}
+                    transition={{ delay: index * 0.1, duration: 0.5 }}
+                    variants={cardVariants}
+                  >
                     <div className="h-10 w-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold font-headline flex-shrink-0">
                       {step.step}
                     </div>
@@ -68,7 +86,7 @@ export default function ServiceDetailPage({ params }: { params: { slug: string }
                       <h3 className="font-headline text-lg font-semibold">{step.title}</h3>
                       <p className="text-muted-foreground">{step.description}</p>
                     </div>
-                  </div>
+                  </motion.div>
                 ))}
               </div>
             </section>
@@ -78,27 +96,36 @@ export default function ServiceDetailPage({ params }: { params: { slug: string }
               <section>
                 <h2 className="font-headline text-2xl font-bold mb-4">Related Case Studies</h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  {relatedCaseStudies.map(study => {
+                  {relatedCaseStudies.map((study, i) => {
                     const studyImage = placeholderImages.find(p => p.id === study.imageId);
                     return (
-                      <Card key={study.id} className="group overflow-hidden">
-                        <Link href={`/portfolio/${study.slug}`} className="block">
-                          {studyImage && (
-                              <div className="aspect-video relative">
-                                  <Image src={studyImage.imageUrl} alt={study.title} fill className="object-cover transition-transform group-hover:scale-105" data-ai-hint={studyImage.imageHint} />
-                              </div>
-                          )}
-                          <CardHeader>
-                              <Badge variant="secondary" className="w-min mb-2">{study.category}</Badge>
-                              <CardTitle className="font-headline text-lg">{study.title}</CardTitle>
-                          </CardHeader>
-                          <CardContent>
-                              <span className="text-primary hover:underline">
-                                  Read Case Study <ArrowRight className="ml-2 h-4 w-4 inline" />
-                              </span>
-                          </CardContent>
-                        </Link>
-                      </Card>
+                      <motion.div
+                        key={study.id}
+                        initial="hidden"
+                        whileInView="visible"
+                        viewport={{ once: true, amount: 0.5 }}
+                        transition={{ delay: i * 0.1, duration: 0.5 }}
+                        variants={cardVariants}
+                      >
+                        <Card className="group overflow-hidden h-full">
+                          <Link href={`/portfolio/${study.slug}`} className="block">
+                            {studyImage && (
+                                <div className="aspect-video relative">
+                                    <Image src={studyImage.imageUrl} alt={study.title} fill className="object-cover transition-transform group-hover:scale-105" data-ai-hint={studyImage.imageHint} />
+                                </div>
+                            )}
+                            <CardHeader>
+                                <Badge variant="secondary" className="w-min mb-2">{study.category}</Badge>
+                                <CardTitle className="font-headline text-lg">{study.title}</CardTitle>
+                            </CardHeader>
+                            <CardContent>
+                                <span className="text-primary hover:underline">
+                                    Read Case Study <ArrowRight className="ml-2 h-4 w-4 inline" />
+                                </span>
+                            </CardContent>
+                          </Link>
+                        </Card>
+                      </motion.div>
                     )
                   })}
                 </div>
@@ -109,43 +136,68 @@ export default function ServiceDetailPage({ params }: { params: { slug: string }
           {/* Sidebar */}
           <aside className="lg:col-span-1 space-y-8 lg:sticky lg:top-24 h-min">
             {serviceImage && (
-                <div className="relative aspect-video rounded-lg overflow-hidden">
+                <motion.div 
+                    className="relative aspect-video rounded-lg overflow-hidden"
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true, amount: 0.5 }}
+                    transition={{ duration: 0.5 }}
+                    variants={cardVariants}
+                >
                     <Image src={serviceImage.imageUrl} alt={service.title} fill className="object-cover" data-ai-hint={serviceImage.imageHint} />
-                </div>
+                </motion.div>
             )}
 
-            <Card>
-              <CardHeader>
-                <CardTitle className="font-headline flex items-center gap-2">
-                    <Wallet className="h-6 w-6 text-primary"/>
-                    Pricing
-                </CardTitle>
-                <CardDescription>Typical Investment</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <p className="text-3xl font-bold font-headline text-primary">{service.priceRange}</p>
-                <p className="text-sm text-muted-foreground mt-1">
-                    Prices vary based on project scope and complexity.
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card className="bg-primary text-primary-foreground text-center">
+            <motion.div
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.5 }}
+                transition={{ duration: 0.5, delay: 0.1 }}
+                variants={cardVariants}
+            >
+                <Card>
                 <CardHeader>
-                    <CardTitle className="font-headline text-2xl">Ready to get started?</CardTitle>
+                    <CardTitle className="font-headline flex items-center gap-2">
+                        <Wallet className="h-6 w-6 text-primary"/>
+                        Pricing
+                    </CardTitle>
+                    <CardDescription>Typical Investment</CardDescription>
                 </CardHeader>
                 <CardContent>
-                    <p>Let's discuss how our {service.title} services can help your business grow.</p>
+                    <p className="text-3xl font-bold font-headline text-primary">{service.priceRange}</p>
+                    <p className="text-sm text-muted-foreground mt-1">
+                        Prices vary based on project scope and complexity.
+                    </p>
                 </CardContent>
-                <CardFooter>
-                    <Button variant="secondary" size="lg" className="w-full" asChild>
-                        <Link href="/contact">Schedule a Free Consultation</Link>
-                    </Button>
-                </CardFooter>
-            </Card>
+                </Card>
+            </motion.div>
+
+            <motion.div
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.5 }}
+                transition={{ duration: 0.5, delay: 0.2 }}
+                variants={cardVariants}
+            >
+                <Card className="bg-primary text-primary-foreground text-center">
+                    <CardHeader>
+                        <CardTitle className="font-headline text-2xl">Ready to get started?</CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                        <p>Let's discuss how our {service.title} services can help your business grow.</p>
+                    </CardContent>
+                    <CardFooter>
+                        <Button variant="secondary" size="lg" className="w-full" asChild>
+                            <Link href="/contact">Schedule a Free Consultation</Link>
+                        </Button>
+                    </CardFooter>
+                </Card>
+            </motion.div>
           </aside>
         </div>
       </div>
     </div>
   );
 }
+
+    
