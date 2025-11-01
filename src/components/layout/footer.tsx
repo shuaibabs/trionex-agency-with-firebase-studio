@@ -84,7 +84,7 @@ export default function Footer() {
         </div>
         <div className="mt-16 flex flex-col items-center justify-between border-t pt-8 sm:flex-row">
           <p className="text-sm text-muted-foreground">
-            &copy; {new Date().getFullYear()} Synergy Digital. All rights reserved.
+            &copy; {new Date().getFullYear()} Trionex Digital. All rights reserved.
           </p>
           <div className="mt-4 flex items-center space-x-4 sm:mt-0">
             {socialLinks.map((link, i) => (

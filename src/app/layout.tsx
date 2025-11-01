@@ -7,9 +7,9 @@ import { Toaster } from '@/components/ui/toaster';
 import { PageTransition } from '@/components/page-transition';
 
 export const metadata: Metadata = {
-  title: 'Synergy Digital - Marketing & Web Development Agency',
+  title: 'Trionex Digital - Marketing & Web Development Agency',
   description:
-    'Synergy Digital is a modern marketing and web development agency helping businesses grow with cutting-edge solutions.',
+    'Trionex Digital is a modern marketing and web development agency helping businesses grow with cutting-edge solutions.',
 };
 
 export default function RootLayout({

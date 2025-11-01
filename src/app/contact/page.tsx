@@ -105,8 +105,8 @@ export default function ContactPage() {
                 </div>
                 <div>
                   <h3 className="font-semibold">Email</h3>
-                  <a href="mailto:hello@synergydigital.dev" className="text-muted-foreground hover:text-primary">
-                    hello@synergydigital.dev
+                  <a href="mailto:hello@trionexdigital.dev" className="text-muted-foreground hover:text-primary">
+                    hello@trionexdigital.dev
                   </a>
                 </div>
               </div>

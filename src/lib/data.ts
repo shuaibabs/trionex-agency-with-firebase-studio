@@ -295,7 +295,7 @@ export const testimonials: Testimonial[] = [
     id: '1',
     name: 'Rohan Sharma',
     title: 'Founder, LegalConnect',
-    quote: 'Synergy Digital delivered a website that perfectly captured our firm\'s professional image. The increase in client consultations through the site was immediate and impressive. A truly fantastic team.',
+    quote: 'Trionex Digital delivered a website that perfectly captured our firm\'s professional image. The increase in client consultations through the site was immediate and impressive. A truly fantastic team.',
     avatarId: 'avatar-2'
   },
   {

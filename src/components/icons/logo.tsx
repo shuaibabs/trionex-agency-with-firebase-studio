@@ -6,9 +6,9 @@ export default function Logo({ className }: { className?: string }) {
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 150 25"
       className={cn('h-6 w-auto', className)}
-      aria-label="Synergy Digital Logo"
+      aria-label="Trionex Digital Logo"
     >
-      <title>Synergy Digital Logo</title>
+      <title>Trionex Digital Logo</title>
       <text
         x="0"
         y="20"
@@ -17,10 +17,10 @@ export default function Logo({ className }: { className?: string }) {
         fontWeight="bold"
         fill="hsl(var(--primary))"
       >
-        Synergy
+        Trionex
       </text>
       <text
-        x="95"
+        x="85"
         y="20"
         fontFamily="'Space Grotesk', sans-serif"
         fontSize="24"
