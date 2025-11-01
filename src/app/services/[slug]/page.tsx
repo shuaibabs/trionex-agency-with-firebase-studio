@@ -1,9 +1,10 @@
+
 import { notFound } from 'next/navigation';
 import Image from 'next/image';
 import Link from 'next/link';
 import { services, caseStudies, placeholderImages } from '@/lib/data';
 import { Badge } from '@/components/ui/badge';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Card, CardContent, CardHeader, CardTitle, CardFooter } from '@/components/ui/card';
 import { Check, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
@@ -80,22 +81,22 @@ export default function ServiceDetailPage({ params }: { params: { slug: string }
                     const studyImage = placeholderImages.find(p => p.id === study.imageId);
                     return (
                       <Card key={study.id} className="group overflow-hidden">
-                        {studyImage && (
-                            <div className="aspect-video relative">
-                                <Image src={studyImage.imageUrl} alt={study.title} fill className="object-cover transition-transform group-hover:scale-105" data-ai-hint={studyImage.imageHint} />
-                            </div>
-                        )}
-                        <CardHeader>
-                            <Badge variant="secondary" className="w-min mb-2">{study.category}</Badge>
-                            <CardTitle className="font-headline text-lg">{study.title}</CardTitle>
-                        </CardHeader>
-                        <CardContent>
-                             <Button variant="link" asChild className='p-0 text-primary'>
-                                <span className="cursor-pointer">
-                                    Read Case Study <ArrowRight className="ml-2 h-4 w-4" />
-                                </span>
-                            </Button>
-                        </CardContent>
+                        <Link href={`/portfolio/${study.slug}`} className="block">
+                          {studyImage && (
+                              <div className="aspect-video relative">
+                                  <Image src={studyImage.imageUrl} alt={study.title} fill className="object-cover transition-transform group-hover:scale-105" data-ai-hint={studyImage.imageHint} />
+                              </div>
+                          )}
+                          <CardHeader>
+                              <Badge variant="secondary" className="w-min mb-2">{study.category}</Badge>
+                              <CardTitle className="font-headline text-lg">{study.title}</CardTitle>
+                          </CardHeader>
+                          <CardContent>
+                              <span className="text-primary hover:underline">
+                                  Read Case Study <ArrowRight className="ml-2 h-4 w-4 inline" />
+                              </span>
+                          </CardContent>
+                        </Link>
                       </Card>
                     )
                   })}

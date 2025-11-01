@@ -1,3 +1,4 @@
+
 'use client';
 
 import Link from 'next/link';
@@ -17,6 +18,7 @@ const navLinks = [
   { href: '/blog', label: 'Blog' },
   { href: '/about', label: 'About' },
   { href: '/pricing', label: 'Pricing' },
+  { href: '/roi-calculator', label: 'ROI Calculator' },
   { href: '/contact', label: 'Contact' },
 ];
 

@@ -1,3 +1,4 @@
+
 import { notFound } from 'next/navigation';
 import Image from 'next/image';
 import { blogPosts, placeholderImages } from '@/lib/data';
