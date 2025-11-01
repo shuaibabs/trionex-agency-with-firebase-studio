@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { Github, Twitter, Linkedin } from 'lucide-react';
 import Logo from '../icons/logo';
 import { Button } from '@/components/ui/button';
+import { NewsletterForm } from '../newsletter-form';
 
 const footerNavs = [
   {
@@ -42,31 +43,18 @@ export default function Footer() {
     <footer className="bg-secondary/50 dark:bg-secondary/20 border-t">
       <div className="container mx-auto px-4">
         {/* Main Footer content */}
-        <div className="py-16 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
-            <div className="flex flex-col gap-4">
+        <div className="py-16 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-8">
+            <div className="flex flex-col gap-4 md:col-span-2">
                 <Link href="/" aria-label="Back to homepage">
                     <Logo />
                 </Link>
-                <p className="text-muted-foreground text-sm">
+                <p className="text-muted-foreground text-sm max-w-sm">
                   A modern marketing and web development agency for growing businesses.
                 </p>
-                <div className="flex items-center space-x-3 mt-2">
-                    {socialLinks.map((link, i) => (
-                    <Button
-                        key={i}
-                        asChild
-                        variant="outline"
-                        size="icon"
-                        className="text-muted-foreground hover:text-primary hover:bg-primary/10"
-                    >
-                        <Link
-                            href={link.href}
-                            aria-label={link.label}
-                        >
-                            {link.icon}
-                        </Link>
-                    </Button>
-                    ))}
+                 <div className="mt-4">
+                  <h3 className="font-headline font-semibold text-foreground">Stay Ahead of the Curve</h3>
+                  <p className="text-muted-foreground text-sm mt-1 mb-4">Subscribe to our newsletter for the latest insights.</p>
+                  <NewsletterForm />
                 </div>
             </div>
             {footerNavs.map((nav) => (
@@ -89,8 +77,26 @@ export default function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t py-6 text-center text-sm text-muted-foreground">
+        <div className="border-t py-6 flex flex-col sm:flex-row justify-between items-center text-sm text-muted-foreground">
           <p>&copy; {new Date().getFullYear()} Trionex Tech. All rights reserved.</p>
+          <div className="flex items-center space-x-3 mt-4 sm:mt-0">
+              {socialLinks.map((link, i) => (
+              <Button
+                  key={i}
+                  asChild
+                  variant="ghost"
+                  size="icon"
+                  className="text-muted-foreground hover:text-primary"
+              >
+                  <Link
+                      href={link.href}
+                      aria-label={link.label}
+                  >
+                      {link.icon}
+                  </Link>
+              </Button>
+              ))}
+          </div>
         </div>
       </div>
     </footer>
