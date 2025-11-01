@@ -1,3 +1,4 @@
+
 import type { Metadata } from 'next';
 import './globals.css';
 import { ThemeProvider } from '@/components/theme-provider';
@@ -36,7 +37,7 @@ export default function RootLayout({
         >
           <div className="relative flex min-h-screen flex-col main-container">
             <Header />
-            <main className="flex-grow">
+            <main className="flex-grow pt-8">
                <PageTransition>{children}</PageTransition>
             </main>
             <Footer />
