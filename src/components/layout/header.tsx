@@ -69,14 +69,6 @@ export default function Header() {
                   <Link href="/" onClick={() => setMobileMenuOpen(false)}>
                     <Logo />
                   </Link>
-                  <Button
-                    variant="ghost"
-                    size="icon"
-                    onClick={() => setMobileMenuOpen(false)}
-                  >
-                    <X />
-                    <span className="sr-only">Close menu</span>
-                  </Button>
                 </div>
                 <nav className="flex-grow mt-6">
                   <ul className="space-y-4">
