@@ -4,8 +4,8 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { services, caseStudies, placeholderImages } from '@/lib/data';
 import { Badge } from '@/components/ui/badge';
-import { Card, CardContent, CardHeader, CardTitle, CardFooter } from '@/components/ui/card';
-import { Check, ArrowRight } from 'lucide-react';
+import { Card, CardContent, CardHeader, CardTitle, CardFooter, CardDescription } from '@/components/ui/card';
+import { Check, ArrowRight, Wallet } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 export async function generateStaticParams() {
@@ -22,14 +22,15 @@ export default function ServiceDetailPage({ params }: { params: { slug: string }
   }
 
   const relatedCaseStudies = caseStudies.filter(cs => service.caseStudyIds.includes(cs.id));
-  const serviceImage = placeholderImages.find(p => p.id.includes(service.id));
+  const serviceImageId = `service-${service.id.substring(0,10)}`;
+  const serviceImage = placeholderImages.find(p => p.id === serviceImageId);
 
   return (
     <div className="py-16 sm:py-24">
       <div className="container mx-auto px-4">
         {/* Header */}
         <div className="text-center mb-12">
-          <Badge variant="outline">Service</Badge>
+          <Badge variant="outline">{service.category}</Badge>
           <h1 className="mt-2 font-headline text-4xl font-bold tracking-tighter text-primary sm:text-5xl md:text-6xl">
             {service.title}
           </h1>
@@ -106,7 +107,7 @@ export default function ServiceDetailPage({ params }: { params: { slug: string }
           </div>
 
           {/* Sidebar */}
-          <aside className="lg:col-span-1 space-y-8">
+          <aside className="lg:col-span-1 space-y-8 lg:sticky lg:top-24 h-min">
             {serviceImage && (
                 <div className="relative aspect-video rounded-lg overflow-hidden">
                     <Image src={serviceImage.imageUrl} alt={service.title} fill className="object-cover" data-ai-hint={serviceImage.imageHint} />
@@ -115,18 +116,17 @@ export default function ServiceDetailPage({ params }: { params: { slug: string }
 
             <Card>
               <CardHeader>
-                <CardTitle className="font-headline">Pricing Options</CardTitle>
+                <CardTitle className="font-headline flex items-center gap-2">
+                    <Wallet className="h-6 w-6 text-primary"/>
+                    Pricing
+                </CardTitle>
+                <CardDescription>Typical Investment</CardDescription>
               </CardHeader>
-              <CardContent className="space-y-4">
-                {service.pricingOptions.map(option => (
-                    <div key={option.plan} className="p-4 rounded-md bg-secondary/50 dark:bg-secondary/20">
-                        <h4 className="font-semibold">{option.plan}</h4>
-                        <p className="text-primary font-bold">{option.price}</p>
-                        <ul className="mt-2 text-sm text-muted-foreground space-y-1">
-                            {option.features.map(f => <li key={f} className="flex items-center gap-2"><Check className="h-4 w-4 text-green-500" /> {f}</li>)}
-                        </ul>
-                    </div>
-                ))}
+              <CardContent>
+                <p className="text-3xl font-bold font-headline text-primary">{service.priceRange}</p>
+                <p className="text-sm text-muted-foreground mt-1">
+                    Prices vary based on project scope and complexity.
+                </p>
               </CardContent>
             </Card>
 

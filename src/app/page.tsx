@@ -27,14 +27,19 @@ import { services, blogPosts, testimonials, clients } from '@/lib/data';
 import { cn } from '@/lib/utils';
 
 const heroImage = placeholderImages.find((img) => img.id === 'home-hero');
+
 const serviceIcons: { [key: string]: React.ElementType } = {
-  'web-development': Code,
+  'business-website-development': Code,
   'seo-optimization': Search,
-  'digital-advertising': BarChart,
+  'ppc-advertising': BarChart,
   'content-marketing': PenTool,
+  'ecommerce-website': Code,
+  'social-media-marketing': Users
 };
 
 export default function Home() {
+  const featuredServices = services.filter(s => ['business-website-development', 'seo-optimization', 'ppc-advertising', 'ecommerce-website'].includes(s.id));
+
   return (
     <div className="flex flex-col">
       {/* Hero Section */}
@@ -114,7 +119,7 @@ export default function Home() {
             </p>
           </div>
           <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
-            {services.slice(0, 4).map((service) => {
+            {featuredServices.map((service) => {
               const Icon = serviceIcons[service.id] || Code;
               return (
                 <Card
@@ -134,7 +139,7 @@ export default function Home() {
                       {service.shortDescription}
                     </p>
                     <Button variant="ghost" asChild className="text-primary">
-                      <Link href={`/services/${service.id}`}>
+                      <Link href={`/services/${service.slug}`}>
                         Learn More <ArrowRight className="ml-2 h-4 w-4" />
                       </Link>
                     </Button>

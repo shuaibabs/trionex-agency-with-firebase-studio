@@ -10,8 +10,8 @@ import { cn } from '@/lib/utils';
 import { ArrowRight } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 
-type Category = 'All' | 'Web' | 'Ads' | 'SEO' | 'WordPress';
-const categories: Category[] = ['All', 'Web', 'Ads', 'SEO', 'WordPress'];
+type Category = 'All' | 'Web' | 'SEO';
+const categories: Category[] = ['All', 'Web', 'SEO'];
 
 export default function PortfolioPage() {
   const [filter, setFilter] = useState<Category>('All');

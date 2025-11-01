@@ -6,8 +6,9 @@ export interface Service {
   longDescription: string;
   scope: string[];
   process: { step: number; title: string; description: string }[];
-  pricingOptions: { plan: string; price: string; features: string[] }[];
+  priceRange: string;
   caseStudyIds: string[];
+  category: 'Web Development' | 'Digital Marketing';
 }
 
 export interface Package {
@@ -29,7 +30,7 @@ export interface CaseStudy {
   shortDescription: string;
   challenge: string;
   solution: string;
-  results: { metric: string; value: string; description: string }[];
+  results: { metric: string; value: string; description:string }[];
   imageId: string;
 }
 

@@ -5,118 +5,179 @@ export const placeholderImages: PlaceholderImage[] = placeholderData.placeholder
 
 export const services: Service[] = [
   {
-    id: 'web-development',
-    title: 'Web Development',
-    slug: 'web-development',
-    shortDescription: 'Crafting high-performance websites that captivate and convert.',
-    longDescription: 'Our web development services focus on building responsive, fast, and secure websites tailored to your business needs. From custom React applications to complex WordPress sites, we deliver digital experiences that drive growth.',
-    scope: ['Custom Website Design', 'React/Next.js Development', 'WordPress Development', 'E-commerce Solutions', 'API Integration'],
+    id: 'business-website-development',
+    slug: 'business-website-development',
+    title: 'Business Website Development',
+    shortDescription: 'Professional, responsive websites for startups, companies, and local businesses.',
+    longDescription: 'Professional, responsive websites for startups, companies, and local businesses — crafted for branding, performance, and lead generation.',
+    priceRange: '₹25,000 – ₹80,000',
+    scope: ['Up to 10 pages', 'Contact Forms', 'Blog Setup', 'SEO Tags', 'Analytics Integration', '1 Month Maintenance'],
     process: [
-      { step: 1, title: 'Discovery & Strategy', description: 'We start by understanding your business goals and target audience to create a strategic plan.' },
-      { step: 2, title: 'Design & Prototyping', description: 'Our designers create wireframes and mockups for a seamless user experience.' },
-      { step: 3, title: 'Development & Testing', description: 'Our developers bring the designs to life with clean, efficient code and rigorous testing.' },
-      { step: 4, title: 'Launch & Optimization', description: 'We deploy your website and monitor performance, making optimizations for continued success.' }
+      { step: 1, title: 'Discovery', description: 'Understand your brand, goals, and audience.' },
+      { step: 2, title: 'Design', description: 'Create wireframes and mockups for a stunning, user-friendly interface.' },
+      { step: 3, title: 'Development', description: 'Build a high-performance, responsive website with clean code.' },
+      { step: 4, title: 'Launch', description: 'Deploy the site and ensure everything is running smoothly.' }
     ],
-    pricingOptions: [
-      { plan: 'Brochure Site', price: 'Starts at ₹9,999', features: ['5-7 pages', 'Responsive Design', 'Basic SEO'] },
-      { plan: 'E-commerce Store', price: 'Starts at ₹29,999', features: ['Full Product Catalog', 'Payment Gateway', 'Inventory Management'] }
+    caseStudyIds: ['case-study-1'],
+    category: 'Web Development'
+  },
+  {
+    id: 'custom-web-application',
+    slug: 'custom-web-application',
+    title: 'Custom Web Application Development',
+    shortDescription: 'End-to-end dynamic web apps with frontend, backend, and database.',
+    longDescription: 'End-to-end dynamic web apps with frontend, backend, and database — built for startups, SaaS, dashboards, and automation.',
+    priceRange: '₹1,00,000 – ₹5,00,000',
+    scope: ['Role-based Login', 'Admin Panels', 'Data Management', 'API Integrations', 'Reporting Features'],
+    process: [
+        { step: 1, title: 'Requirement Analysis', description: 'Deep dive into your application requirements and technical needs.' },
+        { step: 2, title: 'Architecture Design', description: 'Plan the system architecture, database schema, and technology stack.' },
+        { step: 3, title: 'Agile Development', description: 'Develop the application in sprints with regular feedback and iterations.' },
+        { step: 4, title: 'Deployment & Scaling', description: 'Deploy to the cloud and set up for scalability and performance.' }
     ],
-    caseStudyIds: ['case-study-1']
+    caseStudyIds: ['case-study-2'],
+    category: 'Web Development'
+  },
+  {
+    id: 'ecommerce-website',
+    slug: 'ecommerce-website',
+    title: 'E-Commerce Website',
+    shortDescription: 'Powerful online stores with inventory, payment, and delivery management.',
+    longDescription: 'Powerful online stores with inventory, payment, and delivery management, using platforms like Shopify, WooCommerce, or custom solutions.',
+    priceRange: '₹60,000 – ₹3,00,000',
+    scope: ['Product Catalog Setup', 'Shopping Cart & Checkout', 'Payment Gateway Integration', 'Admin Dashboard', 'SEO-ready Structure'],
+    process: [
+        { step: 1, title: 'Platform Selection', description: 'Choose the right e-commerce platform (Shopify, WooCommerce, or custom) for your needs.' },
+        { step: 2, title: 'Store Design', description: 'Design a beautiful and intuitive online store that reflects your brand.' },
+        { step: 3, title: 'Development & Setup', description: 'Build and configure the store, products, and payment systems.' },
+        { step: 4, title: 'Launch & Marketing', description: 'Go live and start driving traffic to your new online store.' }
+    ],
+    caseStudyIds: ['case-study-3'],
+    category: 'Web Development'
+  },
+  {
+    id: 'startup-mvp-development',
+    slug: 'startup-mvp-development',
+    title: 'Startup MVP Development',
+    shortDescription: 'Fast, scalable Minimum Viable Products (MVPs) for tech startups.',
+    longDescription: 'Fast, scalable Minimum Viable Products (MVPs) for tech startups — to validate your idea quickly and efficiently.',
+    priceRange: '₹1,00,000 – ₹5,00,000',
+    scope: ['User Authentication', 'Core Feature Dashboard', 'Database Setup', 'Cloud Deployment', 'Analytics Integration'],
+    process: [
+        { step: 1, title: 'Idea Validation', description: 'Work with you to refine the core features and value proposition of your MVP.' },
+        { step: 2, title: 'Rapid Prototyping', description: 'Design and prototype the user flow and key screens.' },
+        { step: 3, title: 'Lean Development', description: 'Build the essential features required to launch and test your idea with real users.' },
+        { step: 4, title: 'Launch & Iterate', description: 'Deploy the MVP, gather user feedback, and plan the next phase of development.' }
+    ],
+    caseStudyIds: [],
+    category: 'Web Development'
   },
   {
     id: 'seo-optimization',
-    title: 'SEO Optimization',
     slug: 'seo-optimization',
-    shortDescription: 'Boosting your visibility on search engines to attract more traffic.',
-    longDescription: 'Our SEO strategies are designed to increase your organic search rankings, drive targeted traffic, and generate qualified leads. We cover all aspects of SEO, including technical, on-page, and off-page optimization.',
-    scope: ['Technical SEO Audits', 'Keyword Research & Strategy', 'On-Page Optimization', 'Content Strategy', 'Link Building'],
+    title: 'SEO Optimization',
+    shortDescription: 'Improve your website’s visibility on Google with on-page and technical SEO.',
+    longDescription: 'Improve your website’s visibility on Google with on-page and technical SEO. We help you rank higher, attract more organic traffic, and grow your business.',
+    priceRange: '₹8,000 – ₹75,000/month',
+    scope: ['On-page & Off-page SEO', 'Technical SEO Audits', 'Keyword Research', 'Content Strategy', 'Backlink Building'],
     process: [
-        { step: 1, title: 'Comprehensive Audit', description: 'We analyze your current SEO performance and identify opportunities for improvement.' },
-        { step: 2, title: 'Strategy Development', description: 'Based on the audit, we develop a tailored SEO strategy.' },
-        { step: 3, title: 'Implementation', description: 'We execute the strategy, optimizing your site and building authority.' },
-        { step: 4, title: 'Reporting & Analysis', description: 'We provide regular reports on your SEO performance and adjust our strategy as needed.' }
+        { step: 1, title: 'SEO Audit', description: 'We conduct a comprehensive audit to identify technical issues and growth opportunities.' },
+        { step: 2, title: 'Strategy', description: 'We develop a customized SEO strategy targeting high-value keywords.' },
+        { step: 3, title: 'Implementation', description: 'We execute on-page, off-page, and technical optimizations.' },
+        { step: 4, title: 'Reporting', description: 'We provide detailed monthly reports on performance and rankings.' }
     ],
-    pricingOptions: [
-      { plan: 'SEO Audit', price: '₹7,999', features: ['Comprehensive Report', 'Actionable Recommendations'] },
-      { plan: 'Monthly SEO', price: 'Starts at ₹14,999/mo', features: ['Ongoing Optimization', 'Content Creation', 'Reporting'] }
-    ],
-    caseStudyIds: ['case-study-2']
+    caseStudyIds: ['case-study-4'],
+    category: 'Digital Marketing'
   },
   {
-    id: 'digital-advertising',
-    title: 'Digital Advertising',
-    slug: 'digital-advertising',
-    shortDescription: 'Running targeted ad campaigns that deliver measurable results.',
-    longDescription: 'We create and manage data-driven advertising campaigns across platforms like Google, Meta, and LinkedIn. Our goal is to maximize your return on ad spend (ROAS) and achieve your marketing objectives.',
-    scope: ['PPC Campaign Management', 'Social Media Ads', 'Ad Copy & Creative', 'Landing Page Optimization', 'Performance Tracking'],
+    id: 'ppc-advertising',
+    slug: 'ppc-advertising',
+    title: 'PPC Advertising',
+    shortDescription: 'Manage paid ad campaigns on Google & Meta to get instant, targeted traffic.',
+    longDescription: 'Setup and manage paid ad campaigns on Google, Facebook/Instagram, including ad creation, bidding, tracking and optimization to maximize your return on investment.',
+    priceRange: '₹10,000 – ₹1,00,000/month',
+    scope: ['Google Ads Management', 'Meta (Facebook & Instagram) Ads', 'Ad Copy & Creative', 'A/B Testing', 'Conversion Tracking'],
     process: [
-      { step: 1, title: 'Audience Research', description: 'We identify and analyze your target audience to ensure ad relevance.' },
-      { step: 2, title: 'Campaign Setup', description: 'We set up your campaigns with compelling creative and copy.' },
-      { step: 3, title: 'Management & Optimization', description: 'We continuously monitor and optimize campaigns for peak performance.' },
-      { step: 4, title: 'Analysis & Reporting', description: 'We deliver clear reports on campaign ROI and key metrics.' }
+        { step: 1, title: 'Audience Research', description: 'We identify your ideal customer and where to find them online.' },
+        { step: 2, title: 'Campaign Setup', description: 'We create compelling ad copy and visuals, and set up your campaigns for success.' },
+        { step: 3, title: 'Optimization', description: 'We constantly monitor and tweak your campaigns to improve performance and lower costs.' },
+        { step: 4, title: 'Reporting', description: 'You get clear, concise reports on what matters most: your ROI.' }
     ],
-    pricingOptions: [
-      { plan: 'Campaign Setup', price: 'Starts at ₹4,999', features: ['1 Ad Platform', 'Ad Creative & Copy'] },
-      { plan: 'Monthly Management', price: '15% of Ad Spend (min. ₹9,999/mo)', features: ['Ongoing Optimization', 'A/B Testing', 'Reporting'] }
+    caseStudyIds: [],
+    category: 'Digital Marketing'
+  },
+  {
+    id: 'social-media-marketing',
+    slug: 'social-media-marketing',
+    title: 'Social Media Marketing',
+    shortDescription: 'Content creation, posting, and community management for social platforms.',
+    longDescription: 'Content creation, posting, community management and paid social campaigns across platforms like Facebook, Instagram, LinkedIn, etc., to build your brand and engage your audience.',
+    priceRange: '₹8,000 – ₹40,000/month',
+    scope: ['Content Calendar', 'Post Creation & Scheduling', 'Community Engagement', 'Paid Social Campaigns', 'Performance Analytics'],
+    process: [
+        { step: 1, title: 'Strategy', description: 'We define your brand voice, content pillars, and target platforms.' },
+        { step: 2, title: 'Content Creation', description: 'Our team creates engaging visuals and copy tailored to each platform.' },
+        { step: 3, title: 'Management', description: 'We schedule posts, engage with your audience, and monitor conversations.' },
+        { step: 4, title: 'Growth', description: 'We analyze performance to refine the strategy and grow your following.' }
     ],
-    caseStudyIds: ['case-study-3']
+    caseStudyIds: [],
+    category: 'Digital Marketing'
   },
   {
     id: 'content-marketing',
-    title: 'Content Marketing',
     slug: 'content-marketing',
-    shortDescription: 'Engaging your audience with valuable content that builds trust.',
-    longDescription: 'Our content marketing services help you build authority and connect with your audience through high-quality blog posts, articles, case studies, and more. We focus on creating content that educates, entertains, and inspires action.',
-    scope: ['Content Strategy', 'Blog Writing', 'Video Scripts', 'E-books & Whitepapers', 'Social Media Content'],
+    title: 'Content Marketing',
+    shortDescription: 'Creating valuable content (blogs, videos) to attract and engage your audience.',
+    longDescription: 'Creating and distributing valuable content (blogs, videos, infographics) to attract and engage target audiences, supporting SEO, and building your brand authority.',
+    priceRange: '₹2,000 – ₹10,000 per piece',
+    scope: ['Blog Writing', 'Video Scripts', 'Infographics', 'E-books & Whitepapers', 'Content Distribution'],
     process: [
-      { step: 1, title: 'Strategy & Planning', description: 'We create a content calendar based on your goals and audience interests.' },
-      { step: 2, title: 'Content Creation', description: 'Our team of writers and creators produce high-quality content.' },
-      { step: 3, title: 'Distribution & Promotion', description: 'We promote your content across various channels to maximize reach.' },
-      { step: 4, title: 'Performance Analysis', description: 'We track content performance and refine our strategy over time.' }
+        { step: 1, title: 'Topic Ideation', description: 'We research topics your target audience is actively searching for.' },
+        { step: 2, title: 'Content Creation', description: 'Our expert writers and designers produce high-quality, engaging content.' },
+        { step: 3, title: 'SEO Optimization', description: 'Every piece of content is optimized to rank on search engines.' },
+        { step: 4, title: 'Promotion', description: 'We help distribute your content across channels to maximize its reach.' }
     ],
-    pricingOptions: [
-      { plan: 'Blog Post Pack', price: 'Starts at ₹12,000', features: ['4 SEO-optimized posts', 'Keyword Research'] },
-      { plan: 'Full Content Strategy', price: 'Quote-based', features: ['Content Calendar', 'Multi-format Content', 'Distribution'] }
-    ],
-    caseStudyIds: ['case-study-4']
+    caseStudyIds: [],
+    category: 'Digital Marketing'
   },
 ];
 
 export const packages: Package[] = [
   {
-    id: 'starter',
-    title: 'Starter',
-    price: '9,999',
-    pricePeriod: '/month',
-    description: 'Ideal for new businesses looking to establish an online presence.',
-    features: ['1 Ad Platform (Meta or Google)', '5-Page Brochure Website', 'Basic Tracking & Analytics', 'Monthly Reporting'],
-    ctaText: 'Choose Starter',
+    id: 'basic-sites',
+    title: 'Basic Sites',
+    price: '10K - 30K',
+    pricePeriod: 'one-time',
+    description: 'Perfect for freelancers and small businesses needing a sharp, professional online identity.',
+    features: ['Landing Pages', 'Portfolio Sites', 'Responsive Design', 'Contact Form'],
+    ctaText: 'Get Started',
   },
   {
-    id: 'growth',
-    title: 'Growth',
-    price: '19,999',
-    pricePeriod: '/month',
-    description: 'For growing businesses aiming to scale their marketing efforts.',
-    features: ['2 Ad Platforms', 'Landing Page Funnel', 'Conversion Rate Optimization Basics', 'Bi-weekly Reporting', 'Basic SEO'],
+    id: 'business-sites',
+    title: 'Business Sites',
+    price: '30K - 80K',
+    pricePeriod: 'one-time',
+    description: 'The complete package for established businesses, clinics, and schools.',
+    features: ['5-10 Pages', 'Blog & CMS', 'Basic SEO Setup', 'Analytics Integration'],
     isPopular: true,
-    ctaText: 'Choose Growth',
+    ctaText: 'Choose Business',
   },
   {
-    id: 'pro',
-    title: 'Pro',
-    price: '39,999',
+    id: 'web-apps',
+    title: 'Web Apps',
+    price: '1L - 5L+',
+    pricePeriod: 'one-time',
+    description: 'For startups and enterprises that need powerful, custom-built web applications.',
+    features: ['SaaS & MVP Builds', 'E-commerce Platforms', 'Custom CRM/ERP', 'Database & API Development'],
+    ctaText: 'Build Your App',
+  },
+  {
+    id: 'monthly-retainers',
+    title: 'Monthly Retainers',
+    price: '8K - 75K',
     pricePeriod: '/month',
-    description: 'A full-service solution for businesses ready to dominate their market.',
-    features: ['3+ Platforms & Full-Funnel Ads', 'Custom React Web App', 'Advanced SEO & Content', 'Advanced Analytics', 'Dedicated Account Manager'],
-    ctaText: 'Choose Pro',
-  },
-  {
-    id: 'enterprise',
-    title: 'Enterprise',
-    price: 'Custom',
-    description: 'Tailored solutions for large-scale and complex business needs.',
-    features: ['Advanced Integrations', 'Dedicated Team', 'Service Level Agreement (SLA)', 'On-demand Dev Hours', 'SSO & Advanced Security'],
+    description: 'Ongoing support for businesses that want continuous growth and peace of mind.',
+    features: ['Maintenance & Support', 'SEO & PPC Management', 'Social Media Marketing', 'Content Creation'],
     ctaText: 'Contact Us',
   },
 ];
@@ -124,121 +185,107 @@ export const packages: Package[] = [
 export const caseStudies: CaseStudy[] = [
   {
     id: 'case-study-1',
-    title: 'E-commerce Platform Launch for a Fashion Brand',
-    slug: 'ecommerce-fashion-launch',
+    title: 'Professional Website for a Local Law Firm',
+    slug: 'law-firm-website-launch',
     category: 'Web',
-    shortDescription: 'Launched a high-performance React-based e-commerce site, increasing sales by 150%.',
-    challenge: 'The client, a growing fashion brand, was limited by their old, slow website. They needed a modern, mobile-first platform to handle increasing traffic and showcase their products effectively.',
-    solution: 'We built a custom e-commerce solution using Next.js for server-side rendering and performance. The site featured a clean UI, advanced product filtering, and a streamlined checkout process integrated with Stripe.',
+    shortDescription: 'Developed a professional, trustworthy website that increased client inquiries by 40%.',
+    challenge: 'A respected local law firm had an outdated website that did not reflect their professionalism and was not mobile-friendly, causing them to lose potential clients.',
+    solution: 'We designed and developed a clean, professional, and responsive website focusing on trust and authority. Key features included clear service descriptions, attorney profiles, and an easy-to-use contact form for consultations.',
     results: [
-      { metric: '150%', value: 'Increase in Sales', description: 'Within the first quarter post-launch.' },
-      { metric: '60%', value: 'Faster Page Loads', description: 'Average page load time decreased from 4.5s to 1.8s.' },
-      { metric: '40%', value: 'Increase in Conversion Rate', description: 'Optimized checkout flow led to higher completion rates.' },
+      { metric: '40%', value: 'Increase in Client Inquiries', description: 'Achieved within the first two months.' },
+      { metric: '70%', value: 'Increase in Mobile Traffic', description: 'Thanks to the new responsive design.' },
+      { metric: 'Positive', value: 'Client Feedback', description: 'Clients commented on the site\'s professionalism and ease of use.' },
     ],
-    imageId: 'portfolio-1'
+    imageId: 'portfolio-5'
   },
   {
     id: 'case-study-2',
-    title: 'Organic Traffic Growth for a SaaS Company',
-    slug: 'saas-organic-growth',
-    category: 'SEO',
-    shortDescription: 'Achieved a 300% increase in organic traffic through a targeted content and technical SEO strategy.',
-    challenge: 'A SaaS startup was struggling to gain visibility in a competitive market. Their organic traffic was stagnant, and they were heavily reliant on paid advertising.',
-    solution: 'We conducted a full technical SEO audit, fixing crawlability and indexing issues. We then developed a content strategy around high-intent keywords, creating in-depth blog posts and guides to attract their target audience.',
+    title: 'Custom Dashboard for a Logistics Company',
+    slug: 'logistics-dashboard-app',
+    category: 'Web',
+    shortDescription: 'Built a custom web application for real-time shipment tracking, reducing manual reporting by 90%.',
+    challenge: 'A logistics company was struggling with manual processes for tracking shipments and generating reports, leading to delays and operational inefficiencies.',
+    solution: 'We developed a secure, real-time web application with a central dashboard for staff, role-based access for clients, and automated reporting features. The app integrated with their existing GPS and inventory systems.',
     results: [
-      { metric: '300%', value: 'Increase in Organic Traffic', description: 'Over a six-month period.' },
-      { metric: 'Top 3 Rankings', value: 'For 15+ Keywords', description: 'Secured high rankings for core business terms.' },
-      { metric: '50%', value: 'Reduction in Ad Spend', description: 'As organic leads increased, reliance on paid ads decreased.' },
-    ],
-    imageId: 'portfolio-3'
-  },
-  {
-    id: 'case-study-3',
-    title: 'ROAS Improvement for a D2C Brand',
-    slug: 'd2c-roas-improvement',
-    category: 'Ads',
-    shortDescription: 'Doubled Return on Ad Spend (ROAS) for a direct-to-consumer brand on Meta platforms.',
-    challenge: 'A D2C brand was spending a significant amount on Facebook and Instagram ads with inconsistent and declining returns.',
-    solution: 'We restructured their entire ad account, implementing a full-funnel strategy. This involved new creative testing, audience segmentation (prospecting, retargeting, retention), and optimizing for higher-value conversions.',
-    results: [
-      { metric: '2x', value: 'Return on Ad Spend', description: 'ROAS improved from 1.5x to 3.2x in three months.' },
-      { metric: '30%', value: 'Decrease in CPA', description: 'Cost per acquisition was significantly lowered.' },
-      { metric: '70%', value: 'Increase in Purchase Volume', description: 'Drove more sales from the same ad budget.' },
+      { metric: '90%', value: 'Reduction in Manual Reporting', description: 'Automated reports saved countless hours per week.' },
+      { metric: '25%', value: 'Improvement in Efficiency', description: 'Real-time data enabled faster decision-making.' },
+      { metric: 'Higher', value: 'Client Satisfaction', description: 'Clients loved the ability to track their shipments live.' },
     ],
     imageId: 'portfolio-2'
   },
+  {
+    id: 'case-study-3',
+    title: 'High-Converting Shopify Store for a D2C Brand',
+    slug: 'd2c-shopify-store',
+    category: 'Web',
+    shortDescription: 'Launched a custom-themed Shopify store that boosted conversion rates by 60%.',
+    challenge: 'A new direct-to-consumer (D2C) brand needed an online store that was not only visually appealing but also optimized for conversions from day one.',
+    solution: 'We designed and developed a bespoke Shopify theme that highlighted the brand\'s unique value proposition. We focused on a frictionless user experience, from product discovery to a streamlined one-page checkout.',
+    results: [
+      { metric: '60%', value: 'Increase in Conversion Rate', description: 'Compared to initial platform benchmarks.' },
+      { metric: '1.5s', value: 'Page Load Time', description: 'A highly optimized theme ensured a lightning-fast experience.' },
+      { metric: '2.5x', value: 'Higher ROAS on Launch Ads', description: 'The optimized landing experience improved ad performance.' },
+    ],
+    imageId: 'portfolio-1'
+  },
     {
     id: 'case-study-4',
-    title: 'Complex WordPress Site for a Corporate Client',
-    slug: 'wordpress-corporate-site',
-    category: 'WordPress',
-    shortDescription: 'Developed a scalable WordPress site with custom post types and third-party integrations.',
-    challenge: 'A large corporation needed a flexible and easy-to-manage website for their multiple business units, each requiring a unique content structure and design.',
-    solution: 'We built a robust WordPress site using a custom theme and Advanced Custom Fields (ACF). We created custom post types for publications, team members, and events, and integrated their CRM and a third-party API for financial data.',
+    title: 'Dominating Local Search for a Dental Clinic',
+    slug: 'dental-clinic-local-seo',
+    category: 'SEO',
+    shortDescription: 'A targeted Local SEO strategy resulted in a #1 ranking for "dentist near me" and a 200% increase in appointment bookings.',
+    challenge: 'A newly opened dental clinic was invisible online and struggling to attract local patients. They were not appearing in local map packs or search results.',
+    solution: 'We executed a comprehensive Local SEO campaign, which included optimizing their Google Business Profile, building local citations, generating positive patient reviews, and creating location-specific service pages on their website.',
     results: [
-      { metric: '50%', value: 'Faster Content Updates', description: 'Marketing team could update content without developer help.' },
-      { metric: 'Seamless Integration', value: 'with CRM and APIs', description: 'Automated data flows saved hours of manual work.' },
-      { metric: '100%', value: 'Brand Consistency', description: 'Unified design system across all business unit sections.' },
+      { metric: '#1 Rank', value: 'For "dentist near me"', description: 'Achieved the top spot in the local map pack.' },
+      { metric: '200%', value: 'Increase in Bookings', description: 'Online appointment bookings tripled in four months.' },
+      { metric: '5-Star', value: 'Average Rating', description: 'A review generation strategy improved their online reputation.' },
     ],
-    imageId: 'portfolio-4'
+    imageId: 'portfolio-6'
   },
 ];
 
 export const blogPosts: BlogPost[] = [
   {
     id: '1',
-    title: 'The Future of Web Development: Trends to Watch in 2024',
-    slug: 'future-of-web-development-2024',
-    excerpt: 'From AI-powered tools to the rise of server components, we explore the key trends shaping the future of web development.',
-    content: 'The web development landscape is constantly evolving. In this article, we delve into the most impactful trends of 2024, including the proliferation of AI coding assistants, the shift towards edge computing, and the continued dominance of component-based architectures.',
-    date: 'July 15, 2024',
-    readTime: '7 min read',
-    imageId: 'blog-1',
+    title: 'Why Your Business Needs a Professional Website in 2024 (Not Just a Social Media Page)',
+    slug: 'why-you-need-a-professional-website',
+    excerpt: 'In the age of social media, many businesses wonder if they still need a traditional website. The answer is a resounding YES. Discover why a professional website is the cornerstone of your digital presence.',
+    content: 'While social media platforms are excellent for engagement, they are rented land. Your website is your digital headquarters—an asset you fully own and control. It establishes credibility, allows for deep storytelling, and serves as the central hub for all your marketing efforts, from SEO to email marketing. A professional website allows you to capture leads, showcase your products or services without limitation, and build a brand that stands the test of time.',
+    date: 'August 01, 2024',
+    readTime: '6 min read',
+    imageId: 'blog-5',
     author: {
-      name: 'Jane Doe',
-      avatarId: 'avatar-1'
+      name: 'Alex Thompson',
+      avatarId: 'avatar-5'
     }
   },
   {
     id: '2',
-    title: 'Unlocking Growth: A Small Business Guide to SEO',
-    slug: 'small-business-guide-to-seo',
-    excerpt: 'SEO can seem daunting, but it doesn\'t have to be. Our guide breaks down the essentials for small businesses to start ranking.',
-    content: 'This guide provides actionable steps for small businesses to improve their search engine optimization. We cover keyword research, on-page SEO, local SEO, and how to build a foundation for long-term organic growth.',
-    date: 'July 10, 2024',
-    readTime: '10 min read',
+    title: 'SEO vs. PPC: Which is Right for Your Business?',
+    slug: 'seo-vs-ppc',
+    excerpt: 'Should you invest in long-term organic growth with SEO, or do you need the immediate traffic from PPC ads? We break down the pros and cons of each to help you decide.',
+    content: 'SEO (Search Engine Optimization) is the process of optimizing your website to rank higher in organic search results. It\'s a long-term strategy that builds trust and sustainable traffic. PPC (Pay-Per-Click) advertising, on the other hand, allows you to pay for top positions on search engines instantly. The best strategy often involves a combination of both. Use PPC for quick wins and testing, while building a strong SEO foundation for lasting, cost-effective growth.',
+    date: 'July 25, 2024',
+    readTime: '8 min read',
     imageId: 'blog-2',
     author: {
-      name: 'John Smith',
+      name: 'Carlos Rodriguez',
       avatarId: 'avatar-2'
     }
   },
   {
     id: '3',
-    title: 'Why Your Brand Needs a Content Marketing Strategy',
-    slug: 'why-you-need-content-marketing',
-    excerpt: 'Content marketing is more than just blogging. Learn how a cohesive strategy can build your brand, engage your audience, and drive conversions.',
-    content: 'In today\'s digital world, content is king. We explain why a strategic approach to content marketing is crucial for building brand authority, fostering customer loyalty, and ultimately, boosting your bottom line.',
-    date: 'July 5, 2024',
+    title: '5 Signs Your Website Needs a Redesign',
+    slug: 'signs-your-website-needs-redesign',
+    excerpt: 'Your website is your 24/7 salesperson. If it\'s slow, outdated, or not mobile-friendly, it could be costing you business. Here are 5 clear signs it\'s time for a revamp.',
+    content: '1. It\'s not mobile-friendly: Over half of all web traffic comes from mobile devices. If your site is not responsive, you are alienating a huge portion of your audience. 2. It\'s slow to load: Modern users expect pages to load in under 3 seconds. 3. Your bounce rate is high: If visitors leave your site immediately, it\'s a sign of poor user experience. 4. It doesn\'t reflect your current brand: Your business evolves, and your website should too. 5. You\'re not getting leads: A modern website should be a lead generation machine. If it\'s not, it\'s time for an upgrade.',
+    date: 'July 20, 2024',
     readTime: '5 min read',
-    imageId: 'blog-3',
+    imageId: 'blog-6',
     author: {
-      name: 'Emily White',
-      avatarId: 'avatar-3'
-    }
-  },
-   {
-    id: '4',
-    title: 'React Server Components vs. Client Components',
-    slug: 'react-server-vs-client-components',
-    excerpt: 'A deep dive into the new React paradigm. Understand when to use Server Components to optimize performance and improve user experience.',
-    content: 'React Server Components are changing the game. This article breaks down the differences between Server and Client components, explains the benefits of shifting work to the server, and provides practical examples of how to use them in your Next.js application.',
-    date: 'June 28, 2024',
-    readTime: '12 min read',
-    imageId: 'blog-4',
-    author: {
-      name: 'Alex Johnson',
-      avatarId: 'avatar-5'
+      name: 'Diana Miller',
+      avatarId: 'avatar-1'
     }
   },
 ];
@@ -246,24 +293,24 @@ export const blogPosts: BlogPost[] = [
 export const testimonials: Testimonial[] = [
   {
     id: '1',
-    name: 'Sarah Johnson',
-    title: 'CEO, Fashion Forward',
-    quote: 'Synergy Digital transformed our online presence. Their team is professional, creative, and delivered results beyond our expectations. Our sales have skyrocketed since the new website launch!',
-    avatarId: 'avatar-1'
-  },
-  {
-    id: '2',
-    name: 'Michael Chen',
-    title: 'Founder, SaaS Innovations',
-    quote: 'Working with Synergy Digital on our SEO was a game-changer. Their expertise drove a 300% increase in organic traffic, putting us on the map in a crowded market.',
+    name: 'Rohan Sharma',
+    title: 'Founder, LegalConnect',
+    quote: 'Synergy Digital delivered a website that perfectly captured our firm\'s professional image. The increase in client consultations through the site was immediate and impressive. A truly fantastic team.',
     avatarId: 'avatar-2'
   },
   {
-    id: '3',
-    name: 'Priya Patel',
-    title: 'Marketing Director, Healthy Living Co.',
-    quote: 'The digital advertising campaigns they manage for us are incredibly effective. Our ROAS has doubled, and we are reaching our target audience more efficiently than ever before.',
+    id: '2',
+    name: 'Priya Singh',
+    title: 'CEO, FitLife Nutrition',
+    quote: 'Our new Shopify store is not only beautiful but also incredibly fast. The team\'s attention to detail and focus on user experience has directly resulted in a higher conversion rate. Highly recommended!',
     avatarId: 'avatar-4'
+  },
+  {
+    id: '3',
+    name: 'Ankit Gupta',
+    title: 'Owner, City Dental Care',
+    quote: 'Thanks to their Local SEO efforts, we are now the top-ranked dental clinic in our area. Our appointment book is fuller than ever. Their digital marketing expertise is unmatched.',
+    avatarId: 'avatar-5'
   },
 ];
 
