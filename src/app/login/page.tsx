@@ -6,7 +6,7 @@ import { useRouter } from 'next/navigation';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import * as z from 'zod';
-import { getAuth, signInWithEmailAndPassword, sendSignInLinkToEmail } from 'firebase/auth';
+import { getAuth, signInWithEmailAndPassword, sendSignInLinkToEmail, GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import {
@@ -23,6 +23,7 @@ import Link from 'next/link';
 import { Loader2, Mail } from 'lucide-react';
 import { useUser } from '@/firebase';
 import { Separator } from '@/components/ui/separator';
+import GoogleIcon from '@/components/icons/google';
 
 const passwordFormSchema = z.object({
   email: z.string().email({ message: 'Please enter a valid email.' }),
@@ -39,6 +40,7 @@ export default function LoginPage() {
   const { toast } = useToast();
   const [isPasswordLoading, setIsPasswordLoading] = useState(false);
   const [isEmailLoading, setIsEmailLoading] = useState(false);
+  const [isGoogleLoading, setIsGoogleLoading] = useState(false);
   const { user } = useUser();
 
   const passwordForm = useForm<z.infer<typeof passwordFormSchema>>({
@@ -108,37 +110,79 @@ export default function LoginPage() {
     }
   }
 
+  async function onGoogleSignIn() {
+    setIsGoogleLoading(true);
+    const auth = getAuth();
+    const provider = new GoogleAuthProvider();
+    try {
+      await signInWithPopup(auth, provider);
+      toast({
+        title: 'Login Successful',
+        description: "Welcome!",
+      });
+      router.push('/dashboard');
+    } catch (error: any) {
+      console.error(error);
+      toast({
+        variant: 'destructive',
+        title: 'Login Failed',
+        description: error.message || 'An unexpected error occurred with Google Sign-In.',
+      });
+    } finally {
+      setIsGoogleLoading(false);
+    }
+  }
+
+  const isLoading = isPasswordLoading || isEmailLoading || isGoogleLoading;
+
   return (
     <div className="py-16 sm:py-24">
       <div className="container mx-auto px-4 flex justify-center">
         <Card className="w-full max-w-md">
           <CardHeader className="text-center">
             <CardTitle className="text-2xl font-headline">Welcome Back!</CardTitle>
-            <CardDescription>Sign in via magic link or with your password</CardDescription>
+            <CardDescription>Sign in to your account to continue</CardDescription>
           </CardHeader>
           <CardContent>
-            <Form {...emailForm}>
-              <form onSubmit={emailForm.handleSubmit(onEmailSubmit)} className="space-y-4">
-                 <FormField
-                  control={emailForm.control}
-                  name="email"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel>Login with Email</FormLabel>
-                      <FormControl>
-                        <Input type="email" placeholder="john.doe@example.com" {...field} />
-                      </FormControl>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
-                 <Button type="submit" disabled={isEmailLoading} className="w-full">
-                    {isEmailLoading && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
-                    <Mail className="mr-2 h-4 w-4" />
-                    {isEmailLoading ? 'Sending...' : 'Send Magic Link'}
+             <div className="flex flex-col gap-4">
+                <Button variant="outline" onClick={onGoogleSignIn} disabled={isLoading}>
+                    {isGoogleLoading ? <Loader2 className="mr-2 h-4 w-4 animate-spin" /> : <GoogleIcon className="mr-2 h-4 w-4" />}
+                    Sign In with Google
                 </Button>
-              </form>
-            </Form>
+
+                <Form {...emailForm}>
+                <form onSubmit={emailForm.handleSubmit(onEmailSubmit)} className="space-y-4">
+                    <div className="relative">
+                        <div className="absolute inset-0 flex items-center">
+                            <span className="w-full border-t" />
+                        </div>
+                        <div className="relative flex justify-center text-xs uppercase">
+                            <span className="bg-background px-2 text-muted-foreground">
+                            Or sign in with email
+                            </span>
+                        </div>
+                    </div>
+                    <FormField
+                    control={emailForm.control}
+                    name="email"
+                    render={({ field }) => (
+                        <FormItem>
+                        <FormLabel className="sr-only">Login with Email</FormLabel>
+                        <FormControl>
+                            <Input type="email" placeholder="john.doe@example.com" {...field} disabled={isLoading} />
+                        </FormControl>
+                        <FormMessage />
+                        </FormItem>
+                    )}
+                    />
+                    <Button type="submit" disabled={isLoading} className="w-full">
+                        {isEmailLoading && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
+                        <Mail className="mr-2 h-4 w-4" />
+                        {isEmailLoading ? 'Sending...' : 'Send Magic Link'}
+                    </Button>
+                </form>
+                </Form>
+            </div>
 
             <div className="my-6 flex items-center">
                 <Separator className="flex-1" />
@@ -153,9 +197,9 @@ export default function LoginPage() {
                   name="email"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel>Login with Password</FormLabel>
+                      <FormLabel>Email</FormLabel>
                       <FormControl>
-                        <Input type="email" placeholder="john.doe@example.com" {...field} />
+                        <Input type="email" placeholder="john.doe@example.com" {...field} disabled={isLoading} />
                       </FormControl>
                       <FormMessage />
                     </FormItem>
@@ -168,7 +212,7 @@ export default function LoginPage() {
                     <FormItem>
                       <FormLabel>Password</FormLabel>
                       <FormControl>
-                        <Input type="password" placeholder="••••••••" {...field} />
+                        <Input type="password" placeholder="••••••••" {...field} disabled={isLoading} />
                       </FormControl>
                       <FormMessage />
                     </FormItem>
@@ -179,7 +223,7 @@ export default function LoginPage() {
                       Forgot Password?
                     </Link>
                   </div>
-                <Button type="submit" disabled={isPasswordLoading} className="w-full" variant="outline">
+                <Button type="submit" disabled={isLoading} className="w-full" variant="outline">
                   {isPasswordLoading && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
                   {isPasswordLoading ? 'Signing In...' : 'Sign In with Password'}
                 </Button>

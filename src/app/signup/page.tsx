@@ -6,7 +6,7 @@ import { useRouter } from 'next/navigation';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import * as z from 'zod';
-import { getAuth, createUserWithEmailAndPassword, updateProfile } from 'firebase/auth';
+import { getAuth, createUserWithEmailAndPassword, updateProfile, GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import {
@@ -22,6 +22,8 @@ import { useToast } from '@/hooks/use-toast';
 import Link from 'next/link';
 import { Loader2 } from 'lucide-react';
 import { useUser } from '@/firebase';
+import { Separator } from '@/components/ui/separator';
+import GoogleIcon from '@/components/icons/google';
 
 const formSchema = z.object({
   name: z.string().min(2, { message: 'Name must be at least 2 characters.' }),
@@ -32,7 +34,8 @@ const formSchema = z.object({
 export default function SignupPage() {
   const router = useRouter();
   const { toast } = useToast();
-  const [isLoading, setIsLoading] = useState(false);
+  const [isEmailLoading, setIsEmailLoading] = useState(false);
+  const [isGoogleLoading, setIsGoogleLoading] = useState(false);
   const { user } = useUser();
 
   const form = useForm<z.infer<typeof formSchema>>({
@@ -48,9 +51,11 @@ export default function SignupPage() {
     router.push('/dashboard');
     return null;
   }
+  
+  const isLoading = isEmailLoading || isGoogleLoading;
 
   async function onSubmit(values: z.infer<typeof formSchema>) {
-    setIsLoading(true);
+    setIsEmailLoading(true);
     const auth = getAuth();
     try {
       const userCredential = await createUserWithEmailAndPassword(auth, values.email, values.password);
@@ -69,9 +74,33 @@ export default function SignupPage() {
         description: error.message || 'An unexpected error occurred.',
       });
     } finally {
-      setIsLoading(false);
+      setIsEmailLoading(false);
     }
   }
+
+  async function onGoogleSignUp() {
+    setIsGoogleLoading(true);
+    const auth = getAuth();
+    const provider = new GoogleAuthProvider();
+    try {
+      await signInWithPopup(auth, provider);
+      toast({
+        title: 'Account Created!',
+        description: "Welcome to Trionex Tech!",
+      });
+      router.push('/dashboard');
+    } catch (error: any) {
+      console.error(error);
+      toast({
+        variant: 'destructive',
+        title: 'Sign Up Failed',
+        description: error.message || 'An unexpected error occurred with Google Sign-In.',
+      });
+    } finally {
+      setIsGoogleLoading(false);
+    }
+  }
+
 
   return (
     <div className="py-16 sm:py-24">
@@ -82,6 +111,19 @@ export default function SignupPage() {
             <CardDescription>Join us and get started today</CardDescription>
           </CardHeader>
           <CardContent>
+            <div className="flex flex-col gap-4">
+                <Button variant="outline" onClick={onGoogleSignUp} disabled={isLoading}>
+                    {isGoogleLoading ? <Loader2 className="mr-2 h-4 w-4 animate-spin" /> : <GoogleIcon className="mr-2 h-4 w-4" />}
+                    Sign Up with Google
+                </Button>
+            </div>
+
+            <div className="my-6 flex items-center">
+                <Separator className="flex-1" />
+                <span className="mx-4 text-xs text-muted-foreground">OR</span>
+                <Separator className="flex-1" />
+            </div>
+
             <Form {...form}>
               <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
                 <FormField
@@ -91,7 +133,7 @@ export default function SignupPage() {
                     <FormItem>
                       <FormLabel>Full Name</FormLabel>
                       <FormControl>
-                        <Input placeholder="John Doe" {...field} />
+                        <Input placeholder="John Doe" {...field} disabled={isLoading}/>
                       </FormControl>
                       <FormMessage />
                     </FormItem>
@@ -104,7 +146,7 @@ export default function SignupPage() {
                     <FormItem>
                       <FormLabel>Email</FormLabel>
                       <FormControl>
-                        <Input type="email" placeholder="john.doe@example.com" {...field} />
+                        <Input type="email" placeholder="john.doe@example.com" {...field} disabled={isLoading} />
                       </FormControl>
                       <FormMessage />
                     </FormItem>
@@ -117,15 +159,15 @@ export default function SignupPage() {
                     <FormItem>
                       <FormLabel>Password</FormLabel>
                       <FormControl>
-                        <Input type="password" placeholder="••••••••" {...field} />
+                        <Input type="password" placeholder="••••••••" {...field} disabled={isLoading} />
                       </FormControl>
                       <FormMessage />
                     </FormItem>
                   )}
                 />
                 <Button type="submit" disabled={isLoading} className="w-full">
-                  {isLoading && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
-                  {isLoading ? 'Creating Account...' : 'Sign Up'}
+                  {isEmailLoading && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
+                  {isEmailLoading ? 'Creating Account...' : 'Sign Up with Email'}
                 </Button>
               </form>
             </Form>
