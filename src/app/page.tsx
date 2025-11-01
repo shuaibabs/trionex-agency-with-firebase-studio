@@ -28,8 +28,6 @@ import { cn } from '@/lib/utils';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import FuturisticAnimation from '@/components/futuristic-animation';
-import { useState, useEffect } from 'react';
-import { CardSkeleton } from '@/components/ui/card-skeleton';
 
 const serviceIcons: { [key: string]: React.ElementType } = {
   'business-website-development': Code,
@@ -47,13 +45,6 @@ const serviceIcons: { [key: string]: React.ElementType } = {
 };
 
 export default function Home() {
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    const timer = setTimeout(() => setLoading(false), 300); // Simulate loading
-    return () => clearTimeout(timer);
-  }, []);
-
   const featuredServices = services.filter(s => 
     ['business-website-development', 'seo-optimization', 'ecommerce-website', 'custom-web-application'].includes(s.id)
   );
@@ -132,46 +123,42 @@ export default function Home() {
             </p>
           </div>
           <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
-            {loading ? (
-              Array.from({ length: 4 }).map((_, i) => <CardSkeleton key={i} />)
-            ) : (
-              featuredServices.map((service, i) => {
-                const Icon = serviceIcons[service.id] || Code;
-                return (
-                  <motion.div
-                    key={service.id}
-                    initial="hidden"
-                    whileInView="visible"
-                    viewport={{ once: true, amount: 0.5 }}
-                    transition={{ delay: i * 0.1, duration: 0.5 }}
-                    variants={cardVariants}
+            {featuredServices.map((service, i) => {
+              const Icon = serviceIcons[service.id] || Code;
+              return (
+                <motion.div
+                  key={service.id}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true, amount: 0.5 }}
+                  transition={{ delay: i * 0.1, duration: 0.5 }}
+                  variants={cardVariants}
+                >
+                  <Card
+                    className={cn("transform transition-transform duration-300 hover:-translate-y-2 hover:shadow-xl card-glow-on-hover h-full")}
                   >
-                    <Card
-                      className={cn("transform transition-transform duration-300 hover:-translate-y-2 hover:shadow-xl card-glow-on-hover h-full")}
-                    >
-                      <CardHeader className="items-center text-center">
-                        <div className="mb-4 rounded-full bg-primary/10 p-4 text-primary">
-                          <Icon className="h-8 w-8" />
-                        </div>
-                        <CardTitle className="font-headline text-xl">
-                          {service.title}
-                        </CardTitle>
-                      </CardHeader>
-                      <CardContent className="text-center">
-                        <p className="mb-4 text-muted-foreground">
-                          {service.shortDescription}
-                        </p>
-                        <Button variant="ghost" asChild className="text-primary">
-                          <Link href={`/services/${service.slug}`}>
-                            Learn More <ArrowRight className="ml-2 h-4 w-4" />
-                          </Link>
-                        </Button>
-                      </CardContent>
-                    </Card>
-                  </motion.div>
-                );
-              })
-            )}
+                    <CardHeader className="items-center text-center">
+                      <div className="mb-4 rounded-full bg-primary/10 p-4 text-primary">
+                        <Icon className="h-8 w-8" />
+                      </div>
+                      <CardTitle className="font-headline text-xl">
+                        {service.title}
+                      </CardTitle>
+                    </CardHeader>
+                    <CardContent className="text-center">
+                      <p className="mb-4 text-muted-foreground">
+                        {service.shortDescription}
+                      </p>
+                      <Button variant="ghost" asChild className="text-primary">
+                        <Link href={`/services/${service.slug}`}>
+                          Learn More <ArrowRight className="ml-2 h-4 w-4" />
+                        </Link>
+                      </Button>
+                    </CardContent>
+                  </Card>
+                </motion.div>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -274,51 +261,47 @@ export default function Home() {
             </p>
           </div>
           <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
-             {loading ? (
-                Array.from({ length: 3 }).map((_, i) => <CardSkeleton key={i} />)
-              ) : (
-                blogPosts.slice(0, 3).map((post, i) => {
-                  const blogImage = placeholderImages.find(p => p.id === post.imageId);
-                  return (
-                  <motion.div
-                    key={post.id}
-                    initial="hidden"
-                    whileInView="visible"
-                    viewport={{ once: true, amount: 0.3 }}
-                    transition={{ delay: i * 0.1, duration: 0.5 }}
-                    variants={cardVariants}
-                  >
-                    <Card key={post.id} className={cn("overflow-hidden group card-glow-on-hover h-full")}>
-                      <Link href={`/blog/${post.slug}`} className="block">
-                        <div className="aspect-video relative">
-                          {blogImage && <Image
-                            src={blogImage.imageUrl}
-                            alt={post.title}
-                            fill
-                            className="object-cover transition-transform duration-300 group-hover:scale-105"
-                            data-ai-hint={blogImage.imageHint}
-                          />}
-                        </div>
-                        <CardHeader>
-                          <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                            <span>{post.date}</span>
-                            <span>&bull;</span>
-                            <span>{post.readTime}</span>
-                          </div>
-                          <CardTitle className="font-headline text-xl group-hover:text-primary transition-colors">
-                            {post.title}
-                          </CardTitle>
-                        </CardHeader>
-                        <CardContent>
-                          <p className="text-muted-foreground line-clamp-2">
-                            {post.excerpt}
-                          </p>
-                        </CardContent>
-                      </Link>
-                    </Card>
-                  </motion.div>
-                )})
-             )}
+            {blogPosts.slice(0, 3).map((post, i) => {
+              const blogImage = placeholderImages.find(p => p.id === post.imageId);
+              return (
+              <motion.div
+                key={post.id}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.3 }}
+                transition={{ delay: i * 0.1, duration: 0.5 }}
+                variants={cardVariants}
+              >
+                <Card key={post.id} className={cn("overflow-hidden group card-glow-on-hover h-full")}>
+                  <Link href={`/blog/${post.slug}`} className="block">
+                    <div className="aspect-video relative">
+                      {blogImage && <Image
+                        src={blogImage.imageUrl}
+                        alt={post.title}
+                        fill
+                        className="object-cover transition-transform duration-300 group-hover:scale-105"
+                        data-ai-hint={blogImage.imageHint}
+                      />}
+                    </div>
+                    <CardHeader>
+                      <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                        <span>{post.date}</span>
+                        <span>&bull;</span>
+                        <span>{post.readTime}</span>
+                      </div>
+                      <CardTitle className="font-headline text-xl group-hover:text-primary transition-colors">
+                        {post.title}
+                      </CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                      <p className="text-muted-foreground line-clamp-2">
+                        {post.excerpt}
+                      </p>
+                    </CardContent>
+                  </Link>
+                </Card>
+              </motion.div>
+            )})}
           </div>
         </div>
       </section>
@@ -348,5 +331,7 @@ export default function Home() {
     </div>
   );
 }
+
+    
 
     

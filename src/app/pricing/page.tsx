@@ -7,17 +7,8 @@ import { packages } from '@/lib/data';
 import { Check } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { motion } from 'framer-motion';
-import { useState, useEffect } from 'react';
-import { CardSkeleton } from '@/components/ui/card-skeleton';
 
 export default function PricingPage() {
-    const [loading, setLoading] = useState(true);
-
-    useEffect(() => {
-        const timer = setTimeout(() => setLoading(false), 300); // Simulate loading
-        return () => clearTimeout(timer);
-    }, []);
-
     const cardVariants = {
         hidden: { opacity: 0, y: 20 },
         visible: { opacity: 1, y: 0 },
@@ -36,60 +27,56 @@ export default function PricingPage() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 items-start">
-          {loading ? (
-             Array.from({ length: 4 }).map((_, i) => <CardSkeleton key={i} />)
-          ) : (
-            packages.map((pkg, i) => (
-                <motion.div
-                    key={pkg.id}
-                    initial="hidden"
-                    whileInView="visible"
-                    viewport={{ once: true, amount: 0.5 }}
-                    transition={{ delay: i * 0.1, duration: 0.5 }}
-                    variants={cardVariants}
-                    className="h-full"
-                >
-                    <Card className={cn(
-                    "flex flex-col h-full",
-                    pkg.isPopular ? 'border-primary ring-2 ring-primary shadow-lg' : ''
-                    )}>
-                    <CardHeader className="relative">
-                        {pkg.isPopular && (
-                        <div className="absolute top-0 right-6 -mt-3">
-                            <div className="bg-primary text-primary-foreground text-xs font-semibold px-3 py-1 rounded-full">
-                            POPULAR
-                            </div>
-                        </div>
-                        )}
-                        <CardTitle className="font-headline">{pkg.title}</CardTitle>
-                        <CardDescription>{pkg.description}</CardDescription>
-                        <div className="flex items-baseline pt-4">
-                        <span className="text-4xl font-bold font-headline">
-                            {pkg.price.startsWith('Custom') ? '' : '₹'}
-                            {pkg.price}
-                        </span>
-                        <span className="text-sm text-muted-foreground">{pkg.pricePeriod}</span>
-                        </div>
-                    </CardHeader>
-                    <CardContent className="flex-grow">
-                        <ul className="space-y-3">
-                        {pkg.features.map((feature, i) => (
-                            <li key={i} className="flex items-start">
-                            <Check className="h-5 w-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" />
-                            <span className="text-muted-foreground">{feature}</span>
-                            </li>
-                        ))}
-                        </ul>
-                    </CardContent>
-                    <CardFooter>
-                        <Button asChild className="w-full" variant={pkg.isPopular ? 'default' : 'outline'}>
-                        <Link href="/contact">{pkg.ctaText}</Link>
-                        </Button>
-                    </CardFooter>
-                    </Card>
-                </motion.div>
-            ))
-          )}
+          {packages.map((pkg, i) => (
+              <motion.div
+                  key={pkg.id}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true, amount: 0.5 }}
+                  transition={{ delay: i * 0.1, duration: 0.5 }}
+                  variants={cardVariants}
+                  className="h-full"
+              >
+                  <Card className={cn(
+                  "flex flex-col h-full",
+                  pkg.isPopular ? 'border-primary ring-2 ring-primary shadow-lg' : ''
+                  )}>
+                  <CardHeader className="relative">
+                      {pkg.isPopular && (
+                      <div className="absolute top-0 right-6 -mt-3">
+                          <div className="bg-primary text-primary-foreground text-xs font-semibold px-3 py-1 rounded-full">
+                          POPULAR
+                          </div>
+                      </div>
+                      )}
+                      <CardTitle className="font-headline">{pkg.title}</CardTitle>
+                      <CardDescription>{pkg.description}</CardDescription>
+                      <div className="flex items-baseline pt-4">
+                      <span className="text-4xl font-bold font-headline">
+                          {pkg.price.startsWith('Custom') ? '' : '₹'}
+                          {pkg.price}
+                      </span>
+                      <span className="text-sm text-muted-foreground">{pkg.pricePeriod}</span>
+                      </div>
+                  </CardHeader>
+                  <CardContent className="flex-grow">
+                      <ul className="space-y-3">
+                      {pkg.features.map((feature, i) => (
+                          <li key={i} className="flex items-start">
+                          <Check className="h-5 w-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" />
+                          <span className="text-muted-foreground">{feature}</span>
+                          </li>
+                      ))}
+                      </ul>
+                  </CardContent>
+                  <CardFooter>
+                      <Button asChild className="w-full" variant={pkg.isPopular ? 'default' : 'outline'}>
+                      <Link href="/contact">{pkg.ctaText}</Link>
+                      </Button>
+                  </CardFooter>
+                  </Card>
+              </motion.div>
+          ))}
         </div>
         <div className="text-center mt-16">
           <h3 className="font-headline text-2xl font-bold">Need a custom solution?</h3>
@@ -102,5 +89,7 @@ export default function PricingPage() {
     </div>
   );
 }
+
+    
 
     
