@@ -4,6 +4,7 @@ import { ThemeProvider } from '@/components/theme-provider';
 import Header from '@/components/layout/header';
 import Footer from '@/components/layout/footer';
 import { Toaster } from '@/components/ui/toaster';
+import { PageTransition } from '@/components/page-transition';
 
 export const metadata: Metadata = {
   title: 'Synergy Digital - Marketing & Web Development Agency',
@@ -30,7 +31,9 @@ export default function RootLayout({
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <div className="flex min-h-screen flex-col">
             <Header />
-            <main className="flex-grow">{children}</main>
+            <main className="flex-grow">
+               <PageTransition>{children}</PageTransition>
+            </main>
             <Footer />
           </div>
           <Toaster />

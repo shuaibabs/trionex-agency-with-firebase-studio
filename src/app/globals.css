@@ -14,8 +14,21 @@
   }
 }
 
+@keyframes background-pan {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
 body {
   font-family: Arial, Helvetica, sans-serif;
+  animation: background-pan 15s ease-in-out infinite;
 }
 
 @layer base {
@@ -96,6 +109,14 @@ body {
   }
   body {
     @apply bg-background text-foreground;
+     background: linear-gradient(
+      -45deg,
+      hsl(var(--background)),
+      hsl(var(--secondary)),
+      hsl(var(--background)),
+      hsl(var(--muted))
+    );
+    background-size: 400% 400%;
   }
 }
 
