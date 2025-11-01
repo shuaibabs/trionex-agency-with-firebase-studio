@@ -14,21 +14,8 @@
   }
 }
 
-@keyframes background-pan {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
-
 body {
   font-family: 'Inter', sans-serif;
-  animation: background-pan 20s ease-in-out infinite;
 }
 
 @layer base {
@@ -109,14 +96,7 @@ body {
   }
   body {
     @apply bg-background text-foreground;
-     background: linear-gradient(
-      -45deg,
-      hsl(var(--background)),
-      hsl(var(--secondary)),
-      hsl(var(--primary) / 0.1),
-      hsl(var(--secondary))
-    );
-    background-size: 400% 400%;
+     background: hsl(var(--background));
   }
 }
 
