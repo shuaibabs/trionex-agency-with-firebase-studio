@@ -50,36 +50,37 @@ export default function PortfolioPage() {
             const portfolioImage = placeholderImages.find(p => p.id === study.imageId);
             return (
               <Card key={study.id} className="overflow-hidden group flex flex-col">
-                <div className="aspect-video relative">
-                  {portfolioImage && (
-                    <Image
-                      src={portfolioImage.imageUrl}
-                      alt={study.title}
-                      fill
-                      className="object-cover transition-transform duration-300 group-hover:scale-105"
-                      data-ai-hint={portfolioImage.imageHint}
-                    />
-                  )}
-                </div>
-                <CardHeader>
-                    <Badge variant="secondary" className="w-min mb-2">{study.category}</Badge>
-                    <CardTitle className="font-headline text-xl">
-                      {study.title}
-                    </CardTitle>
-                </CardHeader>
-                <CardContent className='flex-grow'>
-                  <p className="text-muted-foreground line-clamp-3">
-                    {study.shortDescription}
-                  </p>
-                </CardContent>
-                <CardFooter>
-                    {/* This would link to a detailed case study page e.g. /portfolio/${study.slug} */}
-                    <Button variant="link" asChild className='p-0 text-primary'>
-                        <span className="cursor-pointer">
-                            Read Case Study <ArrowRight className="ml-2 h-4 w-4" />
-                        </span>
-                    </Button>
-                </CardFooter>
+                <Link href={`/portfolio/${study.slug}`} className="block h-full flex flex-col">
+                  <div className="aspect-video relative">
+                    {portfolioImage && (
+                      <Image
+                        src={portfolioImage.imageUrl}
+                        alt={study.title}
+                        fill
+                        className="object-cover transition-transform duration-300 group-hover:scale-105"
+                        data-ai-hint={portfolioImage.imageHint}
+                      />
+                    )}
+                  </div>
+                  <CardHeader>
+                      <Badge variant="secondary" className="w-min mb-2">{study.category}</Badge>
+                      <CardTitle className="font-headline text-xl group-hover:text-primary transition-colors">
+                        {study.title}
+                      </CardTitle>
+                  </CardHeader>
+                  <CardContent className='flex-grow'>
+                    <p className="text-muted-foreground line-clamp-3">
+                      {study.shortDescription}
+                    </p>
+                  </CardContent>
+                  <CardFooter>
+                      <Button variant="link" asChild className='p-0 text-primary'>
+                          <span className="cursor-pointer">
+                              Read Case Study <ArrowRight className="ml-2 h-4 w-4" />
+                          </span>
+                      </Button>
+                  </CardFooter>
+                </Link>
               </Card>
             );
           })}
