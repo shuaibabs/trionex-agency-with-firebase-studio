@@ -6,6 +6,7 @@ import Header from '@/components/layout/header';
 import Footer from '@/components/layout/footer';
 import { Toaster } from '@/components/ui/toaster';
 import { PageTransition } from '@/components/page-transition';
+import { FirebaseClientProvider } from '@/firebase/client-provider';
 
 export const metadata: Metadata = {
   title: 'Trionex Tech - Marketing & Web Development Agency',
@@ -29,21 +30,23 @@ export default function RootLayout({
         />
       </head>
       <body className="animated-background">
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="dark"
-          enableSystem
-          disableTransitionOnChange
-        >
-          <div className="relative flex min-h-screen flex-col main-container">
-            <Header />
-            <main className="flex-grow pt-8">
-               <PageTransition>{children}</PageTransition>
-            </main>
-            <Footer />
-          </div>
-          <Toaster />
-        </ThemeProvider>
+        <FirebaseClientProvider>
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="dark"
+            enableSystem
+            disableTransitionOnChange
+          >
+            <div className="relative flex min-h-screen flex-col main-container">
+              <Header />
+              <main className="flex-grow pt-8">
+                 <PageTransition>{children}</PageTransition>
+              </main>
+              <Footer />
+            </div>
+            <Toaster />
+          </ThemeProvider>
+        </FirebaseClientProvider>
       </body>
     </html>
   );

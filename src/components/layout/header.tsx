@@ -4,12 +4,23 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useState } from 'react';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, LogOut } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { cn } from '@/lib/utils';
 import { ThemeToggle } from '../theme-toggle';
 import Logo from '../icons/logo';
+import { useUser } from '@/firebase';
+import { getAuth, signOut } from 'firebase/auth';
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from '@/components/ui/dropdown-menu';
 
 const navLinks = [
   { href: '/', label: 'Home' },
@@ -25,6 +36,17 @@ const navLinks = [
 export default function Header() {
   const pathname = usePathname();
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const { user, isUserLoading } = useUser();
+
+  const handleLogout = async () => {
+    const auth = getAuth();
+    await signOut(auth);
+  };
+
+  const getInitials = (email: string | null | undefined) => {
+    if (!email) return 'U';
+    return email.substring(0, 2).toUpperCase();
+  };
 
   return (
     <header className="sticky top-4 z-50 w-full px-4">
@@ -51,9 +73,50 @@ export default function Header() {
 
         <div className="flex flex-1 items-center justify-end gap-2">
           <ThemeToggle />
-          <Button asChild className="hidden md:flex">
-            <Link href="/contact">Get a Quote</Link>
-          </Button>
+
+          {!isUserLoading &&
+            (user ? (
+              <DropdownMenu>
+                <DropdownMenuTrigger asChild>
+                  <Button variant="ghost" className="relative h-8 w-8 rounded-full">
+                    <Avatar className="h-8 w-8">
+                      <AvatarImage src={user.photoURL || undefined} alt={user.email || 'User'} />
+                      <AvatarFallback>{getInitials(user.email)}</AvatarFallback>
+                    </Avatar>
+                  </Button>
+                </DropdownMenuTrigger>
+                <DropdownMenuContent className="w-56" align="end" forceMount>
+                  <DropdownMenuLabel className="font-normal">
+                    <div className="flex flex-col space-y-1">
+                      <p className="text-sm font-medium leading-none">
+                        {user.displayName || 'User'}
+                      </p>
+                      <p className="text-xs leading-none text-muted-foreground">
+                        {user.email}
+                      </p>
+                    </div>
+                  </DropdownMenuLabel>
+                  <DropdownMenuSeparator />
+                  <DropdownMenuItem asChild>
+                    <Link href="/dashboard">Dashboard</Link>
+                  </DropdownMenuItem>
+                  <DropdownMenuSeparator />
+                  <DropdownMenuItem onClick={handleLogout} className="cursor-pointer">
+                    <LogOut className="mr-2 h-4 w-4" />
+                    <span>Log out</span>
+                  </DropdownMenuItem>
+                </DropdownMenuContent>
+              </DropdownMenu>
+            ) : (
+              <div className="hidden md:flex items-center gap-2">
+                <Button variant="ghost" asChild>
+                  <Link href="/login">Login</Link>
+                </Button>
+                <Button asChild>
+                  <Link href="/signup">Sign Up</Link>
+                </Button>
+              </div>
+            ))}
 
           {/* Mobile Navigation */}
           <Sheet open={isMobileMenuOpen} onOpenChange={setMobileMenuOpen}>
@@ -88,11 +151,31 @@ export default function Header() {
                     ))}
                   </ul>
                 </nav>
-                <Button asChild className="w-full mt-6">
-                  <Link href="/contact" onClick={() => setMobileMenuOpen(false)}>
-                    Get a Quote
-                  </Link>
-                </Button>
+                <div className="border-t pt-4">
+                  {user ? (
+                     <div className="flex flex-col gap-4">
+                        <Button variant="outline" asChild>
+                            <Link href="/dashboard">Go to Dashboard</Link>
+                        </Button>
+                        <Button onClick={handleLogout} className="w-full">
+                           Log Out
+                        </Button>
+                     </div>
+                  ) : (
+                    <div className="flex flex-col gap-4">
+                      <Button asChild className="w-full">
+                        <Link href="/login" onClick={() => setMobileMenuOpen(false)}>
+                          Login
+                        </Link>
+                      </Button>
+                       <Button variant="outline" asChild className="w-full">
+                        <Link href="/signup" onClick={() => setMobileMenuOpen(false)}>
+                          Sign Up
+                        </Link>
+                      </Button>
+                    </div>
+                  )}
+                </div>
               </div>
             </SheetContent>
           </Sheet>
