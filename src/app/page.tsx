@@ -82,6 +82,9 @@ export default function Home() {
             <FuturisticAnimation />
           </div>
         </div>
+        <div className="absolute bottom-8 left-1/2 -translate-x-1/2">
+          <Logo className="h-8 w-auto" />
+        </div>
       </section>
 
       {/* Stats Section */}
