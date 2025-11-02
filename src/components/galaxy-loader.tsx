@@ -4,40 +4,11 @@
 import { motion } from 'framer-motion';
 import Logo from './icons/logo';
 
-const containerVariants = {
-  start: {
-    transition: {
-      staggerChildren: 0.1,
-    },
-  },
-  end: {
-    transition: {
-      staggerChildren: 0.1,
-    },
-  },
-};
-
-const circleVariants = {
-  start: {
-    y: '50%',
-  },
-  end: {
-    y: '150%',
-  },
-};
-
-const circleTransition = {
-  duration: 0.5,
-  repeat: Infinity,
-  repeatType: 'reverse' as const,
-  ease: 'easeInOut',
-};
-
 export default function GalaxyLoader() {
   return (
     <div className="flex h-screen w-full flex-col items-center justify-center bg-black">
       <div className="relative flex flex-col items-center justify-center">
-        <Logo className="h-10 mb-8" />
+        <Logo className="h-10 mb-8 text-primary" />
         <div className="flex h-24 w-24 items-center justify-center">
             <motion.div
                 className="absolute h-16 w-16 rounded-full border-2 border-primary/20"
