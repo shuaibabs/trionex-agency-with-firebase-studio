@@ -2,6 +2,7 @@
 'use client';
 
 import Link from 'next/link';
+import React from 'react';
 import {
   ArrowRight,
   BarChart,
@@ -30,6 +31,8 @@ import Image from 'next/image';
 import FuturisticAnimation from '@/components/futuristic-animation';
 import Logo from '@/components/icons/logo';
 import { Starfield } from '@/components/starfield';
+import Autoplay from "embla-carousel-autoplay";
+
 
 const serviceIcons: { [key: string]: React.ElementType } = {
   'business-website-development': Code,
@@ -54,6 +57,10 @@ export default function Home() {
     hidden: { opacity: 0, y: 20 },
     visible: { opacity: 1, y: 0 },
   };
+
+  const plugin = React.useRef(
+    Autoplay({ delay: 2000, stopOnInteraction: true })
+  )
 
   return (
     <div className="flex flex-col">
@@ -216,8 +223,11 @@ export default function Home() {
             </h2>
           </div>
           <Carousel
+            plugins={[plugin.current]}
             className="w-full max-w-4xl mx-auto"
             opts={{ loop: true }}
+            onMouseEnter={plugin.current.stop}
+            onMouseLeave={plugin.current.reset}
           >
             <CarouselContent>
               {testimonials.map((testimonial) => {

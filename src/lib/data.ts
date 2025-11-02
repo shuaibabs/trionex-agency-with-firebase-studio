@@ -428,6 +428,20 @@ export const testimonials: Testimonial[] = [
     quote: 'Thanks to their Local SEO efforts, we are now the top-ranked dental clinic in our area. Our appointment book is fuller than ever. Their digital marketing expertise is unmatched.',
     avatarId: 'avatar-5'
   },
+   {
+    id: '4',
+    name: 'Sameer Khan',
+    title: 'CTO, InnovateTech',
+    quote: 'The custom dashboard they built for us revolutionized our operations. It\'s intuitive, powerful, and has saved us countless hours of manual work. A game-changer for our business.',
+    avatarId: 'avatar-3'
+  },
+  {
+    id: '5',
+    name: 'Neha Desai',
+    title: 'Marketing Head, Aura Fashion',
+    quote: 'Their PPC campaigns are pure magic. We saw a 5X ROAS within the first quarter. They are strategic, transparent, and deliver on their promises.',
+    avatarId: 'avatar-1'
+  }
 ];
 
 export const team: TeamMember[] = [
