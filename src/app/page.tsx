@@ -78,7 +78,7 @@ export default function Home() {
           </div>
           <div className="relative h-96 w-full flex flex-col items-center justify-center">
             <FuturisticAnimation />
-            <Logo className="mt-4 h-12 w-auto" />
+            <Logo className="mt-4 h-16 w-auto" />
           </div>
         </div>
       </section>
