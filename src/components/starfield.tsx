@@ -1,3 +1,4 @@
+
 'use client';
 
 import { useState, useEffect } from 'react';
@@ -54,7 +55,7 @@ const Star = ({
         top: `${y}%`,
         width: size,
         height: size,
-        boxShadow: '0 0 2px #fff, 0 0 4px #fff',
+        boxShadow: '0 0 4px #fff, 0 0 8px #fff',
       }}
       animate={{
         opacity: [0.2, 1, 0.2],
@@ -70,6 +71,33 @@ const Star = ({
     />
   );
 };
+
+const Moon = () => {
+  return (
+    <motion.div
+      className="absolute rounded-full"
+      style={{
+        width: 50,
+        height: 50,
+        background: 'linear-gradient(145deg, #fdfdfd, #c3c3c3)',
+        boxShadow:
+          '0 0 15px 5px #ffffff, 0 0 25px 10px #ffffff, 0 0 5px #f0f0f0 inset',
+      }}
+      animate={{
+        x: ['-20vw', '120vw'],
+        y: ['10vh', '50vh'],
+        rotate: [0, 20],
+      }}
+      transition={{
+        duration: 180, // Slower movement for a majestic feel
+        repeat: Infinity,
+        repeatType: 'mirror',
+        ease: 'easeInOut',
+      }}
+    />
+  );
+};
+
 
 export function Starfield({
   starCount = 200,
@@ -112,6 +140,7 @@ export function Starfield({
         className
       )}
     >
+      <Moon />
       {stars.map((star) => (
         <Star key={star.id} {...star} />
       ))}
