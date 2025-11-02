@@ -2,7 +2,6 @@
 'use client';
 
 import Link, { type LinkProps } from 'next/link';
-import { useLoading } from '@/hooks/use-loading-store';
 import React from 'react';
 
 type LoadingLinkProps = LinkProps & {
@@ -12,18 +11,11 @@ type LoadingLinkProps = LinkProps & {
   'aria-label'?: string;
 };
 
-export default function LoadingLink({ children, onClick, ...props }: LoadingLinkProps) {
-  const { startLoading } = useLoading();
-
-  const handleClick = () => {
-    startLoading();
-    if (onClick) {
-      onClick();
-    }
-  };
-
+// This component is now a simple wrapper around Next.js's Link.
+// The loading state is handled globally by NavigationEvents.
+export default function LoadingLink({ children, ...props }: LoadingLinkProps) {
   return (
-    <Link {...props} onClick={handleClick}>
+    <Link {...props}>
       {children}
     </Link>
   );

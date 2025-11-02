@@ -13,6 +13,8 @@ import { usePathname } from 'next/navigation';
 import LoadingBar from '@/components/loading-bar';
 import { Inter, Space_Grotesk } from 'next/font/google';
 import { cn } from '@/lib/utils';
+import { NavigationEvents } from '@/components/navigation-events';
+
 
 const inter = Inter({
   subsets: ['latin'],
@@ -51,9 +53,7 @@ export default function RootLayout({
             disableTransitionOnChange
           >
             <div className="relative flex min-h-screen flex-col main-container">
-              <Suspense>
-                <LoadingBar />
-              </Suspense>
+              <LoadingBar />
               <Header />
               <AnimatePresence mode="wait">
                 <motion.main
@@ -70,6 +70,9 @@ export default function RootLayout({
               <Footer />
             </div>
             <Toaster />
+            <Suspense fallback={null}>
+                <NavigationEvents />
+            </Suspense>
           </ThemeProvider>
         </FirebaseClientProvider>
       </body>
