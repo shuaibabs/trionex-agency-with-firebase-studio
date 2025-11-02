@@ -119,7 +119,6 @@ const Spaceship = ({
       style={{
         top: initialY,
         scale: 0.5,
-        transform: isFlipped ? 'scaleX(-1)' : 'scaleX(1)',
       }}
       animate={{
         x: [initialX, finalX],
@@ -132,22 +131,23 @@ const Spaceship = ({
         ease: 'linear',
       }}
     >
-      <svg
-        width="50"
-        height="50"
-        viewBox="0 0 24 24"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M3.5 11L11.5 3L14.5 6L11.5 9H16.5L21.5 4V9L18.5 12L21.5 15V20L16.5 15H11.5L14.5 18L11.5 21L3.5 13H9.5V11H3.5Z"
-          fill="currentColor"
-        />
+      <div className="relative" style={{ transform: isFlipped ? 'scaleX(-1)' : 'scaleX(1)'}}>
+        <svg
+          width="50"
+          height="50"
+          viewBox="0 0 24 24"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M3.5 11L11.5 3L14.5 6L11.5 9H16.5L21.5 4V9L18.5 12L21.5 15V20L16.5 15H11.5L14.5 18L11.5 21L3.5 13H9.5V11H3.5Z"
+            fill="currentColor"
+          />
+        </svg>
         <motion.div
           style={{
             position: 'absolute',
-            right: isFlipped ? 'auto' : '-10px',
-            left: isFlipped ? '-10px' : 'auto',
+            right: '-10px',
             top: '50%',
             y: '-50%',
             width: '10px',
@@ -166,7 +166,7 @@ const Spaceship = ({
             repeatType: 'mirror',
           }}
         />
-      </svg>
+      </div>
     </motion.div>
   );
 };
