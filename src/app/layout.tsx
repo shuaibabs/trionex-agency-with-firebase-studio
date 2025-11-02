@@ -5,7 +5,6 @@ import { ThemeProvider } from '@/components/theme-provider';
 import Header from '@/components/layout/header';
 import Footer from '@/components/layout/footer';
 import { Toaster } from '@/components/ui/toaster';
-import { PageTransition } from '@/components/page-transition';
 import { FirebaseClientProvider } from '@/firebase/client-provider';
 
 export const metadata: Metadata = {
@@ -39,9 +38,7 @@ export default function RootLayout({
           >
             <div className="relative flex min-h-screen flex-col main-container">
               <Header />
-              <main className="flex-grow pt-8">
-                 <PageTransition>{children}</PageTransition>
-              </main>
+              <main className="flex-grow pt-8">{children}</main>
               <Footer />
             </div>
             <Toaster />
