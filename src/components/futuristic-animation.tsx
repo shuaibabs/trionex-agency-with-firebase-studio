@@ -47,37 +47,26 @@ export default function FuturisticAnimation() {
           }}
         />
 
-        {/* Logo at the Core */}
+        {/* Logo at the Core with futuristic animation */}
         <motion.div
           className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center justify-center"
            animate={{
-            scale: [1, 1.05, 1],
+            scale: [1, 1.1, 1],
+            filter: [
+              'drop-shadow(0 0 2px hsl(var(--primary) / 0.5))',
+              'drop-shadow(0 0 8px hsl(var(--primary) / 0.8))',
+              'drop-shadow(0 0 2px hsl(var(--primary) / 0.5))',
+            ],
           }}
           transition={{
             repeat: Infinity,
             ease: 'easeInOut',
-            duration: 5,
+            duration: 4,
           }}
         >
             <Logo className="h-12 w-auto" />
         </motion.div>
         
-        {/* Fast inner orb */}
-        <motion.div
-            className="absolute w-3 h-3 rounded-full bg-primary/80 shadow-[0_0_8px_hsl(var(--primary))]"
-            style={{
-                originX: '175px',
-                originY: '175px',
-                transformStyle: 'preserve-3d',
-                rotateY: 45
-            }}
-            animate={{ rotate: 360 }}
-            transition={{
-                repeat: Infinity,
-                ease: 'linear',
-                duration: 5
-            }}
-        />
       </motion.div>
     </div>
   );
