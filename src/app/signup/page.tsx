@@ -63,7 +63,7 @@ export default function SignupPage() {
       
       toast({
         title: 'Account Created!',
-        description: "Welcome to Trionex Tech!",
+        description: "Welcome to Trionex Digital!",
       });
       router.push('/dashboard');
     } catch (error: any) {
@@ -86,7 +86,7 @@ export default function SignupPage() {
       await signInWithPopup(auth, provider);
       toast({
         title: 'Account Created!',
-        description: "Welcome to Trionex Tech!",
+        description: "Welcome to Trionex Digital!",
       });
       router.push('/dashboard');
     } catch (error: any) {

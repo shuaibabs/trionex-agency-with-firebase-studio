@@ -75,7 +75,7 @@ export default function Home() {
               </Button>
             </div>
           </div>
-          <div className="relative h-64 w-full md:h-96 flex items-center justify-center">
+          <div className="relative h-96 w-full flex items-center justify-center">
             <FuturisticAnimation />
           </div>
         </div>
@@ -314,7 +314,7 @@ export default function Home() {
             Ready to Start Your Project?
           </h2>
           <p className="mt-4 mb-8 max-w-2xl mx-auto text-base md:text-lg text-primary-foreground/80">
-            Let&apos;s talk about how Trionex Tech can help you achieve your
+            Let&apos;s talk about how Trionex Digital can help you achieve your
             goals. Schedule a free consultation today.
           </p>
           <Button

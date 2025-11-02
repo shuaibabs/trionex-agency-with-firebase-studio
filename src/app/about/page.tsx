@@ -106,7 +106,7 @@ export default function AboutPage() {
                 From a Spark to Synergy
               </h2>
               <p className="mt-4 text-muted-foreground text-base md:text-lg">
-                Founded in a small garage by a developer and a marketer, Trionex Tech was born from a simple idea: what if technology and creativity worked in perfect harmony? We saw businesses struggling with disconnected digital efforts—beautiful websites that nobody saw, and marketing campaigns that didn't convert.
+                Founded in a small garage by a developer and a marketer, Trionex Digital was born from a simple idea: what if technology and creativity worked in perfect harmony? We saw businesses struggling with disconnected digital efforts—beautiful websites that nobody saw, and marketing campaigns that didn't convert.
               </p>
               <p className="mt-4 text-muted-foreground text-base md:text-lg">
                 We set out to build an agency that bridges that gap. Today, we are a full-service digital powerhouse, but our core mission remains the same: to be a true partner, creating synergistic solutions that deliver tangible results.
@@ -154,7 +154,7 @@ export default function AboutPage() {
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <Badge variant="outline">Our Difference</Badge>
-            <h2 className="mt-2 font-headline text-3xl font-bold tracking-tighter sm:text-4xl">Why Choose Trionex Tech?</h2>
+            <h2 className="mt-2 font-headline text-3xl font-bold tracking-tighter sm:text-4xl">Why Choose Trionex Digital?</h2>
             <p className="mt-4 max-w-2xl mx-auto text-base md:text-lg text-muted-foreground">
               We're more than just a vendor; we're your partner in growth.
             </p>

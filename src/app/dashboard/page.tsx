@@ -43,7 +43,7 @@ export default function DashboardPage() {
           <Card>
             <CardHeader className="text-center">
               <CardTitle className="text-3xl font-headline">Dashboard</CardTitle>
-              <CardDescription>Welcome to your Trionex Tech dashboard.</CardDescription>
+              <CardDescription>Welcome to your Trionex Digital dashboard.</CardDescription>
             </CardHeader>
             <CardContent className="flex flex-col items-center space-y-6">
                 <Avatar className="h-24 w-24 border-4 border-primary">

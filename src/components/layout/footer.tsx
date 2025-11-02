@@ -78,7 +78,7 @@ export default function Footer() {
 
         {/* Bottom Bar */}
         <div className="border-t py-6 flex flex-col sm:flex-row justify-between items-center text-sm text-muted-foreground">
-          <p className="text-center sm:text-left">&copy; {new Date().getFullYear()} Trionex Tech. All rights reserved.</p>
+          <p className="text-center sm:text-left">&copy; {new Date().getFullYear()} Trionex Digital. All rights reserved.</p>
           <div className="flex items-center space-x-1 sm:space-x-3 mt-4 sm:mt-0">
               {socialLinks.map((link, i) => (
               <Button

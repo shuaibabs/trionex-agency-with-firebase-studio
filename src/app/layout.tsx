@@ -8,9 +8,9 @@ import { Toaster } from '@/components/ui/toaster';
 import { FirebaseClientProvider } from '@/firebase/client-provider';
 
 export const metadata: Metadata = {
-  title: 'Trionex Tech - Marketing & Web Development Agency',
+  title: 'Trionex Digital - Marketing & Web Development Agency',
   description:
-    'Trionex Tech is a modern marketing and web development agency helping businesses grow with cutting-edge solutions.',
+    'Trionex Digital is a modern marketing and web development agency helping businesses grow with cutting-edge solutions.',
 };
 
 export default function RootLayout({
