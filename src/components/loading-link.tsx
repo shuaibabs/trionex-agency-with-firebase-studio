@@ -11,15 +11,11 @@ type LoadingLinkProps = LinkProps & {
   'aria-label'?: string;
 };
 
-// This component wraps Next.js's Link to trigger the global loading
-// bar on click, providing immediate feedback to the user.
+// This component wraps Next.js's Link. The loading state is
+// now handled globally by the NavigationEvents component.
 export default function LoadingLink({ children, onClick, ...props }: LoadingLinkProps) {
-  const { startLoading } = useLoading();
-
   const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
-    // We are starting the loading state on click.
-    // The `NavigationEvents` component will handle stopping the loading state.
-    startLoading();
+    // We can still allow custom onClick handlers to run if passed.
     if (onClick) {
       onClick();
     }
