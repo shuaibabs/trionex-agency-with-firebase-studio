@@ -75,7 +75,7 @@ export default function Home() {
               </Button>
             </div>
           </div>
-          <div className="relative h-64 w-full max-w-lg mx-auto md:h-96 flex items-center justify-center">
+          <div className="relative h-64 w-full md:h-96 flex items-center justify-center">
             <FuturisticAnimation />
           </div>
         </div>
