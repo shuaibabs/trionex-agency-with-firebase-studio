@@ -8,7 +8,7 @@ import Footer from '@/components/layout/footer';
 import { Toaster } from '@/components/ui/toaster';
 import { FirebaseClientProvider } from '@/firebase/client-provider';
 import { Suspense } from 'react';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { usePathname } from 'next/navigation';
 import LoadingBar from '@/components/loading-bar';
 import { Inter, Space_Grotesk } from 'next/font/google';
@@ -55,15 +55,18 @@ export default function RootLayout({
                 <LoadingBar />
               </Suspense>
               <Header />
-              <motion.main
-                key={pathname}
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 0.3, ease: 'easeInOut' }}
-                className="flex-grow pt-8"
-              >
-                {children}
-              </motion.main>
+              <AnimatePresence mode="wait">
+                <motion.main
+                  key={pathname}
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 0.3, ease: 'easeInOut' }}
+                  className="flex-grow pt-8"
+                >
+                  {children}
+                </motion.main>
+              </AnimatePresence>
               <Footer />
             </div>
             <Toaster />
