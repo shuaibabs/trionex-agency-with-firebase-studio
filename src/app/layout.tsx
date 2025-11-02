@@ -1,7 +1,6 @@
 
 'use client';
 
-import type { Metadata } from 'next';
 import './globals.css';
 import { ThemeProvider } from '@/components/theme-provider';
 import Header from '@/components/layout/header';
@@ -10,6 +9,7 @@ import { Toaster } from '@/components/ui/toaster';
 import { FirebaseClientProvider } from '@/firebase/client-provider';
 import { useState, useEffect } from 'react';
 import GalaxyLoader from '@/components/galaxy-loader';
+import { PageTransition } from '@/components/page-transition';
 
 export default function RootLayout({
   children,
@@ -56,7 +56,9 @@ export default function RootLayout({
             >
               <div className="relative flex min-h-screen flex-col main-container">
                 <Header />
-                <main className="flex-grow pt-8">{children}</main>
+                <main className="flex-grow pt-8">
+                  <PageTransition>{children}</PageTransition>
+                </main>
                 <Footer />
               </div>
               <Toaster />
