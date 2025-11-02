@@ -28,6 +28,7 @@ import { cn } from '@/lib/utils';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import FuturisticAnimation from '@/components/futuristic-animation';
+import Logo from '@/components/icons/logo';
 
 const serviceIcons: { [key: string]: React.ElementType } = {
   'business-website-development': Code,
@@ -77,7 +78,7 @@ export default function Home() {
           </div>
           <div className="relative h-96 w-full flex flex-col items-center justify-center">
             <FuturisticAnimation />
-            <p className="mt-4 text-center text-muted-foreground">in the center</p>
+            <Logo className="mt-4" />
           </div>
         </div>
       </section>
