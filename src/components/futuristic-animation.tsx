@@ -174,7 +174,7 @@ const Orbit = ({ radius, duration, angleX, angleY, children, ...props }: { radiu
 export default function FuturisticAnimation() {
   return (
     <div className="relative flex items-center justify-center w-full h-full scale-75 sm:scale-90 md:scale-100">
-      <div className="relative w-[520px] h-[520px]" style={{ perspective: 1000 }}>
+      <div className="relative w-[460px] h-[460px]" style={{ perspective: 1000 }}>
         
         {/* Central Glowing Orb */}
         <motion.div
@@ -199,31 +199,29 @@ export default function FuturisticAnimation() {
               ease: "easeInOut",
           }}
         >
-          <Orbit radius={80} duration={12} angleX={60} angleY={20}>
+          <Orbit radius={80} duration={12} angleX={70} angleY={20}>
               <Planet icon={<ReactIcon />} initialAngle={0} orbitRadius={80} />
               <Planet icon={<NodeIcon />} initialAngle={180} orbitRadius={80} />
           </Orbit>
-          <Orbit radius={140} duration={20} angleX={60} angleY={20}>
-              <Planet icon={<JSIcon />} initialAngle={45} orbitRadius={140} />
-              <Planet icon={<HTMLIcon />} initialAngle={135} orbitRadius={140} />
-              <Planet icon={<CSSIcon />} initialAngle={225} orbitRadius={140} />
-              <Planet icon={<ExpressIcon />} initialAngle={315} orbitRadius={140} />
+          <Orbit radius={130} duration={20} angleX={70} angleY={20}>
+              <Planet icon={<JSIcon />} initialAngle={45} orbitRadius={130} />
+              <Planet icon={<HTMLIcon />} initialAngle={135} orbitRadius={130} />
+              <Planet icon={<CSSIcon />} initialAngle={225} orbitRadius={130} />
+              <Planet icon={<ExpressIcon />} initialAngle={315} orbitRadius={130} />
           </Orbit>
-          <Orbit radius={200} duration={30} angleX={60} angleY={20}>
-              <Planet icon={<GoogleIcon />} initialAngle-={90} orbitRadius={200} />
-              <Planet icon={<MetaIcon />} initialAngle={270} orbitRadius={200} />
-              <Planet icon={<WordpressIcon />} initialAngle={0} orbitRadius={200} />
+          <Orbit radius={180} duration={30} angleX={70} angleY={20}>
+              <Planet icon={<GoogleIcon />} initialAngle-={90} orbitRadius={180} />
+              <Planet icon={<MetaIcon />} initialAngle={270} orbitRadius={180} />
+              <Planet icon={<WordpressIcon />} initialAngle={0} orbitRadius={180} />
           </Orbit>
-           <Orbit radius={260} duration={40} angleX={60} angleY={20}>
-              <Planet icon={<GithubIcon />} initialAngle={30} orbitRadius={260} />
-              <Planet icon={<FacebookIcon />} initialAngle={120} orbitRadius={260} />
-              <Planet icon={<InstagramIcon />} initialAngle={210} orbitRadius={260} />
-              <Planet icon={<LinkedInIcon />} initialAngle={300} orbitRadius={260} />
+           <Orbit radius={230} duration={40} angleX={70} angleY={20}>
+              <Planet icon={<GithubIcon />} initialAngle={30} orbitRadius={230} />
+              <Planet icon={<FacebookIcon />} initialAngle={120} orbitRadius={230} />
+              <Planet icon={<InstagramIcon />} initialAngle={210} orbitRadius={230} />
+              <Planet icon={<LinkedInIcon />} initialAngle={300} orbitRadius={230} />
           </Orbit>
         </motion.div>
       </div>
     </div>
   );
 }
-
-    
