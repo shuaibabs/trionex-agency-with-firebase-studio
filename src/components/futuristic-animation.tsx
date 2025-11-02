@@ -46,26 +46,6 @@ export default function FuturisticAnimation() {
             duration: 18,
           }}
         />
-
-        {/* Logo at the Core with futuristic animation */}
-        <motion.div
-          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center justify-center"
-           animate={{
-            scale: [1, 1.1, 1],
-            filter: [
-              'drop-shadow(0 0 2px hsl(var(--primary) / 0.5))',
-              'drop-shadow(0 0 8px hsl(var(--primary) / 0.8))',
-              'drop-shadow(0 0 2px hsl(var(--primary) / 0.5))',
-            ],
-          }}
-          transition={{
-            repeat: Infinity,
-            ease: 'easeInOut',
-            duration: 4,
-          }}
-        >
-            <Logo className="h-12 w-auto" />
-        </motion.div>
         
       </motion.div>
     </div>

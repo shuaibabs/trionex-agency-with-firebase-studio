@@ -75,8 +75,9 @@ export default function Home() {
               </Button>
             </div>
           </div>
-          <div className="relative h-96 w-full flex items-center justify-center">
+          <div className="relative h-96 w-full flex flex-col items-center justify-center">
             <FuturisticAnimation />
+            <p className="mt-4 text-center text-muted-foreground">in the center</p>
           </div>
         </div>
       </section>
