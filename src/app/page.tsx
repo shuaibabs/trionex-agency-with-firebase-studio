@@ -29,6 +29,7 @@ import { motion } from 'framer-motion';
 import Image from 'next/image';
 import FuturisticAnimation from '@/components/futuristic-animation';
 import Logo from '@/components/icons/logo';
+import { Starfield } from '@/components/starfield';
 
 const serviceIcons: { [key: string]: React.ElementType } = {
   'business-website-development': Code,
@@ -57,7 +58,8 @@ export default function Home() {
   return (
     <div className="flex flex-col">
       {/* Hero Section */}
-      <section className="relative w-full py-20 md:py-32 lg:py-40 bg-gradient-to-br from-background to-secondary/50 dark:from-background dark:to-secondary/20">
+      <section className="relative w-full py-20 md:py-32 lg:py-40 bg-gradient-to-br from-background to-secondary/50 dark:from-background dark:to-secondary/20 overflow-hidden">
+        <Starfield />
         <div className="container mx-auto grid grid-cols-1 items-center gap-8 px-4 text-center md:grid-cols-2 md:text-left">
           <div className="space-y-6">
             <h1 className="font-headline text-4xl font-bold tracking-tighter text-primary sm:text-5xl md:text-6xl lg:text-7xl glow-on-hover">
