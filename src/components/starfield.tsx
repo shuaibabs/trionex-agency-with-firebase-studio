@@ -54,6 +54,7 @@ const Star = ({
         top: `${y}%`,
         width: size,
         height: size,
+        boxShadow: '0 0 2px #fff, 0 0 4px #fff',
       }}
       animate={{
         opacity: [0.2, 1, 0.2],
@@ -71,8 +72,8 @@ const Star = ({
 };
 
 export function Starfield({
-  starCount = 100,
-  movingStarCount = 10,
+  starCount = 200,
+  movingStarCount = 20,
   className,
 }: {
   starCount?: number;
@@ -90,7 +91,7 @@ export function Starfield({
           id: i,
           x: Math.random() * 100,
           y: Math.random() * 100,
-          size: Math.random() * (isMoving ? 2 : 1) + 0.5,
+          size: Math.random() * (isMoving ? 2.5 : 1.5) + 1,
           duration: isMoving
             ? Math.random() * 20 + 20
             : Math.random() * 5 + 3,
