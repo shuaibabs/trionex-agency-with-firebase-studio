@@ -35,7 +35,7 @@ const circleTransition = {
 
 export default function GalaxyLoader() {
   return (
-    <div className="flex h-screen w-full flex-col items-center justify-center bg-background">
+    <div className="flex h-screen w-full flex-col items-center justify-center bg-black">
       <div className="relative flex flex-col items-center justify-center">
         <Logo className="h-10 mb-8" />
         <div className="flex h-24 w-24 items-center justify-center">
@@ -55,7 +55,7 @@ export default function GalaxyLoader() {
                 transition={{ duration: 4, repeat: Infinity, ease: 'linear' }}
             />
         </div>
-        <p className="mt-8 text-lg text-muted-foreground animate-pulse">Loading Universe...</p>
+        <p className="mt-8 text-lg text-muted-foreground animate-pulse">Loading Trionex Digital...</p>
       </div>
     </div>
   );
