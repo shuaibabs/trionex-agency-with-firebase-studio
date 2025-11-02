@@ -105,7 +105,6 @@
   }
   body {
     @apply bg-background text-foreground;
-    font-family: 'Inter', sans-serif;
   }
 
   body.animated-background {
