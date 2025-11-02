@@ -58,8 +58,8 @@ export default function Header() {
   };
 
   return (
-    <header className={cn('sticky top-0 z-50 w-full transition-all duration-300 py-2')}>
-        <div className="flex mx-4 h-16 items-center rounded-full border bg-background/95 backdrop-blur-sm supports-[backdrop-filter]:bg-background/60 shadow-lg px-4 sm:px-6">
+    <header className={cn('sticky top-0 z-50 w-full transition-all duration-300 py-0')}>
+        <div className="flex mx-4 mt-2 h-16 items-center rounded-full border bg-background/95 backdrop-blur-sm supports-[backdrop-filter]:bg-background/60 shadow-lg px-4 sm:px-6">
             <Link href="/" className="mr-6 flex items-center">
             <Logo />
             </Link>
