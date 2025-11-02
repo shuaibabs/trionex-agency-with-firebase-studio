@@ -2,6 +2,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import Logo from './icons/logo';
 
 export default function FuturisticAnimation() {
   return (
@@ -46,19 +47,20 @@ export default function FuturisticAnimation() {
           }}
         />
 
-        {/* Pulsing Core */}
+        {/* Logo at the Core */}
         <motion.div
-          className="absolute top-[125px] left-[125px] w-[100px] h-[100px] rounded-full bg-primary/20 border border-primary"
-          animate={{
-            scale: [1, 1.1, 1],
-            opacity: [0.5, 0.8, 0.5],
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center justify-center"
+           animate={{
+            scale: [1, 1.05, 1],
           }}
           transition={{
             repeat: Infinity,
             ease: 'easeInOut',
-            duration: 4,
+            duration: 5,
           }}
-        />
+        >
+            <Logo className="h-12 w-auto" />
+        </motion.div>
         
         {/* Fast inner orb */}
         <motion.div
