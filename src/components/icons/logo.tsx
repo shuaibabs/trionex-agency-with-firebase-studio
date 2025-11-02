@@ -1,6 +1,9 @@
 import { cn } from '@/lib/utils';
 
-export default function Logo({ className }: { className?: string }) {
+export default function Logo({ className, color }: { className?: string, color?: string }) {
+  const primaryColor = color || 'hsl(var(--primary))';
+  const foregroundColor = color ? '#FFF' : 'hsl(var(--foreground))';
+
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -15,7 +18,7 @@ export default function Logo({ className }: { className?: string }) {
         fontFamily="'Space Grotesk', sans-serif"
         fontSize="24"
         fontWeight="bold"
-        fill="hsl(var(--primary))"
+        fill={primaryColor}
       >
         Trionex
       </text>
@@ -25,7 +28,7 @@ export default function Logo({ className }: { className?: string }) {
         fontFamily="'Space Grotesk', sans-serif"
         fontSize="24"
         fontWeight="500"
-        fill="hsl(var(--foreground))"
+        fill={foregroundColor}
       >
         Digital
       </text>
