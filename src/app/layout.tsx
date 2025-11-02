@@ -7,10 +7,11 @@ import Header from '@/components/layout/header';
 import Footer from '@/components/layout/footer';
 import { Toaster } from '@/components/ui/toaster';
 import { FirebaseClientProvider } from '@/firebase/client-provider';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, Suspense } from 'react';
 import GalaxyLoader from '@/components/galaxy-loader';
 import { motion, AnimatePresence } from 'framer-motion';
 import { usePathname } from 'next/navigation';
+import LoadingBar from '@/components/loading-bar';
 
 export default function RootLayout({
   children,
@@ -21,9 +22,7 @@ export default function RootLayout({
   const pathname = usePathname();
 
   useEffect(() => {
-    // This will run once after the component mounts on the client
-    // It helps avoid hydration errors by ensuring the loading state is managed client-side
-    const timer = setTimeout(() => setLoading(false), 500); // Simulate loading
+    const timer = setTimeout(() => setLoading(false), 500); 
     return () => clearTimeout(timer);
   }, []);
 
@@ -61,6 +60,9 @@ export default function RootLayout({
                 disableTransitionOnChange
               >
                 <div className="relative flex min-h-screen flex-col main-container">
+                  <Suspense>
+                    <LoadingBar />
+                  </Suspense>
                   <Header />
                   <motion.main
                     key={pathname}

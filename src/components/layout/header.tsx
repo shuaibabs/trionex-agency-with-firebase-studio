@@ -1,7 +1,6 @@
 
 'use client';
 
-import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useState, useEffect } from 'react';
 import { Menu, X, LogOut } from 'lucide-react';
@@ -21,6 +20,7 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
+import LoadingLink from '../loading-link';
 
 const navLinks = [
   { href: '/', label: 'Home' },
@@ -61,23 +61,23 @@ export default function Header() {
     <header className={cn('sticky top-0 z-50 w-full transition-all duration-300')}>
         <div className="container mx-auto px-4">
             <div className="mt-2 flex h-16 items-center rounded-full border bg-background/95 backdrop-blur-sm supports-[backdrop-filter]:bg-background/60 px-4 shadow-lg sm:px-6">
-                <Link href="/" className="mr-6 flex items-center">
-                <Logo />
-                </Link>
+                <LoadingLink href="/" className="mr-6 flex items-center">
+                  <Logo />
+                </LoadingLink>
 
                 {/* Desktop Navigation */}
                 <nav className="hidden lg:flex lg:items-center lg:gap-6 text-sm font-medium">
                 {navLinks.map(({ href, label }) => (
-                    <Link
-                    key={href}
-                    href={href}
-                    className={cn(
-                        'transition-colors hover:text-primary nav-link-glow',
-                        pathname === href ? 'text-primary font-semibold' : 'text-foreground/60'
-                    )}
+                    <LoadingLink
+                      key={href}
+                      href={href}
+                      className={cn(
+                          'transition-colors hover:text-primary nav-link-glow',
+                          pathname === href ? 'text-primary font-semibold' : 'text-foreground/60'
+                      )}
                     >
                     {label}
-                    </Link>
+                    </LoadingLink>
                 ))}
                 </nav>
 
@@ -108,7 +108,7 @@ export default function Header() {
                         </DropdownMenuLabel>
                         <DropdownMenuSeparator />
                         <DropdownMenuItem asChild>
-                            <Link href="/dashboard">Dashboard</Link>
+                            <LoadingLink href="/dashboard">Dashboard</LoadingLink>
                         </DropdownMenuItem>
                         <DropdownMenuSeparator />
                         <DropdownMenuItem onClick={handleLogout} className="cursor-pointer">
@@ -120,10 +120,10 @@ export default function Header() {
                     ) : (
                     <div className="hidden md:flex items-center gap-2">
                         <Button variant="ghost" asChild>
-                        <Link href="/login">Login</Link>
+                          <LoadingLink href="/login">Login</LoadingLink>
                         </Button>
                         <Button asChild>
-                        <Link href="/signup">Sign Up</Link>
+                          <LoadingLink href="/signup">Sign Up</LoadingLink>
                         </Button>
                     </div>
                     ))}
@@ -139,15 +139,15 @@ export default function Header() {
                     <SheetContent side="left">
                     <div className="flex flex-col h-full">
                         <div className="flex items-center justify-between border-b pb-4">
-                        <Link href="/" onClick={() => setMobileMenuOpen(false)}>
+                        <LoadingLink href="/" onClick={() => setMobileMenuOpen(false)}>
                             <Logo />
-                        </Link>
+                        </LoadingLink>
                         </div>
                         <nav className="flex-grow mt-6">
                         <ul className="space-y-4">
                             {navLinks.map(({ href, label }) => (
                             <li key={href}>
-                                <Link
+                                <LoadingLink
                                 href={href}
                                 onClick={() => setMobileMenuOpen(false)}
                                 className={cn(
@@ -156,7 +156,7 @@ export default function Header() {
                                 )}
                                 >
                                 {label}
-                                </Link>
+                                </LoadingLink>
                             </li>
                             ))}
                         </ul>
@@ -165,7 +165,7 @@ export default function Header() {
                         {user ? (
                             <div className="flex flex-col gap-4">
                                 <Button variant="outline" asChild>
-                                    <Link href="/dashboard">Go to Dashboard</Link>
+                                    <LoadingLink href="/dashboard">Go to Dashboard</LoadingLink>
                                 </Button>
                                 <Button onClick={handleLogout} className="w-full">
                                 Log Out
@@ -174,14 +174,14 @@ export default function Header() {
                         ) : (
                             <div className="flex flex-col gap-4">
                             <Button asChild className="w-full">
-                                <Link href="/login" onClick={() => setMobileMenuOpen(false)}>
+                                <LoadingLink href="/login" onClick={() => setMobileMenuOpen(false)}>
                                 Login
-                                </Link>
+                                </LoadingLink>
                             </Button>
                             <Button variant="outline" asChild className="w-full">
-                                <Link href="/signup" onClick={() => setMobileMenuOpen(false)}>
+                                <LoadingLink href="/signup" onClick={() => setMobileMenuOpen(false)}>
                                 Sign Up
-                                </Link>
+                                </LoadingLink>
                             </Button>
                             </div>
                         )}

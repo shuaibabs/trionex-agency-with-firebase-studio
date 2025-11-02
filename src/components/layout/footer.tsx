@@ -4,6 +4,7 @@ import { Github, Twitter, Linkedin } from 'lucide-react';
 import Logo from '../icons/logo';
 import { Button } from '@/components/ui/button';
 import { NewsletterForm } from '../newsletter-form';
+import LoadingLink from '../loading-link';
 
 const footerNavs = [
   {
@@ -45,9 +46,9 @@ export default function Footer() {
         {/* Main Footer content */}
         <div className="py-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
             <div className="flex flex-col gap-4 md:col-span-2">
-                <Link href="/" aria-label="Back to homepage">
+                <LoadingLink href="/" aria-label="Back to homepage">
                     <Logo />
-                </Link>
+                </LoadingLink>
                 <p className="text-muted-foreground text-sm max-w-sm">
                   A modern marketing and web development agency for growing businesses.
                 </p>
@@ -63,12 +64,12 @@ export default function Footer() {
                 <ul className="mt-4 space-y-3">
                   {nav.items.map((item) => (
                     <li key={item.name}>
-                      <Link
+                      <LoadingLink
                         href={item.href}
                         className="text-sm text-muted-foreground hover:text-primary transition-colors"
                       >
                         {item.name}
-                      </Link>
+                      </LoadingLink>
                     </li>
                   ))}
                 </ul>
