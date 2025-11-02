@@ -9,7 +9,8 @@ import { Toaster } from '@/components/ui/toaster';
 import { FirebaseClientProvider } from '@/firebase/client-provider';
 import { useState, useEffect } from 'react';
 import GalaxyLoader from '@/components/galaxy-loader';
-import { PageTransition } from '@/components/page-transition';
+import { motion, AnimatePresence } from 'framer-motion';
+import { usePathname } from 'next/navigation';
 
 export default function RootLayout({
   children,
@@ -17,11 +18,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   const [loading, setLoading] = useState(true);
+  const pathname = usePathname();
 
   useEffect(() => {
     // This will run once after the component mounts on the client
     // It helps avoid hydration errors by ensuring the loading state is managed client-side
-    setLoading(false);
+    const timer = setTimeout(() => setLoading(false), 500); // Simulate loading
+    return () => clearTimeout(timer);
   }, []);
 
   return (
@@ -44,27 +47,38 @@ export default function RootLayout({
         />
       </head>
       <body className="animated-background">
-        {loading ? (
-          <GalaxyLoader />
-        ) : (
-          <FirebaseClientProvider>
-            <ThemeProvider
-              attribute="class"
-              defaultTheme="dark"
-              enableSystem
-              disableTransitionOnChange
-            >
-              <div className="relative flex min-h-screen flex-col main-container">
-                <Header />
-                <main className="flex-grow pt-8">
-                  <PageTransition>{children}</PageTransition>
-                </main>
-                <Footer />
-              </div>
-              <Toaster />
-            </ThemeProvider>
-          </FirebaseClientProvider>
-        )}
+        <AnimatePresence mode="wait">
+          {loading ? (
+            <motion.div key="loader">
+              <GalaxyLoader />
+            </motion.div>
+          ) : (
+            <FirebaseClientProvider>
+              <ThemeProvider
+                attribute="class"
+                defaultTheme="dark"
+                enableSystem
+                disableTransitionOnChange
+              >
+                <div className="relative flex min-h-screen flex-col main-container">
+                  <Header />
+                  <motion.main
+                    key={pathname}
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    transition={{ duration: 0.5, ease: 'easeInOut' }}
+                    className="flex-grow pt-8"
+                  >
+                    {children}
+                  </motion.main>
+                  <Footer />
+                </div>
+                <Toaster />
+              </ThemeProvider>
+            </FirebaseClientProvider>
+          )}
+        </AnimatePresence>
       </body>
     </html>
   );
