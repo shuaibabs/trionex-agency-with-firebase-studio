@@ -59,7 +59,7 @@ export default function Header() {
 
   return (
     <header className={cn('sticky top-0 z-50 w-full transition-all duration-300')}>
-      <div className="container mt-4">
+      <div className="container mt-6">
         <div className="flex h-16 items-center rounded-full border bg-background/95 backdrop-blur-sm supports-[backdrop-filter]:bg-background/60 shadow-lg px-4 sm:px-6">
           <Link href="/" className="mr-6 flex items-center">
             <Logo />
