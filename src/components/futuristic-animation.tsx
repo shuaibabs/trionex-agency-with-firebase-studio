@@ -69,7 +69,7 @@ const CSSIcon = () => (
         <path d="M4 3H20L18 19L12 21L6 19L4 3Z" fill="#1572B6"/>
         <path d="M12 5V19.5L17 18L18.5 5H12Z" fill="#33A9DC"/>
         <path d="M12 9H9.5L9.25 7H12V9ZM9.4 12H12V14H7.5L7.6 15L12 15V17L9.5 16.5L9.4 15.5H7.2L7.5 18L12 19.5V17.5" fill="white"/>
-        <path d="M12 9V7H16.75L16.5 9H12ZM12 12H16.25L16.1 14H12V12ZM12 15V17.5L14.5 16.5L14.7 15H12Z" fill="#EBEBEB"/>
+        <path d="M12 12H16.25L16.1 14H12V12ZM12 15V17.5L14.5 16.5L14.7 15H12Z" fill="#EBEBEB"/>
     </svg>
 );
 
@@ -204,3 +204,4 @@ export default function FuturisticAnimation() {
   );
 }
 
+    
