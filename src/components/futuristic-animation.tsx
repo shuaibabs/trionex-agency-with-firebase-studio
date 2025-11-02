@@ -91,60 +91,29 @@ const WordpressIcon = () => (
 // --- Planet Component ---
 const Planet = ({
   icon,
-  orbitRadius,
-  duration,
   initialAngle,
-  size,
-  zIndex,
-  scale,
+  orbitRadius
 }: {
   icon: React.ReactNode;
-  orbitRadius: number;
-  duration: number;
   initialAngle: number;
-  size: number;
-  zIndex: number;
-  scale: number;
+  orbitRadius: number;
 }) => {
+  const size = 36;
   return (
     <motion.div
-      className="absolute top-1/2 left-1/2"
+      className="absolute flex items-center justify-center"
       style={{
         width: size,
         height: size,
-        transformStyle: 'preserve-3d',
-        zIndex,
-      }}
-      animate={{
-        rotate: 360,
-      }}
-      transition={{
-        duration: duration,
-        repeat: Infinity,
-        ease: 'linear',
+        left: '50%',
+        top: '50%',
+        marginLeft: -size / 2,
+        marginTop: -size / 2,
+        transform: `rotate(${initialAngle}deg) translateX(${orbitRadius}px) rotate(${-initialAngle}deg)`,
+        transformOrigin: 'center center'
       }}
     >
-      <motion.div
-        className="absolute flex items-center justify-center"
-        style={{
-          width: size,
-          height: size,
-          left: '50%',
-          top: '50%',
-          marginLeft: -size / 2,
-          marginTop: -size / 2,
-          transform: `translateX(${orbitRadius}px) rotate(${initialAngle}deg)`,
-          transformOrigin: `-${orbitRadius}px center`,
-          scale,
-        }}
-      >
-        <motion.div
-            animate={{ rotate: -360 }}
-            transition={{ duration: duration, repeat: Infinity, ease: 'linear' }}
-        >
-            {icon}
-        </motion.div>
-      </motion.div>
+        {icon}
     </motion.div>
   );
 };
@@ -172,19 +141,19 @@ const Orbit = ({ radius, duration, angleX, angleY, children, ...props }: { radiu
 export default function FuturisticAnimation() {
   const planets = [
     // Inner Orbit
-    { id: 'react', icon: <ReactIcon />, orbitRadius: 80, duration: 12, initialAngle: 0, size: 36, scale: 1, zIndex: 10 },
-    { id: 'node', icon: <NodeIcon />, orbitRadius: 80, duration: 12, initialAngle: 180, size: 36, scale: 1, zIndex: 10 },
+    { id: 'react', icon: <ReactIcon />, orbitRadius: 80, initialAngle: 0 },
+    { id: 'node', icon: <NodeIcon />, orbitRadius: 80, initialAngle: 180 },
     
     // Middle Orbit
-    { id: 'js', icon: <JSIcon />, orbitRadius: 140, duration: 20, initialAngle: 45, size: 36, scale: 1, zIndex: 20 },
-    { id: 'html', icon: <HTMLIcon />, orbitRadius: 140, duration: 20, initialAngle: 135, size: 36, scale: 1, zIndex: 20 },
-    { id: 'css', icon: <CSSIcon />, orbitRadius: 140, duration: 20, initialAngle: 225, size: 36, scale: 1, zIndex: 20 },
-    { id: 'express', icon: <ExpressIcon />, orbitRadius: 140, duration: 20, initialAngle: 315, size: 36, scale: 1, zIndex: 20 },
+    { id: 'js', icon: <JSIcon />, orbitRadius: 140, initialAngle: 45 },
+    { id: 'html', icon: <HTMLIcon />, orbitRadius: 140, initialAngle: 135 },
+    { id: 'css', icon: <CSSIcon />, orbitRadius: 140, initialAngle: 225 },
+    { id: 'express', icon: <ExpressIcon />, orbitRadius: 140, initialAngle: 315 },
 
     // Outer Orbit
-    { id: 'google', icon: <GoogleIcon />, orbitRadius: 200, duration: 30, initialAngle: 90, size: 36, scale: 1, zIndex: 30 },
-    { id: 'meta', icon: <MetaIcon />, orbitRadius: 200, duration: 30, initialAngle: 270, size: 36, scale: 1, zIndex: 30 },
-    { id: 'wordpress', icon: <WordpressIcon />, orbitRadius: 200, duration: 30, initialAngle: 0, size: 36, scale: 1, zIndex: 30 },
+    { id: 'google', icon: <GoogleIcon />, orbitRadius: 200, initialAngle: 90 },
+    { id: 'meta', icon: <MetaIcon />, orbitRadius: 200, initialAngle: 270 },
+    { id: 'wordpress', icon: <WordpressIcon />, orbitRadius: 200, initialAngle: 0 },
   ];
 
   return (
@@ -214,15 +183,24 @@ export default function FuturisticAnimation() {
               ease: "easeInOut",
           }}
         >
-          <Orbit radius={80} duration={12} angleX={60} angleY={20}/>
-          <Orbit radius={140} duration={20} angleX={60} angleY={20}/>
-          <Orbit radius={200} duration={30} angleX={60} angleY={20}/>
-
-          {planets.map(planet => (
-            <Planet key={planet.id} {...planet} />
-          ))}
+          <Orbit radius={80} duration={12} angleX={60} angleY={20}>
+              <Planet icon={<ReactIcon />} initialAngle={0} orbitRadius={80} />
+              <Planet icon={<NodeIcon />} initialAngle={180} orbitRadius={80} />
+          </Orbit>
+          <Orbit radius={140} duration={20} angleX={60} angleY={20}>
+              <Planet icon={<JSIcon />} initialAngle={45} orbitRadius={140} />
+              <Planet icon={<HTMLIcon />} initialAngle={135} orbitRadius={140} />
+              <Planet icon={<CSSIcon />} initialAngle={225} orbitRadius={140} />
+              <Planet icon={<ExpressIcon />} initialAngle={315} orbitRadius={140} />
+          </Orbit>
+          <Orbit radius={200} duration={30} angleX={60} angleY={20}>
+              <Planet icon={<GoogleIcon />} initialAngle={90} orbitRadius={200} />
+              <Planet icon={<MetaIcon />} initialAngle={270} orbitRadius={200} />
+              <Planet icon={<WordpressIcon />} initialAngle={0} orbitRadius={200} />
+          </Orbit>
         </motion.div>
       </div>
     </div>
   );
 }
+
