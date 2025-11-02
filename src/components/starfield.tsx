@@ -29,7 +29,7 @@ const Star = ({
           top: `${y}%`,
           width: size,
           height: size,
-          boxShadow: '0 0 4px #fff, 0 0 8px #fff',
+          boxShadow: '0 0 8px #fff, 0 0 16px #fff',
         }}
         animate={{
           x: [0, Math.random() * 200 - 100, 0],
@@ -55,7 +55,7 @@ const Star = ({
         top: `${y}%`,
         width: size,
         height: size,
-        boxShadow: '0 0 4px #fff, 0 0 8px #fff',
+        boxShadow: '0 0 8px #fff, 0 0 16px #fff',
       }}
       animate={{
         opacity: [0.2, 1, 0.2],
@@ -98,10 +98,82 @@ const Moon = () => {
   );
 };
 
+const Spaceship = ({
+  initialX,
+  initialY,
+  finalX,
+  duration,
+  delay = 0,
+  isFlipped = false,
+}: {
+  initialX: string;
+  initialY: string;
+  finalX: string;
+  duration: number;
+  delay?: number;
+  isFlipped?: boolean;
+}) => {
+  return (
+    <motion.div
+      className="absolute text-white"
+      style={{
+        top: initialY,
+        scale: 0.5,
+        transform: isFlipped ? 'scaleX(-1)' : 'scaleX(1)',
+      }}
+      animate={{
+        x: [initialX, finalX],
+      }}
+      transition={{
+        duration,
+        delay,
+        repeat: Infinity,
+        repeatType: 'loop',
+        ease: 'linear',
+      }}
+    >
+      <svg
+        width="50"
+        height="50"
+        viewBox="0 0 24 24"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M3.5 11L11.5 3L14.5 6L11.5 9H16.5L21.5 4V9L18.5 12L21.5 15V20L16.5 15H11.5L14.5 18L11.5 21L3.5 13H9.5V11H3.5Z"
+          fill="currentColor"
+        />
+        <motion.div
+          style={{
+            position: 'absolute',
+            right: isFlipped ? 'auto' : '-10px',
+            left: isFlipped ? '-10px' : 'auto',
+            top: '50%',
+            y: '-50%',
+            width: '10px',
+            height: '4px',
+            borderRadius: '2px',
+            background: 'hsl(var(--primary))',
+            boxShadow: '0 0 10px 2px hsl(var(--primary))',
+          }}
+          animate={{
+            scaleX: [1, 2, 1],
+            opacity: [0.7, 1, 0.7],
+          }}
+          transition={{
+            duration: 0.5,
+            repeat: Infinity,
+            repeatType: 'mirror',
+          }}
+        />
+      </svg>
+    </motion.div>
+  );
+};
 
 export function Starfield({
-  starCount = 200,
-  movingStarCount = 20,
+  starCount = 300,
+  movingStarCount = 50,
   className,
 }: {
   starCount?: number;
@@ -119,7 +191,7 @@ export function Starfield({
           id: i,
           x: Math.random() * 100,
           y: Math.random() * 100,
-          size: Math.random() * (isMoving ? 2.5 : 1.5) + 1,
+          size: Math.random() * (isMoving ? 3 : 2) + 1,
           duration: isMoving
             ? Math.random() * 20 + 20
             : Math.random() * 5 + 3,
@@ -144,6 +216,28 @@ export function Starfield({
       {stars.map((star) => (
         <Star key={star.id} {...star} />
       ))}
+      <Spaceship
+        initialX="-10vw"
+        initialY="20%"
+        finalX="110vw"
+        duration={20}
+        delay={0}
+      />
+      <Spaceship
+        initialX="110vw"
+        initialY="40%"
+        finalX="-10vw"
+        duration={15}
+        delay={5}
+        isFlipped
+      />
+      <Spaceship
+        initialX="-10vw"
+        initialY="70%"
+        finalX="110vw"
+        duration={25}
+        delay={10}
+      />
     </div>
   );
 }
