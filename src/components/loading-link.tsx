@@ -17,6 +17,8 @@ export default function LoadingLink({ children, onClick, ...props }: LoadingLink
   const { startLoading } = useLoading();
 
   const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    // We are starting the loading state on click.
+    // The `NavigationEvents` component will handle stopping the loading state.
     startLoading();
     if (onClick) {
       onClick();
