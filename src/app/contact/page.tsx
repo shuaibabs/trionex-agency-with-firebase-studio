@@ -117,8 +117,8 @@ export default function ContactPage() {
                 </div>
                 <div>
                   <h3 className="font-semibold text-lg">Phone</h3>
-                  <a href="tel:+911234567890" className="text-muted-foreground hover:text-primary text-sm sm:text-base">
-                    +91 12345 67890
+                  <a href="tel:+919258724441" className="text-muted-foreground hover:text-primary text-sm sm:text-base">
+                    +91 9258724441
                   </a>
                 </div>
               </div>
