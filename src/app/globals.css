@@ -171,4 +171,8 @@
   .card-glow-on-hover:hover:before {
     left: 100%;
   }
+  
+  .map-dark-mode {
+    filter: grayscale(1) invert(0.9) hue-rotate(180deg);
+  }
 }

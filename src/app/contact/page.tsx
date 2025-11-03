@@ -135,9 +135,16 @@ export default function ContactPage() {
                 </div>
               </div>
             </div>
-            {/* Placeholder for map */}
-            <div className="h-64 bg-secondary rounded-lg flex items-center justify-center">
-              <p className="text-muted-foreground">Google Maps Placeholder</p>
+             <div className="h-96 w-full rounded-lg overflow-hidden border">
+                <iframe
+                    className="h-full w-full map-dark-mode"
+                    src="https://maps.google.com/maps?q=Jalalabad,%20Shamli,%20Uttar%20Pradesh,%20247772&t=&z=13&ie=UTF8&iwloc=&output=embed"
+                    frameBorder="0"
+                    scrolling="no"
+                    marginHeight={0}
+                    marginWidth={0}
+                    loading="lazy"
+                ></iframe>
             </div>
           </div>
 
