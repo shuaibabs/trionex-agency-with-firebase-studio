@@ -3,6 +3,7 @@
 
 import { usePathname } from 'next/navigation';
 import { useState, useEffect } from 'react';
+import Link from 'next/link';
 import { Menu, X, LogOut } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
@@ -20,7 +21,6 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
-import LoadingLink from '../loading-link';
 
 const navLinks = [
   { href: '/', label: 'Home' },
@@ -28,7 +28,7 @@ const navLinks = [
   { href: '/portfolio', label: 'Portfolio' },
   { href: '/blog', label: 'Blog' },
   { href: '/about', label: 'About' },
-  { href: '/pricing', label: 'Pricing' },
+  { href: '/packages', label: 'Packages' },
   { href: '/contact', label: 'Contact' },
 ];
 
@@ -60,14 +60,14 @@ export default function Header() {
     <header className={cn('sticky top-0 z-50 w-full transition-all duration-300')}>
         <div className="container mx-auto px-4">
             <div className="mt-2 flex h-16 items-center rounded-full border bg-background/95 backdrop-blur-sm supports-[backdrop-filter]:bg-background/60 px-4 shadow-lg sm:px-6">
-                <LoadingLink href="/" className="mr-6 flex items-center">
+                <Link href="/" className="mr-6 flex items-center">
                   <Logo />
-                </LoadingLink>
+                </Link>
 
                 {/* Desktop Navigation */}
                 <nav className="hidden lg:flex lg:items-center lg:gap-6 text-sm font-medium">
                 {navLinks.map(({ href, label }) => (
-                    <LoadingLink
+                    <Link
                       key={href}
                       href={href}
                       className={cn(
@@ -76,7 +76,7 @@ export default function Header() {
                       )}
                     >
                     {label}
-                    </LoadingLink>
+                    </Link>
                 ))}
                 </nav>
 
@@ -107,7 +107,7 @@ export default function Header() {
                         </DropdownMenuLabel>
                         <DropdownMenuSeparator />
                         <DropdownMenuItem asChild>
-                            <LoadingLink href="/dashboard">Dashboard</LoadingLink>
+                            <Link href="/dashboard">Dashboard</Link>
                         </DropdownMenuItem>
                         <DropdownMenuSeparator />
                         <DropdownMenuItem onClick={handleLogout} className="cursor-pointer">
@@ -119,10 +119,10 @@ export default function Header() {
                     ) : (
                     <div className="hidden md:flex items-center gap-2">
                         <Button variant="ghost" asChild>
-                          <LoadingLink href="/login">Login</LoadingLink>
+                          <Link href="/login">Login</Link>
                         </Button>
                         <Button asChild>
-                          <LoadingLink href="/signup">Sign Up</LoadingLink>
+                          <Link href="/signup">Sign Up</Link>
                         </Button>
                     </div>
                     ))}
@@ -138,15 +138,15 @@ export default function Header() {
                     <SheetContent side="left">
                     <div className="flex flex-col h-full">
                         <div className="flex items-center justify-between border-b pb-4">
-                        <LoadingLink href="/" onClick={() => setMobileMenuOpen(false)}>
+                        <Link href="/" onClick={() => setMobileMenuOpen(false)}>
                             <Logo />
-                        </LoadingLink>
+                        </Link>
                         </div>
                         <nav className="flex-grow mt-6">
                         <ul className="space-y-4">
                             {navLinks.map(({ href, label }) => (
                             <li key={href}>
-                                <LoadingLink
+                                <Link
                                 href={href}
                                 onClick={() => setMobileMenuOpen(false)}
                                 className={cn(
@@ -155,7 +155,7 @@ export default function Header() {
                                 )}
                                 >
                                 {label}
-                                </LoadingLink>
+                                </Link>
                             </li>
                             ))}
                         </ul>
@@ -164,7 +164,7 @@ export default function Header() {
                         {user ? (
                             <div className="flex flex-col gap-4">
                                 <Button variant="outline" asChild>
-                                    <LoadingLink href="/dashboard">Go to Dashboard</LoadingLink>
+                                    <Link href="/dashboard">Go to Dashboard</Link>
                                 </Button>
                                 <Button onClick={handleLogout} className="w-full">
                                 Log Out
@@ -173,14 +173,14 @@ export default function Header() {
                         ) : (
                             <div className="flex flex-col gap-4">
                             <Button asChild className="w-full">
-                                <LoadingLink href="/login" onClick={() => setMobileMenuOpen(false)}>
+                                <Link href="/login" onClick={() => setMobileMenuOpen(false)}>
                                 Login
-                                </LoadingLink>
+                                </Link>
                             </Button>
                             <Button variant="outline" asChild className="w-full">
-                                <LoadingLink href="/signup" onClick={() => setMobileMenuOpen(false)}>
+                                <Link href="/signup" onClick={() => setMobileMenuOpen(false)}>
                                 Sign Up
-                                </LoadingLink>
+                                </Link>
                             </Button>
                             </div>
                         )}
