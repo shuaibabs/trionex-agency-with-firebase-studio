@@ -135,7 +135,7 @@ export default function ContactPage() {
                 </div>
               </div>
             </div>
-             <div className="h-96 w-full rounded-lg overflow-hidden border">
+             <div className="h-80 w-full rounded-lg overflow-hidden border">
                 <iframe
                     className="h-full w-full"
                     src="https://maps.google.com/maps?q=Jalalabad,%20Shamli,%20Uttar%20Pradesh,%20247772&t=&z=13&ie=UTF8&iwloc=&output=embed"
