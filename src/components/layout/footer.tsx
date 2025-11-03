@@ -13,7 +13,6 @@ const footerNavs = [
       { href: '/pricing', name: 'Pricing' },
       { href: '/services', name: 'Services' },
       { href: '/portfolio', name: 'Case Studies' },
-      { href: '/roi-calculator', name: 'ROI Calculator' },
     ],
   },
   {
