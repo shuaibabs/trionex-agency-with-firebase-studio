@@ -129,8 +129,7 @@ export default function ContactPage() {
                 <div>
                   <h3 className="font-semibold text-lg">Office</h3>
                   <p className="text-muted-foreground text-sm sm:text-base">
-                    123 Innovation Drive, Tech Park, <br />
-                    Bengaluru, Karnataka 560100, India
+                    Jalalabad, Shamli, Uttar Pradesh, 247772, India
                   </p>
                 </div>
               </div>
