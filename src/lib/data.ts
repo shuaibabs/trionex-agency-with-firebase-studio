@@ -406,7 +406,7 @@ export const caseStudies: CaseStudy[] = [
                 "https://picsum.photos/seed/cs8-ss2/1280/720"
             ],
             "screenshotsAspectRatio": "16:9",
-            "youtubeVideo": "https://www.youtube.com/watch?v=-JbofnRpV0U"
+            "youtubeVideo": "https://youtu.be/-JbofnRpV0U?si=KAIuvSvjF2K07lVM"
         },
         "locales": {
             "en": {

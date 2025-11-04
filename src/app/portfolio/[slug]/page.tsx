@@ -36,14 +36,22 @@ export default function CaseStudyPage() {
 
   const getYouTubeEmbedUrl = (url: string) => {
     if (!url) return null;
-    const videoId = url.split('v=')[1];
-    if (!videoId) return null;
+    let videoId;
+    if (url.includes('youtu.be/')) {
+        videoId = url.split('youtu.be/')[1];
+    } else if (url.includes('watch?v=')) {
+        videoId = url.split('watch?v=')[1];
+    } else {
+        return null; // Not a standard YouTube URL
+    }
+
     const ampersandPosition = videoId.indexOf('&');
     if (ampersandPosition !== -1) {
-      return `https://www.youtube.com/embed/${videoId.substring(0, ampersandPosition)}`;
+        videoId = videoId.substring(0, ampersandPosition);
     }
     return `https://www.youtube.com/embed/${videoId}`;
   };
+
 
   const youtubeEmbedUrl = getYouTubeEmbedUrl(study.preview.youtubeVideo);
 
@@ -52,7 +60,7 @@ export default function CaseStudyPage() {
     setOpen(true);
   };
   
-  const hasMedia = study.preview.screenshots.length > 0 || youtubeEmbedUrl;
+  const hasMedia = study.preview.screenshots.length > 0;
 
   const handleNextImage = (e: React.MouseEvent) => {
     e.stopPropagation();
@@ -113,7 +121,6 @@ export default function CaseStudyPage() {
                   {hasMedia && (
                       <Card className="overflow-hidden">
                         <CardContent className="p-0">
-                          {study.preview.screenshots.length > 0 ? (
                             <Carousel 
                             plugins={[plugin.current]}
                             className="w-full"
@@ -142,25 +149,27 @@ export default function CaseStudyPage() {
                                 <CarouselNext className="right-4" />
                               </>}
                             </Carousel>
-                          ) : youtubeEmbedUrl ? (
-                            <div className="aspect-video relative bg-black">
-                                <iframe
-                                    src={youtubeEmbedUrl}
-                                    title="YouTube video player"
-                                    frameBorder="0"
-                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                    allowFullScreen
-                                    className="w-full h-full"
-                                ></iframe>
-                            </div>
-                          ) : (
-                            <div className="aspect-video relative bg-muted flex items-center justify-center">
-                              <Youtube className="h-16 w-16 text-muted-foreground" />
-                            </div>
-                          )}
                         </CardContent>
                       </Card>
                   )}
+
+                  {youtubeEmbedUrl && (
+                        <section>
+                            <h2 className="font-headline text-3xl font-bold tracking-tight mb-4 flex items-center gap-3"><Youtube className="h-7 w-7 text-red-500"/>Project Demo</h2>
+                            <Card className="overflow-hidden">
+                                <div className="aspect-video relative bg-black">
+                                    <iframe
+                                        src={youtubeEmbedUrl}
+                                        title="YouTube video player"
+                                        frameBorder="0"
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                        allowFullScreen
+                                        className="w-full h-full"
+                                    ></iframe>
+                                </div>
+                            </Card>
+                        </section>
+                    )}
                   
                   <section>
                       <h2 className="font-headline text-3xl font-bold tracking-tight mb-4 flex items-center gap-3"><Trophy className="h-7 w-7 text-amber-500"/>Key Results</h2>
@@ -277,5 +286,3 @@ export default function CaseStudyPage() {
     </article>
   );
 }
-
-    
