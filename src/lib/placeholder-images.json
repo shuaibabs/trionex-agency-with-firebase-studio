@@ -217,16 +217,40 @@
       "imageHint": "business office"
     },
     {
+      "id": "service-image-1-2",
+      "description": "A person's hands typing on a laptop keyboard.",
+      "imageUrl": "https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?q=80&w=2070&auto=format&fit=crop",
+      "imageHint": "laptop typing"
+    },
+    {
+      "id": "service-image-1-3",
+      "description": "A clean and modern website layout displayed on a monitor.",
+      "imageUrl": "https://images.unsplash.com/photo-1547658719-da2b51169166?q=80&w=1964&auto=format&fit=crop",
+      "imageHint": "website layout"
+    },
+    {
       "id": "service-image-2",
       "description": "A developer collaborating with a colleague, pointing at code on a screen.",
       "imageUrl": "https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=2070&auto=format&fit=crop",
       "imageHint": "web application"
     },
     {
+      "id": "service-image-2-2",
+      "description": "Flowchart and diagrams on a whiteboard representing application architecture.",
+      "imageUrl": "https://images.unsplash.com/photo-1517048676732-d65bc937f952?q=80&w=2070&auto=format&fit=crop",
+      "imageHint": "architecture planning"
+    },
+    {
       "id": "service-image-3",
       "description": "A sleek, modern e-commerce website displayed on a laptop screen.",
       "imageUrl": "https://images.unsplash.com/photo-1585241936939-be4099591252?q=80&w=2070&auto=format&fit=crop",
       "imageHint": "ecommerce website"
+    },
+    {
+      "id": "service-image-3-2",
+      "description": "A person making a purchase online with a credit card.",
+      "imageUrl": "https://images.unsplash.com/photo-1563013544-824ae1b704d3?q=80&w=2070&auto=format&fit=crop",
+      "imageHint": "online purchase"
     },
     {
       "id": "service-image-4",
@@ -271,10 +295,22 @@
       "imageHint": "seo research"
     },
     {
+      "id": "service-image-10-2",
+      "description": "A graph showing upward trending analytics data on a screen.",
+      "imageUrl": "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?q=80&w=2076&auto=format&fit=crop",
+      "imageHint": "analytics data"
+    },
+    {
       "id": "service-image-11",
       "description": "A person clicking on a paid search ad on a laptop.",
       "imageUrl": "https://images.unsplash.com/photo-1599658880111-35c6fab47a69?q=80&w=2070&auto=format&fit=crop",
       "imageHint": "ppc advertising"
+    },
+    {
+      "id": "service-image-11-2",
+      "description": "Facebook and Instagram ads displayed on a mobile phone.",
+      "imageUrl": "https://images.unsplash.com/photo-1611162616805-6a406bde6858?q=80&w=1974&auto=format&fit=crop",
+      "imageHint": "social ads"
     },
     {
       "id": "service-image-12",

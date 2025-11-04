@@ -18,7 +18,7 @@ export default function ServiceDetailPage({ params }: { params: { slug: string }
   }
 
   const relatedCaseStudies = caseStudies.filter(cs => service.caseStudyIds.includes(String(cs.id)));
-  const serviceImageId = `service-${service.id.substring(0,10)}`;
+  const serviceImageId = `service-${service.id}`;
   const serviceImage = placeholderImages.find(p => p.id === serviceImageId);
   
   const cardVariants = {

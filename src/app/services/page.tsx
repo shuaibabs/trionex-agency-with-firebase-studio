@@ -1,5 +1,6 @@
 
 'use client';
+import React from 'react';
 import { ArrowRight } from 'lucide-react';
 import LoadingLink from '@/components/loading-link';
 import { Button } from '@/components/ui/button';
@@ -7,6 +8,8 @@ import { Card, CardContent, CardHeader, CardTitle, CardFooter } from '@/componen
 import { services, placeholderImages } from '@/lib/data';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
+import { Carousel, CarouselContent, CarouselItem } from '@/components/ui/carousel';
+import Autoplay from "embla-carousel-autoplay";
 
 
 export default function ServicesPage() {
@@ -34,7 +37,7 @@ export default function ServicesPage() {
           <h2 className="font-headline text-3xl font-bold tracking-tight mb-8 text-center sm:text-4xl">Web Development Solutions</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {webDevServices.map((service, i) => {
-              const serviceImage = placeholderImages.find(p => p.id === service.imageId);
+              const serviceImages = service.imageIds.map(id => placeholderImages.find(p => p.id === id)).filter(Boolean);
               return (
               <motion.div
                 key={service.id}
@@ -48,17 +51,38 @@ export default function ServicesPage() {
                 <Card
                   className="flex flex-col transform transition-transform duration-300 hover:-translate-y-2 hover:shadow-xl h-full group overflow-hidden"
                 >
-                  {serviceImage && (
-                    <div className="aspect-video relative">
-                      <Image
-                        src={serviceImage.imageUrl}
-                        alt={service.title}
-                        fill
-                        className="object-cover transition-transform duration-300 group-hover:scale-105"
-                        data-ai-hint={serviceImage.imageHint}
-                      />
-                    </div>
-                  )}
+                  <Carousel 
+                      className="w-full" 
+                      plugins={[
+                        Autoplay({
+                          delay: 2000 + Math.random() * 1000,
+                          stopOnInteraction: true,
+                        }),
+                      ]}
+                      opts={{ loop: true }}
+                    >
+                    <CarouselContent>
+                        {serviceImages.length > 0 ? serviceImages.map((img, index) => (
+                            <CarouselItem key={index}>
+                                <div className="aspect-video relative overflow-hidden">
+                                <Image
+                                    src={img!.imageUrl}
+                                    alt={img!.description}
+                                    fill
+                                    className="object-cover transition-transform duration-300 group-hover:scale-105"
+                                    data-ai-hint={img!.imageHint}
+                                />
+                                </div>
+                            </CarouselItem>
+                        )) : (
+                              <CarouselItem>
+                                <div className="aspect-video relative overflow-hidden bg-secondary flex items-center justify-center">
+                                  <p className="text-muted-foreground">No Image</p>
+                                </div>
+                            </CarouselItem>
+                        )}
+                    </CarouselContent>
+                  </Carousel>
                   <CardHeader>
                     <CardTitle className="font-headline text-xl md:text-2xl">
                       {service.title}
@@ -87,7 +111,7 @@ export default function ServicesPage() {
           <h2 className="font-headline text-3xl font-bold tracking-tight mb-8 text-center sm:text-4xl">Digital Marketing Services</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {marketingServices.map((service, i) => {
-              const serviceImage = placeholderImages.find(p => p.id === service.imageId);
+              const serviceImages = service.imageIds.map(id => placeholderImages.find(p => p.id === id)).filter(Boolean);
               return (
               <motion.div
                   key={service.id}
@@ -101,17 +125,38 @@ export default function ServicesPage() {
                   <Card
                   className="flex flex-col transform transition-transform duration-300 hover:-translate-y-2 hover:shadow-xl h-full group overflow-hidden"
                   >
-                    {serviceImage && (
-                      <div className="aspect-video relative">
-                        <Image
-                          src={serviceImage.imageUrl}
-                          alt={service.title}
-                          fill
-                          className="object-cover transition-transform duration-300 group-hover:scale-105"
-                          data-ai-hint={serviceImage.imageHint}
-                        />
-                      </div>
-                    )}
+                    <Carousel 
+                      className="w-full" 
+                      plugins={[
+                        Autoplay({
+                          delay: 2000 + Math.random() * 1000,
+                          stopOnInteraction: true,
+                        }),
+                      ]}
+                      opts={{ loop: true }}
+                    >
+                    <CarouselContent>
+                        {serviceImages.length > 0 ? serviceImages.map((img, index) => (
+                            <CarouselItem key={index}>
+                                <div className="aspect-video relative overflow-hidden">
+                                <Image
+                                    src={img!.imageUrl}
+                                    alt={img!.description}
+                                    fill
+                                    className="object-cover transition-transform duration-300 group-hover:scale-105"
+                                    data-ai-hint={img!.imageHint}
+                                />
+                                </div>
+                            </CarouselItem>
+                        )) : (
+                            <CarouselItem>
+                                <div className="aspect-video relative overflow-hidden bg-secondary flex items-center justify-center">
+                                  <p className="text-muted-foreground">No Image</p>
+                                </div>
+                            </CarouselItem>
+                        )}
+                    </CarouselContent>
+                  </Carousel>
                     <CardHeader>
                       <CardTitle className="font-headline text-xl md:text-2xl">
                       {service.title}

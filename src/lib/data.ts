@@ -1,4 +1,5 @@
 
+
 import type { Service, Package, CaseStudy, BlogPost, Testimonial, TeamMember, Client, PlaceholderImage } from './types';
 import placeholderData from './placeholder-images.json';
 
@@ -21,7 +22,7 @@ export const services: Service[] = [
     ],
     caseStudyIds: ['1'],
     category: 'Web Development',
-    imageId: 'service-image-1'
+    imageIds: ['service-image-1', 'service-image-1-2', 'service-image-1-3']
   },
   {
     id: 'custom-web-application',
@@ -39,7 +40,7 @@ export const services: Service[] = [
     ],
     caseStudyIds: ['2'],
     category: 'Web Development',
-    imageId: 'service-image-2'
+    imageIds: ['service-image-2', 'service-image-2-2']
   },
   {
     id: 'ecommerce-website',
@@ -57,7 +58,7 @@ export const services: Service[] = [
     ],
     caseStudyIds: ['3'],
     category: 'Web Development',
-    imageId: 'service-image-3'
+    imageIds: ['service-image-3', 'service-image-3-2']
   },
   {
     id: 'startup-mvp-development',
@@ -75,7 +76,7 @@ export const services: Service[] = [
     ],
     caseStudyIds: [],
     category: 'Web Development',
-    imageId: 'service-image-4'
+    imageIds: ['service-image-4']
   },
    {
     id: 'real-estate-website-development',
@@ -93,7 +94,7 @@ export const services: Service[] = [
     ],
     caseStudyIds: [],
     category: 'Web Development',
-    imageId: 'service-image-5'
+    imageIds: ['service-image-5']
   },
     {
     id: 'college-school-website-development',
@@ -111,7 +112,7 @@ export const services: Service[] = [
     ],
     caseStudyIds: [],
     category: 'Web Development',
-    imageId: 'service-image-6'
+    imageIds: ['service-image-6']
   },
   {
     id: 'healthcare-clinic-website-development',
@@ -129,7 +130,7 @@ export const services: Service[] = [
     ],
     caseStudyIds: [],
     category: 'Web Development',
-    imageId: 'service-image-7'
+    imageIds: ['service-image-7']
   },
   {
     id: 'portfolio-personal-branding-websites',
@@ -147,7 +148,7 @@ export const services: Service[] = [
     ],
     caseStudyIds: [],
     category: 'Web Development',
-    imageId: 'service-image-8'
+    imageIds: ['service-image-8']
   },
    {
     id: 'landing-page-design-development',
@@ -165,7 +166,7 @@ export const services: Service[] = [
     ],
     caseStudyIds: [],
     category: 'Web Development',
-    imageId: 'service-image-9'
+    imageIds: ['service-image-9']
   },
   {
     id: 'seo-optimization',
@@ -183,7 +184,7 @@ export const services: Service[] = [
     ],
     caseStudyIds: ['4'],
     category: 'Digital Marketing',
-    imageId: 'service-image-10'
+    imageIds: ['service-image-10', 'service-image-10-2']
   },
   {
     id: 'ppc-advertising',
@@ -201,7 +202,7 @@ export const services: Service[] = [
     ],
     caseStudyIds: ['5'],
     category: 'Digital Marketing',
-    imageId: 'service-image-11'
+    imageIds: ['service-image-11', 'service-image-11-2']
   },
   {
     id: 'social-media-marketing',
@@ -219,7 +220,7 @@ export const services: Service[] = [
     ],
     caseStudyIds: ['6'],
     category: 'Digital Marketing',
-    imageId: 'service-image-12'
+    imageIds: ['service-image-12']
   },
   {
     id: 'content-marketing',
@@ -237,7 +238,7 @@ export const services: Service[] = [
     ],
     caseStudyIds: [],
     category: 'Digital Marketing',
-    imageId: 'service-image-13'
+    imageIds: ['service-image-13']
   },
 ];
 
