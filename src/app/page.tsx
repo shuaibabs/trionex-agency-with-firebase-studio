@@ -336,16 +336,24 @@ export default function Home() {
                             Ready to Start Your Project?
                         </h2>
                         <p className="text-base md:text-lg text-muted-foreground max-w-md mx-auto md:mx-0">
-                            Let's talk about how Trionex Digital can help you achieve your
+                            Let's talk about how Synergy Digital can help you achieve your
                             goals. Schedule a free consultation today.
                         </p>
                         <motion.div
-                          whileHover={{ scale: 1.05 }}
-                          whileTap={{ scale: 0.95 }}
+                          animate={{
+                            scale: [1, 1.05, 1],
+                          }}
+                          transition={{
+                            duration: 2,
+                            repeat: Infinity,
+                            ease: "easeInOut",
+                          }}
+                          className="inline-block"
                         >
                             <Button
                                 size="lg"
                                 asChild
+                                className="shadow-lg shadow-primary/30"
                             >
                                 <LoadingLink href="/contact">
                                 Schedule a meeting <ArrowRight className="ml-2 h-5 w-5" />
@@ -354,7 +362,18 @@ export default function Home() {
                         </motion.div>
                     </div>
                     <div className="relative h-48 md:h-full flex items-center justify-center">
-                        <MessageSquareQuote className="w-24 h-24 md:w-32 md:h-32 text-primary/20" />
+                         <motion.div
+                            animate={{
+                                y: [-10, 10, -10],
+                            }}
+                            transition={{
+                                duration: 5,
+                                repeat: Infinity,
+                                ease: "easeInOut",
+                            }}
+                         >
+                            <MessageSquareQuote className="w-24 h-24 md:w-32 md:h-32 text-primary/20" />
+                        </motion.div>
                     </div>
                 </div>
             </div>
