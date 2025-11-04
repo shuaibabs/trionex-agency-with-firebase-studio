@@ -254,7 +254,6 @@ export default function ContactPage() {
                       <FormControl>
                         <Textarea
                           placeholder="Tell us more about your project requirements..."
-                          className="resize-none"
                           {...field}
                           rows={4}
                         />
