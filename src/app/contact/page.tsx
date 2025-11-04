@@ -27,7 +27,8 @@ import { useSearchParams } from 'next/navigation';
 
 const allOfferings = [
   ...services.map(s => ({ id: s.id, title: s.title, type: 'Service' })),
-  ...packages.map(p => ({ id: p.id, title: p.title, type: 'Package' }))
+  ...packages.map(p => ({ id: p.id, title: p.title, type: 'Package' })),
+  { id: 'custom', title: 'Custom Service/Package', type: 'Custom Inquiry' }
 ];
 
 const formSchema = z.object({
