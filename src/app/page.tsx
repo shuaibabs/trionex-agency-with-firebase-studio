@@ -339,14 +339,19 @@ export default function Home() {
                             Let's talk about how Trionex Digital can help you achieve your
                             goals. Schedule a free consultation today.
                         </p>
-                        <Button
-                            size="lg"
-                            asChild
+                        <motion.div
+                          whileHover={{ scale: 1.05 }}
+                          whileTap={{ scale: 0.95 }}
                         >
-                            <LoadingLink href="/contact">
-                            Schedule a Call <ArrowRight className="ml-2 h-5 w-5" />
-                            </LoadingLink>
-                        </Button>
+                            <Button
+                                size="lg"
+                                asChild
+                            >
+                                <LoadingLink href="/contact">
+                                Schedule a meeting <ArrowRight className="ml-2 h-5 w-5" />
+                                </LoadingLink>
+                            </Button>
+                        </motion.div>
                     </div>
                     <div className="relative h-48 md:h-full flex items-center justify-center">
                         <MessageSquareQuote className="w-24 h-24 md:w-32 md:h-32 text-primary/20" />
