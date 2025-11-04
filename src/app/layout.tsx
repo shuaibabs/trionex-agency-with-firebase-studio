@@ -7,7 +7,7 @@ import Header from '@/components/layout/header';
 import Footer from '@/components/layout/footer';
 import { Toaster } from '@/components/ui/toaster';
 import { FirebaseClientProvider } from '@/firebase/client-provider';
-import { Suspense, useEffect } from 'react';
+import { Suspense } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { usePathname } from 'next/navigation';
 import { GlobalLoader } from '@/components/global-loader';
@@ -35,13 +35,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   const pathname = usePathname();
-  const { isLoading, stopLoading } = useLoading();
-
-  useEffect(() => {
-    // On initial mount, stop the loading, since it's defaulted to true now.
-    stopLoading();
-  }, [stopLoading]);
-
+  const { isLoading } = useLoading();
 
   return (
     <html lang="en" suppressHydrationWarning>
