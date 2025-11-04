@@ -71,6 +71,7 @@ export interface BlogPost {
     name: string;
     avatarId: string;
   };
+  tags: string[];
 }
 
 export interface Testimonial {
