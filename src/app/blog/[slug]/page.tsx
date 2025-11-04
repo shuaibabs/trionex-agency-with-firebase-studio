@@ -1,4 +1,6 @@
 
+'use client';
+
 import { notFound } from 'next/navigation';
 import Image from 'next/image';
 import { blogPosts, placeholderImages } from '@/lib/data';
@@ -7,12 +9,6 @@ import { Button } from '@/components/ui/button';
 import LoadingLink from '@/components/loading-link';
 import { ArrowLeft, Clock, Calendar } from 'lucide-react';
 import { motion } from 'framer-motion';
-
-export async function generateStaticParams() {
-  return blogPosts.map((post) => ({
-    slug: post.slug,
-  }));
-}
 
 export default function BlogPostPage({ params }: { params: { slug:string } }) {
   const post = blogPosts.find((p) => p.slug === params.slug);
