@@ -35,9 +35,9 @@ const footerNavs = [
 ];
 
 const socialLinks = [
-  { icon: <Instagram className="h-5 w-5" />, href: '#', label: 'Instagram' },
-  { icon: <Facebook className="h-5 w-5" />, href: '#', label: 'Facebook' },
-  { icon: <Linkedin className="h-5 w-5" />, href: '#', label: 'LinkedIn' },
+  { icon: <Instagram className="h-6 w-6" />, href: '#', label: 'Instagram' },
+  { icon: <Facebook className="h-6 w-6" />, href: '#', label: 'Facebook' },
+  { icon: <Linkedin className="h-6 w-6" />, href: '#', label: 'LinkedIn' },
 ];
 
 export default function Footer() {
@@ -88,7 +88,7 @@ export default function Footer() {
                   asChild
                   variant="ghost"
                   size="icon"
-                  className="text-muted-foreground hover:text-primary"
+                  className="text-muted-foreground hover:text-primary transition-transform hover:scale-110"
               >
                   <LoadingLink
                       href={link.href}
