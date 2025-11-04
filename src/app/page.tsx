@@ -35,21 +35,6 @@ import { Starfield } from '@/components/starfield';
 import Autoplay from "embla-carousel-autoplay";
 
 
-const serviceIcons: { [key: string]: React.ElementType } = {
-  'business-website-development': Code,
-  'seo-optimization': Search,
-  'ppc-advertising': BarChart,
-  'content-marketing': PenTool,
-  'ecommerce-website': Code,
-  'social-media-marketing': Users,
-  'real-estate-website-development': Code,
-  'college-school-website-development': Code,
-  'healthcare-clinic-website-development': Code,
-  'portfolio-personal-branding-websites': Code,
-  'startup-mvp-development': Code,
-  'landing-page-design-development': Code,
-};
-
 export default function Home() {
   const featuredServices = services.filter(s => 
     ['business-website-development', 'portfolio-personal-branding-websites', 'ppc-advertising', 'seo-optimization'].includes(s.id)
@@ -98,7 +83,7 @@ export default function Home() {
       </section>
 
       {/* Stats Section */}
-      <section className="bg-background py-16 sm:py-24">
+      <section className="bg-secondary/50 dark:bg-secondary/20 py-16 sm:py-24">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-2 gap-8 md:grid-cols-4">
             <div className="text-center">
@@ -126,7 +111,7 @@ export default function Home() {
       </section>
 
       {/* Featured Services Section */}
-      <section className="bg-secondary/50 dark:bg-secondary/20 py-16 sm:py-24">
+      <section className="bg-background py-16 sm:py-24">
         <div className="container mx-auto px-4">
           <div className="mb-12 text-center">
             <Badge variant="outline">Our Expertise</Badge>
@@ -138,9 +123,8 @@ export default function Home() {
               you covered.
             </p>
           </div>
-          <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
+          <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
             {featuredServices.map((service, i) => {
-              const Icon = serviceIcons[service.id] || Code;
               const serviceImages = service.imageIds.map(id => placeholderImages.find(p => p.id === id)).filter(Boolean);
               return (
                 <motion.div
@@ -150,6 +134,7 @@ export default function Home() {
                   viewport={{ once: true, amount: 0.5 }}
                   transition={{ delay: i * 0.1, duration: 0.5 }}
                   variants={cardVariants}
+                  className="flex"
                 >
                   <Card
                     className={cn("group overflow-hidden transform transition-transform duration-300 hover:-translate-y-2 hover:shadow-xl card-glow-on-hover h-full flex flex-col")}
@@ -180,7 +165,6 @@ export default function Home() {
                           )) : (
                                 <CarouselItem>
                                   <div className="aspect-video relative overflow-hidden bg-secondary flex items-center justify-center">
-                                     <Icon className="h-10 w-10 text-muted-foreground" />
                                   </div>
                               </CarouselItem>
                           )}
@@ -212,7 +196,7 @@ export default function Home() {
       </section>
 
       {/* Client Logos Section */}
-      <section className="py-16 bg-background">
+      <section className="py-16 bg-secondary/50 dark:bg-secondary/20">
         <div className="container mx-auto px-4">
             <h3 className="mb-8 text-center text-base font-semibold text-muted-foreground">
                 Trusted by leading companies worldwide
@@ -224,14 +208,14 @@ export default function Home() {
                     {duplicatedClients.map((client) => {
                         const clientImage = placeholderImages.find(p => p.id === client.imageId);
                         return (
-                            <div key={`${client.id}-1`} className="flex-shrink-0 w-1/4 sm:w-1/6 md:w-1/8 p-4">
+                            <div key={`${client.id}-1`} className="flex-shrink-0 w-1/2 sm:w-1/4 md:w-1/6 p-4">
                                 {clientImage && (
                                     <Image
                                         src={clientImage.imageUrl}
                                         alt={client.name}
                                         width={150}
                                         height={50}
-                                        className="object-contain h-[50px] w-auto mx-auto grayscale transition-all hover:grayscale-0"
+                                        className="object-contain h-10 w-auto mx-auto grayscale transition-all hover:grayscale-0"
                                         data-ai-hint={clientImage.imageHint}
                                     />
                                 )}
@@ -244,7 +228,7 @@ export default function Home() {
     </section>
 
       {/* Testimonials Section */}
-      <section className="bg-secondary/50 dark:bg-secondary/20 py-16 sm:py-24">
+      <section className="bg-background py-16 sm:py-24">
         <div className="container mx-auto px-4">
           <div className="mb-12 text-center">
             <Badge variant="outline">Client Feedback</Badge>
@@ -297,7 +281,7 @@ export default function Home() {
       </section>
 
       {/* Blog Section */}
-      <section className="py-16 sm:py-24 bg-background">
+      <section className="py-16 sm:py-24 bg-secondary/50 dark:bg-secondary/20">
         <div className="container mx-auto px-4">
           <div className="mb-12 text-center">
             <Badge variant="outline">Our Insights</Badge>
@@ -420,5 +404,7 @@ export default function Home() {
     </div>
   );
 }
+
+    
 
     
