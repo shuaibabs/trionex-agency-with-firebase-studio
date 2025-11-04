@@ -3,7 +3,7 @@
 
 import Image from 'next/image';
 import LoadingLink from '@/components/loading-link';
-import React, { useState } from 'react';
+import React, { useState, useMemo } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle, CardFooter } from '@/components/ui/card';
 import { caseStudies } from '@/lib/data';
@@ -13,14 +13,12 @@ import { motion } from 'framer-motion';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
 import Autoplay from "embla-carousel-autoplay";
 
-
-const categories = [
-  { id: 'all', name: 'All' },
-  { id: 'category_web', name: 'Web App' },
-  { id: 'category_utilities', name: 'Utilities' },
-  { id: 'category_seo', name: 'SEO' },
-  { id: 'category_marketing', name: 'Marketing' },
-];
+const categoryIdToName: Record<string, string> = {
+  'category_web': 'Web App',
+  'category_utilities': 'Utilities',
+  'category_seo': 'SEO',
+  'category_marketing': 'Marketing',
+};
 
 export default function PortfolioPage() {
   const [filter, setFilter] = useState<string>('all');
@@ -28,6 +26,20 @@ export default function PortfolioPage() {
   const plugin = React.useRef(
     Autoplay({ delay: 2500, stopOnInteraction: true })
   )
+
+  const categories = useMemo(() => {
+    const allCategories = caseStudies.reduce((acc, study) => {
+      if (study.categoryId && !acc.some(c => c.id === study.categoryId)) {
+        acc.push({
+          id: study.categoryId,
+          name: categoryIdToName[study.categoryId] || study.categoryId,
+        });
+      }
+      return acc;
+    }, [] as { id: string; name: string }[]);
+    
+    return [{ id: 'all', name: 'All' }, ...allCategories];
+  }, []);
 
   const filteredCaseStudies =
     filter === 'all'
