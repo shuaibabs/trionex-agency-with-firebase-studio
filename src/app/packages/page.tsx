@@ -71,7 +71,7 @@ export default function PackagesPage() {
                   </CardContent>
                   <CardFooter>
                       <Button asChild className="w-full" variant={pkg.isPopular ? 'default' : 'outline'}>
-                      <LoadingLink href="/contact">{pkg.ctaText}</LoadingLink>
+                        <LoadingLink href={`/contact?interest=${pkg.id}`}>{pkg.ctaText}</LoadingLink>
                       </Button>
                   </CardFooter>
                   </Card>

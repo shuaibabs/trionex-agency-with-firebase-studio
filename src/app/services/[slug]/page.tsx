@@ -190,7 +190,7 @@ export default function ServiceDetailPage({ params }: { params: { slug: string }
                     </CardContent>
                     <CardFooter>
                         <Button variant="secondary" size="lg" className="w-full" asChild>
-                            <LoadingLink href="/contact">Schedule a Free Consultation</LoadingLink>
+                            <LoadingLink href={`/contact?interest=${service.id}`}>Schedule a Free Consultation</LoadingLink>
                         </Button>
                     </CardFooter>
                 </Card>

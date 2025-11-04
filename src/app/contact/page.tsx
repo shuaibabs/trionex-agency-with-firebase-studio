@@ -15,12 +15,20 @@ import {
 } from '@/components/ui/form';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
-import { Mail, Phone, MapPin, Loader2, Bot, UserCheck } from 'lucide-react';
-import { useState } from 'react';
+import { Mail, Phone, MapPin, Loader2, Bot, UserCheck, Briefcase } from 'lucide-react';
+import { useState, useEffect } from 'react';
 import type { SummarizeContactFormSubmissionOutput } from '@/ai/flows/summarize-contact-form-submissions';
 import { summarizeSubmissionAction } from '@/app/contact/actions';
 import { useToast } from '@/hooks/use-toast';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
+import { services, packages } from '@/lib/data';
+import { useSearchParams } from 'next/navigation';
+
+const allOfferings = [
+  ...services.map(s => ({ id: s.id, title: s.title, type: 'Service' })),
+  ...packages.map(p => ({ id: p.id, title: p.title, type: 'Package' }))
+];
 
 const formSchema = z.object({
   name: z.string().min(2, {
@@ -30,6 +38,7 @@ const formSchema = z.object({
     message: 'Please enter a valid email address.',
   }),
   phone: z.string().optional(),
+  interest: z.string().min(1, { message: 'Please select a service or package.' }),
   message: z
     .string()
     .min(10, {
@@ -44,6 +53,8 @@ export default function ContactPage() {
   const [loading, setLoading] = useState(false);
   const [result, setResult] = useState<SummarizeContactFormSubmissionOutput | null>(null);
   const { toast } = useToast();
+  const searchParams = useSearchParams();
+  const interestParam = searchParams.get('interest');
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -51,16 +62,32 @@ export default function ContactPage() {
       name: '',
       email: '',
       phone: '',
+      interest: '',
       message: '',
     },
   });
+
+  useEffect(() => {
+    if (interestParam) {
+      form.setValue('interest', interestParam);
+    }
+  }, [interestParam, form]);
+
+  const selectedInterestId = form.watch('interest');
+  const selectedOffering = allOfferings.find(o => o.id === selectedInterestId);
+
 
   async function onSubmit(values: z.infer<typeof formSchema>) {
     setLoading(true);
     setResult(null);
 
+    const submissionData = {
+        ...values,
+        interest: selectedOffering?.title || values.interest,
+    };
+
     try {
-      const response = await summarizeSubmissionAction(values);
+      const response = await summarizeSubmissionAction(submissionData);
       if (response) {
         setResult(response);
         toast({
@@ -153,63 +180,108 @@ export default function ContactPage() {
              <h2 className="font-headline text-2xl font-bold mb-8">Send Us a Message</h2>
             <Form {...form}>
               <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    <FormField
+                    control={form.control}
+                    name="name"
+                    render={({ field }) => (
+                        <FormItem>
+                        <FormLabel>Full Name</FormLabel>
+                        <FormControl>
+                            <Input placeholder="John Doe" {...field} />
+                        </FormControl>
+                        <FormMessage />
+                        </FormItem>
+                    )}
+                    />
+                    <FormField
+                    control={form.control}
+                    name="email"
+                    render={({ field }) => (
+                        <FormItem>
+                        <FormLabel>Email</FormLabel>
+                        <FormControl>
+                            <Input placeholder="john.doe@example.com" {...field} />
+                        </FormControl>
+                        <FormMessage />
+                        </FormItem>
+                    )}
+                    />
+                </div>
+                
+                <FormField
+                    control={form.control}
+                    name="phone"
+                    render={({ field }) => (
+                        <FormItem>
+                        <FormLabel>Phone (Optional)</FormLabel>
+                        <FormControl>
+                            <Input placeholder="+91 12345 67890" {...field} />
+                        </FormControl>
+                        <FormMessage />
+                        </FormItem>
+                    )}
+                />
+
                 <FormField
                   control={form.control}
-                  name="name"
+                  name="interest"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel>Full Name</FormLabel>
-                      <FormControl>
-                        <Input placeholder="John Doe" {...field} />
-                      </FormControl>
+                      <FormLabel>Service of Interest</FormLabel>
+                      <Select onValueChange={field.onChange} value={field.value}>
+                        <FormControl>
+                          <SelectTrigger>
+                            <SelectValue placeholder="Select a service or package..." />
+                          </SelectTrigger>
+                        </FormControl>
+                        <SelectContent>
+                          {allOfferings.map(offering => (
+                            <SelectItem key={offering.id} value={offering.id}>
+                              {offering.title} ({offering.type})
+                            </SelectItem>
+                          ))}
+                        </SelectContent>
+                      </Select>
                       <FormMessage />
                     </FormItem>
                   )}
                 />
-                <FormField
-                  control={form.control}
-                  name="email"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel>Email</FormLabel>
-                      <FormControl>
-                        <Input placeholder="john.doe@example.com" {...field} />
-                      </FormControl>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
-                <FormField
-                  control={form.control}
-                  name="phone"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel>Phone (Optional)</FormLabel>
-                      <FormControl>
-                        <Input placeholder="+91 12345 67890" {...field} />
-                      </FormControl>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
+                
                 <FormField
                   control={form.control}
                   name="message"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel>Message</FormLabel>
+                      <FormLabel>Your Message</FormLabel>
                       <FormControl>
                         <Textarea
-                          placeholder="Tell us about your project..."
+                          placeholder="Tell us more about your project requirements..."
                           className="resize-none"
                           {...field}
-                          rows={5}
+                          rows={4}
                         />
                       </FormControl>
                       <FormMessage />
                     </FormItem>
                   )}
                 />
+
+                {selectedOffering && (
+                    <Card className="bg-secondary/50 dark:bg-secondary/20 border-dashed">
+                        <CardHeader className='p-4'>
+                            <CardTitle className="flex items-center gap-2 text-base font-semibold">
+                                <Briefcase className="h-5 w-5 text-primary" />
+                                Your Selection
+                            </CardTitle>
+                        </CardHeader>
+                        <CardContent className='p-4 pt-0'>
+                            <p className="text-sm font-medium text-foreground">{selectedOffering.title}</p>
+                            <p className="text-xs text-muted-foreground">({selectedOffering.type})</p>
+                        </CardContent>
+                    </Card>
+                )}
+
                 <Button type="submit" disabled={loading} className="w-full">
                   {loading && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
                   {loading ? 'Submitting...' : 'Send Message'}

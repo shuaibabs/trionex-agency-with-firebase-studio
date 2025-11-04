@@ -1,3 +1,4 @@
+
 'use server';
 /**
  * @fileOverview Summarizes contact form submissions and routes them to the appropriate team member.
@@ -14,6 +15,7 @@ const SummarizeContactFormSubmissionInputSchema = z.object({
   name: z.string().describe('The name of the person submitting the form.'),
   email: z.string().email().describe('The email address of the person submitting the form.'),
   phone: z.string().describe('The phone number of the person submitting the form.'),
+  interest: z.string().describe('The service or package the user is interested in.'),
   message: z.string().describe('The message from the contact form submission.'),
 });
 export type SummarizeContactFormSubmissionInput = z.infer<typeof SummarizeContactFormSubmissionInputSchema>;
@@ -40,6 +42,7 @@ const summarizeContactFormSubmissionPrompt = ai.definePrompt({
   Name: {{{name}}}
   Email: {{{email}}}
   Phone: {{{phone}}}
+  Interested In: {{{interest}}}
   Message: {{{message}}}
 
   Respond with a summary of the message, and the name of the suggested team member to handle the submission.  Make sure to respond using the specified output schema.
