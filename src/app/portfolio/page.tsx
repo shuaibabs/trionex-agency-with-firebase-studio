@@ -128,7 +128,6 @@ export default function PortfolioPage() {
                       </CarouselContent>
                     </Carousel>
                     <CardHeader>
-                        {categoryName && <Badge variant="secondary" className="w-min mb-2">{categoryName}</Badge>}
                         <CardTitle className="font-headline text-xl group-hover:text-primary transition-colors">
                           {study.locales.en.title}
                         </CardTitle>
