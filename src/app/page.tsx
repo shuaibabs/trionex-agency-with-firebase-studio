@@ -154,11 +154,6 @@ export default function Home() {
                   <Card
                     className={cn("group overflow-hidden transform transition-transform duration-300 hover:-translate-y-2 hover:shadow-xl card-glow-on-hover h-full flex flex-col")}
                   >
-                     <div className="p-6 pb-2 flex justify-center">
-                        <div className="p-3 bg-primary/10 rounded-full">
-                          <Icon className="h-6 w-6 text-primary" />
-                        </div>
-                      </div>
                      <Carousel 
                         className="w-full" 
                         plugins={[

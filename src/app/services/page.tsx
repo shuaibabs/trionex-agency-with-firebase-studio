@@ -67,11 +67,6 @@ export default function ServicesPage() {
                 <Card
                   className={cn("flex flex-col transform transition-transform duration-300 hover:-translate-y-2 hover:shadow-xl h-full group overflow-hidden card-glow-on-hover")}
                 >
-                  <div className="p-6 pb-2 flex justify-center">
-                    <div className="p-3 bg-primary/10 rounded-full">
-                        <Icon className="h-6 w-6 text-primary" />
-                    </div>
-                  </div>
                   <Carousel 
                       className="w-full" 
                       plugins={[
@@ -146,11 +141,6 @@ export default function ServicesPage() {
                   <Card
                   className={cn("flex flex-col transform transition-transform duration-300 hover:-translate-y-2 hover:shadow-xl h-full group overflow-hidden card-glow-on-hover")}
                   >
-                    <div className="p-6 pb-2 flex justify-center">
-                        <div className="p-3 bg-primary/10 rounded-full">
-                          <Icon className="h-6 w-6 text-primary" />
-                        </div>
-                    </div>
                     <Carousel 
                       className="w-full" 
                       plugins={[
