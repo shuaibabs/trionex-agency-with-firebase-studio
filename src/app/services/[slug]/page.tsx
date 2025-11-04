@@ -113,7 +113,7 @@ export default function ServiceDetailPage({ params }: { params: { slug: string }
                         variants={cardVariants}
                       >
                         <Card className="group overflow-hidden h-full">
-                          <LoadingLink href={`/portfolio/${study.slug}`} className="block">
+                          <LoadingLink href={`/case-studies/${study.slug}`} className="block">
                                 <div className="aspect-video relative">
                                     <Image src={study.img} alt={study.locales.en.title} fill className="object-cover transition-transform group-hover:scale-105"  />
                                 </div>

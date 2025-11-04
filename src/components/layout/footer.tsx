@@ -11,7 +11,7 @@ const footerNavs = [
     items: [
       { href: '/packages', name: 'Packages' },
       { href: '/services', name: 'Services' },
-      { href: '/portfolio', name: 'Case Studies' },
+      { href: '/case-studies', name: 'Case Studies' },
     ],
   },
   {
