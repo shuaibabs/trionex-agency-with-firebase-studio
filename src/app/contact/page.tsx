@@ -169,7 +169,7 @@ export default function ContactPage() {
                 <iframe
                   width="100%"
                   height="100%"
-                  className={cn("absolute inset-0 w-full h-full themed-map-filter")}
+                  className="absolute inset-0 w-full h-full"
                   title="map"
                   src="https://maps.google.com/maps?width=100%&amp;height=600&amp;hl=en&amp;q=Jalalabad,%20Shamli,%20Uttar%20Pradesh,%20247772&amp;ie=UTF8&amp;t=&amp;z=14&amp;iwloc=B&amp;output=embed"
                 ></iframe>
