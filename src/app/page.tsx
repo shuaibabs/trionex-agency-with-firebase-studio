@@ -83,7 +83,7 @@ export default function Home() {
       </section>
 
       {/* Stats Section */}
-      <section className="bg-secondary/50 dark:bg-secondary/20 py-16 sm:py-24">
+      <section className="bg-secondary/70 dark:bg-secondary/20 py-16 sm:py-24">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-2 gap-8 md:grid-cols-4">
             <div className="text-center">
