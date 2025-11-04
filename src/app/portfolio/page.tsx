@@ -44,7 +44,7 @@ export default function PortfolioPage() {
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h1 className="font-headline text-4xl font-bold tracking-tighter text-primary sm:text-5xl md:text-6xl">
-            My Portfolio
+            Case Studies
           </h1>
           <p className="mt-4 max-w-2xl mx-auto text-base md:text-lg text-muted-foreground">
             Explore my portfolio of success stories and see how I've helped businesses like yours thrive.
