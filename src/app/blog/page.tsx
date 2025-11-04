@@ -1,7 +1,7 @@
 
 'use client';
 import Image from 'next/image';
-import Link from 'next/link';
+import LoadingLink from '@/components/loading-link';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { blogPosts, placeholderImages } from '@/lib/data';
 import { motion } from 'framer-motion';
@@ -37,7 +37,7 @@ export default function BlogPage() {
                 variants={cardVariants}
               >
                 <Card className="overflow-hidden group h-full flex flex-col">
-                  <Link href={`/blog/${post.slug}`} className="block h-full flex flex-col">
+                  <LoadingLink href={`/blog/${post.slug}`} className="block h-full flex flex-col">
                     <div className="aspect-video relative">
                       {blogImage && (
                         <Image
@@ -64,7 +64,7 @@ export default function BlogPage() {
                         {post.excerpt}
                       </p>
                     </CardContent>
-                  </Link>
+                  </LoadingLink>
                 </Card>
               </motion.div>
             );

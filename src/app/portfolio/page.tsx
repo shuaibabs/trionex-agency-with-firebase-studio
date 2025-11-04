@@ -2,7 +2,7 @@
 'use client';
 
 import Image from 'next/image';
-import Link from 'next/link';
+import LoadingLink from '@/components/loading-link';
 import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle, CardFooter } from '@/components/ui/card';
@@ -78,7 +78,7 @@ export default function PortfolioPage() {
                 className="flex"
               >
                 <Card className="overflow-hidden group flex flex-col h-full w-full bg-secondary/30 dark:bg-secondary/20">
-                  <Link href={`/portfolio/${study.slug}`} className="block h-full flex flex-col">
+                  <LoadingLink href={`/portfolio/${study.slug}`} className="block h-full flex flex-col">
                      <Carousel 
                         className="w-full" 
                         plugins={[
@@ -132,7 +132,7 @@ export default function PortfolioPage() {
                             View Details <ArrowRight className="ml-2 h-4 w-4" />
                         </span>
                     </CardFooter>
-                  </Link>
+                  </LoadingLink>
                 </Card>
               </motion.div>
             );

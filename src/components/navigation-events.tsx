@@ -1,3 +1,4 @@
+
 'use client';
 
 import { useEffect } from 'react';
@@ -10,7 +11,8 @@ export function NavigationEvents() {
   const { stopLoading } = useLoading();
 
   useEffect(() => {
-    // Stop loading whenever the path changes and the new component renders.
+    // Stop loading whenever the path or search params change.
+    // This is triggered after the new page component has rendered.
     stopLoading();
   }, [pathname, searchParams, stopLoading]);
 

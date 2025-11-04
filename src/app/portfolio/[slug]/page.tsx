@@ -6,7 +6,7 @@ import { caseStudies } from '@/lib/data';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Github, Link as LinkIcon, Youtube, ArrowLeft, CheckCircle, Target, Trophy, MessageSquareQuote, Briefcase, Clock, Code, ChevronLeft, ChevronRight } from 'lucide-react';
-import Link from 'next/link';
+import LoadingLink from '@/components/loading-link';
 import { Button } from '@/components/ui/button';
 import Autoplay from "embla-carousel-autoplay";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
@@ -98,10 +98,10 @@ export default function CaseStudyPage() {
         <div className="container mx-auto px-4 max-w-6xl">
           <header className="mb-12">
               <Button variant="ghost" asChild className="mb-4">
-                  <Link href="/portfolio">
+                  <LoadingLink href="/portfolio">
                       <ArrowLeft className="mr-2 h-4 w-4"/>
                       Back to Portfolio
-                  </Link>
+                  </LoadingLink>
               </Button>
             <h1 className="font-headline text-4xl font-bold tracking-tighter text-primary sm:text-5xl md:text-6xl">
               {study.locales.en.title}
@@ -241,10 +241,10 @@ export default function CaseStudyPage() {
                               const Icon = iconMap[link.faIcon] || LinkIcon;
                               return (
                                   <Button asChild key={index} variant="outline" className="justify-start">
-                                  <Link href={link.href} target="_blank" rel="noopener noreferrer">
+                                  <LoadingLink href={link.href} target="_blank" rel="noopener noreferrer">
                                       <Icon className="mr-2" />
                                       {link.tooltipString === 'see_on_github' ? 'View on GitHub' : 'Visit Website'}
-                                  </Link>
+                                  </LoadingLink>
                                   </Button>
                               )
                               })}
@@ -252,10 +252,10 @@ export default function CaseStudyPage() {
                           )}
                           {study.preview.youtubeVideo && (
                               <Button asChild variant="outline" className="justify-start w-full mt-3">
-                                  <Link href={study.preview.youtubeVideo} target="_blank" rel="noopener noreferrer">
+                                  <LoadingLink href={study.preview.youtubeVideo} target="_blank" rel="noopener noreferrer">
                                       <Youtube className="mr-2 text-red-500" />
                                   Watch on YouTube
-                                  </Link>
+                                  </LoadingLink>
                               </Button>
                           )}
                           {!study.preview.links.length && !study.preview.youtubeVideo && (

@@ -19,7 +19,7 @@ import {
 } from '@/components/ui/form';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { useToast } from '@/hooks/use-toast';
-import Link from 'next/link';
+import LoadingLink from '@/components/loading-link';
 import { Loader2, Mail } from 'lucide-react';
 import { useUser } from '@/firebase';
 import { Separator } from '@/components/ui/separator';
@@ -219,9 +219,9 @@ export default function LoginPage() {
                   )}
                 />
                  <div className="text-right text-sm">
-                    <Link href="/forgot-password" className="text-primary hover:underline">
+                    <LoadingLink href="/forgot-password" className="text-primary hover:underline">
                       Forgot Password?
-                    </Link>
+                    </LoadingLink>
                   </div>
                 <Button type="submit" disabled={isLoading} className="w-full" variant="outline">
                   {isPasswordLoading && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
@@ -231,9 +231,9 @@ export default function LoginPage() {
             </Form>
             <div className="mt-6 text-center text-sm">
               Don&apos;t have an account?{' '}
-              <Link href="/signup" className="text-primary hover:underline">
+              <LoadingLink href="/signup" className="text-primary hover:underline">
                 Sign Up
-              </Link>
+              </LoadingLink>
             </div>
           </CardContent>
         </Card>

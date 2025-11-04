@@ -18,7 +18,7 @@ import {
 } from '@/components/ui/form';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { useToast } from '@/hooks/use-toast';
-import Link from 'next/link';
+import LoadingLink from '@/components/loading-link';
 import { Loader2 } from 'lucide-react';
 
 const formSchema = z.object({
@@ -76,7 +76,7 @@ export default function ForgotPasswordPage() {
                   A password reset link has been sent to your email address. Please check your inbox and spam folder.
                 </p>
                 <Button asChild>
-                    <Link href="/login">Back to Login</Link>
+                    <LoadingLink href="/login">Back to Login</LoadingLink>
                 </Button>
               </div>
             ) : (
@@ -104,9 +104,9 @@ export default function ForgotPasswordPage() {
                 </Form>
                  <div className="mt-6 text-center text-sm">
                     Remember your password?{' '}
-                    <Link href="/login" className="text-primary hover:underline">
+                    <LoadingLink href="/login" className="text-primary hover:underline">
                         Login
-                    </Link>
+                    </LoadingLink>
                 </div>
               </>
             )}

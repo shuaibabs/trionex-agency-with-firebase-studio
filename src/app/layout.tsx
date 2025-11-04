@@ -10,7 +10,7 @@ import { FirebaseClientProvider } from '@/firebase/client-provider';
 import { Suspense } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { usePathname } from 'next/navigation';
-import LoadingBar from '@/components/loading-bar';
+import { GlobalLoader } from '@/components/global-loader';
 import { Inter, Space_Grotesk } from 'next/font/google';
 import { cn } from '@/lib/utils';
 import { NavigationEvents } from '@/components/navigation-events';
@@ -53,7 +53,7 @@ export default function RootLayout({
             disableTransitionOnChange
           >
             <div className="relative flex min-h-screen flex-col main-container">
-              <LoadingBar />
+              <GlobalLoader />
               <Header />
               <AnimatePresence mode="wait">
                 <motion.main

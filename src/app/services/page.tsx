@@ -1,7 +1,7 @@
 
 'use client';
 import { ArrowRight } from 'lucide-react';
-import Link from 'next/link';
+import LoadingLink from '@/components/loading-link';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle, CardFooter } from '@/components/ui/card';
 import { services, placeholderImages } from '@/lib/data';
@@ -71,9 +71,9 @@ export default function ServicesPage() {
                   </CardContent>
                   <CardFooter>
                     <Button variant="outline" asChild className="w-full mt-auto">
-                        <Link href={`/services/${service.slug}`}>
+                        <LoadingLink href={`/services/${service.slug}`}>
                             View Details <ArrowRight className="ml-2 h-4 w-4" />
-                        </Link>
+                        </LoadingLink>
                     </Button>
                   </CardFooter>
                 </Card>
@@ -124,9 +124,9 @@ export default function ServicesPage() {
                   </CardContent>
                   <CardFooter>
                     <Button variant="outline" asChild className="w-full mt-auto">
-                        <Link href={`/services/${service.slug}`}>
+                        <LoadingLink href={`/services/${service.slug}`}>
                             View Details <ArrowRight className="ml-2 h-4 w-4" />
-                        </Link>
+                        </LoadingLink>
                     </Button>
                   </CardFooter>
                   </Card>

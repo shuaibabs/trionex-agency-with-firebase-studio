@@ -6,9 +6,9 @@ import Logo from './icons/logo';
 
 export default function GalaxyLoader() {
   return (
-    <div className="flex h-screen w-full flex-col items-center justify-center bg-black">
+    <div className="flex h-screen w-full flex-col items-center justify-center bg-background/80 backdrop-blur-sm">
       <div className="relative flex flex-col items-center justify-center">
-        <Logo className="h-10 mb-8" color="hsl(217.2 91.2% 59.8%)" />
+        <Logo className="h-10 mb-8" />
         <div className="flex h-24 w-24 items-center justify-center">
           <motion.div
             className="absolute h-16 w-16 rounded-full border-2 border-primary/20"
@@ -38,8 +38,8 @@ export default function GalaxyLoader() {
             }}
           />
         </div>
-        <p className="mt-8 text-lg text-gray-400 animate-pulse">
-          Loading Trionex Digital...
+        <p className="mt-8 text-lg text-muted-foreground animate-pulse">
+          Loading...
         </p>
       </div>
     </div>

@@ -1,4 +1,5 @@
-import Link from 'next/link';
+
+import LoadingLink from '@/components/loading-link';
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { placeholderImages } from '@/lib/data';
@@ -31,10 +32,10 @@ export default function NotFound() {
           </p>
           <div className="mt-10">
             <Button asChild>
-              <Link href="/">
+              <LoadingLink href="/">
                 <ArrowLeft className="mr-2 h-4 w-4" />
                 Go back home
-              </Link>
+              </LoadingLink>
             </Button>
           </div>
         </div>

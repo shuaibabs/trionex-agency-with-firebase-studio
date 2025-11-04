@@ -1,7 +1,7 @@
 
 'use client';
 
-import Link from 'next/link';
+import LoadingLink from '@/components/loading-link';
 import React from 'react';
 import {
   ArrowRight,
@@ -78,10 +78,10 @@ export default function Home() {
             </p>
             <div className="flex flex-col gap-4 sm:flex-row justify-center md:justify-start">
               <Button asChild size="lg">
-                <Link href="/contact">Get a Free Quote</Link>
+                <LoadingLink href="/contact">Get a Free Quote</LoadingLink>
               </Button>
               <Button asChild size="lg" variant="outline">
-                <Link href="/services">Our Services</Link>
+                <LoadingLink href="/services">Our Services</LoadingLink>
               </Button>
             </div>
           </div>
@@ -165,9 +165,9 @@ export default function Home() {
                     </CardContent>
                     <div className="p-6 pt-0">
                       <Button variant="ghost" asChild className="text-primary w-full">
-                        <Link href={`/services/${service.slug}`}>
+                        <LoadingLink href={`/services/${service.slug}`}>
                           Learn More <ArrowRight className="ml-2 h-4 w-4" />
-                        </Link>
+                        </LoadingLink>
                       </Button>
                     </div>
                   </Card>
@@ -290,7 +290,7 @@ export default function Home() {
                 transition={{ delay: i * 0.1, duration: 0.5 }}
               >
                 <Card key={post.id} className={cn("overflow-hidden group card-glow-on-hover h-full flex flex-col")}>
-                  <Link href={`/blog/${post.slug}`} className="block flex flex-col h-full">
+                  <LoadingLink href={`/blog/${post.slug}`} className="block flex flex-col h-full">
                     <div className="aspect-video relative">
                       {blogImage && <Image
                         src={blogImage.imageUrl}
@@ -315,7 +315,7 @@ export default function Home() {
                         {post.excerpt}
                       </p>
                     </CardContent>
-                  </Link>
+                  </LoadingLink>
                 </Card>
               </motion.div>
             )})}
@@ -339,9 +339,9 @@ export default function Home() {
             asChild
             className="text-primary hover:bg-secondary/90"
           >
-            <Link href="/contact">
+            <LoadingLink href="/contact">
               Schedule a Call <ArrowRight className="ml-2 h-5 w-5" />
-            </Link>
+            </LoadingLink>
           </Button>
         </div>
       </section>

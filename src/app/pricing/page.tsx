@@ -1,6 +1,6 @@
 
 'use client';
-import Link from 'next/link';
+import LoadingLink from '@/components/loading-link';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { packages } from '@/lib/data';
@@ -71,7 +71,7 @@ export default function PricingPage() {
                   </CardContent>
                   <CardFooter>
                       <Button asChild className="w-full" variant={pkg.isPopular ? 'default' : 'outline'}>
-                      <Link href="/contact">{pkg.ctaText}</Link>
+                      <LoadingLink href="/contact">{pkg.ctaText}</LoadingLink>
                       </Button>
                   </CardFooter>
                   </Card>
@@ -82,7 +82,7 @@ export default function PricingPage() {
           <h3 className="font-headline text-2xl font-bold">Need a custom solution?</h3>
           <p className="text-muted-foreground mt-2">We offer tailored enterprise plans. Let's discuss your unique requirements.</p>
           <Button asChild className="mt-4">
-            <Link href="/contact">Schedule a Call</Link>
+            <LoadingLink href="/contact">Schedule a Call</LoadingLink>
           </Button>
         </div>
       </div>

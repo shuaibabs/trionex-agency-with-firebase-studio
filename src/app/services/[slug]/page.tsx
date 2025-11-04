@@ -2,7 +2,7 @@
 'use client';
 import { notFound } from 'next/navigation';
 import Image from 'next/image';
-import Link from 'next/link';
+import LoadingLink from '@/components/loading-link';
 import { services, caseStudies, placeholderImages } from '@/lib/data';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent, CardHeader, CardTitle, CardFooter, CardDescription } from '@/components/ui/card';
@@ -107,7 +107,7 @@ export default function ServiceDetailPage({ params }: { params: { slug: string }
                         variants={cardVariants}
                       >
                         <Card className="group overflow-hidden h-full">
-                          <Link href={`/portfolio/${study.slug}`} className="block">
+                          <LoadingLink href={`/portfolio/${study.slug}`} className="block">
                                 <div className="aspect-video relative">
                                     <Image src={study.img} alt={study.locales.en.title} fill className="object-cover transition-transform group-hover:scale-105"  />
                                 </div>
@@ -119,7 +119,7 @@ export default function ServiceDetailPage({ params }: { params: { slug: string }
                                     Read Case Study <ArrowRight className="ml-2 h-4 w-4 inline" />
                                 </span>
                             </CardContent>
-                          </Link>
+                          </LoadingLink>
                         </Card>
                       </motion.div>
                     )
@@ -184,7 +184,7 @@ export default function ServiceDetailPage({ params }: { params: { slug: string }
                     </CardContent>
                     <CardFooter>
                         <Button variant="secondary" size="lg" className="w-full" asChild>
-                            <Link href="/contact">Schedule a Free Consultation</Link>
+                            <LoadingLink href="/contact">Schedule a Free Consultation</LoadingLink>
                         </Button>
                     </CardFooter>
                 </Card>

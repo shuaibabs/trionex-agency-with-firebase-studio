@@ -19,7 +19,7 @@ import {
 } from '@/components/ui/form';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { useToast } from '@/hooks/use-toast';
-import Link from 'next/link';
+import LoadingLink from '@/components/loading-link';
 import { Loader2 } from 'lucide-react';
 import { useUser } from '@/firebase';
 import { Separator } from '@/components/ui/separator';
@@ -173,9 +173,9 @@ export default function SignupPage() {
             </Form>
             <div className="mt-6 text-center text-sm">
               Already have an account?{' '}
-              <Link href="/login" className="text-primary hover:underline">
+              <LoadingLink href="/login" className="text-primary hover:underline">
                 Login
-              </Link>
+              </LoadingLink>
             </div>
           </CardContent>
         </Card>
