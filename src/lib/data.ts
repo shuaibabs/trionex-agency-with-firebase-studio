@@ -20,7 +20,8 @@ export const services: Service[] = [
       { step: 4, title: 'Launch', description: 'Deploy the site and ensure everything is running smoothly.' }
     ],
     caseStudyIds: ['case-study-1'],
-    category: 'Web Development'
+    category: 'Web Development',
+    imageId: 'service-image-1'
   },
   {
     id: 'custom-web-application',
@@ -37,7 +38,8 @@ export const services: Service[] = [
         { step: 4, title: 'Deployment & Scaling', description: 'Deploy to the cloud and set up for scalability and performance.' }
     ],
     caseStudyIds: ['case-study-2'],
-    category: 'Web Development'
+    category: 'Web Development',
+    imageId: 'service-image-2'
   },
   {
     id: 'ecommerce-website',
@@ -54,7 +56,8 @@ export const services: Service[] = [
         { step: 4, title: 'Launch & Marketing', description: 'Go live and start driving traffic to your new online store.' }
     ],
     caseStudyIds: ['case-study-3'],
-    category: 'Web Development'
+    category: 'Web Development',
+    imageId: 'service-image-3'
   },
   {
     id: 'startup-mvp-development',
@@ -71,7 +74,8 @@ export const services: Service[] = [
         { step: 4, title: 'Launch & Iterate', description: 'Deploy the MVP, gather user feedback, and plan the next phase of development.' }
     ],
     caseStudyIds: [],
-    category: 'Web Development'
+    category: 'Web Development',
+    imageId: 'service-image-4'
   },
    {
     id: 'real-estate-website-development',
@@ -88,7 +92,8 @@ export const services: Service[] = [
         { step: 4, title: 'Launch', description: 'Deploy the site and provide training for your team to manage it effectively.' }
     ],
     caseStudyIds: [],
-    category: 'Web Development'
+    category: 'Web Development',
+    imageId: 'service-image-5'
   },
     {
     id: 'college-school-website-development',
@@ -105,7 +110,8 @@ export const services: Service[] = [
         { step: 4, title: 'Training & Launch', description: 'Train staff on how to manage content and launch the new website.' }
     ],
     caseStudyIds: [],
-    category: 'Web Development'
+    category: 'Web Development',
+    imageId: 'service-image-6'
   },
   {
     id: 'healthcare-clinic-website-development',
@@ -122,7 +128,8 @@ export const services: Service[] = [
         { step: 4, title: 'Launch & Support', description: 'Deploy the website and provide ongoing support to ensure security and performance.' }
     ],
     caseStudyIds: [],
-    category: 'Web Development'
+    category: 'Web Development',
+    imageId: 'service-image-7'
   },
   {
     id: 'portfolio-personal-branding-websites',
@@ -139,7 +146,8 @@ export const services: Service[] = [
         { step: 4, title: 'Launch', description: 'Go live and help you share your new portfolio with the world.' }
     ],
     caseStudyIds: [],
-    category: 'Web Development'
+    category: 'Web Development',
+    imageId: 'service-image-8'
   },
    {
     id: 'landing-page-design-development',
@@ -156,7 +164,8 @@ export const services: Service[] = [
         { step: 4, title: 'Optimize', description: 'Launch the page and use analytics and A/B testing to continuously improve conversion rates.' }
     ],
     caseStudyIds: [],
-    category: 'Web Development'
+    category: 'Web Development',
+    imageId: 'service-image-9'
   },
   {
     id: 'seo-optimization',
@@ -173,7 +182,8 @@ export const services: Service[] = [
         { step: 4, title: 'Reporting', description: 'We provide detailed monthly reports on performance and rankings.' }
     ],
     caseStudyIds: ['case-study-4'],
-    category: 'Digital Marketing'
+    category: 'Digital Marketing',
+    imageId: 'service-image-10'
   },
   {
     id: 'ppc-advertising',
@@ -190,7 +200,8 @@ export const services: Service[] = [
         { step: 4, title: 'Reporting', description: 'You get clear, concise reports on what matters most: your ROI.' }
     ],
     caseStudyIds: ['case-study-5'],
-    category: 'Digital Marketing'
+    category: 'Digital Marketing',
+    imageId: 'service-image-11'
   },
   {
     id: 'social-media-marketing',
@@ -207,7 +218,8 @@ export const services: Service[] = [
         { step: 4, title: 'Growth', description: 'We analyze performance to refine the strategy and grow your following.' }
     ],
     caseStudyIds: ['case-study-6'],
-    category: 'Digital Marketing'
+    category: 'Digital Marketing',
+    imageId: 'service-image-12'
   },
   {
     id: 'content-marketing',
@@ -224,7 +236,8 @@ export const services: Service[] = [
         { step: 4, title: 'Promotion', description: 'We help distribute your content across channels to maximize its reach.' }
     ],
     caseStudyIds: [],
-    category: 'Digital Marketing'
+    category: 'Digital Marketing',
+    imageId: 'service-image-13'
   },
 ];
 

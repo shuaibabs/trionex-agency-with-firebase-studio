@@ -10,6 +10,7 @@ export interface Service {
   priceRange: string;
   caseStudyIds: string[];
   category: 'Web Development' | 'Digital Marketing';
+  imageId: string;
 }
 
 export interface Package {

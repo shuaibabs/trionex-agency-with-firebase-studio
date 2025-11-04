@@ -209,6 +209,84 @@
       "description": "A lost person looking at a map",
       "imageUrl": "https://images.unsplash.com/photo-1495249346844-83e18c90a511?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxsb3N0JTIwbWFwfGVufDB8fHx8MTc2MjAxNjYxMnww&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "lost map"
+    },
+    {
+      "id": "service-image-1",
+      "description": "A modern office space with laptops on desks, signifying business websites.",
+      "imageUrl": "https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2070&auto=format&fit=crop",
+      "imageHint": "business office"
+    },
+    {
+      "id": "service-image-2",
+      "description": "A developer collaborating with a colleague, pointing at code on a screen.",
+      "imageUrl": "https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=2070&auto=format&fit=crop",
+      "imageHint": "web application"
+    },
+    {
+      "id": "service-image-3",
+      "description": "A sleek, modern e-commerce website displayed on a laptop screen.",
+      "imageUrl": "https://images.unsplash.com/photo-1585241936939-be4099591252?q=80&w=2070&auto=format&fit=crop",
+      "imageHint": "ecommerce website"
+    },
+    {
+      "id": "service-image-4",
+      "description": "A lightbulb made of glowing circuitry, symbolizing a new tech idea.",
+      "imageUrl": "https://images.unsplash.com/photo-1521791136064-7986c2920216?q=80&w=2070&auto=format&fit=crop",
+      "imageHint": "startup idea"
+    },
+    {
+      "id": "service-image-5",
+      "description": "A modern house with a for sale sign, representing real estate.",
+      "imageUrl": "https://images.unsplash.com/photo-1560518883-ce09059eeffa?q=80&w=1973&auto=format&fit=crop",
+      "imageHint": "real estate"
+    },
+    {
+      "id": "service-image-6",
+      "description": "A university campus building with students walking by.",
+      "imageUrl": "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?q=80&w=2070&auto=format&fit=crop",
+      "imageHint": "college campus"
+    },
+    {
+      "id": "service-image-7",
+      "description": "A doctor using a tablet computer in a modern clinic.",
+      "imageUrl": "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=2070&auto=format&fit=crop",
+      "imageHint": "healthcare technology"
+    },
+    {
+      "id": "service-image-8",
+      "description": "A minimalist and artistic personal portfolio website on a tablet.",
+      "imageUrl": "https://images.unsplash.com/photo-1512486130939-2c4f79935e4f?q=80&w=1974&auto=format&fit=crop",
+      "imageHint": "personal portfolio"
+    },
+    {
+      "id": "service-image-9",
+      "description": "An arrow hitting the center of a target, symbolizing conversion.",
+      "imageUrl": "https://images.unsplash.com/photo-1550536448-9f1e9c56f70a?q=80&w=2070&auto=format&fit=crop",
+      "imageHint": "landing page"
+    },
+    {
+      "id": "service-image-10",
+      "description": "A magnifying glass over a keyword map, representing SEO research.",
+      "imageUrl": "https://images.unsplash.com/photo-1554224155-16954405a255?q=80&w=2070&auto=format&fit=crop",
+      "imageHint": "seo research"
+    },
+    {
+      "id": "service-image-11",
+      "description": "A person clicking on a paid search ad on a laptop.",
+      "imageUrl": "https://images.unsplash.com/photo-1599658880111-35c6fab47a69?q=80&w=2070&auto=format&fit=crop",
+      "imageHint": "ppc advertising"
+    },
+    {
+      "id": "service-image-12",
+      "description": "A grid of social media profile pictures, showing community.",
+      "imageUrl": "https://images.unsplash.com/photo-1633332755192-727a05c4013d?q=80&w=1780&auto=format&fit=crop",
+      "imageHint": "social community"
+    },
+    {
+      "id": "service-image-13",
+      "description": "A person writing content on a vintage typewriter.",
+      "imageUrl": "https://images.unsplash.com/photo-1520638023360-6126f239f52b?q=80&w=2070&auto=format&fit=crop",
+      "imageHint": "content creation"
     }
   ]
 }
