@@ -288,34 +288,42 @@ export default function Home() {
                 whileInView="visible"
                 viewport={{ once: true, amount: 0.3 }}
                 transition={{ delay: i * 0.1, duration: 0.5 }}
+                className="flex"
               >
                 <Card key={post.id} className={cn("overflow-hidden group card-glow-on-hover h-full flex flex-col")}>
-                  <LoadingLink href={`/blog/${post.slug}`} className="block flex flex-col h-full">
-                    <div className="aspect-video relative">
-                      {blogImage && <Image
-                        src={blogImage.imageUrl}
-                        alt={post.title}
-                        fill
-                        className="object-cover transition-transform duration-300 group-hover:scale-105"
-                        data-ai-hint={blogImage.imageHint}
-                      />}
-                    </div>
-                    <CardHeader>
-                      <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                        <span>{post.date}</span>
-                        <span>&bull;</span>
-                        <span>{post.readTime}</span>
-                      </div>
-                      <CardTitle className="font-headline text-xl group-hover:text-primary transition-colors">
-                        {post.title}
-                      </CardTitle>
-                    </CardHeader>
-                    <CardContent className="flex-grow">
-                      <p className="text-muted-foreground line-clamp-2 text-sm md:text-base">
-                        {post.excerpt}
-                      </p>
-                    </CardContent>
-                  </LoadingLink>
+                    <LoadingLink href={`/blog/${post.slug}`} className="block flex flex-col h-full">
+                        <div className="aspect-video relative">
+                          {blogImage && <Image
+                            src={blogImage.imageUrl}
+                            alt={post.title}
+                            fill
+                            className="object-cover transition-transform duration-300 group-hover:scale-105"
+                            data-ai-hint={blogImage.imageHint}
+                          />}
+                        </div>
+                        <CardHeader>
+                          <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                            <span>{post.date}</span>
+                            <span>&bull;</span>
+                            <span>{post.readTime}</span>
+                          </div>
+                          <CardTitle className="font-headline text-xl group-hover:text-primary transition-colors">
+                            {post.title}
+                          </CardTitle>
+                        </CardHeader>
+                        <CardContent className="flex-grow">
+                          <p className="text-muted-foreground line-clamp-2 text-sm md:text-base">
+                            {post.excerpt}
+                          </p>
+                        </CardContent>
+                        <CardFooter>
+                            <Button variant="outline" asChild className="w-full mt-auto">
+                                <LoadingLink href={`/blog/${post.slug}`}>
+                                    Read Article <ArrowRight className="ml-2 h-4 w-4" />
+                                </LoadingLink>
+                            </Button>
+                        </CardFooter>
+                    </LoadingLink>
                 </Card>
               </motion.div>
             )})}
