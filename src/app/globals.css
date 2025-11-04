@@ -254,8 +254,8 @@
   }
 
   .map-container iframe {
-    filter: grayscale(1) invert(0.9) contrast(0.8) hue-rotate(-200deg) saturate(0.5) brightness(1.1);
-    mix-blend-mode: multiply;
+    filter: none;
+    mix-blend-mode: normal;
   }
 
   .dark .map-container iframe {
