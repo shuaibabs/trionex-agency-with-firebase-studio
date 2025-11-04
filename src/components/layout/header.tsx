@@ -2,9 +2,9 @@
 'use client';
 
 import { usePathname } from 'next/navigation';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import LoadingLink from '@/components/loading-link';
-import { Menu, X, LogOut } from 'lucide-react';
+import { LogOut, Menu } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { cn } from '@/lib/utils';
@@ -24,11 +24,11 @@ import {
 
 const navLinks = [
   { href: '/', label: 'Home' },
+  { href: '/about', label: 'About' },
   { href: '/services', label: 'Services' },
   { href: '/case-studies', label: 'Case Studies' },
-  { href: '/blog', label: 'Blog' },
-  { href: '/about', label: 'About' },
   { href: '/packages', label: 'Packages' },
+  { href: '/blog', label: 'Blog' },
   { href: '/contact', label: 'Contact' },
 ];
 
@@ -56,7 +56,7 @@ export default function Header() {
                 </LoadingLink>
 
                 {/* Desktop Navigation */}
-                <nav className="hidden xl:flex xl:items-center xl:gap-6 text-sm font-medium mx-auto">
+                <nav className="hidden lg:flex lg:items-center lg:gap-6 text-sm font-medium mx-auto">
                 {navLinks.map(({ href, label }) => (
                     <LoadingLink
                       key={href}
@@ -71,8 +71,7 @@ export default function Header() {
                 ))}
                 </nav>
 
-                <div className="flex items-center justify-end gap-2">
-                  <div className="flex items-center gap-2">
+                <div className="flex items-center justify-end gap-2 ml-auto">
                     <ThemeToggle />
 
                     {!isUserLoading && (
@@ -121,12 +120,11 @@ export default function Header() {
                         )}
                       </>
                     )}
-                  </div>
 
                   {/* Mobile & Tablet Navigation Menu */}
                   <Sheet open={isMobileMenuOpen} onOpenChange={setMobileMenuOpen}>
                       <SheetTrigger asChild>
-                      <Button variant="ghost" size="icon" className="xl:hidden">
+                      <Button variant="ghost" size="icon" className="lg:hidden">
                           <Menu />
                           <span className="sr-only">Open menu</span>
                       </Button>
@@ -168,8 +166,8 @@ export default function Header() {
                                   </Button>
                               </div>
                           ) : (
-                            // Logged out user in mobile sheet (only shows on small mobile)
-                              <div className="flex flex-col gap-4 md:hidden">
+                            // Logged out user in mobile sheet
+                              <div className="flex flex-col gap-4">
                                 <Button asChild className="w-full">
                                     <LoadingLink href="/login" onClick={() => setMobileMenuOpen(false)}>
                                     Login
