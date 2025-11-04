@@ -11,6 +11,7 @@ import {
   PenTool,
   Search,
   Users,
+  MessageSquareQuote
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -323,26 +324,35 @@ export default function Home() {
       </section>
 
       {/* Final CTA */}
-       <section className="py-20 bg-primary/90 text-primary-foreground relative overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_rgba(255,255,255,0.1)_0%,_rgba(255,255,255,0)_70%)] opacity-50"></div>
-        <div className="container mx-auto px-4 text-center relative">
-          <h2 className="font-headline text-3xl font-bold sm:text-4xl">
-            Ready to Start Your Project?
-          </h2>
-          <p className="mt-4 mb-8 max-w-2xl mx-auto text-base md:text-lg text-primary-foreground/80">
-            Let's talk about how Trionex Digital can help you achieve your
-            goals. Schedule a free consultation today.
-          </p>
-          <Button
-            size="lg"
-            variant="secondary"
-            asChild
-            className="text-primary hover:bg-secondary/90"
-          >
-            <LoadingLink href="/contact">
-              Schedule a Call <ArrowRight className="ml-2 h-5 w-5" />
-            </LoadingLink>
-          </Button>
+      <section className="py-16 sm:py-24 bg-background">
+        <div className="container mx-auto px-4">
+            <div className="relative rounded-lg bg-secondary/50 dark:bg-secondary/20 p-8 md:p-12 overflow-hidden">
+                <div className="absolute -right-16 -top-16 w-64 h-64 bg-primary/10 rounded-full blur-3xl"></div>
+                <div className="absolute -left-24 -bottom-24 w-80 h-80 bg-primary/10 rounded-full blur-3xl"></div>
+                
+                <div className="relative grid md:grid-cols-2 gap-8 items-center">
+                    <div className="space-y-4 text-center md:text-left">
+                        <h2 className="font-headline text-3xl font-bold tracking-tighter sm:text-4xl text-primary">
+                            Ready to Start Your Project?
+                        </h2>
+                        <p className="text-base md:text-lg text-muted-foreground max-w-md mx-auto md:mx-0">
+                            Let's talk about how Trionex Digital can help you achieve your
+                            goals. Schedule a free consultation today.
+                        </p>
+                        <Button
+                            size="lg"
+                            asChild
+                        >
+                            <LoadingLink href="/contact">
+                            Schedule a Call <ArrowRight className="ml-2 h-5 w-5" />
+                            </LoadingLink>
+                        </Button>
+                    </div>
+                    <div className="relative h-48 md:h-full flex items-center justify-center">
+                        <MessageSquareQuote className="w-24 h-24 md:w-32 md:h-32 text-primary/20" />
+                    </div>
+                </div>
+            </div>
         </div>
       </section>
     </div>
