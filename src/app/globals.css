@@ -211,6 +211,49 @@
   .dark .prose :where(code):not(:where([class~="not-prose"] *)) {
      @apply bg-primary/20;
   }
+
+  /* New Testimonial Card Styles */
+  .testimonial-card {
+    @apply relative h-full w-full rounded-2xl p-6 text-center transition-all duration-500;
+    background-color: hsl(var(--secondary) / 0.5);
+  }
+  
+  html.dark .testimonial-card {
+    background-color: hsl(var(--secondary) / 0.1);
+  }
+
+  .testimonial-card-content {
+      @apply relative z-10 flex h-full flex-col items-center justify-center;
+  }
+
+  .testimonial-card::before {
+      content: "";
+      @apply absolute inset-0 z-0 rounded-2xl border border-border transition-all duration-500;
+  }
+
+  html.dark .testimonial-card::before {
+      border-color: hsl(var(--border) / 0.2);
+  }
+
+  .testimonial-card::after {
+    content: "";
+    @apply absolute inset-0 z-0 rounded-2xl opacity-0 transition-all duration-500;
+    background: radial-gradient(circle at center, hsl(var(--primary) / 0.15), transparent 60%);
+  }
+
+  .testimonial-avatar {
+     transition: box-shadow 0.5s ease-in-out;
+  }
+
+  /* Active/Hover state for the card itself */
+  .motion-safe .testimonial-card:hover::after,
+  .motion-safe [data-active="true"] .testimonial-card::after {
+    opacity: 1;
+  }
+
+  .motion-safe [data-active="true"] .testimonial-card::before {
+      border-color: hsl(var(--primary) / 0.5);
+  }
 }
 
 @layer utilities {
@@ -258,7 +301,7 @@
     mix-blend-mode: normal;
   }
 
-  .dark .map-container iframe {
+  html.dark .map-container iframe {
     filter: grayscale(1) invert(0.95) contrast(0.7) hue-rotate(-200deg) saturate(0.3) brightness(0.9);
     mix-blend-mode: screen;
   }

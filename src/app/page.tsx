@@ -11,7 +11,8 @@ import {
   PenTool,
   Search,
   Users,
-  MessageSquareQuote
+  MessageSquareQuote,
+  Quote
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle, CardFooter } from '@/components/ui/card';
@@ -59,13 +60,12 @@ export default function Home() {
       return
     }
  
-    setCurrentTestimonial(testimonialApi.selectedScrollSnap())
- 
     const onSelect = (api: CarouselApi) => {
       setCurrentTestimonial(api.selectedScrollSnap())
     }
 
     testimonialApi.on("select", onSelect)
+    onSelect(testimonialApi); // Set initial state
  
     return () => {
       testimonialApi.off("select", onSelect)
@@ -261,58 +261,62 @@ export default function Home() {
           <Carousel
             setApi={setTestimonialApi}
             plugins={[plugin.current]}
-            className="w-full"
+            className="w-full max-w-6xl mx-auto"
             opts={{ 
               loop: true,
               align: 'center',
             }}
           >
-            <CarouselContent>
+            <CarouselContent className="-ml-4">
               {testimonials.map((testimonial, index) => {
-                const avatarImage = placeholderImages.find(p => p.id === testimonial.avatarId);
-                const isActive = index === currentTestimonial;
+                 const avatarImage = placeholderImages.find(p => p.id === testimonial.avatarId);
+                 const isActive = index === currentTestimonial;
                 return (
-                <CarouselItem key={testimonial.id} className="md:basis-1/2 lg:basis-1/3">
+                 <CarouselItem key={testimonial.id} className="pl-4 md:basis-1/2 lg:basis-1/3">
                     <motion.div 
-                        className="h-full p-4"
+                        className="h-full p-1"
                         animate={{ 
                             scale: isActive ? 1 : 0.85,
-                            opacity: isActive ? 1 : 0.6,
+                            opacity: isActive ? 1 : 0.5,
                         }}
                         transition={{ type: 'spring', stiffness: 300, damping: 30 }}
                     >
-                      <Card className="relative h-full w-full overflow-hidden rounded-xl">
-                        {avatarImage && (
-                            <Image
-                                src={avatarImage.imageUrl}
-                                alt={testimonial.name}
-                                fill
-                                className="object-cover transition-transform duration-500 ease-in-out group-hover:scale-105"
-                                data-ai-hint={avatarImage.imageHint}
-                            />
-                        )}
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
-                        <div className="absolute inset-0 flex flex-col justify-end p-6 text-white">
-                            <motion.div 
-                                initial={{ opacity: 0, y: 20 }}
-                                animate={{ opacity: isActive ? 1 : 0, y: isActive ? 0 : 20 }}
-                                transition={{ duration: 0.5, delay: 0.1 }}
-                            >
-                                <p className="text-sm md:text-base italic">&quot;{testimonial.quote}&quot;</p>
-                                <div className="mt-4 border-t border-white/20 pt-4">
-                                    <p className="font-bold font-headline text-lg">{testimonial.name}</p>
-                                    <p className="text-xs text-white/70">{testimonial.title}</p>
-                                </div>
-                            </motion.div>
-                        </div>
-                      </Card>
+                      <div className="testimonial-card">
+                          <div className="testimonial-card-content">
+                            {avatarImage && (
+                                <motion.div 
+                                    className="relative w-24 h-24 rounded-full overflow-hidden mx-auto mb-6 testimonial-avatar"
+                                    animate={{ 
+                                        boxShadow: isActive ? '0 0 0 4px hsl(var(--primary-foreground)), 0 0 25px 5px hsl(var(--primary))' : '0 0 0 2px hsl(var(--border))',
+                                    }}
+                                    transition={{duration: 0.5}}
+                                >
+                                    <Image
+                                        src={avatarImage.imageUrl}
+                                        alt={testimonial.name}
+                                        fill
+                                        className="object-cover"
+                                        data-ai-hint={avatarImage.imageHint}
+                                    />
+                                </motion.div>
+                            )}
+                            <Quote className="absolute top-6 left-6 w-10 h-10 text-primary/10" />
+                            <p className="text-muted-foreground text-center italic mb-6 text-sm sm:text-base">
+                                &quot;{testimonial.quote}&quot;
+                            </p>
+                            <div className="text-center">
+                                <p className="font-bold font-headline text-lg text-foreground">{testimonial.name}</p>
+                                <p className="text-xs text-primary">{testimonial.title}</p>
+                            </div>
+                          </div>
+                      </div>
                     </motion.div>
                 </CarouselItem>
               )})}
             </CarouselContent>
              <div className="hidden sm:block">
-                <CarouselPrevious />
-                <CarouselNext />
+                <CarouselPrevious className="-left-4 sm:-left-8 md:-left-12" />
+                <CarouselNext className="-right-4 sm:-right-8 md:-right-12" />
             </div>
           </Carousel>
         </div>
