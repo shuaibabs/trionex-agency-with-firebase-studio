@@ -99,13 +99,16 @@ export default function ServicesPage() {
                         )}
                     </CarouselContent>
                   </Carousel>
-                  <CardHeader>
+                  <CardHeader className="items-center text-center">
+                    <div className="p-3 bg-primary/10 rounded-full mb-2">
+                        <Icon className="h-6 w-6 text-primary" />
+                    </div>
                     <CardTitle className="font-headline text-xl">
                       {service.title}
                     </CardTitle>
                   </CardHeader>
                   <CardContent className="flex-grow">
-                    <p className="text-muted-foreground mb-6 flex-grow text-sm">
+                    <p className="text-muted-foreground mb-6 flex-grow text-sm text-center">
                       {service.shortDescription}
                     </p>
                   </CardContent>
@@ -173,13 +176,16 @@ export default function ServicesPage() {
                         )}
                     </CarouselContent>
                   </Carousel>
-                    <CardHeader>
+                    <CardHeader className="items-center text-center">
+                      <div className="p-3 bg-primary/10 rounded-full mb-2">
+                          <Icon className="h-6 w-6 text-primary" />
+                      </div>
                       <CardTitle className="font-headline text-xl">
                       {service.title}
                       </CardTitle>
                   </CardHeader>
                   <CardContent className="flex-grow">
-                      <p className="text-muted-foreground mb-6 flex-grow text-sm">
+                      <p className="text-muted-foreground mb-6 flex-grow text-sm text-center">
                       {service.shortDescription}
                       </p>
                   </CardContent>
@@ -200,3 +206,5 @@ export default function ServicesPage() {
     </div>
   );
 }
+
+    

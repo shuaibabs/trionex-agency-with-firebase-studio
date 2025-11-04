@@ -186,7 +186,10 @@ export default function Home() {
                           )}
                       </CarouselContent>
                     </Carousel>
-                    <CardHeader className="text-center">
+                    <CardHeader className="items-center text-center">
+                      <div className="p-3 bg-primary/10 rounded-full mb-2">
+                        <Icon className="h-6 w-6 text-primary" />
+                      </div>
                       <CardTitle className="font-headline text-xl">
                         {service.title}
                       </CardTitle>
@@ -420,3 +423,5 @@ export default function Home() {
     </div>
   );
 }
+
+    
