@@ -15,7 +15,7 @@ import {
 } from '@/components/ui/form';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
-import { Mail, Phone, MapPin, Loader2, Bot, UserCheck, Briefcase } from 'lucide-react';
+import { Mail, Phone, MapPin, Loader2, Bot, UserCheck, Briefcase, Wallet } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import type { SummarizeContactFormSubmissionOutput } from '@/ai/flows/summarize-contact-form-submissions';
 import { summarizeSubmissionAction } from '@/app/contact/actions';
@@ -26,9 +26,9 @@ import { services, packages } from '@/lib/data';
 import { useSearchParams } from 'next/navigation';
 
 const allOfferings = [
-  ...services.map(s => ({ id: s.id, title: s.title, type: 'Service' })),
-  ...packages.map(p => ({ id: p.id, title: p.title, type: 'Package' })),
-  { id: 'custom', title: 'Custom Service/Package', type: 'Custom Inquiry' }
+  ...services.map(s => ({ id: s.id, title: s.title, type: 'Service', price: s.priceRange })),
+  ...packages.map(p => ({ id: p.id, title: p.title, type: 'Package', price: p.pricePeriod ? `${p.price} ${p.pricePeriod}` : p.price })),
+  { id: 'custom', title: 'Custom Service/Package', type: 'Custom Inquiry', price: 'Let\'s talk' }
 ];
 
 const formSchema = z.object({
@@ -163,17 +163,14 @@ export default function ContactPage() {
               </div>
             </div>
              <div className="h-80 w-full rounded-lg overflow-hidden border">
-                 <iframe
-                    width="100%"
-                    height="100%"
-                    frameBorder="0"
-                    scrolling="no"
-                    marginHeight={0}
-                    marginWidth={0}
-                    src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=Jalalabad,%20Shamli,%20Uttar%20Pradesh,%20247772+(My%20Business%20Name)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
-                    className="dark:invert dark:grayscale dark:hue-rotate-180"
-                    >
-                </iframe>
+                <iframe
+                  width="100%"
+                  height="100%"
+                  className="absolute inset-0"
+                  title="map"
+                  src="https://maps.google.com/maps?width=100%&amp;height=600&amp;hl=en&amp;q=Jalalabad,%20Shamli,%20Uttar%20Pradesh,%20247772&amp;ie=UTF8&amp;t=&amp;z=14&amp;iwloc=B&amp;output=embed"
+                  style={{ filter: 'grayscale(1) contrast(1.2) opacity(0.8)' }}
+                ></iframe>
             </div>
           </div>
 
@@ -270,15 +267,19 @@ export default function ContactPage() {
 
                 {selectedOffering && (
                     <Card className="bg-secondary/50 dark:bg-secondary/20 border-dashed">
-                        <CardHeader className='p-4'>
+                        <CardHeader className='p-4 pb-2'>
                             <CardTitle className="flex items-center gap-2 text-base font-semibold">
                                 <Briefcase className="h-5 w-5 text-primary" />
                                 Your Selection
                             </CardTitle>
                         </CardHeader>
-                        <CardContent className='p-4 pt-0'>
+                        <CardContent className='p-4 pt-2'>
                             <p className="text-sm font-medium text-foreground">{selectedOffering.title}</p>
-                            <p className="text-xs text-muted-foreground">({selectedOffering.type})</p>
+                            <p className="text-xs text-muted-foreground mb-2">({selectedOffering.type})</p>
+                            <div className="flex items-center gap-2 text-sm text-primary font-semibold border-t border-dashed pt-2">
+                                <Wallet className="h-4 w-4" />
+                                <span>{selectedOffering.price}</span>
+                            </div>
                         </CardContent>
                     </Card>
                 )}
