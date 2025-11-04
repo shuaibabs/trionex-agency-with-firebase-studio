@@ -15,6 +15,7 @@ import Autoplay from "embla-carousel-autoplay";
 
 const categoryIdToName: Record<string, string> = {
   'category_web': 'Web App',
+  'category_mobile_app': 'Mobile App',
   'category_utilities': 'Utilities',
   'category_seo': 'SEO',
   'category_marketing': 'Marketing',

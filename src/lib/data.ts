@@ -481,6 +481,68 @@ export const caseStudies: CaseStudy[] = [
                 "tags": ["PPC", "Google Ads", "LinkedIn Ads", "Conversion Rate Optimization"]
             }
         }
+    },
+    {
+        "id": 15,
+        "slug": "zenith-fitness-tracker",
+        "categoryId": "category_mobile_app",
+        "img": "https://picsum.photos/seed/cs15/600/400",
+        "challenge": "A fitness startup wanted to create a mobile app with a clean UI and strong motivational features to stand out in a crowded market. They needed a cross-platform solution to reach both iOS and Android users quickly.",
+        "solution": "Developed a cross-platform fitness tracking app using React Native. The app featured real-time GPS tracking for activities, personalized workout plans, and social sharing capabilities to boost user engagement and motivation.",
+        "testimonial": { "text": "The app is incredibly smooth and intuitive. Our users love the design and the social features have created a real sense of community. The launch was a huge success!", "author": "Founder, Zenith Fitness" },
+        "results": ["Launched on iOS & Android in 4 months", "Achieved 50,000+ downloads in the first year", "4.8-star average rating on both app stores"],
+        "overview": {
+            "role": "Lead Mobile Developer",
+            "timeline": "4 Months",
+            "techStack": "React Native, Firebase, Mapbox"
+        },
+        "preview": {
+            "links": [],
+            "screenshots": [
+                "https://picsum.photos/seed/cs15-ss1/1280/720",
+                "https://picsum.photos/seed/cs15-ss2/1280/720"
+            ],
+            "screenshotsAspectRatio": "9:16",
+            "youtubeVideo": ""
+        },
+        "locales": {
+            "en": {
+                "title": "Zenith Fitness Tracker",
+                "text": "A cross-platform <b>mobile fitness app</b> built with React Native, featuring real-time activity tracking, workout plans, and social sharing.",
+                "tags": ["React Native", "Firebase", "Mobile App", "iOS", "Android"]
+            }
+        }
+    },
+    {
+        "id": 16,
+        "slug": "orderly-task-manager",
+        "categoryId": "category_mobile_app",
+        "img": "https://picsum.photos/seed/cs16/600/400",
+        "challenge": "The client wanted a minimalist, easy-to-use task manager for iOS that avoided the feature bloat of existing productivity apps. The key was to focus on simplicity and a delightful user experience.",
+        "solution": "Designed and built a native iOS application using Swift and SwiftUI. The app featured a clean, gesture-based interface, smart reminders, and iCloud sync. The focus was on intuitive design and fast performance.",
+        "testimonial": { "text": "They perfectly understood our vision for a simple, elegant task manager. The final product is a joy to use and has become an essential part of my daily routine.", "author": "Solo Entrepreneur" },
+        "results": ["Featured on the App Store as 'App of the Day'", "Reached 100,000 active users", "Maintained a 4.9-star rating with over 5,000 reviews"],
+        "overview": {
+            "role": "iOS Developer & UI/UX Designer",
+            "timeline": "5 Months",
+            "techStack": "Swift, SwiftUI, Core Data, iCloud"
+        },
+        "preview": {
+            "links": [],
+            "screenshots": [
+                "https://picsum.photos/seed/cs16-ss1/1280/720",
+                "https://picsum.photos/seed/cs16-ss2/1280/720"
+            ],
+            "screenshotsAspectRatio": "9:16",
+            "youtubeVideo": ""
+        },
+        "locales": {
+            "en": {
+                "title": "Orderly Task Manager",
+                "text": "A native <b>iOS productivity app</b> with a focus on minimalist design, intuitive gestures, and seamless iCloud synchronization.",
+                "tags": ["iOS", "Swift", "SwiftUI", "Mobile App", "Productivity"]
+            }
+        }
     }
 ];
 
@@ -701,4 +763,5 @@ export const clients: Client[] = [
   { id: '7', name: 'StartUpCo', imageId: 'client-logo-1' },
   { id: '8', name: 'FutureGadget', imageId: 'client-logo-2' },
 ];
+
 

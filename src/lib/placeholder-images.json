@@ -443,6 +443,30 @@
       "description": "An infographic showing data and statistics.",
       "imageUrl": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop",
       "imageHint": "data infographic"
+    },
+    {
+      "id": "case-study-15-1",
+      "description": "Mobile app showing fitness tracking screen.",
+      "imageUrl": "https://images.unsplash.com/photo-1434494878577-86c23bcb06b9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxmaXRuZXNzJTIwYXBwfGVufDB8fHx8MTc2MjE5NTM0OHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "fitness app"
+    },
+    {
+      "id": "case-study-15-2",
+      "description": "Close up of a mobile phone with a fitness app open.",
+      "imageUrl": "https://images.unsplash.com/photo-1626252346582-c7721d805e0d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxtb2JpbGUlMjBmaXRuZXNzfGVufDB8fHx8MTc2MjI1NDU0NXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "mobile fitness"
+    },
+    {
+      "id": "case-study-16-1",
+      "description": "Clean interface of a task manager app on a phone.",
+      "imageUrl": "https://images.unsplash.com/photo-1570649236495-42fa5fe5c48b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHx0YXNrJTIwbWFuYWdlcnxlbnwwfHx8fDE3NjIyNTQ1NDV8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "task manager"
+    },
+    {
+      "id": "case-study-16-2",
+      "description": "A person using a productivity app on their smartphone.",
+      "imageUrl": "https://images.unsplash.com/photo-1758786977080-a5e60a3f843c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxwcm9kdWN0aXZpdHklMjBhcHB8ZW58MHx8fHwxNzYyMTY0Mjc1fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "productivity app"
     }
   ]
 }
