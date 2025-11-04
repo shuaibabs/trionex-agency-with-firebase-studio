@@ -529,6 +529,96 @@ export const blogPosts: BlogPost[] = [
       avatarId: 'avatar-1'
     }
   },
+  {
+    id: '4',
+    title: 'The Art of the Landing Page: How to Boost Conversions',
+    slug: 'art-of-the-landing-page',
+    tags: ['CRO', 'Web Design', 'Marketing'],
+    excerpt: 'A great landing page is a masterpiece of persuasion. Learn the key elements that turn visitors into customers and how to design pages that convert.',
+    content: 'Your landing page has one job: to convert. This means every element, from the headline to the call-to-action, must be laser-focused. We explore the psychology of color, the power of persuasive copywriting, and the importance of a single, clear CTA. We\'ll also look at A/B testing strategies to continuously refine your pages for maximum impact.',
+    date: 'August 05, 2024',
+    readTime: '7 min read',
+    imageId: 'service-image-9',
+    author: {
+      name: 'Diana Miller',
+      avatarId: 'avatar-1'
+    }
+  },
+  {
+    id: '5',
+    title: 'From Idea to MVP: A Startup\'s Guide to Lean Development',
+    slug: 'idea-to-mvp-guide',
+    tags: ['Startups', 'Web Development', 'Business'],
+    excerpt: 'Have a great app idea? Don\'t spend a year building it in secret. Learn how the Minimum Viable Product (MVP) approach can help you validate your concept faster and with less risk.',
+    content: 'The MVP is your first step to market. It\'s not about building a perfect product; it\'s about building a product that solves a core problem for a specific audience. This guide walks you through defining your core features, choosing the right tech stack, and gathering crucial user feedback to iterate and grow.',
+    date: 'August 10, 2024',
+    readTime: '9 min read',
+    imageId: 'service-image-4',
+    author: {
+      name: 'Brenda Chen',
+      avatarId: 'avatar-4'
+    }
+  },
+  {
+    id: '6',
+    title: 'Unlocking Local SEO: How to Dominate Your Neighborhood',
+    slug: 'unlocking-local-seo',
+    tags: ['SEO', 'Local Business', 'Marketing'],
+    excerpt: 'For brick-and-mortar businesses, local SEO isn\'t just important—it\'s everything. Discover the proven strategies to get your business on the map and attract more local customers.',
+    content: 'Dominating local search means optimizing your Google Business Profile, gathering reviews, building local citations, and creating content that speaks directly to your community. This post provides a step-by-step checklist for local businesses to improve their visibility and drive foot traffic.',
+    date: 'August 12, 2024',
+    readTime: '7 min read',
+    imageId: 'service-image-10',
+    author: {
+      name: 'Carlos Rodriguez',
+      avatarId: 'avatar-2'
+    }
+  },
+  {
+    id: '7',
+    title: 'Content is King, But Distribution is Queen',
+    slug: 'content-distribution-is-queen',
+    tags: ['Content Marketing', 'Social Media', 'Marketing'],
+    excerpt: 'You\'ve created an amazing piece of content. Now what? Learn why a smart distribution strategy is just as important as the content itself for reaching your target audience.',
+    content: 'Creating great content is only half the battle. Without a solid distribution plan, it won\'t reach the people who need to see it. This article covers how to leverage social media, email newsletters, paid promotion, and community outreach to amplify your content\'s impact.',
+    date: 'August 15, 2024',
+    readTime: '5 min read',
+    imageId: 'service-image-13',
+    author: {
+      name: 'Alex Thompson',
+      avatarId: 'avatar-5'
+    }
+  },
+  {
+    id: '8',
+    title: 'The Future is Headless: Is a Headless CMS Right for You?',
+    slug: 'headless-cms-guide',
+    tags: ['Web Development', 'CMS', 'Technology'],
+    excerpt: 'Headless CMS architecture is gaining popularity for its flexibility and performance. But what is it, and how do you know if it\'s the right choice for your next project?',
+    content: 'A headless CMS decouples the content backend from the presentation layer (the "head"). This allows you to use your content across multiple platforms—a website, a mobile app, a smart watch—all from one place. We explore the pros and cons of going headless versus a traditional CMS like WordPress.',
+    date: 'August 18, 2024',
+    readTime: '8 min read',
+    imageId: 'service-image-2',
+    author: {
+      name: 'Brenda Chen',
+      avatarId: 'avatar-4'
+    }
+  },
+  {
+    id: '9',
+    title: 'Building Brand Trust Through Authentic Social Media Marketing',
+    slug: 'building-brand-trust-social-media',
+    tags: ['Social Media', 'Branding', 'Marketing'],
+    excerpt: 'In a world of sponsored posts and influencers, authenticity stands out. Learn how to build a genuine connection with your audience and turn followers into loyal brand advocates.',
+    content: 'Authenticity in social media means being transparent, showcasing behind-the-scenes moments, and engaging in real conversations. It\'s about building a community, not just collecting followers. This post shares practical tips for creating an authentic social media presence that resonates with today\'s consumers.',
+    date: 'August 20, 2024',
+    readTime: '6 min read',
+    imageId: 'service-image-12',
+    author: {
+      name: 'Alex Thompson',
+      avatarId: 'avatar-5'
+    }
+  }
 ];
 
 export const testimonials: Testimonial[] = [
