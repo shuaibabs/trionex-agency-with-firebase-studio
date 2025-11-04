@@ -39,11 +39,7 @@ export default function RootLayout({
 
   useEffect(() => {
     // On initial mount, stop the loading, since it's defaulted to true now.
-    // We use a short timeout to allow the initial render to complete.
-    const timer = setTimeout(() => {
-        stopLoading();
-    }, 500);
-    return () => clearTimeout(timer);
+    stopLoading();
   }, [stopLoading]);
 
 
