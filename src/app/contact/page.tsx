@@ -135,15 +135,17 @@ export default function ContactPage() {
               </div>
             </div>
              <div className="h-80 w-full rounded-lg overflow-hidden border">
-                <iframe
-                    className="h-full w-full dark-map-filter"
-                    src="https://maps.google.com/maps?q=Jalalabad,%20Shamli,%20Uttar%20Pradesh,%20247772&t=k&z=13&ie=UTF8&iwloc=&output=embed"
+                 <iframe
+                    width="100%"
+                    height="100%"
                     frameBorder="0"
                     scrolling="no"
                     marginHeight={0}
                     marginWidth={0}
-                    loading="lazy"
-                ></iframe>
+                    src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=Jalalabad,%20Shamli,%20Uttar%20Pradesh,%20247772+(My%20Business%20Name)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
+                    className="dark:invert dark:grayscale dark:hue-rotate-180"
+                    >
+                </iframe>
             </div>
           </div>
 
