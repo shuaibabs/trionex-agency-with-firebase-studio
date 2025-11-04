@@ -60,12 +60,12 @@ export default function Header() {
     <header className={cn('sticky top-0 z-50 w-full transition-all duration-300')}>
         <div className="container mx-auto px-4">
             <div className="mt-2 flex h-16 items-center rounded-full border bg-background/95 backdrop-blur-sm supports-[backdrop-filter]:bg-background/60 px-4 shadow-lg sm:px-6">
-                <LoadingLink href="/" className="mr-auto lg:mr-6 flex items-center">
+                <LoadingLink href="/" className="mr-auto flex items-center">
                   <Logo />
                 </LoadingLink>
 
                 {/* Desktop Navigation */}
-                <nav className="hidden lg:flex lg:items-center lg:gap-6 text-sm font-medium">
+                <nav className="hidden xl:flex xl:items-center xl:gap-6 text-sm font-medium mx-auto">
                 {navLinks.map(({ href, label }) => (
                     <LoadingLink
                       key={href}
@@ -81,8 +81,9 @@ export default function Header() {
                 </nav>
 
                 <div className="flex flex-1 items-center justify-end gap-2">
-                <div className="hidden lg:flex flex-1 items-center justify-end gap-2">
-                  <ThemeToggle />
+                
+                {/* Auth buttons for desktop and tablet */}
+                <div className="hidden sm:flex items-center gap-2">
                   {!isUserLoading &&
                       (user ? (
                       <DropdownMenu>
@@ -127,12 +128,13 @@ export default function Header() {
                       </div>
                       ))}
                 </div>
+                 <ThemeToggle />
 
 
-                {/* Mobile Navigation */}
+                {/* Mobile & Tablet Navigation */}
                 <Sheet open={isMobileMenuOpen} onOpenChange={setMobileMenuOpen}>
                     <SheetTrigger asChild>
-                    <Button variant="ghost" size="icon" className="lg:hidden">
+                    <Button variant="ghost" size="icon" className="xl:hidden">
                         <Menu />
                         <span className="sr-only">Open menu</span>
                     </Button>
@@ -143,7 +145,6 @@ export default function Header() {
                         <LoadingLink href="/" onClick={() => setMobileMenuOpen(false)}>
                             <Logo />
                         </LoadingLink>
-                        <ThemeToggle />
                         </div>
                         <nav className="flex-grow mt-6">
                         <ul className="space-y-4">
@@ -166,10 +167,20 @@ export default function Header() {
                         <div className="border-t pt-4">
                         {user ? (
                             <div className="flex flex-col gap-4">
+                                <div className="flex items-center gap-4">
+                                     <Avatar className="h-10 w-10">
+                                        <AvatarImage src={user.photoURL || undefined} alt={user.email || 'User'} />
+                                        <AvatarFallback>{getInitials(user.email)}</AvatarFallback>
+                                    </Avatar>
+                                    <div>
+                                        <p className="text-sm font-medium leading-none">{user.displayName || 'User'}</p>
+                                        <p className="text-xs leading-none text-muted-foreground">{user.email}</p>
+                                    </div>
+                                </div>
                                 <Button variant="outline" asChild>
-                                    <LoadingLink href="/dashboard">Go to Dashboard</LoadingLink>
+                                    <LoadingLink href="/dashboard" onClick={() => setMobileMenuOpen(false)}>Go to Dashboard</LoadingLink>
                                 </Button>
-                                <Button onClick={handleLogout} className="w-full">
+                                <Button onClick={() => {handleLogout(); setMobileMenuOpen(false);}} className="w-full">
                                 Log Out
                                 </Button>
                             </div>
