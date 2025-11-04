@@ -238,44 +238,50 @@ export default function Home() {
           </div>
           <Carousel
             plugins={[plugin.current]}
-            className="w-full max-w-4xl mx-auto"
+            className="w-full max-w-6xl mx-auto"
             opts={{ loop: true }}
             onMouseEnter={plugin.current.stop}
             onMouseLeave={plugin.current.reset}
           >
-            <CarouselContent>
+            <CarouselContent className="-ml-4">
               {testimonials.map((testimonial) => {
                 const avatarImage = placeholderImages.find(p => p.id === testimonial.avatarId);
                 return (
-                <CarouselItem key={testimonial.id}>
-                  <Card className="border-0 bg-transparent shadow-none">
-                    <CardContent className="p-6 text-center">
-                      <p className="mb-6 text-lg md:text-xl italic text-foreground">
-                        &quot;{testimonial.quote}&quot;
-                      </p>
-                      <div className="flex items-center justify-center">
-                        {avatarImage && <Avatar className="mr-4 h-12 w-12">
-                          <AvatarImage
-                            src={avatarImage.imageUrl}
-                            alt={testimonial.name}
-                            data-ai-hint={avatarImage.imageHint}
-                          />
-                          <AvatarFallback>{testimonial.name[0]}</AvatarFallback>
-                        </Avatar>}
-                        <div>
-                          <p className="font-semibold">{testimonial.name}</p>
-                          <p className="text-sm text-muted-foreground">
-                            {testimonial.title}
-                          </p>
-                        </div>
-                      </div>
-                    </CardContent>
-                  </Card>
+                <CarouselItem key={testimonial.id} className="pl-4 md:basis-1/2 lg:basis-1/2">
+                  <div className="p-1">
+                    <Card className="overflow-hidden h-full">
+                       <CardContent className="p-0 flex flex-col md:flex-row items-center">
+                          <div className="relative w-full md:w-2/5 aspect-square md:aspect-auto md:h-full flex-shrink-0">
+                             {avatarImage && (
+                                <Image
+                                    src={avatarImage.imageUrl}
+                                    alt={testimonial.name}
+                                    fill
+                                    className="object-cover"
+                                    data-ai-hint={avatarImage.imageHint}
+                                />
+                             )}
+                          </div>
+                          <div className="p-6 md:p-8 flex-grow self-start">
+                             <MessageSquareQuote className="w-8 h-8 text-primary/30 mb-4" />
+                            <p className="mb-6 text-base md:text-lg italic text-foreground/90">
+                              &quot;{testimonial.quote}&quot;
+                            </p>
+                            <div>
+                                <p className="font-semibold font-headline text-primary">{testimonial.name}</p>
+                                <p className="text-sm text-muted-foreground">
+                                  {testimonial.title}
+                                </p>
+                            </div>
+                          </div>
+                       </CardContent>
+                    </Card>
+                  </div>
                 </CarouselItem>
               )})}
             </CarouselContent>
-            <CarouselPrevious className="hidden sm:flex" />
-            <CarouselNext className="hidden sm:flex" />
+            <CarouselPrevious className="left-[-1rem] sm:left-[-2rem]" />
+            <CarouselNext className="right-[-1rem] sm:right-[-2rem]" />
           </Carousel>
         </div>
       </section>
