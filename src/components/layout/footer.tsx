@@ -25,8 +25,11 @@ const footerNavs = [
   {
     label: 'Legal',
     items: [
-      { href: '#', name: 'Privacy Policy' },
-      { href: '#', name: 'Terms of Service' },
+      { href: '/legal/privacy-policy', name: 'Privacy Policy' },
+      { href: '/legal/terms-of-service', name: 'Terms of Service' },
+      { href: '/legal/cancellation-policy', name: 'Cancellation Policy' },
+      { href: '/legal/refund-policy', name: 'Refund Policy' },
+      { href: '/legal/cookie-policy', name: 'Cookie Policy' },
     ],
   },
 ];
