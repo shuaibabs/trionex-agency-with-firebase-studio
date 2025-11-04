@@ -141,7 +141,7 @@ const Planet = ({
   );
 };
 
-const Orbit = ({ radius, duration, angleX, angleY, children, ...props }: { radius: number, duration: number, angleX: number, angleY: number, children?: React.ReactNode }) => (
+const Orbit = ({ radius, duration, children, ...props }: { radius: number, duration: number, children?: React.ReactNode }) => (
   <motion.div
     className="absolute top-1/2 left-1/2 border-2 border-dashed border-primary/20 rounded-full"
     style={{
@@ -149,8 +149,6 @@ const Orbit = ({ radius, duration, angleX, angleY, children, ...props }: { radiu
         height: radius * 2,
         marginLeft: -radius,
         marginTop: -radius,
-        transformStyle: 'preserve-3d',
-        transform: `rotateX(${angleX}deg) rotateY(${angleY}deg)`,
     }}
     animate={{ rotate: 360 }}
     transition={{ duration: duration, repeat: Infinity, ease: "linear"}}
@@ -164,7 +162,7 @@ const Orbit = ({ radius, duration, angleX, angleY, children, ...props }: { radiu
 export default function FuturisticAnimation() {
   return (
     <div className="relative flex items-center justify-center w-full h-full scale-75 sm:scale-90 md:scale-100">
-      <div className="relative w-[460px] h-[460px]" style={{ perspective: 1000 }}>
+      <div className="relative w-[460px] h-[460px]">
         
         {/* Central Glowing Orb */}
         <motion.div
@@ -177,39 +175,31 @@ export default function FuturisticAnimation() {
           transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
         />
 
-        {/* Main 3D container for orbits */}
-        <motion.div
+        {/* Main 2D container for orbits */}
+        <div
           className="w-full h-full"
-          style={{ transformStyle: 'preserve-3d' }}
-          animate={{ rotateY: [0, 15, -10, 0], rotateX: [0, 10, -15, 0] }}
-          transition={{
-              repeat: Infinity,
-              repeatType: "mirror",
-              duration: 20,
-              ease: "easeInOut",
-          }}
         >
-          <Orbit radius={80} duration={12} angleX={70} angleY={20}>
+          <Orbit radius={80} duration={12}>
               <Planet icon={<ReactIcon />} initialAngle={0} orbitRadius={80} />
               <Planet icon={<NodeIcon />} initialAngle={180} orbitRadius={80} />
           </Orbit>
-          <Orbit radius={130} duration={20} angleX={70} angleY={20}>
+          <Orbit radius={130} duration={20}>
               <Planet icon={<JSIcon />} initialAngle={45} orbitRadius={130} />
               <Planet icon={<HTMLIcon />} initialAngle={135} orbitRadius={130} />
               <Planet icon={<CSSIcon />} initialAngle={225} orbitRadius={130} />
               <Planet icon={<ExpressIcon />} initialAngle={315} orbitRadius={130} />
           </Orbit>
-          <Orbit radius={180} duration={30} angleX={70} angleY={20}>
+          <Orbit radius={180} duration={30}>
               <Planet icon={<MetaIcon />} initialAngle={270} orbitRadius={180} />
               <Planet icon={<WordpressIcon />} initialAngle={0} orbitRadius={180} />
           </Orbit>
-           <Orbit radius={230} duration={40} angleX={70} angleY={20}>
+           <Orbit radius={230} duration={40}>
               <Planet icon={<GithubIcon />} initialAngle={30} orbitRadius={230} />
               <Planet icon={<FacebookIcon />} initialAngle={120} orbitRadius={230} />
               <Planet icon={<InstagramIcon />} initialAngle={210} orbitRadius={230} />
               <Planet icon={<LinkedInIcon />} initialAngle={300} orbitRadius={230} />
           </Orbit>
-        </motion.div>
+        </div>
       </div>
     </div>
   );
