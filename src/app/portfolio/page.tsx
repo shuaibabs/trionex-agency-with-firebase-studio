@@ -128,9 +128,11 @@ export default function PortfolioPage() {
                       />
                     </CardContent>
                     <CardFooter>
-                        <span className="text-primary hover:underline flex items-center text-sm font-semibold">
-                            View Details <ArrowRight className="ml-2 h-4 w-4" />
-                        </span>
+                        <Button variant="outline" asChild className="w-full mt-auto">
+                            <LoadingLink href={`/portfolio/${study.slug}`}>
+                                View Details <ArrowRight className="ml-2 h-4 w-4" />
+                            </LoadingLink>
+                        </Button>
                     </CardFooter>
                   </LoadingLink>
                 </Card>

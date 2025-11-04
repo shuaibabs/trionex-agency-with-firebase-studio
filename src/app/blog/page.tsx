@@ -6,6 +6,7 @@ import { Card, CardContent, CardHeader, CardTitle, CardFooter } from '@/componen
 import { blogPosts, placeholderImages } from '@/lib/data';
 import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
+import { Button } from '@/components/ui/button';
 
 export default function BlogPage() {
   const cardVariants = {
@@ -67,9 +68,11 @@ export default function BlogPage() {
                       </p>
                     </CardContent>
                     <CardFooter>
-                       <span className="text-primary font-semibold flex items-center text-sm group-hover:underline">
-                          Read Article <ArrowRight className="ml-2 h-4 w-4" />
-                        </span>
+                       <Button variant="outline" asChild className="w-full mt-auto">
+                            <LoadingLink href={`/blog/${post.slug}`}>
+                                Read Article <ArrowRight className="ml-2 h-4 w-4" />
+                            </LoadingLink>
+                        </Button>
                     </CardFooter>
                   </LoadingLink>
                 </Card>
