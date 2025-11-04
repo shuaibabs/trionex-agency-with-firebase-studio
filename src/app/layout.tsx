@@ -15,6 +15,7 @@ import { Inter, Space_Grotesk } from 'next/font/google';
 import { cn } from '@/lib/utils';
 import { NavigationEvents } from '@/components/navigation-events';
 import { useLoading } from '@/hooks/use-loading-store';
+import CookieConsent from '@/components/cookie-consent';
 
 
 const inter = Inter({
@@ -77,6 +78,7 @@ export default function RootLayout({
             <Suspense fallback={null}>
                 <NavigationEvents />
             </Suspense>
+            <CookieConsent />
           </ThemeProvider>
         </FirebaseClientProvider>
       </body>
