@@ -154,6 +154,11 @@ export default function Home() {
                   <Card
                     className={cn("group overflow-hidden transform transition-transform duration-300 hover:-translate-y-2 hover:shadow-xl card-glow-on-hover h-full flex flex-col")}
                   >
+                     <div className="p-6 pb-2 flex justify-center">
+                        <div className="p-3 bg-primary/10 rounded-full">
+                          <Icon className="h-6 w-6 text-primary" />
+                        </div>
+                      </div>
                      <Carousel 
                         className="w-full" 
                         plugins={[
@@ -187,9 +192,6 @@ export default function Home() {
                       </CarouselContent>
                     </Carousel>
                     <CardHeader className="items-center text-center">
-                      <div className="p-3 bg-primary/10 rounded-full mb-2">
-                        <Icon className="h-6 w-6 text-primary" />
-                      </div>
                       <CardTitle className="font-headline text-xl">
                         {service.title}
                       </CardTitle>
@@ -269,7 +271,7 @@ export default function Home() {
                 <CarouselItem key={testimonial.id}>
                   <Card className="border-0 bg-transparent shadow-none">
                     <CardContent className="p-6 text-center">
-                      <p className="mb-6 text-base md:text-lg italic text-foreground">
+                      <p className="mb-6 text-lg md:text-xl italic text-foreground">
                         &quot;{testimonial.quote}&quot;
                       </p>
                       <div className="flex items-center justify-center">
