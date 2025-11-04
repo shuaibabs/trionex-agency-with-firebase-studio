@@ -61,6 +61,8 @@ export default function Home() {
   const plugin = React.useRef(
     Autoplay({ delay: 2000, stopOnInteraction: true })
   )
+  
+  const duplicatedClients = [...clients, ...clients];
 
   return (
     <div className="flex flex-col">
@@ -179,39 +181,36 @@ export default function Home() {
       </section>
 
       {/* Client Logos Section */}
-      <section className="py-12 bg-background">
+      <section className="py-16 bg-background">
         <div className="container mx-auto px-4">
-          <h3 className="mb-8 text-center text-base md:text-lg font-semibold text-muted-foreground">
-            Trusted by leading companies worldwide
-          </h3>
-          <Carousel
-            opts={{
-              align: 'start',
-              loop: true,
-            }}
-            className="w-full"
-          >
-            <CarouselContent>
-              {clients.map((client) => {
-                const clientImage = placeholderImages.find(p => p.id === client.imageId);
-                return (
-                <CarouselItem key={client.id} className="basis-1/2 sm:basis-1/3 md:basis-1/4 lg:basis-1/6">
-                  <div className="p-1 flex justify-center">
-                    {clientImage && <Image
-                      src={clientImage.imageUrl}
-                      alt={client.name}
-                      width={150}
-                      height={50}
-                      className="object-contain grayscale transition-all hover:grayscale-0 h-[50px] w-auto"
-                      data-ai-hint={clientImage.imageHint}
-                    />}
-                  </div>
-                </CarouselItem>
-              )})}
-            </CarouselContent>
-          </Carousel>
+            <h3 className="mb-8 text-center text-base md:text-lg font-semibold text-muted-foreground">
+                Trusted by leading companies worldwide
+            </h3>
+            <div
+                className="group relative w-full overflow-hidden [mask-image:linear-gradient(to_right,transparent,white_20%,white_80%,transparent)]"
+                >
+                <div className="flex animate-scroll group-hover:[animation-play-state:paused]">
+                    {duplicatedClients.map((client) => {
+                        const clientImage = placeholderImages.find(p => p.id === client.imageId);
+                        return (
+                            <div key={`${client.id}-1`} className="flex-shrink-0 w-1/4 sm:w-1/6 md:w-1/8 p-4">
+                                {clientImage && (
+                                    <Image
+                                        src={clientImage.imageUrl}
+                                        alt={client.name}
+                                        width={150}
+                                        height={50}
+                                        className="object-contain h-[50px] w-auto mx-auto grayscale transition-all hover:grayscale-0"
+                                        data-ai-hint={clientImage.imageHint}
+                                    />
+                                )}
+                            </div>
+                        );
+                    })}
+                </div>
+            </div>
         </div>
-      </section>
+    </section>
 
       {/* Testimonials Section */}
       <section className="bg-secondary/50 dark:bg-secondary/20 py-16 sm:py-24">
