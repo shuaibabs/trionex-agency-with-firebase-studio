@@ -241,6 +241,12 @@
       "imageHint": "architecture planning"
     },
     {
+      "id": "service-image-2-3",
+      "description": "Close up of complex database schema diagram.",
+      "imageUrl": "https://images.unsplash.com/photo-1589170284481-4d40b8f02f9e?q=80&w=2070&auto=format&fit=crop",
+      "imageHint": "database schema"
+    },
+    {
       "id": "service-image-3",
       "description": "A sleek, modern e-commerce website displayed on a laptop screen.",
       "imageUrl": "https://images.unsplash.com/photo-1585241936939-be4099591252?q=80&w=2070&auto=format&fit=crop",
@@ -253,10 +259,28 @@
       "imageHint": "online purchase"
     },
     {
+      "id": "service-image-3-3",
+      "description": "A shopping cart icon glowing on a digital screen.",
+      "imageUrl": "https://images.unsplash.com/photo-1580974928045-83452317122f?q=80&w=2070&auto=format&fit=crop",
+      "imageHint": "shopping cart"
+    },
+    {
       "id": "service-image-4",
       "description": "A lightbulb made of glowing circuitry, symbolizing a new tech idea.",
       "imageUrl": "https://images.unsplash.com/photo-1521791136064-7986c2920216?q=80&w=2070&auto=format&fit=crop",
       "imageHint": "startup idea"
+    },
+    {
+      "id": "service-image-4-2",
+      "description": "A group of young entrepreneurs collaborating around a table.",
+      "imageUrl": "https://images.unsplash.com/photo-1556740738-b6a63e27c4df?q=80&w=2070&auto=format&fit=crop",
+      "imageHint": "startup team"
+    },
+    {
+      "id": "service-image-4-3",
+      "description": "A simple wireframe sketch of a mobile app.",
+      "imageUrl": "https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?q=80&w=2070&auto=format&fit=crop",
+      "imageHint": "app wireframe"
     },
     {
       "id": "service-image-5",
@@ -265,10 +289,34 @@
       "imageHint": "real estate"
     },
     {
+      "id": "service-image-5-2",
+      "description": "An aerial view of a suburban neighborhood.",
+      "imageUrl": "https://images.unsplash.com/photo-1582493325888-2ff041355529?q=80&w=2070&auto=format&fit=crop",
+      "imageHint": "neighborhood aerial"
+    },
+    {
+      "id": "service-image-5-3",
+      "description": "A real estate agent handing keys to a new homeowner.",
+      "imageUrl": "https://images.unsplash.com/photo-1581287162985-1e3d36b1e0a2?q=80&w=2070&auto=format&fit=crop",
+      "imageHint": "real estate agent"
+    },
+    {
       "id": "service-image-6",
       "description": "A university campus building with students walking by.",
       "imageUrl": "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?q=80&w=2070&auto=format&fit=crop",
       "imageHint": "college campus"
+    },
+    {
+      "id": "service-image-6-2",
+      "description": "A lecture hall filled with students.",
+      "imageUrl": "https://images.unsplash.com/photo-1540575467063-178a50c2df87?q=80&w=2070&auto=format&fit=crop",
+      "imageHint": "lecture hall"
+    },
+    {
+      "id": "service-image-6-3",
+      "description": "A stack of textbooks on a desk.",
+      "imageUrl": "https://images.unsplash.com/photo-1495446815901-a7297e633e8d?q=80&w=2070&auto=format&fit=crop",
+      "imageHint": "textbooks desk"
     },
     {
       "id": "service-image-7",
@@ -277,16 +325,52 @@
       "imageHint": "healthcare technology"
     },
     {
+      "id": "service-image-7-2",
+      "description": "A close-up of a stethoscope on a medical chart.",
+      "imageUrl": "https://images.unsplash.com/photo-1505751172876-fa1923c5c528?q=80&w=2070&auto=format&fit=crop",
+      "imageHint": "medical equipment"
+    },
+    {
+      "id": "service-image-7-3",
+      "description": "A clean, modern hospital waiting room.",
+      "imageUrl": "https://images.unsplash.com/photo-1551076805-e1869033e561?q=80&w=1932&auto=format&fit=crop",
+      "imageHint": "hospital waiting"
+    },
+    {
       "id": "service-image-8",
       "description": "A minimalist and artistic personal portfolio website on a tablet.",
       "imageUrl": "https://images.unsplash.com/photo-1512486130939-2c4f79935e4f?q=80&w=1974&auto=format&fit=crop",
       "imageHint": "personal portfolio"
     },
     {
+      "id": "service-image-8-2",
+      "description": "A photographer's camera on a desk with edited photos in the background.",
+      "imageUrl": "https://images.unsplash.com/photo-1497215842964-222b430dc094?q=80&w=2070&auto=format&fit=crop",
+      "imageHint": "photographer desk"
+    },
+    {
+      "id": "service-image-8-3",
+      "description": "A graphic designer sketching on a digital tablet.",
+      "imageUrl": "https://images.unsplash.com/photo-1581093450021-4a7360e9a6b5?q=80&w=2070&auto=format&fit=crop",
+      "imageHint": "designer sketching"
+    },
+    {
       "id": "service-image-9",
       "description": "An arrow hitting the center of a target, symbolizing conversion.",
       "imageUrl": "https://images.unsplash.com/photo-1550536448-9f1e9c56f70a?q=80&w=2070&auto=format&fit=crop",
       "imageHint": "landing page"
+    },
+    {
+      "id": "service-image-9-2",
+      "description": "A simple and clean landing page design on a laptop.",
+      "imageUrl": "https://images.unsplash.com/photo-1516131206173-684961a432db?q=80&w=2070&auto=format&fit=crop",
+      "imageHint": "clean design"
+    },
+    {
+      "id": "service-image-9-3",
+      "description": "A large 'Sign Up Now' button on a screen.",
+      "imageUrl": "https://images.unsplash.com/photo-1506784983877-45594efa4c85?q=80&w=2070&auto=format&fit=crop",
+      "imageHint": "call action"
     },
     {
       "id": "service-image-10",
@@ -301,6 +385,12 @@
       "imageHint": "analytics data"
     },
     {
+      "id": "service-image-10-3",
+      "description": "A person looking at a Google search results page.",
+      "imageUrl": "https://images.unsplash.com/photo-1516900448138-898708f36c83?q=80&w=2070&auto=format&fit=crop",
+      "imageHint": "search results"
+    },
+    {
       "id": "service-image-11",
       "description": "A person clicking on a paid search ad on a laptop.",
       "imageUrl": "https://images.unsplash.com/photo-1599658880111-35c6fab47a69?q=80&w=2070&auto=format&fit=crop",
@@ -313,16 +403,46 @@
       "imageHint": "social ads"
     },
     {
+      "id": "service-image-11-3",
+      "description": "A dashboard showing ad campaign performance metrics.",
+      "imageUrl": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop",
+      "imageHint": "campaign dashboard"
+    },
+    {
       "id": "service-image-12",
       "description": "A grid of social media profile pictures, showing community.",
       "imageUrl": "https://images.unsplash.com/photo-1633332755192-727a05c4013d?q=80&w=1780&auto=format&fit=crop",
       "imageHint": "social community"
     },
     {
+      "id": "service-image-12-2",
+      "description": "A person scrolling through an Instagram feed on their phone.",
+      "imageUrl": "https://images.unsplash.com/photo-1589156280159-24542a22525e?q=80&w=1974&auto=format&fit=crop",
+      "imageHint": "instagram feed"
+    },
+    {
+      "id": "service-image-12-3",
+      "description": "Like and heart icons floating over a mobile phone.",
+      "imageUrl": "https://images.unsplash.com/photo-1611605698335-8b1569810432?q=80&w=1974&auto=format&fit=crop",
+      "imageHint": "social engagement"
+    },
+    {
       "id": "service-image-13",
       "description": "A person writing content on a vintage typewriter.",
       "imageUrl": "https://images.unsplash.com/photo-1520638023360-6126f239f52b?q=80&w=2070&auto=format&fit=crop",
       "imageHint": "content creation"
+    },
+    {
+      "id": "service-image-13-2",
+      "description": "A collection of blog post titles on a website.",
+      "imageUrl": "https://images.unsplash.com/photo-1457369804613-52c61a468e7d?q=80&w=2070&auto=format&fit=crop",
+      "imageHint": "blog posts"
+    },
+    {
+      "id": "service-image-13-3",
+      "description": "An infographic showing data and statistics.",
+      "imageUrl": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop",
+      "imageHint": "data infographic"
     }
   ]
 }

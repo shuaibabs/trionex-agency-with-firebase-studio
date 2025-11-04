@@ -40,7 +40,7 @@ export const services: Service[] = [
     ],
     caseStudyIds: ['2'],
     category: 'Web Development',
-    imageIds: ['service-image-2', 'service-image-2-2']
+    imageIds: ['service-image-2', 'service-image-2-2', 'service-image-2-3']
   },
   {
     id: 'ecommerce-website',
@@ -58,7 +58,7 @@ export const services: Service[] = [
     ],
     caseStudyIds: ['3'],
     category: 'Web Development',
-    imageIds: ['service-image-3', 'service-image-3-2']
+    imageIds: ['service-image-3', 'service-image-3-2', 'service-image-3-3']
   },
   {
     id: 'startup-mvp-development',
@@ -76,7 +76,7 @@ export const services: Service[] = [
     ],
     caseStudyIds: [],
     category: 'Web Development',
-    imageIds: ['service-image-4']
+    imageIds: ['service-image-4', 'service-image-4-2', 'service-image-4-3']
   },
    {
     id: 'real-estate-website-development',
@@ -94,7 +94,7 @@ export const services: Service[] = [
     ],
     caseStudyIds: [],
     category: 'Web Development',
-    imageIds: ['service-image-5']
+    imageIds: ['service-image-5', 'service-image-5-2', 'service-image-5-3']
   },
     {
     id: 'college-school-website-development',
@@ -112,7 +112,7 @@ export const services: Service[] = [
     ],
     caseStudyIds: [],
     category: 'Web Development',
-    imageIds: ['service-image-6']
+    imageIds: ['service-image-6', 'service-image-6-2', 'service-image-6-3']
   },
   {
     id: 'healthcare-clinic-website-development',
@@ -130,7 +130,7 @@ export const services: Service[] = [
     ],
     caseStudyIds: [],
     category: 'Web Development',
-    imageIds: ['service-image-7']
+    imageIds: ['service-image-7', 'service-image-7-2', 'service-image-7-3']
   },
   {
     id: 'portfolio-personal-branding-websites',
@@ -148,7 +148,7 @@ export const services: Service[] = [
     ],
     caseStudyIds: [],
     category: 'Web Development',
-    imageIds: ['service-image-8']
+    imageIds: ['service-image-8', 'service-image-8-2', 'service-image-8-3']
   },
    {
     id: 'landing-page-design-development',
@@ -166,7 +166,7 @@ export const services: Service[] = [
     ],
     caseStudyIds: [],
     category: 'Web Development',
-    imageIds: ['service-image-9']
+    imageIds: ['service-image-9', 'service-image-9-2', 'service-image-9-3']
   },
   {
     id: 'seo-optimization',
@@ -184,7 +184,7 @@ export const services: Service[] = [
     ],
     caseStudyIds: ['4'],
     category: 'Digital Marketing',
-    imageIds: ['service-image-10', 'service-image-10-2']
+    imageIds: ['service-image-10', 'service-image-10-2', 'service-image-10-3']
   },
   {
     id: 'ppc-advertising',
@@ -202,7 +202,7 @@ export const services: Service[] = [
     ],
     caseStudyIds: ['5'],
     category: 'Digital Marketing',
-    imageIds: ['service-image-11', 'service-image-11-2']
+    imageIds: ['service-image-11', 'service-image-11-2', 'service-image-11-3']
   },
   {
     id: 'social-media-marketing',
@@ -220,7 +220,7 @@ export const services: Service[] = [
     ],
     caseStudyIds: ['6'],
     category: 'Digital Marketing',
-    imageIds: ['service-image-12']
+    imageIds: ['service-image-12', 'service-image-12-2', 'service-image-12-3']
   },
   {
     id: 'content-marketing',
@@ -238,7 +238,7 @@ export const services: Service[] = [
     ],
     caseStudyIds: [],
     category: 'Digital Marketing',
-    imageIds: ['service-image-13']
+    imageIds: ['service-image-13', 'service-image-13-2', 'service-image-13-3']
   },
 ];
 
@@ -701,3 +701,4 @@ export const clients: Client[] = [
   { id: '7', name: 'StartUpCo', imageId: 'client-logo-1' },
   { id: '8', name: 'FutureGadget', imageId: 'client-logo-2' },
 ];
+
