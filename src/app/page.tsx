@@ -274,66 +274,38 @@ export default function Home() {
                 return (
                 <CarouselItem key={testimonial.id} className="md:basis-1/2 lg:basis-1/3">
                     <motion.div 
-                        className="h-full"
+                        className="h-full p-4"
                         animate={{ 
                             scale: isActive ? 1 : 0.85,
                             opacity: isActive ? 1 : 0.6,
                         }}
                         transition={{ type: 'spring', stiffness: 300, damping: 30 }}
                     >
-                        <div className="relative aspect-[1/1.2] h-full">
-                            {avatarImage && (
-                                <Image
-                                    src={avatarImage.imageUrl}
-                                    alt={testimonial.name}
-                                    fill
-                                    className="object-cover rounded-xl"
-                                    data-ai-hint={avatarImage.imageHint}
-                                />
-                            )}
-                            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent rounded-xl" />
-                            
+                      <Card className="relative h-full w-full overflow-hidden rounded-xl">
+                        {avatarImage && (
+                            <Image
+                                src={avatarImage.imageUrl}
+                                alt={testimonial.name}
+                                fill
+                                className="object-cover transition-transform duration-500 ease-in-out group-hover:scale-105"
+                                data-ai-hint={avatarImage.imageHint}
+                            />
+                        )}
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
+                        <div className="absolute inset-0 flex flex-col justify-end p-6 text-white">
                             <motion.div 
-                                className="absolute inset-0 flex flex-col justify-end p-6 text-white"
-                                initial={{ y: 20, opacity: 0}}
-                                animate={{
-                                    y: isActive ? 0 : 20,
-                                    opacity: isActive ? 1 : 0,
-                                }}
+                                initial={{ opacity: 0, y: 20 }}
+                                animate={{ opacity: isActive ? 1 : 0, y: isActive ? 0 : 20 }}
+                                transition={{ duration: 0.5, delay: 0.1 }}
                             >
-                                <p className="text-sm italic">&quot;{testimonial.quote}&quot;</p>
-                                <p className="mt-4 font-bold font-headline text-lg">{testimonial.name}</p>
-                                <p className="text-xs text-white/70">{testimonial.title}</p>
-                            </motion.div>
-
-                             <motion.div 
-                                className="absolute -left-12 top-1/2 -translate-y-1/2"
-                                animate={{
-                                  x: isActive ? 0 : -20,
-                                  opacity: isActive ? 0 : 1
-                                }}
-                             >
-                                <div className="h-40 w-10 bg-black/50 backdrop-blur-sm rounded-lg flex items-center justify-center -rotate-12 transform-gpu">
-                                    <p className="text-white/50 font-bold font-headline text-lg" style={{ writingMode: 'vertical-rl' }}>
-                                      {testimonials[(index - 1 + testimonials.length) % testimonials.length].name.split(' ')[0]}
-                                    </p>
-                                </div>
-                            </motion.div>
-
-                            <motion.div 
-                                className="absolute -right-12 top-1/2 -translate-y-1/2"
-                                animate={{
-                                  x: isActive ? 0 : 20,
-                                  opacity: isActive ? 0 : 1
-                                }}
-                            >
-                                <div className="h-40 w-10 bg-black/50 backdrop-blur-sm rounded-lg flex items-center justify-center rotate-12 transform-gpu">
-                                     <p className="text-white/50 font-bold font-headline text-lg" style={{ writingMode: 'vertical-rl' }}>
-                                      {testimonials[(index + 1) % testimonials.length].name.split(' ')[0]}
-                                    </p>
+                                <p className="text-sm md:text-base italic">&quot;{testimonial.quote}&quot;</p>
+                                <div className="mt-4 border-t border-white/20 pt-4">
+                                    <p className="font-bold font-headline text-lg">{testimonial.name}</p>
+                                    <p className="text-xs text-white/70">{testimonial.title}</p>
                                 </div>
                             </motion.div>
                         </div>
+                      </Card>
                     </motion.div>
                 </CarouselItem>
               )})}
@@ -470,3 +442,5 @@ export default function Home() {
     </div>
   );
 }
+
+    
