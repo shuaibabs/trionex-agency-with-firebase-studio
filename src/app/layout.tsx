@@ -14,6 +14,7 @@ import { GlobalLoader } from '@/components/global-loader';
 import { Inter, Space_Grotesk } from 'next/font/google';
 import { cn } from '@/lib/utils';
 import { NavigationEvents } from '@/components/navigation-events';
+import { useLoading } from '@/hooks/use-loading-store';
 
 
 const inter = Inter({
@@ -34,6 +35,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   const pathname = usePathname();
+  const { isLoading } = useLoading();
 
   return (
     <html lang="en" suppressHydrationWarning>
@@ -56,16 +58,18 @@ export default function RootLayout({
               <GlobalLoader />
               <Header />
               <AnimatePresence mode="wait">
-                <motion.main
-                  key={pathname}
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  exit={{ opacity: 0 }}
-                  transition={{ duration: 0.3, ease: 'easeInOut' }}
-                  className="flex-grow pt-8"
-                >
-                  {children}
-                </motion.main>
+                 {!isLoading && (
+                    <motion.main
+                      key={pathname}
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      exit={{ opacity: 0 }}
+                      transition={{ duration: 0.3, ease: 'easeInOut' }}
+                      className="flex-grow pt-8"
+                    >
+                      {children}
+                    </motion.main>
+                 )}
               </AnimatePresence>
               <Footer />
             </div>
