@@ -1,6 +1,6 @@
 
 import LoadingLink from '@/components/loading-link';
-import { Github, Twitter, Linkedin } from 'lucide-react';
+import { Facebook, Instagram, Linkedin } from 'lucide-react';
 import Logo from '../icons/logo';
 import { Button } from '@/components/ui/button';
 import { NewsletterForm } from '../newsletter-form';
@@ -35,8 +35,8 @@ const footerNavs = [
 ];
 
 const socialLinks = [
-  { icon: <Twitter className="h-5 w-5" />, href: '#', label: 'Twitter' },
-  { icon: <Github className="h-5 w-5" />, href: '#', label: 'Github' },
+  { icon: <Instagram className="h-5 w-5" />, href: '#', label: 'Instagram' },
+  { icon: <Facebook className="h-5 w-5" />, href: '#', label: 'Facebook' },
   { icon: <Linkedin className="h-5 w-5" />, href: '#', label: 'LinkedIn' },
 ];
 
