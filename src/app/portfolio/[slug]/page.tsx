@@ -5,7 +5,7 @@ import Image from 'next/image';
 import { caseStudies } from '@/lib/data';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Github, Link as LinkIcon, Youtube, ArrowLeft, CheckCircle, Target, Trophy, MessageSquareQuote, Briefcase, Clock, Code } from 'lucide-react';
+import { Github, Link as LinkIcon, Youtube, ArrowLeft, CheckCircle, Target, Trophy, MessageSquareQuote, Briefcase, Clock, Code, ChevronLeft, ChevronRight } from 'lucide-react';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import Autoplay from "embla-carousel-autoplay";
@@ -22,7 +22,7 @@ export default function CaseStudyPage() {
   const params = useParams();
   const slug = params.slug as string;
   const [open, setOpen] = useState(false);
-  const [selectedImage, setSelectedImage] = useState('');
+  const [selectedImageIndex, setSelectedImageIndex] = useState(0);
   
   const study = caseStudies.find((p) => p.slug === slug);
 
@@ -47,25 +47,44 @@ export default function CaseStudyPage() {
 
   const youtubeEmbedUrl = getYouTubeEmbedUrl(study.preview.youtubeVideo);
 
-  const handleImageClick = (src: string) => {
-    setSelectedImage(src);
+  const handleImageClick = (index: number) => {
+    setSelectedImageIndex(index);
     setOpen(true);
   };
   
   const hasMedia = study.preview.screenshots.length > 0 || youtubeEmbedUrl;
 
+  const handleNextImage = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    setSelectedImageIndex((prevIndex) => (prevIndex + 1) % study.preview.screenshots.length);
+  };
+
+  const handlePrevImage = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    setSelectedImageIndex((prevIndex) => (prevIndex - 1 + study.preview.screenshots.length) % study.preview.screenshots.length);
+  };
 
   return (
     <article className="py-16 sm:py-24 bg-background">
       <Dialog open={open} onOpenChange={setOpen}>
-        <DialogContent className="max-w-4xl p-0 border-0 bg-transparent">
-          <Image
-            src={selectedImage}
-            alt="Selected Screenshot"
-            width={1920}
-            height={1080}
-            className="w-full h-auto rounded-lg"
-          />
+        <DialogContent className="max-w-5xl w-full p-0 border-0 bg-transparent flex items-center justify-center">
+            {study.preview.screenshots.length > 1 && (
+                <Button variant="outline" size="icon" className="absolute left-2 top-1/2 -translate-y-1/2 z-10 bg-black/50 hover:bg-black/75 text-white" onClick={handlePrevImage}>
+                    <ChevronLeft className="h-6 w-6" />
+                </Button>
+            )}
+            <Image
+                src={study.preview.screenshots[selectedImageIndex]}
+                alt="Selected Screenshot"
+                width={1920}
+                height={1080}
+                className="w-auto h-auto max-w-full max-h-[90vh] rounded-lg object-contain"
+            />
+            {study.preview.screenshots.length > 1 && (
+                <Button variant="outline" size="icon" className="absolute right-2 top-1/2 -translate-y-1/2 z-10 bg-black/50 hover:bg-black/75 text-white" onClick={handleNextImage}>
+                    <ChevronRight className="h-6 w-6" />
+                </Button>
+            )}
         </DialogContent>
 
         <div className="container mx-auto px-4 max-w-6xl">
@@ -95,18 +114,18 @@ export default function CaseStudyPage() {
                       <Card className="overflow-hidden">
                         <CardContent className="p-0">
                           {study.preview.screenshots.length > 0 ? (
-                            <DialogTrigger asChild>
-                              <Carousel 
-                              plugins={[plugin.current]}
-                              className="w-full"
-                              opts={{ loop: true }}
-                              onMouseEnter={plugin.current.stop}
-                              onMouseLeave={plugin.current.reset}
-                              >
-                                <CarouselContent>
-                                    {study.preview.screenshots.map((screenshot, index) => (
-                                      <CarouselItem key={index}>
-                                          <div className="aspect-video relative cursor-pointer" onClick={() => handleImageClick(screenshot)}>
+                            <Carousel 
+                            plugins={[plugin.current]}
+                            className="w-full"
+                            opts={{ loop: true }}
+                            onMouseEnter={plugin.current.stop}
+                            onMouseLeave={plugin.current.reset}
+                            >
+                              <CarouselContent>
+                                  {study.preview.screenshots.map((screenshot, index) => (
+                                    <CarouselItem key={index}>
+                                        <DialogTrigger asChild>
+                                          <div className="aspect-video relative cursor-pointer" onClick={() => handleImageClick(index)}>
                                           <Image
                                               src={screenshot}
                                               alt={`${study.locales.en.title} screenshot ${index + 1}`}
@@ -114,15 +133,15 @@ export default function CaseStudyPage() {
                                               className="object-cover"
                                           />
                                           </div>
-                                      </CarouselItem>
-                                    ))}
-                                </CarouselContent>
-                                {study.preview.screenshots.length > 1 && <>
-                                  <CarouselPrevious className="left-4" />
-                                  <CarouselNext className="right-4" />
-                                </>}
-                              </Carousel>
-                            </DialogTrigger>
+                                        </DialogTrigger>
+                                    </CarouselItem>
+                                  ))}
+                              </CarouselContent>
+                              {study.preview.screenshots.length > 1 && <>
+                                <CarouselPrevious className="left-4" />
+                                <CarouselNext className="right-4" />
+                              </>}
+                            </Carousel>
                           ) : youtubeEmbedUrl ? (
                             <div className="aspect-video relative bg-black">
                                 <iframe
@@ -258,3 +277,5 @@ export default function CaseStudyPage() {
     </article>
   );
 }
+
+    
