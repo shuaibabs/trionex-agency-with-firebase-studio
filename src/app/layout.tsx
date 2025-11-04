@@ -75,7 +75,7 @@ export default function RootLayout({
                       animate={{ opacity: 1 }}
                       exit={{ opacity: 0 }}
                       transition={{ duration: 0.3, ease: 'easeInOut' }}
-                      className="flex-grow pt-8"
+                      className="flex-grow pt-2"
                     >
                       {children}
                     </motion.main>
