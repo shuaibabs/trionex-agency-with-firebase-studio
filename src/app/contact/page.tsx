@@ -1,3 +1,4 @@
+
 'use client';
 
 import { zodResolver } from '@hookform/resolvers/zod';
@@ -114,7 +115,7 @@ export default function ContactPage() {
     <div className="py-16 sm:py-24">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <h1 className="font-headline text-4xl font-bold tracking-tighter text-primary sm:text-5xl md:text-6xl">
+          <h1 className="font-headline text-4xl font-bold tracking-tighter text-primary sm:text-5xl">
             Get in Touch
           </h1>
           <p className="mt-4 max-w-2xl mx-auto text-base md:text-lg text-muted-foreground">
@@ -133,7 +134,7 @@ export default function ContactPage() {
                 </div>
                 <div>
                   <h3 className="font-semibold text-lg">Email</h3>
-                  <a href="mailto:support@trionexdigital.com" className="text-muted-foreground hover:text-primary text-sm sm:text-base">
+                  <a href="mailto:support@trionexdigital.com" className="text-muted-foreground hover:text-primary text-sm">
                     support@trionexdigital.com
                   </a>
                 </div>
@@ -144,7 +145,7 @@ export default function ContactPage() {
                 </div>
                 <div>
                   <h3 className="font-semibold text-lg">Phone</h3>
-                  <a href="tel:+919258724441" className="text-muted-foreground hover:text-primary text-sm sm:text-base">
+                  <a href="tel:+919258724441" className="text-muted-foreground hover:text-primary text-sm">
                     +91 9258724441
                   </a>
                 </div>
@@ -155,7 +156,7 @@ export default function ContactPage() {
                 </div>
                 <div>
                   <h3 className="font-semibold text-lg">Office</h3>
-                  <p className="text-muted-foreground text-sm sm:text-base">
+                  <p className="text-muted-foreground text-sm">
                     Jalalabad, Shamli, Uttar Pradesh, 247772, India
                   </p>
                 </div>
@@ -292,7 +293,7 @@ export default function ContactPage() {
             {result && (
               <Card className="mt-8 bg-gradient-to-br from-secondary/30 to-background dark:from-secondary/20 dark:to-background">
                 <CardHeader>
-                  <CardTitle className="flex items-center gap-2 font-headline text-primary text-xl md:text-2xl">
+                  <CardTitle className="flex items-center gap-2 font-headline text-xl md:text-2xl">
                     <Bot className="h-6 w-6" />
                     AI-Powered Routing Summary
                   </CardTitle>
@@ -300,7 +301,7 @@ export default function ContactPage() {
                 <CardContent className="space-y-4">
                   <div>
                     <h4 className="font-semibold">Inquiry Summary:</h4>
-                    <p className="text-muted-foreground italic text-sm md:text-base">
+                    <p className="text-muted-foreground italic text-sm">
                       &quot;{result.summary}&quot;
                     </p>
                   </div>

@@ -54,11 +54,11 @@ export default function AboutPage() {
       {/* Hero Section */}
       <section className="relative w-full py-20 md:py-32">
         <div className="container mx-auto px-4 text-center">
-           <Badge variant="outline" className="text-base py-1 px-4 sm:text-lg">Our Journey</Badge>
+           <Badge variant="outline" className="text-sm py-1 px-4 sm:text-base">Our Journey</Badge>
           <h1 className="font-headline text-4xl font-bold tracking-tighter text-primary sm:text-5xl md:text-6xl mt-4">
             Crafting Digital Excellence, Driving Real Growth
           </h1>
-          <p className="mt-6 max-w-3xl mx-auto text-base text-muted-foreground md:text-xl">
+          <p className="mt-6 max-w-3xl mx-auto text-base text-muted-foreground md:text-lg">
             We&apos;re a passionate team of developers, designers, and marketers dedicated to building exceptional digital experiences that fuel success.
           </p>
         </div>
@@ -174,7 +174,7 @@ export default function AboutPage() {
                   {reason.icon}
                 </div>
                 <h3 className="text-xl font-semibold font-headline">{reason.title}</h3>
-                <p className="mt-2 text-muted-foreground text-sm md:text-base">{reason.description}</p>
+                <p className="mt-2 text-muted-foreground text-sm">{reason.description}</p>
               </motion.div>
             ))}
           </div>
@@ -186,7 +186,7 @@ export default function AboutPage() {
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <Badge variant="outline">Our Leaders</Badge>
-            <h2 className="mt-2 font-headline text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
+            <h2 className="mt-2 font-headline text-3xl font-bold tracking-tighter sm:text-4xl">
               Meet the Team
             </h2>
             <p className="mt-4 max-w-2xl mx-auto text-base md:text-lg text-muted-foreground">

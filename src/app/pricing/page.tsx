@@ -18,10 +18,10 @@ export default function PricingPage() {
     <div className="py-16 sm:py-24 bg-background">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <h1 className="font-headline text-4xl font-bold tracking-tighter text-primary sm:text-5xl md:text-6xl">
+          <h1 className="font-headline text-4xl font-bold tracking-tighter text-primary sm:text-5xl">
             Our Pricing Plans
           </h1>
-          <p className="mt-4 max-w-2xl mx-auto text-lg text-muted-foreground">
+          <p className="mt-4 max-w-2xl mx-auto text-base md:text-lg text-muted-foreground">
             Choose the perfect plan to fuel your growth. Simple, transparent pricing for businesses of all sizes.
           </p>
         </div>
@@ -52,7 +52,7 @@ export default function PricingPage() {
                       <CardTitle className="font-headline">{pkg.title}</CardTitle>
                       <CardDescription>{pkg.description}</CardDescription>
                       <div className="flex items-baseline pt-4">
-                      <span className="text-4xl font-bold font-headline">
+                      <span className="text-3xl font-bold font-headline sm:text-4xl">
                           {pkg.price.startsWith('Custom') ? '' : '₹'}
                           {pkg.price}
                       </span>
@@ -64,7 +64,7 @@ export default function PricingPage() {
                       {pkg.features.map((feature, i) => (
                           <li key={i} className="flex items-start">
                           <Check className="h-5 w-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" />
-                          <span className="text-muted-foreground">{feature}</span>
+                          <span className="text-muted-foreground text-sm">{feature}</span>
                           </li>
                       ))}
                       </ul>
@@ -79,8 +79,8 @@ export default function PricingPage() {
           ))}
         </div>
         <div className="text-center mt-16">
-          <h3 className="font-headline text-2xl font-bold">Need a custom solution?</h3>
-          <p className="text-muted-foreground mt-2">We offer tailored enterprise plans. Let's discuss your unique requirements.</p>
+          <h3 className="font-headline text-2xl font-bold sm:text-3xl">Need a custom solution?</h3>
+          <p className="text-muted-foreground mt-2 text-base md:text-lg">We offer tailored enterprise plans. Let's discuss your unique requirements.</p>
           <Button asChild className="mt-4">
             <LoadingLink href="/contact">Schedule a Call</LoadingLink>
           </Button>

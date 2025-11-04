@@ -75,7 +75,7 @@ export default function Home() {
             <h1 className="font-headline text-4xl font-bold tracking-tighter text-primary sm:text-5xl md:text-6xl lg:text-7xl glow-on-hover">
               Elevate Your Digital Presence
             </h1>
-            <p className="max-w-[600px] text-lg text-muted-foreground md:text-xl">
+            <p className="max-w-[600px] text-base text-muted-foreground md:text-lg">
               We are a results-driven agency specializing in web development,
               SEO, and digital marketing. Let us build your success story.
             </p>
@@ -130,7 +130,7 @@ export default function Home() {
         <div className="container mx-auto px-4">
           <div className="mb-12 text-center">
             <Badge variant="outline">Our Expertise</Badge>
-            <h2 className="mt-2 font-headline text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
+            <h2 className="mt-2 font-headline text-3xl font-bold tracking-tighter sm:text-4xl">
               Services We Offer
             </h2>
             <p className="mx-auto mt-4 max-w-2xl text-base md:text-lg text-muted-foreground">
@@ -162,7 +162,7 @@ export default function Home() {
                       </CardTitle>
                     </CardHeader>
                     <CardContent className="text-center flex-grow">
-                      <p className="mb-4 text-muted-foreground text-sm md:text-base">
+                      <p className="mb-4 text-muted-foreground text-sm">
                         {service.shortDescription}
                       </p>
                     </CardContent>
@@ -184,7 +184,7 @@ export default function Home() {
       {/* Client Logos Section */}
       <section className="py-16 bg-background">
         <div className="container mx-auto px-4">
-            <h3 className="mb-8 text-center text-base md:text-lg font-semibold text-muted-foreground">
+            <h3 className="mb-8 text-center text-base font-semibold text-muted-foreground">
                 Trusted by leading companies worldwide
             </h3>
             <div
@@ -218,7 +218,7 @@ export default function Home() {
         <div className="container mx-auto px-4">
           <div className="mb-12 text-center">
             <Badge variant="outline">Client Feedback</Badge>
-            <h2 className="mt-2 font-headline text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
+            <h2 className="mt-2 font-headline text-3xl font-bold tracking-tighter sm:text-4xl">
               What Our Clients Say
             </h2>
           </div>
@@ -236,7 +236,7 @@ export default function Home() {
                 <CarouselItem key={testimonial.id}>
                   <Card className="border-0 bg-transparent shadow-none">
                     <CardContent className="p-6 text-center">
-                      <p className="mb-6 text-lg md:text-xl italic text-foreground">
+                      <p className="mb-6 text-base md:text-lg italic text-foreground">
                         &quot;{testimonial.quote}&quot;
                       </p>
                       <div className="flex items-center justify-center">
@@ -271,7 +271,7 @@ export default function Home() {
         <div className="container mx-auto px-4">
           <div className="mb-12 text-center">
             <Badge variant="outline">Our Insights</Badge>
-            <h2 className="mt-2 font-headline text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
+            <h2 className="mt-2 font-headline text-3xl font-bold tracking-tighter sm:text-4xl">
               From Our Blog
             </h2>
             <p className="mx-auto mt-4 max-w-2xl text-base md:text-lg text-muted-foreground">
@@ -312,7 +312,7 @@ export default function Home() {
                           </CardTitle>
                         </CardHeader>
                         <CardContent className="flex-grow">
-                          <p className="text-muted-foreground line-clamp-2 text-sm md:text-base">
+                          <p className="text-muted-foreground line-clamp-2 text-sm">
                             {post.excerpt}
                           </p>
                         </CardContent>
@@ -343,8 +343,8 @@ export default function Home() {
                         <h2 className="font-headline text-3xl font-bold tracking-tighter sm:text-4xl text-primary">
                             Ready to Start Your Project?
                         </h2>
-                        <p className="text-base md:text-lg text-muted-foreground max-w-md mx-auto md:mx-0">
-                            Let's talk about how Synergy Digital can help you achieve your
+                        <p className="text-base text-muted-foreground max-w-md mx-auto md:mx-0">
+                            Let's talk about how Trionex Digital can help you achieve your
                             goals. Schedule a free consultation today.
                         </p>
                         <motion.div
@@ -390,5 +390,3 @@ export default function Home() {
     </div>
   );
 }
-
-    

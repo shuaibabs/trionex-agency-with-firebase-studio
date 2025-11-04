@@ -60,7 +60,7 @@ export default function Header() {
     <header className={cn('sticky top-0 z-50 w-full transition-all duration-300')}>
         <div className="container mx-auto px-4">
             <div className="mt-2 flex h-16 items-center rounded-full border bg-background/95 backdrop-blur-sm supports-[backdrop-filter]:bg-background/60 px-4 shadow-lg sm:px-6">
-                <LoadingLink href="/" className="mr-6 flex items-center">
+                <LoadingLink href="/" className="mr-auto lg:mr-6 flex items-center">
                   <Logo />
                 </LoadingLink>
 
@@ -81,51 +81,53 @@ export default function Header() {
                 </nav>
 
                 <div className="flex flex-1 items-center justify-end gap-2">
-                <ThemeToggle />
+                <div className="hidden lg:flex flex-1 items-center justify-end gap-2">
+                  <ThemeToggle />
+                  {!isUserLoading &&
+                      (user ? (
+                      <DropdownMenu>
+                          <DropdownMenuTrigger asChild>
+                          <Button variant="ghost" className="relative h-8 w-8 rounded-full">
+                              <Avatar className="h-8 w-8">
+                              <AvatarImage src={user.photoURL || undefined} alt={user.email || 'User'} />
+                              <AvatarFallback>{getInitials(user.email)}</AvatarFallback>
+                              </Avatar>
+                          </Button>
+                          </DropdownMenuTrigger>
+                          <DropdownMenuContent className="w-56" align="end" forceMount>
+                          <DropdownMenuLabel className="font-normal">
+                              <div className="flex flex-col space-y-1">
+                              <p className="text-sm font-medium leading-none">
+                                  {user.displayName || 'User'}
+                              </p>
+                              <p className="text-xs leading-none text-muted-foreground">
+                                  {user.email}
+                              </p>
+                              </div>
+                          </DropdownMenuLabel>
+                          <DropdownMenuSeparator />
+                          <DropdownMenuItem asChild>
+                              <LoadingLink href="/dashboard">Dashboard</LoadingLink>
+                          </DropdownMenuItem>
+                          <DropdownMenuSeparator />
+                          <DropdownMenuItem onClick={handleLogout} className="cursor-pointer">
+                              <LogOut className="mr-2 h-4 w-4" />
+                              <span>Log out</span>
+                          </DropdownMenuItem>
+                          </DropdownMenuContent>
+                      </DropdownMenu>
+                      ) : (
+                      <div className="hidden md:flex items-center gap-2">
+                          <Button variant="ghost" asChild>
+                            <LoadingLink href="/login">Login</LoadingLink>
+                          </Button>
+                          <Button asChild>
+                            <LoadingLink href="/signup">Sign Up</LoadingLink>
+                          </Button>
+                      </div>
+                      ))}
+                </div>
 
-                {!isUserLoading &&
-                    (user ? (
-                    <DropdownMenu>
-                        <DropdownMenuTrigger asChild>
-                        <Button variant="ghost" className="relative h-8 w-8 rounded-full">
-                            <Avatar className="h-8 w-8">
-                            <AvatarImage src={user.photoURL || undefined} alt={user.email || 'User'} />
-                            <AvatarFallback>{getInitials(user.email)}</AvatarFallback>
-                            </Avatar>
-                        </Button>
-                        </DropdownMenuTrigger>
-                        <DropdownMenuContent className="w-56" align="end" forceMount>
-                        <DropdownMenuLabel className="font-normal">
-                            <div className="flex flex-col space-y-1">
-                            <p className="text-sm font-medium leading-none">
-                                {user.displayName || 'User'}
-                            </p>
-                            <p className="text-xs leading-none text-muted-foreground">
-                                {user.email}
-                            </p>
-                            </div>
-                        </DropdownMenuLabel>
-                        <DropdownMenuSeparator />
-                        <DropdownMenuItem asChild>
-                            <LoadingLink href="/dashboard">Dashboard</LoadingLink>
-                        </DropdownMenuItem>
-                        <DropdownMenuSeparator />
-                        <DropdownMenuItem onClick={handleLogout} className="cursor-pointer">
-                            <LogOut className="mr-2 h-4 w-4" />
-                            <span>Log out</span>
-                        </DropdownMenuItem>
-                        </DropdownMenuContent>
-                    </DropdownMenu>
-                    ) : (
-                    <div className="hidden md:flex items-center gap-2">
-                        <Button variant="ghost" asChild>
-                          <LoadingLink href="/login">Login</LoadingLink>
-                        </Button>
-                        <Button asChild>
-                          <LoadingLink href="/signup">Sign Up</LoadingLink>
-                        </Button>
-                    </div>
-                    ))}
 
                 {/* Mobile Navigation */}
                 <Sheet open={isMobileMenuOpen} onOpenChange={setMobileMenuOpen}>
@@ -141,6 +143,7 @@ export default function Header() {
                         <LoadingLink href="/" onClick={() => setMobileMenuOpen(false)}>
                             <Logo />
                         </LoadingLink>
+                        <ThemeToggle />
                         </div>
                         <nav className="flex-grow mt-6">
                         <ul className="space-y-4">

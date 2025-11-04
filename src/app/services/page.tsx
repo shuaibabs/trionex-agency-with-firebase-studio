@@ -24,7 +24,7 @@ export default function ServicesPage() {
     <div className="py-16 sm:py-24 bg-background">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h1 className="font-headline text-4xl font-bold tracking-tighter text-primary sm:text-5xl md:text-6xl">
+          <h1 className="font-headline text-4xl font-bold tracking-tighter text-primary sm:text-5xl">
             Our Services
           </h1>
           <p className="mt-4 max-w-2xl mx-auto text-base md:text-lg text-muted-foreground">
@@ -45,7 +45,6 @@ export default function ServicesPage() {
                 whileInView="visible"
                 viewport={{ once: true, amount: 0.5 }}
                 transition={{ delay: i * 0.1, duration: 0.5 }}
-                variants={cardVariants}
                 className="h-full"
               >
                 <Card
@@ -84,12 +83,12 @@ export default function ServicesPage() {
                     </CarouselContent>
                   </Carousel>
                   <CardHeader>
-                    <CardTitle className="font-headline text-xl md:text-2xl">
+                    <CardTitle className="font-headline text-xl">
                       {service.title}
                     </CardTitle>
                   </CardHeader>
                   <CardContent className="flex-grow">
-                    <p className="text-muted-foreground mb-6 flex-grow text-sm md:text-base">
+                    <p className="text-muted-foreground mb-6 flex-grow text-sm">
                       {service.shortDescription}
                     </p>
                   </CardContent>
@@ -119,7 +118,6 @@ export default function ServicesPage() {
                   whileInView="visible"
                   viewport={{ once: true, amount: 0.5 }}
                   transition={{ delay: i * 0.1, duration: 0.5 }}
-                  variants={cardVariants}
                   className="h-full"
               >
                   <Card
@@ -158,12 +156,12 @@ export default function ServicesPage() {
                     </CarouselContent>
                   </Carousel>
                     <CardHeader>
-                      <CardTitle className="font-headline text-xl md:text-2xl">
+                      <CardTitle className="font-headline text-xl">
                       {service.title}
                       </CardTitle>
                   </CardHeader>
                   <CardContent className="flex-grow">
-                      <p className="text-muted-foreground mb-6 flex-grow text-sm md:text-base">
+                      <p className="text-muted-foreground mb-6 flex-grow text-sm">
                       {service.shortDescription}
                       </p>
                   </CardContent>

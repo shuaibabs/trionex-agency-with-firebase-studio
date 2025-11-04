@@ -56,7 +56,7 @@ export default function PortfolioPage() {
     <div className="py-16 sm:py-24 bg-background">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <h1 className="font-headline text-4xl font-bold tracking-tighter text-primary sm:text-5xl md:text-6xl">
+          <h1 className="font-headline text-4xl font-bold tracking-tighter text-primary sm:text-5xl">
             Case Studies
           </h1>
           <p className="mt-4 max-w-2xl mx-auto text-base md:text-lg text-muted-foreground">
@@ -87,7 +87,6 @@ export default function PortfolioPage() {
                 whileInView="visible"
                 viewport={{ once: true, amount: 0.3 }}
                 transition={{ delay: i * 0.1, duration: 0.5 }}
-                variants={cardVariants}
                 className="flex"
               >
                 <Card className="overflow-hidden group flex flex-col h-full w-full bg-secondary/30 dark:bg-secondary/20">
@@ -135,7 +134,7 @@ export default function PortfolioPage() {
                     </CardHeader>
                     <CardContent className='flex-grow'>
                       <div
-                        className="text-muted-foreground line-clamp-3 text-sm md:text-base"
+                        className="text-muted-foreground line-clamp-3 text-sm"
                         dangerouslySetInnerHTML={{ __html: study.locales.en.text }}
                       />
                     </CardContent>

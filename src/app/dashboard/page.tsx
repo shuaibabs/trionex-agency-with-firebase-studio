@@ -25,7 +25,7 @@ export default function DashboardPage() {
 
   if (isUserLoading) {
     return (
-      <div className="flex h-screen items-center justify-center">
+      <div className="flex min-h-[60vh] items-center justify-center">
         <p>Loading...</p>
       </div>
     );
@@ -51,12 +51,12 @@ export default function DashboardPage() {
                     <AvatarFallback className="text-3xl">{getInitials(user.email)}</AvatarFallback>
                 </Avatar>
                 <div className='text-center'>
-                    <h2 className="text-2xl font-semibold">{user.displayName || 'User'}</h2>
-                    <p className="text-muted-foreground">{user.email}</p>
+                    <h2 className="text-xl sm:text-2xl font-semibold">{user.displayName || 'User'}</h2>
+                    <p className="text-muted-foreground text-sm sm:text-base">{user.email}</p>
                 </div>
                 <div className="w-full border-t pt-6">
                     <h3 className="font-semibold text-lg mb-2">Account Details</h3>
-                    <div className="text-sm space-y-2 text-muted-foreground">
+                    <div className="text-sm space-y-2 text-muted-foreground break-all">
                        <p><span className="font-medium text-foreground">User ID:</span> {user.uid}</p>
                        <p><span className="font-medium text-foreground">Email Verified:</span> {user.emailVerified ? 'Yes' : 'No'}</p>
                        <p><span className="font-medium text-foreground">Account Created:</span> {user.metadata.creationTime ? new Date(user.metadata.creationTime).toLocaleDateString() : 'N/A'}</p>

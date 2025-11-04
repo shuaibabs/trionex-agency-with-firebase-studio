@@ -38,10 +38,10 @@ export default function ServiceDetailPage({ params }: { params: { slug: string }
         {/* Header */}
         <div className="text-center mb-12">
           <Badge variant="outline">{service.category}</Badge>
-          <h1 className="mt-2 font-headline text-4xl font-bold tracking-tighter text-primary sm:text-5xl md:text-6xl">
+          <h1 className="mt-2 font-headline text-4xl font-bold tracking-tighter text-primary sm:text-5xl">
             {service.title}
           </h1>
-          <p className="mt-4 max-w-3xl mx-auto text-lg text-muted-foreground">
+          <p className="mt-4 max-w-3xl mx-auto text-base md:text-lg text-muted-foreground">
             {service.longDescription}
           </p>
         </div>
@@ -51,7 +51,7 @@ export default function ServiceDetailPage({ params }: { params: { slug: string }
 
             {/* What's Included Section */}
             <section>
-              <h2 className="font-headline text-2xl font-bold mb-4">What's Included</h2>
+              <h2 className="font-headline text-2xl font-bold mb-4 sm:text-3xl">What's Included</h2>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {service.scope.map((item, index) => (
                   <motion.div
@@ -73,7 +73,7 @@ export default function ServiceDetailPage({ params }: { params: { slug: string }
             
             {/* Our Process Section */}
             <section>
-              <h2 className="font-headline text-2xl font-bold mb-6">Our Process</h2>
+              <h2 className="font-headline text-2xl font-bold mb-6 sm:text-3xl">Our Process</h2>
               <div className="space-y-8 relative before:absolute before:inset-0 before:ml-5 before:h-full before:w-0.5 before:bg-border before:-translate-x-px">
                 {service.process.map((step, index) => (
                    <motion.div
@@ -90,7 +90,7 @@ export default function ServiceDetailPage({ params }: { params: { slug: string }
                     </div>
                     <div className="ml-6">
                       <h3 className="font-headline text-lg font-semibold">{step.title}</h3>
-                      <p className="text-muted-foreground">{step.description}</p>
+                      <p className="text-muted-foreground text-sm">{step.description}</p>
                     </div>
                   </motion.div>
                 ))}
@@ -100,7 +100,7 @@ export default function ServiceDetailPage({ params }: { params: { slug: string }
             {/* Related Case Studies Section */}
             {relatedCaseStudies.length > 0 && (
               <section>
-                <h2 className="font-headline text-2xl font-bold mb-4">Related Case Studies</h2>
+                <h2 className="font-headline text-2xl font-bold mb-4 sm:text-3xl">Related Case Studies</h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   {relatedCaseStudies.map((study, i) => {
                     return (
@@ -121,8 +121,8 @@ export default function ServiceDetailPage({ params }: { params: { slug: string }
                                 <CardTitle className="font-headline text-lg">{study.locales.en.title}</CardTitle>
                             </CardHeader>
                             <CardContent>
-                                <span className="text-primary hover:underline">
-                                    Read Case Study <ArrowRight className="ml-2 h-4 w-4 inline" />
+                                <span className="text-primary hover:underline text-sm">
+                                    Read Case Study <ArrowRight className="ml-1 h-4 w-4 inline" />
                                 </span>
                             </CardContent>
                           </LoadingLink>
@@ -159,7 +159,7 @@ export default function ServiceDetailPage({ params }: { params: { slug: string }
             >
                 <Card>
                 <CardHeader>
-                    <CardTitle className="font-headline flex items-center gap-2">
+                    <CardTitle className="font-headline flex items-center gap-2 text-xl">
                         <Wallet className="h-6 w-6 text-primary"/>
                         Pricing
                     </CardTitle>
@@ -186,7 +186,7 @@ export default function ServiceDetailPage({ params }: { params: { slug: string }
                         <CardTitle className="font-headline text-2xl">Ready to get started?</CardTitle>
                     </CardHeader>
                     <CardContent>
-                        <p>Let's discuss how our {service.title} services can help your business grow.</p>
+                        <p className="text-sm">Let's discuss how our {service.title} services can help your business grow.</p>
                     </CardContent>
                     <CardFooter>
                         <Button variant="secondary" size="lg" className="w-full" asChild>

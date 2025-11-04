@@ -68,7 +68,7 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
               </motion.div>
 
               <motion.h1 
-                className="font-headline text-4xl font-bold tracking-tighter text-primary sm:text-5xl md:text-6xl"
+                className="font-headline text-3xl font-bold tracking-tighter text-primary sm:text-4xl md:text-5xl"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.2 }}
