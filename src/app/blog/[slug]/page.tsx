@@ -7,10 +7,10 @@ import { blogPosts, placeholderImages } from '@/lib/data';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Button } from '@/components/ui/button';
 import LoadingLink from '@/components/loading-link';
-import { ArrowLeft, Clock, Calendar, ArrowRight } from 'lucide-react';
+import { ArrowLeft, Clock, Calendar } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { Badge } from '@/components/ui/badge';
-import { Card, CardContent, CardHeader } from '@/components/ui/card';
+import { Card } from '@/components/ui/card';
 
 export default function BlogPostPage({ params }: { params: { slug: string } }) {
   const post = blogPosts.find((p) => p.slug === params.slug);
@@ -113,7 +113,7 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.4 }}
             >
-              <p className="lead text-xl text-muted-foreground">{post.excerpt}</p>
+              <p className="lead">{post.excerpt}</p>
               
               <h2>The Core Idea</h2>
               <p>
@@ -131,10 +131,10 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
                 Duis semper. Duis arcu massa, scelerisque vitae, consequat in, pretium a, enim. Pellentesque congue. Ut in risus volutpat libero pharetra tempor. Cras vestibulum bibendum augu. Praesent egestas leo in pede. Praesent blanitac, tellus.
               </p>
               <blockquote>
-                "The journey of a thousand miles begins with a single step. This is that step."
+                The journey of a thousand miles begins with a single step. This is that step.
               </blockquote>
               <p>
-                Fusce tristique, nisl Sign in to write a review. Aliquam erat volutpat. Nulla facilisi. Duis sit amet felis. Morbi nisl `nulla`, pulvinar `nulla`, commodo `nulla`, porttitor `nulla`, et `nulla`. This approach allows for iterative development and feedback, ensuring the final product aligns perfectly with user needs and business goals.
+                Fusce tristique, nisl Sign in to write a review. Aliquam erat volutpat. Nulla facilisi. Duis sit amet felis. Morbi nisl <code>nulla</code>, pulvinar <code>nulla</code>, commodo <code>nulla</code>, porttitor <code>nulla</code>, et <code>nulla</code>. This approach allows for iterative development and feedback, ensuring the final product aligns perfectly with user needs and business goals.
               </p>
             </motion.div>
           </div>

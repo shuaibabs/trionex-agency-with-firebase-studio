@@ -140,6 +140,83 @@
   }
 }
 
+@layer components {
+  .prose {
+      --tw-prose-body: hsl(var(--foreground) / 0.85);
+      --tw-prose-headings: hsl(var(--foreground));
+      --tw-prose-lead: hsl(var(--muted-foreground));
+      --tw-prose-links: hsl(var(--primary));
+      --tw-prose-bold: hsl(var(--foreground));
+      --tw-prose-counters: hsl(var(--muted-foreground));
+      --tw-prose-bullets: hsl(var(--border));
+      --tw-prose-hr: hsl(var(--border));
+      --tw-prose-quotes: hsl(var(--foreground));
+      --tw-prose-quote-borders: hsl(var(--primary));
+      --tw-prose-captions: hsl(var(--muted-foreground));
+      --tw-prose-code: hsl(var(--primary));
+      --tw-prose-pre-code: hsl(var(--primary-foreground));
+      --tw-prose-pre-bg: hsl(var(--foreground));
+      --tw-prose-th-borders: hsl(var(--border));
+      --tw-prose-td-borders: hsl(var(--border));
+      
+      --tw-prose-invert-body: hsl(var(--foreground) / 0.8);
+      --tw-prose-invert-headings: hsl(var(--foreground));
+      --tw-prose-invert-lead: hsl(var(--muted-foreground));
+      --tw-prose-invert-links: hsl(var(--primary));
+      --tw-prose-invert-bold: hsl(var(--foreground));
+      --tw-prose-invert-counters: hsl(var(--muted-foreground));
+      --tw-prose-invert-bullets: hsl(var(--border));
+      --tw-prose-invert-hr: hsl(var(--border));
+      --tw-prose-invert-quotes: hsl(var(--foreground));
+      --tw-prose-invert-quote-borders: hsl(var(--primary));
+      --tw-prose-invert-captions: hsl(var(--muted-foreground));
+      --tw-prose-invert-code: hsl(var(--primary));
+      --tw-prose-invert-pre-code: hsl(var(--background));
+      --tw-prose-invert-pre-bg: hsl(var(--foreground));
+      --tw-prose-invert-th-borders: hsl(var(--border));
+      --tw-prose-invert-td-borders: hsl(var(--border));
+  }
+
+  .prose-lg {
+    font-size: 1.125rem; /* 18px */
+    line-height: 1.7;
+  }
+
+  .prose :where(p.lead):not(:where([class~="not-prose"] *)) {
+    @apply text-xl md:text-2xl font-normal leading-relaxed text-muted-foreground;
+  }
+  
+  .prose :where(h2):not(:where([class~="not-prose"] *)) {
+    @apply font-headline font-bold tracking-tight mb-6 mt-12 pb-2 border-b border-border;
+  }
+
+  .prose :where(h3):not(:where([class~="not-prose"] *)) {
+    @apply font-headline font-semibold tracking-tight mt-8 mb-4;
+  }
+
+  .prose :where(blockquote):not(:where([class~="not-prose"] *)) {
+    @apply text-lg font-medium not-italic px-6 py-4 rounded-r-lg border-l-4;
+    @apply bg-secondary/50 dark:bg-secondary/20;
+  }
+
+  .prose :where(code):not(:where([class~="not-prose"] *))::before,
+  .prose :where(code):not(:where([class~="not-prose"] *))::after {
+    content: "";
+  }
+  
+  .prose :where(code):not(:where([class~="not-prose"] *)) {
+    @apply font-code font-normal text-base bg-primary/10 text-primary py-0.5 px-1.5 rounded-md;
+  }
+  
+  .dark .prose :where(code):not(:where([class~="not-prose"] *)) {
+     @apply bg-primary/20;
+  }
+
+  .prose :where(ul > li):not(:where([class~="not-prose"] *))::before {
+    @apply bg-primary h-1.5 w-1.5 top-[0.5em];
+  }
+}
+
 @layer utilities {
   .text-balance {
     text-wrap: balance;
