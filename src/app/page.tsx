@@ -248,10 +248,10 @@ export default function Home() {
                 const avatarImage = placeholderImages.find(p => p.id === testimonial.avatarId);
                 return (
                 <CarouselItem key={testimonial.id} className="pl-4 md:basis-1/2 lg:basis-1/2">
-                  <div className="p-1">
+                  <div className="p-1 h-full">
                     <Card className="overflow-hidden h-full">
-                       <CardContent className="p-0 flex flex-col md:flex-row items-center">
-                          <div className="relative w-full md:w-2/5 aspect-square md:aspect-auto md:h-full flex-shrink-0">
+                       <CardContent className="p-0 flex flex-col md:flex-row items-stretch h-full">
+                          <div className="relative w-full md:w-2/5 aspect-[4/3] md:aspect-auto flex-shrink-0">
                              {avatarImage && (
                                 <Image
                                     src={avatarImage.imageUrl}
@@ -262,7 +262,7 @@ export default function Home() {
                                 />
                              )}
                           </div>
-                          <div className="p-6 md:p-8 flex-grow self-start">
+                          <div className="p-6 md:p-8 flex flex-col justify-center">
                              <MessageSquareQuote className="w-8 h-8 text-primary/30 mb-4" />
                             <p className="mb-6 text-base md:text-lg italic text-foreground/90">
                               &quot;{testimonial.quote}&quot;
@@ -410,6 +410,8 @@ export default function Home() {
     </div>
   );
 }
+
+    
 
     
 
