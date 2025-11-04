@@ -14,7 +14,7 @@ import {
   MessageSquareQuote
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Card, CardContent, CardHeader, CardTitle, CardFooter } from '@/components/ui/card';
 import {
   Carousel,
   CarouselContent,
@@ -166,13 +166,13 @@ export default function Home() {
                         {service.shortDescription}
                       </p>
                     </CardContent>
-                    <div className="p-6 pt-0">
-                      <Button variant="ghost" asChild className="text-primary w-full">
+                    <CardFooter>
+                      <Button variant="outline" asChild className="w-full mt-auto">
                         <LoadingLink href={`/services/${service.slug}`}>
                           Learn More <ArrowRight className="ml-2 h-4 w-4" />
                         </LoadingLink>
                       </Button>
-                    </div>
+                    </CardFooter>
                   </Card>
                 </motion.div>
               );
@@ -382,3 +382,5 @@ export default function Home() {
     </div>
   );
 }
+
+    
