@@ -1,16 +1,18 @@
 
+
 'use client';
 import { notFound, useParams } from 'next/navigation';
 import Image from 'next/image';
 import { caseStudies } from '@/lib/data';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Github, Link as LinkIcon, Youtube, ArrowLeft, CheckCircle, Target, Trophy, MessageSquareQuote } from 'lucide-react';
+import { Github, Link as LinkIcon, Youtube, ArrowLeft, CheckCircle, Target, Trophy, MessageSquareQuote, Briefcase, Clock, Code } from 'lucide-react';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import Autoplay from "embla-carousel-autoplay";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
-import React from 'react';
+import React, { useState } from 'react';
+import { Dialog, DialogContent, DialogTrigger } from '@/components/ui/dialog';
 
 const iconMap: { [key: string]: React.ElementType } = {
   'fa-brands fa-github': Github,
@@ -20,6 +22,8 @@ const iconMap: { [key: string]: React.ElementType } = {
 export default function CaseStudyPage() {
   const params = useParams();
   const slug = params.slug as string;
+  const [open, setOpen] = useState(false);
+  const [selectedImage, setSelectedImage] = useState('');
   
   const study = caseStudies.find((p) => p.slug === slug);
 
@@ -43,10 +47,29 @@ export default function CaseStudyPage() {
   };
 
   const youtubeEmbedUrl = getYouTubeEmbedUrl(study.preview.youtubeVideo);
+
+  const handleImageClick = (src: string) => {
+    setSelectedImage(src);
+    setOpen(true);
+  };
+  
   const hasMedia = study.preview.screenshots.length > 0 || youtubeEmbedUrl;
+
 
   return (
     <article className="py-16 sm:py-24 bg-background">
+      <Dialog open={open} onOpenChange={setOpen}>
+        <DialogContent className="max-w-4xl p-0 border-0 bg-transparent">
+          <Image
+            src={selectedImage}
+            alt="Selected Screenshot"
+            width={1920}
+            height={1080}
+            className="w-full h-auto rounded-lg"
+          />
+        </DialogContent>
+      </Dialog>
+
       <div className="container mx-auto px-4 max-w-6xl">
         <header className="mb-12">
             <Button variant="ghost" asChild className="mb-4">
@@ -71,45 +94,55 @@ export default function CaseStudyPage() {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
             <div className='lg:col-span-2 space-y-12'>
                 {hasMedia && (
-                    <div className="mb-12">
-                    {study.preview.screenshots.length > 0 ? (
-                        <Carousel 
-                        plugins={[plugin.current]}
-                        className="w-full rounded-lg overflow-hidden border shadow-lg"
-                        opts={{ loop: true }}
-                        onMouseEnter={plugin.current.stop}
-                        onMouseLeave={plugin.current.reset}
-                        >
-                        <CarouselContent>
-                            {study.preview.screenshots.map((screenshot, index) => (
-                            <CarouselItem key={index}>
-                                <div className="aspect-video relative">
-                                <Image
-                                    src={screenshot}
-                                    alt={`${study.locales.en.title} screenshot ${index + 1}`}
-                                    fill
-                                    className="object-cover"
-                                />
-                                </div>
-                            </CarouselItem>
-                            ))}
-                        </CarouselContent>
-                        <CarouselPrevious className="left-4" />
-                        <CarouselNext className="right-4" />
-                        </Carousel>
-                    ) : (
-                        <div className="aspect-video relative rounded-lg overflow-hidden shadow-lg">
-                            <iframe
-                                src={youtubeEmbedUrl!}
-                                title="YouTube video player"
-                                frameBorder="0"
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                allowFullScreen
-                                className="w-full h-full"
-                            ></iframe>
-                        </div>
-                    )}
-                    </div>
+                    <Card className="overflow-hidden">
+                      <CardContent className="p-0">
+                         {study.preview.screenshots.length > 0 ? (
+                           <Carousel 
+                           plugins={[plugin.current]}
+                           className="w-full"
+                           opts={{ loop: true }}
+                           onMouseEnter={plugin.current.stop}
+                           onMouseLeave={plugin.current.reset}
+                           >
+                              <CarouselContent>
+                                  {study.preview.screenshots.map((screenshot, index) => (
+                                    <CarouselItem key={index}>
+                                        <DialogTrigger asChild>
+                                          <div className="aspect-video relative cursor-pointer" onClick={() => handleImageClick(screenshot)}>
+                                          <Image
+                                              src={screenshot}
+                                              alt={`${study.locales.en.title} screenshot ${index + 1}`}
+                                              fill
+                                              className="object-cover"
+                                          />
+                                          </div>
+                                        </DialogTrigger>
+                                    </CarouselItem>
+                                  ))}
+                              </CarouselContent>
+                              {study.preview.screenshots.length > 1 && <>
+                                <CarouselPrevious className="left-4" />
+                                <CarouselNext className="right-4" />
+                              </>}
+                            </Carousel>
+                         ) : youtubeEmbedUrl ? (
+                           <div className="aspect-video relative bg-black">
+                               <iframe
+                                   src={youtubeEmbedUrl}
+                                   title="YouTube video player"
+                                   frameBorder="0"
+                                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                   allowFullScreen
+                                   className="w-full h-full"
+                               ></iframe>
+                           </div>
+                         ) : (
+                          <div className="aspect-video relative bg-muted flex items-center justify-center">
+                            <Youtube className="h-16 w-16 text-muted-foreground" />
+                          </div>
+                         )}
+                      </CardContent>
+                    </Card>
                 )}
                 
                 <section>
@@ -144,6 +177,35 @@ export default function CaseStudyPage() {
             <aside className="lg:sticky lg:top-24 h-min space-y-8">
                  <Card>
                     <CardHeader>
+                        <CardTitle className="font-headline">Project Overview</CardTitle>
+                    </CardHeader>
+                     <CardContent className="space-y-4 text-sm">
+                        <div className="flex items-center">
+                            <Briefcase className="h-5 w-5 mr-3 text-muted-foreground"/>
+                            <div>
+                                <span className="font-semibold">My Role:</span>
+                                <p className="text-muted-foreground">{study.overview.role}</p>
+                            </div>
+                        </div>
+                         <div className="flex items-center">
+                            <Clock className="h-5 w-5 mr-3 text-muted-foreground"/>
+                             <div>
+                                <span className="font-semibold">Timeline:</span>
+                                <p className="text-muted-foreground">{study.overview.timeline}</p>
+                            </div>
+                        </div>
+                         <div className="flex items-start">
+                            <Code className="h-5 w-5 mr-3 text-muted-foreground mt-0.5"/>
+                            <div>
+                                <span className="font-semibold">Tech Stack:</span>
+                                <p className="text-muted-foreground">{study.overview.techStack}</p>
+                            </div>
+                        </div>
+                    </CardContent>
+                 </Card>
+            
+                 <Card>
+                    <CardHeader>
                         <CardTitle className="font-headline">Project Links</CardTitle>
                     </CardHeader>
                     <CardContent>
@@ -162,7 +224,7 @@ export default function CaseStudyPage() {
                             })}
                         </div>
                         )}
-                        {youtubeEmbedUrl && (
+                        {study.preview.youtubeVideo && (
                             <Button asChild variant="outline" className="justify-start w-full mt-3">
                                 <Link href={study.preview.youtubeVideo} target="_blank" rel="noopener noreferrer">
                                     <Youtube className="mr-2 text-red-500" />
@@ -170,7 +232,7 @@ export default function CaseStudyPage() {
                                 </Link>
                             </Button>
                         )}
-                         {!study.preview.links.length && !youtubeEmbedUrl && (
+                         {!study.preview.links.length && !study.preview.youtubeVideo && (
                              <p className="text-muted-foreground text-sm">No external links available.</p>
                         )}
                     </CardContent>

@@ -32,6 +32,11 @@ export interface CaseStudy {
   img: string;
   challenge: string;
   solution: string;
+  overview: {
+    role: string;
+    timeline: string;
+    techStack: string;
+  };
   testimonial: {
     text: string;
     author: string;

@@ -291,6 +291,11 @@ export const caseStudies: CaseStudy[] = [
         "solution": "Developed a standalone Java-based command-line tool (JAR) that parses any JSON file and converts it into a well-formatted Excel file. The tool automatically creates tables with filtering and sorting enabled, making data exploration intuitive.",
         "testimonial": { "text": "This tool saved our team countless hours. What used to take half a day now takes seconds. A real game-changer for our workflow!", "author": "Data Analyst, FinCorp" },
         "results": ["99% reduction in data conversion time", "Eliminated manual data entry errors", "Enabled self-serve data analysis for business teams"],
+        "overview": {
+            "role": "Lead Developer",
+            "timeline": "2 Weeks",
+            "techStack": "Java, Apache POI"
+        },
         "preview": {
             "links": [
                 {"href": "#", "tooltipString": "see_on_github", "faIcon": "fa-brands fa-github"}
@@ -320,6 +325,11 @@ export const caseStudies: CaseStudy[] = [
         "solution": "Built a full-stack web application using Angular for the frontend and a Node.js/Express backend. The system processes and aggregates usage data into a MySQL database, exposing it through a GraphQL API for detailed and flexible reporting.",
         "testimonial": { "text": "The Scholar Counter platform has been invaluable for our institutional clients. The reliability and accuracy of the data have greatly improved our relationships with libraries.", "author": "Head of Publishing, Academic Press" },
         "results": ["Achieved 100% COUNTER Code of Practice compliance", "Provided data analytics for over 500 institutions", "Reduced report generation time by 85%"],
+        "overview": {
+            "role": "Full-Stack Developer",
+            "timeline": "6 Months",
+            "techStack": "Angular, Node.js, MySQL, GraphQL"
+        },
         "preview": {
             "links": [
                 {"href": "#", "tooltipString": "open_website", "faIcon": "fa-solid fa-link"}
@@ -349,6 +359,11 @@ export const caseStudies: CaseStudy[] = [
         "solution": "Developed a comprehensive travel portal using React for a dynamic frontend and Node.js for the backend. The platform integrates multiple third-party APIs for flights, hotels, and buses. An AI model was integrated to provide users with personalized travel suggestions based on their search history and preferences.",
         "testimonial": { "text": "Trionex Digital brought our vision to life. The AI-powered recommendations are a huge hit with our users, and the platform is incredibly robust and scalable.", "author": "CEO, TripBookKar" },
         "results": ["Unified 5+ travel booking APIs into one platform", "Increased user engagement by 40% with AI recommendations", "Processed over 10,000 bookings in the first six months"],
+        "overview": {
+            "role": "Lead Architect",
+            "timeline": "9 Months",
+            "techStack": "React, Node.js, MongoDB, AI/ML"
+        },
         "preview": {
             "links": [
                 {"href": "#", "tooltipString": "open_website", "faIcon": "fa-solid fa-link"}
@@ -377,6 +392,11 @@ export const caseStudies: CaseStudy[] = [
         "solution": "As part of the core team, I contributed to the development of FinnOne Neo CAS, a web-based platform using React and Java. My role involved developing key UI components, integrating with the backend PL/SQL engine, and conducting penetration testing to ensure enterprise-grade security.",
          "testimonial": { "text": "The new CAS platform has reduced loan processing times by over 50% for our clients. The user interface is modern, intuitive, and highly secure.", "author": "Product Manager, Nucleus Software" },
         "results": ["Contributed to a platform used by top-tier banks globally", "Improved UI performance and responsiveness", "Identified and patched critical security vulnerabilities"],
+        "overview": {
+            "role": "Software Engineer",
+            "timeline": "2 Years (Team Contribution)",
+            "techStack": "React, Java, Spring, PL/SQL"
+        },
         "preview": {
             "links": [
                 {"href": "#", "tooltipString": "open_website", "faIcon": "fa-solid fa-link"}
@@ -405,6 +425,11 @@ export const caseStudies: CaseStudy[] = [
         "solution": "Executed a hyper-local SEO strategy. This included optimizing their Google Business Profile, building local citations, creating location-specific landing pages, and generating content around local events and keywords like 'best cakes in [City]'.",
         "testimonial": { "text": "We went from obscurity to the #1 spot on Google Maps for 'bakery near me'. Our phone is ringing off the hook, and online orders have tripled. It's been transformative!", "author": "Owner, The Sweet Spot Bakery" },
         "results": ["Achieved #1 ranking in Google Map Pack for target keywords", "300% increase in online orders", "50% increase in daily foot traffic"],
+        "overview": {
+            "role": "SEO Strategist",
+            "timeline": "3 Months",
+            "techStack": "Google Business Profile, SEMrush, Ahrefs"
+        },
         "preview": {
             "links": [
                 {"href": "#", "tooltipString": "open_website", "faIcon": "fa-solid fa-link"}
@@ -433,6 +458,11 @@ export const caseStudies: CaseStudy[] = [
         "solution": "Restructured their Google and LinkedIn Ads campaigns. Focused on high-intent keywords, competitor targeting, and precise audience segmentation on LinkedIn based on job titles and company size. Created highly-targeted ad copy and landing pages for each segment.",
          "testimonial": { "text": "Their PPC strategy was a game-changer. Our lead quality improved overnight, and our CPA dropped by 60%. We're now signing clients we could only dream of before.", "author": "CMO, DataStream Innovations" },
         "results": ["Reduced Cost-Per-Acquisition (CPA) by 60%", "Increased qualified marketing leads by 150%", "Achieved a 4x Return on Ad Spend (ROAS)"],
+        "overview": {
+            "role": "PPC Manager",
+            "timeline": "Ongoing (6+ months)",
+            "techStack": "Google Ads, LinkedIn Ads, Google Analytics"
+        },
         "preview": {
             "links": [],
             "screenshots": [
@@ -577,4 +607,3 @@ export const clients: Client[] = [
   { id: '7', name: 'StartUpCo', imageId: 'client-logo-1' },
   { id: '8', name: 'FutureGadget', imageId: 'client-logo-2' },
 ];
-
