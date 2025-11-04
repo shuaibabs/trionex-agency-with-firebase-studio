@@ -323,13 +323,14 @@ export default function Home() {
       </section>
 
       {/* Final CTA */}
-      <section className="py-20 bg-gradient-to-r from-primary to-accent text-primary-foreground">
-        <div className="container mx-auto px-4 text-center">
+       <section className="py-20 bg-primary/90 text-primary-foreground relative overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_rgba(255,255,255,0.1)_0%,_rgba(255,255,255,0)_70%)] opacity-50"></div>
+        <div className="container mx-auto px-4 text-center relative">
           <h2 className="font-headline text-3xl font-bold sm:text-4xl">
             Ready to Start Your Project?
           </h2>
           <p className="mt-4 mb-8 max-w-2xl mx-auto text-base md:text-lg text-primary-foreground/80">
-            Let&apos;s talk about how Trionex Digital can help you achieve your
+            Let's talk about how Trionex Digital can help you achieve your
             goals. Schedule a free consultation today.
           </p>
           <Button
