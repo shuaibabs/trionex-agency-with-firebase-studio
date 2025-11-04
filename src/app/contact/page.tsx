@@ -15,7 +15,7 @@ import {
 } from '@/components/ui/form';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
-import { Mail, Phone, MapPin, Loader2, Bot, UserCheck, Briefcase, Wallet } from 'lucide-react';
+import { Mail, Phone, MapPin, Loader2, Bot, UserCheck, Briefcase, Wallet, Building } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import type { SummarizeContactFormSubmissionOutput } from '@/ai/flows/summarize-contact-form-submissions';
 import { summarizeSubmissionAction } from '@/app/contact/actions';
@@ -24,6 +24,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { services, packages } from '@/lib/data';
 import { useSearchParams } from 'next/navigation';
+import { cn } from '@/lib/utils';
 
 const allOfferings = [
   ...services.map(s => ({ id: s.id, title: s.title, type: 'Service', price: s.priceRange })),
@@ -38,6 +39,7 @@ const formSchema = z.object({
   email: z.string().email({
     message: 'Please enter a valid email address.',
   }),
+  companyName: z.string().optional(),
   phone: z.string().optional(),
   interest: z.string().min(1, { message: 'Please select a service or package.' }),
   message: z
@@ -62,6 +64,7 @@ export default function ContactPage() {
     defaultValues: {
       name: '',
       email: '',
+      companyName: '',
       phone: '',
       interest: interestParam || '',
       message: '',
@@ -166,10 +169,9 @@ export default function ContactPage() {
                 <iframe
                   width="100%"
                   height="100%"
-                  className="absolute inset-0 w-full h-full"
+                  className={cn("absolute inset-0 w-full h-full themed-map-filter")}
                   title="map"
                   src="https://maps.google.com/maps?width=100%&amp;height=600&amp;hl=en&amp;q=Jalalabad,%20Shamli,%20Uttar%20Pradesh,%20247772&amp;ie=UTF8&amp;t=&amp;z=14&amp;iwloc=B&amp;output=embed"
-                  style={{ filter: 'grayscale(1) contrast(1.2) opacity(0.8)' }}
                 ></iframe>
             </div>
           </div>
@@ -206,6 +208,20 @@ export default function ContactPage() {
                     )}
                     />
                 </div>
+                
+                 <FormField
+                    control={form.control}
+                    name="companyName"
+                    render={({ field }) => (
+                        <FormItem>
+                        <FormLabel>Company Name (Optional)</FormLabel>
+                        <FormControl>
+                            <Input placeholder="Acme Inc." {...field} />
+                        </FormControl>
+                        <FormMessage />
+                        </FormItem>
+                    )}
+                />
                 
                 <FormField
                     control={form.control}

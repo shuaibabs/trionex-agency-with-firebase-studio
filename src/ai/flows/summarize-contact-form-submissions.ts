@@ -14,6 +14,7 @@ import {z} from 'genkit';
 const SummarizeContactFormSubmissionInputSchema = z.object({
   name: z.string().describe('The name of the person submitting the form.'),
   email: z.string().email().describe('The email address of the person submitting the form.'),
+  companyName: z.string().optional().describe('The company name of the person submitting the form.'),
   phone: z.string().describe('The phone number of the person submitting the form.'),
   interest: z.string().describe('The service or package the user is interested in.'),
   message: z.string().describe('The message from the contact form submission.'),
@@ -41,6 +42,7 @@ const summarizeContactFormSubmissionPrompt = ai.definePrompt({
   Here is the contact form submission:
   Name: {{{name}}}
   Email: {{{email}}}
+  Company Name: {{{companyName}}}
   Phone: {{{phone}}}
   Interested In: {{{interest}}}
   Message: {{{message}}}

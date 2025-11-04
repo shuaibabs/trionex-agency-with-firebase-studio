@@ -257,7 +257,11 @@
     left: 100%;
   }
   
-  .dark .dark-map-filter {
-    filter: invert(1) hue-rotate(180deg) contrast(0.9) saturate(0.8);
+  .themed-map-filter {
+    filter: grayscale(1) opacity(0.8) contrast(1.2);
+  }
+
+  .dark .themed-map-filter {
+    filter: grayscale(1) opacity(0.5) contrast(1.2) hue-rotate(180deg) invert(1);
   }
 }
