@@ -165,7 +165,7 @@ export default function ContactPage() {
                 </div>
               </div>
             </div>
-             <div className="relative h-80 w-full rounded-lg overflow-hidden border">
+             <div className="relative h-80 w-full rounded-lg overflow-hidden border map-container">
                 <iframe
                   width="100%"
                   height="100%"
