@@ -227,10 +227,10 @@ export default function Home() {
                 className="group relative w-full overflow-hidden [mask-image:linear-gradient(to_right,transparent,white_20%,white_80%,transparent)]"
                 >
                 <div className="flex animate-scroll group-hover:[animation-play-state:paused]">
-                    {duplicatedClients.map((client) => {
+                    {duplicatedClients.map((client, index) => {
                         const clientImage = placeholderImages.find(p => p.id === client.imageId);
                         return (
-                            <div key={`${client.id}-1`} className="flex-shrink-0 w-1/2 sm:w-1/4 md:w-1/6 p-4">
+                            <div key={`${client.id}-${index}`} className="flex-shrink-0 w-1/2 sm:w-1/4 md:w-1/6 p-4">
                                 {clientImage && (
                                     <Image
                                         src={clientImage.imageUrl}
@@ -284,13 +284,7 @@ export default function Home() {
                       <div className="testimonial-card">
                           <div className="testimonial-card-content">
                             {avatarImage && (
-                                <motion.div 
-                                    className="relative w-24 h-24 rounded-full overflow-hidden mx-auto mb-6 testimonial-avatar"
-                                    animate={{ 
-                                        boxShadow: isActive ? '0 0 0 4px hsl(var(--primary-foreground)), 0 0 25px 5px hsl(var(--primary))' : '0 0 0 2px hsl(var(--border))',
-                                    }}
-                                    transition={{duration: 0.5}}
-                                >
+                                <div className="relative w-24 h-24 rounded-full overflow-hidden mx-auto mb-6 testimonial-avatar">
                                     <Image
                                         src={avatarImage.imageUrl}
                                         alt={testimonial.name}
@@ -298,7 +292,7 @@ export default function Home() {
                                         className="object-cover"
                                         data-ai-hint={avatarImage.imageHint}
                                     />
-                                </motion.div>
+                                </div>
                             )}
                             <Quote className="absolute top-6 left-6 w-10 h-10 text-primary/10" />
                             <p className="text-muted-foreground text-center italic mb-6 text-sm sm:text-base">
@@ -446,5 +440,7 @@ export default function Home() {
     </div>
   );
 }
+
+    
 
     
