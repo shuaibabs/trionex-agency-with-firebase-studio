@@ -141,6 +141,7 @@ export default function Home() {
           <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
             {featuredServices.map((service, i) => {
               const Icon = serviceIcons[service.id] || Code;
+              const serviceImages = service.imageIds.map(id => placeholderImages.find(p => p.id === id)).filter(Boolean);
               return (
                 <motion.div
                   key={service.id}
@@ -151,12 +152,41 @@ export default function Home() {
                   variants={cardVariants}
                 >
                   <Card
-                    className={cn("transform transition-transform duration-300 hover:-translate-y-2 hover:shadow-xl card-glow-on-hover h-full flex flex-col")}
+                    className={cn("group overflow-hidden transform transition-transform duration-300 hover:-translate-y-2 hover:shadow-xl card-glow-on-hover h-full flex flex-col")}
                   >
-                    <CardHeader className="items-center text-center">
-                      <div className="mb-4 rounded-full bg-primary/10 p-4 text-primary">
-                        <Icon className="h-8 w-8" />
-                      </div>
+                     <Carousel 
+                        className="w-full" 
+                        plugins={[
+                          Autoplay({
+                            delay: 2000 + Math.random() * 1000,
+                            stopOnInteraction: true,
+                          }),
+                        ]}
+                        opts={{ loop: true }}
+                      >
+                      <CarouselContent>
+                          {serviceImages.length > 0 ? serviceImages.map((img, index) => (
+                              <CarouselItem key={index}>
+                                  <div className="aspect-video relative overflow-hidden">
+                                  <Image
+                                      src={img!.imageUrl}
+                                      alt={img!.description}
+                                      fill
+                                      className="object-cover transition-transform duration-300 group-hover:scale-105"
+                                      data-ai-hint={img!.imageHint}
+                                  />
+                                  </div>
+                              </CarouselItem>
+                          )) : (
+                                <CarouselItem>
+                                  <div className="aspect-video relative overflow-hidden bg-secondary flex items-center justify-center">
+                                     <Icon className="h-10 w-10 text-muted-foreground" />
+                                  </div>
+                              </CarouselItem>
+                          )}
+                      </CarouselContent>
+                    </Carousel>
+                    <CardHeader className="text-center">
                       <CardTitle className="font-headline text-xl">
                         {service.title}
                       </CardTitle>

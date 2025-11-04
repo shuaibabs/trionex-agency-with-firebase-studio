@@ -12,6 +12,7 @@ import { Badge } from '@/components/ui/badge';
 import { motion } from 'framer-motion';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
 import Autoplay from "embla-carousel-autoplay";
+import { cn } from '@/lib/utils';
 
 const categoryIdToName: Record<string, string> = {
   'category_web': 'Web App',
@@ -89,7 +90,7 @@ export default function PortfolioPage() {
                 transition={{ delay: i * 0.1, duration: 0.5 }}
                 className="flex"
               >
-                <Card className="overflow-hidden group flex flex-col h-full w-full bg-secondary/30 dark:bg-secondary/20">
+                <Card className={cn("overflow-hidden group flex flex-col h-full w-full transform transition-transform duration-300 hover:-translate-y-2 hover:shadow-xl card-glow-on-hover")}>
                   <LoadingLink href={`/portfolio/${study.slug}`} className="block h-full flex flex-col">
                      <Carousel 
                         className="w-full" 

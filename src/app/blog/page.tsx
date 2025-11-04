@@ -7,6 +7,7 @@ import { blogPosts, placeholderImages } from '@/lib/data';
 import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { cn } from '@/lib/utils';
 
 export default function BlogPage() {
   const cardVariants = {
@@ -38,7 +39,7 @@ export default function BlogPage() {
                 transition={{ delay: i * 0.1, duration: 0.5 }}
                 className="flex"
               >
-                <Card className="overflow-hidden group flex flex-col h-full w-full">
+                <Card className={cn("overflow-hidden group flex flex-col h-full w-full transform transition-transform duration-300 hover:-translate-y-2 hover:shadow-xl card-glow-on-hover")}>
                   <LoadingLink href={`/blog/${post.slug}`} className="block h-full flex flex-col">
                     <div className="aspect-video relative">
                       {blogImage && (

@@ -1,7 +1,7 @@
 
 'use client';
 import React from 'react';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, BarChart, Code, PenTool, Search, Users } from 'lucide-react';
 import LoadingLink from '@/components/loading-link';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle, CardFooter } from '@/components/ui/card';
@@ -10,6 +10,22 @@ import { motion } from 'framer-motion';
 import Image from 'next/image';
 import { Carousel, CarouselContent, CarouselItem } from '@/components/ui/carousel';
 import Autoplay from "embla-carousel-autoplay";
+import { cn } from '@/lib/utils';
+
+const serviceIcons: { [key: string]: React.ElementType } = {
+  'business-website-development': Code,
+  'seo-optimization': Search,
+  'ppc-advertising': BarChart,
+  'content-marketing': PenTool,
+  'ecommerce-website': Code,
+  'social-media-marketing': Users,
+  'real-estate-website-development': Code,
+  'college-school-website-development': Code,
+  'healthcare-clinic-website-development': Code,
+  'portfolio-personal-branding-websites': Code,
+  'startup-mvp-development': Code,
+  'landing-page-design-development': Code,
+};
 
 
 export default function ServicesPage() {
@@ -38,6 +54,7 @@ export default function ServicesPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {webDevServices.map((service, i) => {
               const serviceImages = service.imageIds.map(id => placeholderImages.find(p => p.id === id)).filter(Boolean);
+              const Icon = serviceIcons[service.id] || Code;
               return (
               <motion.div
                 key={service.id}
@@ -48,7 +65,7 @@ export default function ServicesPage() {
                 className="h-full"
               >
                 <Card
-                  className="flex flex-col transform transition-transform duration-300 hover:-translate-y-2 hover:shadow-xl h-full group overflow-hidden"
+                  className={cn("flex flex-col transform transition-transform duration-300 hover:-translate-y-2 hover:shadow-xl h-full group overflow-hidden card-glow-on-hover")}
                 >
                   <Carousel 
                       className="w-full" 
@@ -76,7 +93,7 @@ export default function ServicesPage() {
                         )) : (
                               <CarouselItem>
                                 <div className="aspect-video relative overflow-hidden bg-secondary flex items-center justify-center">
-                                  <p className="text-muted-foreground">No Image</p>
+                                  <Icon className="h-10 w-10 text-muted-foreground" />
                                 </div>
                             </CarouselItem>
                         )}
@@ -111,6 +128,7 @@ export default function ServicesPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {marketingServices.map((service, i) => {
               const serviceImages = service.imageIds.map(id => placeholderImages.find(p => p.id === id)).filter(Boolean);
+               const Icon = serviceIcons[service.id] || Code;
               return (
               <motion.div
                   key={service.id}
@@ -121,7 +139,7 @@ export default function ServicesPage() {
                   className="h-full"
               >
                   <Card
-                  className="flex flex-col transform transition-transform duration-300 hover:-translate-y-2 hover:shadow-xl h-full group overflow-hidden"
+                  className={cn("flex flex-col transform transition-transform duration-300 hover:-translate-y-2 hover:shadow-xl h-full group overflow-hidden card-glow-on-hover")}
                   >
                     <Carousel 
                       className="w-full" 
@@ -149,7 +167,7 @@ export default function ServicesPage() {
                         )) : (
                             <CarouselItem>
                                 <div className="aspect-video relative overflow-hidden bg-secondary flex items-center justify-center">
-                                  <p className="text-muted-foreground">No Image</p>
+                                  <Icon className="h-10 w-10 text-muted-foreground" />
                                 </div>
                             </CarouselItem>
                         )}
