@@ -52,19 +52,31 @@ export default function AboutPage() {
   return (
     <div className="bg-background">
       {/* Hero Section */}
-      <section className="relative w-full py-20 md:py-32">
-        <div className="container mx-auto px-4 text-center">
-           <Badge variant="outline" className="text-sm py-1 px-4 sm:text-base">Our Journey</Badge>
-          <h1 className="font-headline text-4xl font-bold tracking-tighter text-primary sm:text-5xl md:text-6xl mt-4">
-            Crafting Digital Excellence, Driving Real Growth
-          </h1>
-          <p className="mt-6 max-w-3xl mx-auto text-base text-muted-foreground md:text-lg">
-            We&apos;re a passionate team of developers, designers, and marketers dedicated to building exceptional digital experiences that fuel success.
-          </p>
-        </div>
-        {aboutHeroImage && (
-            <div className="container mx-auto px-4 mt-12">
-                <div className="relative aspect-[16/7] rounded-lg overflow-hidden shadow-xl">
+      <section className="relative w-full py-20 md:py-32 overflow-hidden">
+        <div className="container mx-auto px-4 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <motion.div 
+                className="space-y-4 text-center md:text-left"
+                initial="hidden"
+                animate="visible"
+                variants={cardVariants}
+                transition={{ duration: 0.5 }}
+            >
+                <Badge variant="outline" className="text-sm py-1 px-4 sm:text-base">Our Journey</Badge>
+                <h1 className="font-headline text-4xl font-bold tracking-tighter text-primary sm:text-5xl md:text-6xl mt-4">
+                    Crafting Digital Excellence, Driving Real Growth
+                </h1>
+                <p className="mt-6 max-w-xl mx-auto md:mx-0 text-base text-muted-foreground md:text-lg">
+                    We&apos;re a passionate team of developers, designers, and marketers dedicated to building exceptional digital experiences that fuel success.
+                </p>
+            </motion.div>
+            {aboutHeroImage && (
+                <motion.div 
+                    className="relative aspect-video rounded-lg overflow-hidden shadow-xl"
+                    initial="hidden"
+                    animate="visible"
+                    variants={cardVariants}
+                    transition={{ duration: 0.5, delay: 0.2 }}
+                >
                     <Image
                         src={aboutHeroImage.imageUrl}
                         alt={aboutHeroImage.description}
@@ -73,13 +85,13 @@ export default function AboutPage() {
                         data-ai-hint={aboutHeroImage.imageHint}
                         priority
                     />
-                </div>
-            </div>
-        )}
+                </motion.div>
+            )}
+        </div>
       </section>
 
       {/* Our Story Section */}
-      <section className="py-16 sm:py-24 bg-secondary/50 dark:bg-secondary/20">
+      <section className="py-16 sm:py-24 bg-gradient-to-b from-secondary/30 to-background dark:from-secondary/10 dark:to-background">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
             {ourStoryImage && (
@@ -121,7 +133,7 @@ export default function AboutPage() {
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <Badge variant="outline">Our Compass</Badge>
-            <h2 className="mt-2 font-headline text-3xl font-bold tracking-tighter sm:text-4xl">Our Mission & Values</h2>
+            <h2 className="mt-2 font-headline text-3xl font-bold tracking-tighter sm:text-4xl">Our Mission &amp; Values</h2>
             <p className="mt-4 max-w-2xl mx-auto text-base md:text-lg text-muted-foreground">
              Our mission is to empower businesses to thrive in the digital world through technology and creativity. These values guide every decision we make.
             </p>
