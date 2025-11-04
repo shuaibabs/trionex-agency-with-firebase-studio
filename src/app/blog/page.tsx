@@ -2,9 +2,10 @@
 'use client';
 import Image from 'next/image';
 import LoadingLink from '@/components/loading-link';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Card, CardContent, CardHeader, CardTitle, CardFooter } from '@/components/ui/card';
 import { blogPosts, placeholderImages } from '@/lib/data';
 import { motion } from 'framer-motion';
+import { ArrowRight } from 'lucide-react';
 
 export default function BlogPage() {
   const cardVariants = {
@@ -35,8 +36,9 @@ export default function BlogPage() {
                 viewport={{ once: true, amount: 0.3 }}
                 transition={{ delay: i * 0.1, duration: 0.5 }}
                 variants={cardVariants}
+                className="flex"
               >
-                <Card className="overflow-hidden group h-full flex flex-col">
+                <Card className="overflow-hidden group flex flex-col h-full w-full">
                   <LoadingLink href={`/blog/${post.slug}`} className="block h-full flex flex-col">
                     <div className="aspect-video relative">
                       {blogImage && (
@@ -64,6 +66,11 @@ export default function BlogPage() {
                         {post.excerpt}
                       </p>
                     </CardContent>
+                    <CardFooter>
+                       <span className="text-primary font-semibold flex items-center text-sm group-hover:underline">
+                          Read Article <ArrowRight className="ml-2 h-4 w-4" />
+                        </span>
+                    </CardFooter>
                   </LoadingLink>
                 </Card>
               </motion.div>
