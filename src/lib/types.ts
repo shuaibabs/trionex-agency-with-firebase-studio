@@ -1,4 +1,5 @@
 
+
 export interface Service {
   id: string;
   title: string;
@@ -25,16 +26,28 @@ export interface Package {
 }
 
 export interface CaseStudy {
-  id: string;
-  title: string;
+  id: number;
   slug: string;
-  category: 'Web' | 'Ads' | 'SEO';
-  shortDescription: string;
-  challenge: string;
-  solution: string;
-  results: { metric: string; value: string; description:string }[];
-  imageId: string;
+  categoryId: string;
+  img: string;
+  faIcon: string;
+  faIconColors: { bg: string; fill: string };
+  preview: {
+    links: { href: string; tooltipString: string; faIcon: string }[];
+    screenshots: string[];
+    screenshotsAspectRatio: string;
+    youtubeVideo: string;
+
+  };
+  locales: {
+    en: {
+      title: string;
+      text: string;
+      tags: string[];
+    };
+  };
 }
+
 
 export interface BlogPost {
   id: string;

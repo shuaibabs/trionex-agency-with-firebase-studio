@@ -19,7 +19,7 @@ export const services: Service[] = [
       { step: 3, title: 'Development', description: 'Build a high-performance, responsive website with clean code.' },
       { step: 4, title: 'Launch', description: 'Deploy the site and ensure everything is running smoothly.' }
     ],
-    caseStudyIds: ['case-study-1'],
+    caseStudyIds: ['1'],
     category: 'Web Development',
     imageId: 'service-image-1'
   },
@@ -37,7 +37,7 @@ export const services: Service[] = [
         { step: 3, title: 'Agile Development', description: 'Develop the application in sprints with regular feedback and iterations.' },
         { step: 4, title: 'Deployment & Scaling', description: 'Deploy to the cloud and set up for scalability and performance.' }
     ],
-    caseStudyIds: ['case-study-2'],
+    caseStudyIds: ['2'],
     category: 'Web Development',
     imageId: 'service-image-2'
   },
@@ -55,7 +55,7 @@ export const services: Service[] = [
         { step: 3, title: 'Development & Setup', description: 'Build and configure the store, products, and payment systems.' },
         { step: 4, title: 'Launch & Marketing', description: 'Go live and start driving traffic to your new online store.' }
     ],
-    caseStudyIds: ['case-study-3'],
+    caseStudyIds: ['3'],
     category: 'Web Development',
     imageId: 'service-image-3'
   },
@@ -181,7 +181,7 @@ export const services: Service[] = [
         { step: 3, title: 'Implementation', description: 'We execute on-page, off-page, and technical optimizations.' },
         { step: 4, title: 'Reporting', description: 'We provide detailed monthly reports on performance and rankings.' }
     ],
-    caseStudyIds: ['case-study-4'],
+    caseStudyIds: ['4'],
     category: 'Digital Marketing',
     imageId: 'service-image-10'
   },
@@ -199,7 +199,7 @@ export const services: Service[] = [
         { step: 3, title: 'Optimization', description: 'We constantly monitor and tweak your campaigns to improve performance and lower costs.' },
         { step: 4, title: 'Reporting', description: 'You get clear, concise reports on what matters most: your ROI.' }
     ],
-    caseStudyIds: ['case-study-5'],
+    caseStudyIds: ['5'],
     category: 'Digital Marketing',
     imageId: 'service-image-11'
   },
@@ -217,7 +217,7 @@ export const services: Service[] = [
         { step: 3, title: 'Management', description: 'We schedule posts, engage with your audience, and monitor conversations.' },
         { step: 4, title: 'Growth', description: 'We analyze performance to refine the strategy and grow your following.' }
     ],
-    caseStudyIds: ['case-study-6'],
+    caseStudyIds: ['6'],
     category: 'Digital Marketing',
     imageId: 'service-image-12'
   },
@@ -282,96 +282,301 @@ export const packages: Package[] = [
 ];
 
 export const caseStudies: CaseStudy[] = [
-  {
-    id: 'case-study-1',
-    title: 'Professional Website for a Local Law Firm',
-    slug: 'law-firm-website-launch',
-    category: 'Web',
-    shortDescription: 'Developed a professional, trustworthy website that increased client inquiries by 40%.',
-    challenge: 'A respected local law firm had an outdated website that did not reflect their professionalism and was not mobile-friendly, causing them to lose potential clients.',
-    solution: 'We designed and developed a clean, professional, and responsive website focusing on trust and authority. Key features included clear service descriptions, attorney profiles, and an easy-to-use contact form for consultations.',
-    results: [
-      { metric: '40%', value: 'Increase in Client Inquiries', description: 'Achieved within the first two months.' },
-      { metric: '70%', value: 'Increase in Mobile Traffic', description: 'Thanks to the new responsive design.' },
-      { metric: 'Positive', value: 'Client Feedback', description: 'Clients commented on the site\'s professionalism and ease of use.' },
-    ],
-    imageId: 'portfolio-5'
-  },
-  {
-    id: 'case-study-2',
-    title: 'Custom Dashboard for a Logistics Company',
-    slug: 'logistics-dashboard-app',
-    category: 'Web',
-    shortDescription: 'Built a custom web application for real-time shipment tracking, reducing manual reporting by 90%.',
-    challenge: 'A logistics company was struggling with manual processes for tracking shipments and generating reports, leading to delays and operational inefficiencies.',
-    solution: 'We developed a secure, real-time web application with a central dashboard for staff, role-based access for clients, and automated reporting features. The app integrated with their existing GPS and inventory systems.',
-    results: [
-      { metric: '90%', value: 'Reduction in Manual Reporting', description: 'Automated reports saved countless hours per week.' },
-      { metric: '25%', value: 'Improvement in Efficiency', description: 'Real-time data enabled faster decision-making.' },
-      { metric: 'Higher', value: 'Client Satisfaction', description: 'Clients loved the ability to track their shipments live.' },
-    ],
-    imageId: 'portfolio-2'
-  },
-  {
-    id: 'case-study-3',
-    title: 'High-Converting Shopify Store for a D2C Brand',
-    slug: 'd2c-shopify-store',
-    category: 'Web',
-    shortDescription: 'Launched a custom-themed Shopify store that boosted conversion rates by 60%.',
-    challenge: 'A new direct-to-consumer (D2C) brand needed an online store that was not only visually appealing but also optimized for conversions from day one.',
-    solution: 'We designed and developed a bespoke Shopify theme that highlighted the brand\'s unique value proposition. We focused on a frictionless user experience, from product discovery to a streamlined one-page checkout.',
-    results: [
-      { metric: '60%', value: 'Increase in Conversion Rate', description: 'Compared to initial platform benchmarks.' },
-      { metric: '1.5s', value: 'Page Load Time', description: 'A highly optimized theme ensured a lightning-fast experience.' },
-      { metric: '2.5x', value: 'Higher ROAS on Launch Ads', description: 'The optimized landing experience improved ad performance.' },
-    ],
-    imageId: 'portfolio-1'
-  },
     {
-    id: 'case-study-4',
-    title: 'Dominating Local Search for a Dental Clinic',
-    slug: 'dental-clinic-local-seo',
-    category: 'SEO',
-    shortDescription: 'A targeted Local SEO strategy resulted in a #1 ranking for "dentist near me" and a 200% increase in appointment bookings.',
-    challenge: 'A newly opened dental clinic was invisible online and struggling to attract local patients. They were not appearing in local map packs or search results.',
-    solution: 'We executed a comprehensive Local SEO campaign, which included optimizing their Google Business Profile, building local citations, generating positive patient reviews, and creating location-specific service pages on their website.',
-    results: [
-      { metric: '#1 Rank', value: 'For "dentist near me"', description: 'Achieved the top spot in the local map pack.' },
-      { metric: '200%', value: 'Increase in Bookings', description: 'Online appointment bookings tripled in four months.' },
-      { metric: '5-Star', value: 'Average Rating', description: 'A review generation strategy improved their online reputation.' },
-    ],
-    imageId: 'portfolio-6'
-  },
-  {
-    id: 'case-study-5',
-    slug: 'fashion-brand-ppc',
-    title: 'Scaling a Fashion Brand with Google Ads',
-    category: 'Ads',
-    shortDescription: 'Achieved a 5X Return on Ad Spend (ROAS) for a new fashion e-commerce store using targeted Google Shopping campaigns.',
-    challenge: 'A new online fashion brand wanted to drive sales and acquire customers quickly but had a limited marketing budget and low brand recognition.',
-    solution: 'We launched a series of highly targeted Google Shopping and Search campaigns focused on specific product categories and long-tail keywords. Ad copy was continuously A/B tested, and the product feed was optimized for maximum visibility.',
-    results: [
-      { metric: '5X', value: 'Return on Ad Spend (ROAS)', description: 'Generated ₹5 in revenue for every ₹1 spent on ads.' },
-      { metric: '50%', value: 'Decrease in Cost-per-Acquisition', description: 'Optimization led to more efficient customer acquisition over 3 months.' },
-      { metric: '150%', value: 'Increase in Website Traffic', description: 'Drove a significant volume of qualified buyers to the website.' },
-    ],
-    imageId: 'portfolio-3'
-  },
-  {
-    id: 'case-study-6',
-    slug: 'tech-startup-social-media',
-    title: 'Building a Community for a B2B Tech Startup',
-    category: 'Web',
-    shortDescription: 'Grew a B2B tech startup’s LinkedIn followers by 300% and generated qualified leads through strategic content marketing.',
-    challenge: 'A B2B SaaS startup had a groundbreaking product but struggled to reach and engage with its target audience of enterprise-level decision-makers on social media.',
-    solution: 'We developed a content strategy focused on LinkedIn, sharing valuable industry insights, case studies, and thought leadership articles. We engaged in industry-specific groups and built relationships with key influencers to amplify the brand\'s message.',
-    results: [
-      { metric: '300%', value: 'Follower Growth on LinkedIn', description: 'Organically grew their audience in six months.' },
-      { metric: '50+', value: 'Qualified Leads Generated', description: 'Directly from social media content and engagement.' },
-      { metric: 'Top 10%', value: 'Industry Engagement Rate', description: 'Achieved engagement rates well above the industry average.' },
-    ],
-    imageId: 'portfolio-4'
-  }
+        "id": 1,
+        "slug": "json-to-excel-converter",
+        "categoryId": "category_utilities",
+        "img": "/images/portfolio/jar.png",
+        "faIcon": "",
+        "faIconColors": {"bg": "", "fill": ""},
+        "preview": {
+            "links": [
+            ],
+            "screenshots": [
+            ],
+            "screenshotsAspectRatio": "",
+            "youtubeVideo": ""
+        },
+        "locales": {
+            "en": {
+                "title": "JSON to Excel Converter",
+                "text": "A <b>Java-based JAR tool</b> that converts JSON data into Excel with <b>default filtering, sorting, and structured formatting</b> for efficient data management and reporting.",
+                "tags": ["JAVA", "JAR", "JSON", "Excel"]
+            }
+        }
+    },
+    {
+        "id": 2,
+        "slug": "windows-harvesting-tool",
+        "categoryId": "category_utilities",
+        "img": "/images/portfolio/windows.png",
+        "faIcon": "",
+        "faIconColors": {"bg": "", "fill": ""},
+        "preview": {
+            "links": [],
+            "screenshots": [
+            ],
+            "screenshotsAspectRatio": "",
+            "youtubeVideo": ""
+        },
+        "locales": {
+            "en": {
+                "title": "Windows Harvesting Tool",
+                "text": "A <b>C# .NET Windows harvesting tool</b> that downloads files from specified URLs and servers with <b>configurable scheduling, parallel transfers, and robust error handling.</b> ideal for automated data collection and mass file retrieval.",
+                "tags": ["C#", "DotNet", "Windows", "Tool"]
+            }
+        }
+    },
+    {
+        "id": 3,
+        "slug": "alpine-college-of-education",
+        "categoryId": "category_web",
+        "img": "/images/portfolio/alpine.png",
+        "faIcon": "",
+        "faIconColors": {"bg": "", "fill": ""},
+        "preview": {
+            "links": [],
+            "screenshots": [],
+            "screenshotsAspectRatio": "16:9",
+            "youtubeVideo": ""
+        },
+        "locales": {
+            "en": {
+                "title": "Alpine College of Education",
+                "text": "A responsive <b>college website</b> built with modern web technologies, featuring course details, faculty profiles, admission forms, event management, and a student portal for seamless communication and resource access.",
+                "tags": ["Angular", "MySQL", "NodeJS", "ExpressJS"]
+            }
+        }
+    },
+    {
+        "id": 4,
+        "slug": "time-attendance-system",
+        "categoryId": "category_utilities",
+        "img": "/images/portfolio/tms.png",
+        "faIcon": "",
+        "faIconColors": {"bg": "", "fill": ""},
+        "preview": {
+            "links": [],
+            "screenshots": [
+            ],
+            "screenshotsAspectRatio": "",
+            "youtubeVideo": ""
+        },
+        "locales": {
+            "en": {
+                "title": "Time & Attendance System",
+                "text": "A <b>Time & Attendance System</b> to track employee working hours, manage shifts, and generate automated reports with real-time monitoring and secure data management.",
+                "tags": ["Angular", "MySQL", "NodeJS", "ExpressJS"]
+            }
+        }
+    },
+    {
+        "id": 5,
+        "slug": "scholar-counter",
+        "categoryId": "category_web",
+        "img": "/images/portfolio/sc.png",
+        "faIcon": "",
+        "faIconColors": {"bg": "", "fill": ""},
+        "preview": {
+            "links": [
+                {"href": "https://sc.gindowa.com/", "tooltipString": "open_website", "faIcon": "fa-solid fa-link"}
+            ],
+            "screenshots": [
+                "/images/portfolio/sc/10001.png",
+                "/images/portfolio/sc/10002.jpg",
+                "/images/portfolio/sc/10003.jpg",
+                "/images/portfolio/sc/10004.jpg",
+                "/images/portfolio/sc/10005.jpg",
+                "/images/portfolio/sc/10006.jpg",
+                "/images/portfolio/sc/10007.jpg"
+            ],
+            "screenshotsAspectRatio": "16:9",
+            "youtubeVideo": ""
+        },
+        "locales": {
+            "en": {
+                "title": "Scholar Counter",
+                "text": "<b>Scholar Counter</b> follows the <b>COUNTER Code of Practice</b> to provide standardized, credible, and comparable usage data for scholarly electronic resources. It ensures libraries, publishers, and vendors have consistent insights into how academic content is accessed and used.",
+                "tags": ["Angular", "MySQL", "NodeJS", "ExpressJS", "GraphQL"]
+            }
+        }
+    },
+    {
+        "id": 6,
+        "slug": "maker-checker",
+        "categoryId": "category_web",
+        "img": "/images/portfolio/maker-checker.png",
+        "faIcon": "",
+        "faIconColors": {"bg": "", "fill": ""},
+        "preview": {
+            "links": [
+                {"href": "https://github.com", "tooltipString": "see_on_github", "faIcon": "fa-brands fa-github"}
+            ],
+            "screenshots": [
+
+            ],
+            "screenshotsAspectRatio": "",
+            "youtubeVideo": ""
+        },
+        "locales": {
+            "en": {
+                "title": "Maker Checker",
+                "text": "A <b>Maker-Checker</b> system implementing <b>dual-authorization workflow,</b> where one user (Maker) creates or initiates a transaction/request and another user (Checker) reviews and approves it. Ensures <b>accuracy, accountability, and compliance</b> in critical operations.",
+                "tags": ["PL/SQL", "Core Java", "Servlet", "JSP", "Spring", "Hibernate" ]
+            }
+        }
+    },
+    {
+        "id": 7,
+        "slug": "tripbookkar",
+        "categoryId": "category_web",
+        "img": "/images/portfolio/trip.png",
+        "faIcon": "",
+        "faIconColors": {"bg": "", "fill": ""},
+        "preview": {
+            "links": [
+                {"href": "https://tripbookkar.com/", "tooltipString": "open_website", "faIcon": "fa-solid fa-link"}
+            ],
+            "screenshots": [
+                "/images/portfolio/trip/10001.png",
+                "/images/portfolio/trip/10002.png",
+                "/images/portfolio/trip/10003.png",
+                "/images/portfolio/trip/10004.png"
+            ],
+            "screenshotsAspectRatio": "16:9",
+            "youtubeVideo": ""
+        },
+        "locales": {
+            "en": {
+                "title": "TripBookKar",
+                "text": "<b>TripBookKar</b> is one-stop travel booking platform for <b>holiday packages, flights, hotels, trains, buses, cabs, and helicopter services.</b> Discover trending destinations, explore budget-friendly deals, and book your perfect trip with ease.",
+                "tags": ["React", "ExpressJS", "NodeJS", "MongoDB", "AI Model Integration"]
+            }
+        }
+    },
+    {
+        "id": 8,
+        "slug": "finnone-neo-cas",
+        "categoryId": "category_web",
+        "img": "/images/portfolio/cas.png",
+        "faIcon": "",
+        "faIconColors": {"bg": "", "fill": ""},
+        "preview": {
+            "links": [
+                {"href": "https://www.nucleussoftware.com/finnone-neo/loan-origination-system/", "tooltipString": "open_website", "faIcon": "fa-solid fa-link"}
+            ],
+            "screenshots": [
+
+            ],
+            "screenshotsAspectRatio": "",
+            "youtubeVideo": "https://www.youtube.com/watch?v=-JbofnRpV0U"
+        },
+        "locales": {
+            "en": {
+                "title": "FinnOne Neo CAS",
+                "text": "<b>FinnOne Neo CAS (Customer Acquisition System)</b> by Nucleus Software is a digital loan origination platform. It helps <b>banks and NBFCs</b> manage the entire customer onboarding and lending journey from <b>lead capture and eKYC to credit scoring, verification, approval, and disbursement.</b>",
+                "tags": ["React", "NodeJS", "Java", "PL/SQL", "Penetration Testing", "Documentation"]
+            }
+        }
+    },
+    {
+        "id": 9,
+        "slug": "finnone-neo-lms",
+        "categoryId": "category_web",
+        "img": "/images/portfolio/lms.png",
+        "faIcon": "",
+        "faIconColors": {"bg": "", "fill": ""},
+        "preview": {
+            "links": [
+                {"href": "https://www.nucleussoftware.com/finnone-neo/loan-management-system/", "tooltipString": "open_website", "faIcon": "fa-solid fa-link"}
+            ],
+            "screenshots": [
+
+            ],
+            "screenshotsAspectRatio": "",
+            "youtubeVideo": "https://www.youtube.com/watch?v=9NgOjw2ZFBQ"
+        },
+        "locales": {
+            "en": {
+                "title": "FinnOne Neo LMS",
+                "text": "<b>FinnOne Neo LMS (Loan Management System)</b> by Nucleus Software is a comprehensive loan servicing platform. It helps <b>banks and NBFCs</b> manage the entire loan lifecycle from <b>disbursement and repayment scheduling to interest calculation, accounting, monitoring, and closure</b> ensuring accuracy, compliance, and customer satisfaction.",
+                "tags": ["React", "NodeJS", "Java", "PL/SQL", "Penetration Testing", "Documentation"]
+            }
+        }
+    },
+     {
+        "id": 10,
+        "slug": "finnone-neo-collections",
+        "categoryId": "category_web",
+        "img": "/images/portfolio/coll.png",
+        "faIcon": "",
+        "faIconColors": {"bg": "", "fill": ""},
+        "preview": {
+            "links": [
+                {"href": "https://www.nucleussoftware.com/finnone-neo/collections/", "tooltipString": "open_website", "faIcon": "fa-solid fa-link"}
+            ],
+            "screenshots": [
+
+            ],
+            "screenshotsAspectRatio": "",
+            "youtubeVideo": "https://www.youtube.com/watch?v=OkCsQaTH3G4"
+        },
+        "locales": {
+            "en": {
+                "title": "FinnOne Neo Collections",
+                "text": "<b>FinnOne Neo Collections</b> by Nucleus Software is a digital debt recovery and management solution. It empowers financial institutions to <b>streamline collections</b> with <b>intelligent strategies, digital reminders, field tracking, and analytics</b> reducing delinquencies, improving recovery rates, and enhancing borrower engagement.",
+                "tags": ["React", "NodeJS", "Java", "PL/SQL", "Penetration Testing", "Documentation"]
+            }
+        }
+    },
+    {
+        "id": 11,
+        "slug": "e-commerce-store",
+        "categoryId": "category_apps",
+        "img": "/images/portfolio/ecom.png",
+        "faIcon": "",
+        "faIconColors": {"bg": "", "fill": ""},
+        "preview": {
+            "links": [
+            ],
+            "screenshots": [
+
+            ],
+            "screenshotsAspectRatio": "",
+            "youtubeVideo": ""
+        },
+        "locales": {
+            "en": {
+                "title": "E-Commerce Store",
+                "text": "A modern, full-stack e-commerce Android app built with <b>React (Vite)</b> for a fast and responsive user interface, powered by <b>Node.js with Express as the backend server.</b> The application leverages <b>MongoDB</b> as the primary database for managing products, users, orders, and inventory, while <b>Firebase</b> is integrated for authentication, real-time notifications, and secure backend services.",
+               "tags": ["React", "Vite", "NodeJS", "Express", "MongoDB", "Firebase", "Android", "E-Commerce", "Full Stack Development"]
+            }
+        }
+    },
+     {
+        "id": 12,
+        "slug": "finnone-neo-mobile-apps",
+        "categoryId": "category_apps",
+        "img": "/images/portfolio/mFinnOne.jpg",
+        "faIcon": "",
+        "faIconColors": {"bg": "", "fill": ""},
+        "preview": {
+            "links": [
+            ],
+            "screenshots": [
+
+            ],
+            "screenshotsAspectRatio": "",
+            "youtubeVideo": ""
+        },
+        "locales": {
+            "en": {
+                "title": "FinnOne Neo Mobile Apps (mCAS, Mcollect, mFinn, mServe/mApply)",
+                "text": "A suite of mobile apps under <b>Nucleus Software’s FinnOne Neo digital lending platform,</b> built to simplify lending and customer servicing. <b>mCAS</b> – Digital customer onboarding with KYC & application processing. <b>mCollect</b> – Real-time collections & payment tracking. <b>mFinn</b> – Customer loan management & service requests. <b>mServe/mApply</b> – Loan applications & servicing through mobile. Ensures secure, real-time, and seamless integration for banks & NBFCs.",
+               "tags": ["mCAS", "mCollect", "mServe", "mApply", "mFinn", "Frida", "Android", "Penetration Testing", "Backend APIs"]
+            }
+        }
+    }
 ];
 
 export const blogPosts: BlogPost[] = [

@@ -17,7 +17,7 @@ export default function ServiceDetailPage({ params }: { params: { slug: string }
     notFound();
   }
 
-  const relatedCaseStudies = caseStudies.filter(cs => service.caseStudyIds.includes(cs.id));
+  const relatedCaseStudies = caseStudies.filter(cs => service.caseStudyIds.includes(String(cs.id)));
   const serviceImageId = `service-${service.id.substring(0,10)}`;
   const serviceImage = placeholderImages.find(p => p.id === serviceImageId);
   
@@ -97,7 +97,6 @@ export default function ServiceDetailPage({ params }: { params: { slug: string }
                 <h2 className="font-headline text-2xl font-bold mb-4">Related Case Studies</h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   {relatedCaseStudies.map((study, i) => {
-                    const studyImage = placeholderImages.find(p => p.id === study.imageId);
                     return (
                       <motion.div
                         key={study.id}
@@ -109,14 +108,11 @@ export default function ServiceDetailPage({ params }: { params: { slug: string }
                       >
                         <Card className="group overflow-hidden h-full">
                           <Link href={`/portfolio/${study.slug}`} className="block">
-                            {studyImage && (
                                 <div className="aspect-video relative">
-                                    <Image src={studyImage.imageUrl} alt={study.title} fill className="object-cover transition-transform group-hover:scale-105" data-ai-hint={studyImage.imageHint} />
+                                    <Image src={study.img} alt={study.locales.en.title} fill className="object-cover transition-transform group-hover:scale-105"  />
                                 </div>
-                            )}
                             <CardHeader>
-                                <Badge variant="secondary" className="w-min mb-2">{study.category}</Badge>
-                                <CardTitle className="font-headline text-lg">{study.title}</CardTitle>
+                                <CardTitle className="font-headline text-lg">{study.locales.en.title}</CardTitle>
                             </CardHeader>
                             <CardContent>
                                 <span className="text-primary hover:underline">
@@ -199,5 +195,3 @@ export default function ServiceDetailPage({ params }: { params: { slug: string }
     </div>
   );
 }
-
-    
