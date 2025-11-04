@@ -82,8 +82,8 @@ export default function Header() {
 
                 <div className="flex flex-1 items-center justify-end gap-2">
                 
-                {/* Auth buttons for desktop and tablet */}
-                <div className="hidden sm:flex items-center gap-2">
+                {/* Auth buttons & Theme toggle for different screen sizes */}
+                <div className="flex items-center gap-2">
                   {!isUserLoading &&
                       (user ? (
                       <DropdownMenu>
@@ -127,11 +127,11 @@ export default function Header() {
                           </Button>
                       </div>
                       ))}
+                    <ThemeToggle />
                 </div>
-                 <ThemeToggle />
 
 
-                {/* Mobile & Tablet Navigation */}
+                {/* Mobile & Tablet Navigation Menu */}
                 <Sheet open={isMobileMenuOpen} onOpenChange={setMobileMenuOpen}>
                     <SheetTrigger asChild>
                     <Button variant="ghost" size="icon" className="xl:hidden">
@@ -185,7 +185,7 @@ export default function Header() {
                                 </Button>
                             </div>
                         ) : (
-                            <div className="flex flex-col gap-4">
+                            <div className="flex flex-col gap-4 md:hidden">
                             <Button asChild className="w-full">
                                 <LoadingLink href="/login" onClick={() => setMobileMenuOpen(false)}>
                                 Login
