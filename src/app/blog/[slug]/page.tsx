@@ -4,6 +4,9 @@ import Image from 'next/image';
 import { blogPosts, placeholderImages } from '@/lib/data';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Badge } from '@/components/ui/badge';
+import { Button } from '@/components/ui/button';
+import LoadingLink from '@/components/loading-link';
+import { ArrowLeft } from 'lucide-react';
 
 export async function generateStaticParams() {
   return blogPosts.map((post) => ({
@@ -24,6 +27,12 @@ export default function BlogPostPage({ params }: { params: { slug:string } }) {
   return (
     <article className="py-16 sm:py-24">
       <div className="container mx-auto px-4 max-w-4xl">
+        <Button variant="ghost" asChild className="mb-4">
+            <LoadingLink href="/blog">
+                <ArrowLeft className="mr-2 h-4 w-4"/>
+                Back to Blog
+            </LoadingLink>
+        </Button>
         <header className="mb-12 text-center">
           <h1 className="font-headline text-4xl font-bold tracking-tighter text-primary sm:text-5xl md:text-6xl">
             {post.title}

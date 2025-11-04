@@ -6,7 +6,7 @@ import LoadingLink from '@/components/loading-link';
 import { services, caseStudies, placeholderImages } from '@/lib/data';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent, CardHeader, CardTitle, CardFooter, CardDescription } from '@/components/ui/card';
-import { Check, ArrowRight, Wallet } from 'lucide-react';
+import { Check, ArrowRight, Wallet, ArrowLeft } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { motion } from 'framer-motion';
 
@@ -29,6 +29,12 @@ export default function ServiceDetailPage({ params }: { params: { slug: string }
   return (
     <div className="py-16 sm:py-24">
       <div className="container mx-auto px-4">
+        <Button variant="ghost" asChild className="mb-4">
+            <LoadingLink href="/services">
+                <ArrowLeft className="mr-2 h-4 w-4"/>
+                Back to Services
+            </LoadingLink>
+        </Button>
         {/* Header */}
         <div className="text-center mb-12">
           <Badge variant="outline">{service.category}</Badge>
