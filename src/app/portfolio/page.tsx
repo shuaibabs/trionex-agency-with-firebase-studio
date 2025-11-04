@@ -3,24 +3,31 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle, CardFooter } from '@/components/ui/card';
 import { caseStudies } from '@/lib/data';
-import { ArrowRight, Tag } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 import { motion } from 'framer-motion';
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
+import Autoplay from "embla-carousel-autoplay";
 
 
 const categories = [
   { id: 'all', name: 'All' },
   { id: 'category_web', name: 'Web App' },
-  { id: 'category_apps', name: 'Mobile App' },
-  { id: 'category_utilities', name: 'Utilities/Tools' }
+  { id: 'category_utilities', name: 'Utilities' },
+  { id: 'category_seo', name: 'SEO' },
+  { id: 'category_marketing', name: 'Marketing' },
 ];
 
 export default function PortfolioPage() {
   const [filter, setFilter] = useState<string>('all');
+  
+  const plugin = React.useRef(
+    Autoplay({ delay: 2500, stopOnInteraction: true })
+  )
 
   const filteredCaseStudies =
     filter === 'all'
@@ -40,7 +47,7 @@ export default function PortfolioPage() {
             My Portfolio
           </h1>
           <p className="mt-4 max-w-2xl mx-auto text-base md:text-lg text-muted-foreground">
-            Explore my portfolio of success stories and see how I&apos;ve helped businesses like yours thrive.
+            Explore my portfolio of success stories and see how I've helped businesses like yours thrive.
           </p>
         </div>
 
@@ -72,14 +79,42 @@ export default function PortfolioPage() {
               >
                 <Card className="overflow-hidden group flex flex-col h-full w-full bg-secondary/30 dark:bg-secondary/20">
                   <Link href={`/portfolio/${study.slug}`} className="block h-full flex flex-col">
-                    <div className="aspect-video relative overflow-hidden">
-                      <Image
-                        src={study.img}
-                        alt={study.locales.en.title}
-                        fill
-                        className="object-cover transition-transform duration-300 group-hover:scale-105"
-                      />
-                    </div>
+                     <Carousel 
+                        className="w-full" 
+                        plugins={[
+                          Autoplay({
+                            delay: 2000 + Math.random() * 1000,
+                            stopOnInteraction: true,
+                          }),
+                        ]}
+                        opts={{ loop: true }}
+                      >
+                      <CarouselContent>
+                          {study.preview.screenshots.length > 0 ? study.preview.screenshots.map((ss, index) => (
+                              <CarouselItem key={index}>
+                                  <div className="aspect-video relative overflow-hidden">
+                                  <Image
+                                      src={ss}
+                                      alt={`${study.locales.en.title} screenshot ${index + 1}`}
+                                      fill
+                                      className="object-cover transition-transform duration-300 group-hover:scale-105"
+                                  />
+                                  </div>
+                              </CarouselItem>
+                          )) : (
+                               <CarouselItem>
+                                  <div className="aspect-video relative overflow-hidden">
+                                      <Image
+                                          src={study.img}
+                                          alt={study.locales.en.title}
+                                          fill
+                                          className="object-cover transition-transform duration-300 group-hover:scale-105"
+                                      />
+                                  </div>
+                              </CarouselItem>
+                          )}
+                      </CarouselContent>
+                    </Carousel>
                     <CardHeader>
                         {categoryName && <Badge variant="secondary" className="w-min mb-2">{categoryName}</Badge>}
                         <CardTitle className="font-headline text-xl group-hover:text-primary transition-colors">

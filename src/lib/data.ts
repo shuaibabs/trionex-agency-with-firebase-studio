@@ -286,87 +286,28 @@ export const caseStudies: CaseStudy[] = [
         "id": 1,
         "slug": "json-to-excel-converter",
         "categoryId": "category_utilities",
-        "img": "/images/portfolio/jar.png",
-        "faIcon": "",
-        "faIconColors": {"bg": "", "fill": ""},
+        "img": "https://picsum.photos/seed/cs1/600/400",
+        "challenge": "Client needed an efficient way to convert large, complex JSON files into structured Excel spreadsheets for non-technical team members to analyze. Manual conversion was time-consuming and prone to errors.",
+        "solution": "Developed a standalone Java-based command-line tool (JAR) that parses any JSON file and converts it into a well-formatted Excel file. The tool automatically creates tables with filtering and sorting enabled, making data exploration intuitive.",
+        "testimonial": { "text": "This tool saved our team countless hours. What used to take half a day now takes seconds. A real game-changer for our workflow!", "author": "Data Analyst, FinCorp" },
+        "results": ["99% reduction in data conversion time", "Eliminated manual data entry errors", "Enabled self-serve data analysis for business teams"],
         "preview": {
             "links": [
+                {"href": "#", "tooltipString": "see_on_github", "faIcon": "fa-brands fa-github"}
             ],
             "screenshots": [
+                 "https://picsum.photos/seed/cs1-ss1/1280/720",
+                 "https://picsum.photos/seed/cs1-ss2/1280/720",
+                 "https://picsum.photos/seed/cs1-ss3/1280/720"
             ],
-            "screenshotsAspectRatio": "",
+            "screenshotsAspectRatio": "16:9",
             "youtubeVideo": ""
         },
         "locales": {
             "en": {
                 "title": "JSON to Excel Converter",
                 "text": "A <b>Java-based JAR tool</b> that converts JSON data into Excel with <b>default filtering, sorting, and structured formatting</b> for efficient data management and reporting.",
-                "tags": ["JAVA", "JAR", "JSON", "Excel"]
-            }
-        }
-    },
-    {
-        "id": 2,
-        "slug": "windows-harvesting-tool",
-        "categoryId": "category_utilities",
-        "img": "/images/portfolio/windows.png",
-        "faIcon": "",
-        "faIconColors": {"bg": "", "fill": ""},
-        "preview": {
-            "links": [],
-            "screenshots": [
-            ],
-            "screenshotsAspectRatio": "",
-            "youtubeVideo": ""
-        },
-        "locales": {
-            "en": {
-                "title": "Windows Harvesting Tool",
-                "text": "A <b>C# .NET Windows harvesting tool</b> that downloads files from specified URLs and servers with <b>configurable scheduling, parallel transfers, and robust error handling.</b> ideal for automated data collection and mass file retrieval.",
-                "tags": ["C#", "DotNet", "Windows", "Tool"]
-            }
-        }
-    },
-    {
-        "id": 3,
-        "slug": "alpine-college-of-education",
-        "categoryId": "category_web",
-        "img": "/images/portfolio/alpine.png",
-        "faIcon": "",
-        "faIconColors": {"bg": "", "fill": ""},
-        "preview": {
-            "links": [],
-            "screenshots": [],
-            "screenshotsAspectRatio": "16:9",
-            "youtubeVideo": ""
-        },
-        "locales": {
-            "en": {
-                "title": "Alpine College of Education",
-                "text": "A responsive <b>college website</b> built with modern web technologies, featuring course details, faculty profiles, admission forms, event management, and a student portal for seamless communication and resource access.",
-                "tags": ["Angular", "MySQL", "NodeJS", "ExpressJS"]
-            }
-        }
-    },
-    {
-        "id": 4,
-        "slug": "time-attendance-system",
-        "categoryId": "category_utilities",
-        "img": "/images/portfolio/tms.png",
-        "faIcon": "",
-        "faIconColors": {"bg": "", "fill": ""},
-        "preview": {
-            "links": [],
-            "screenshots": [
-            ],
-            "screenshotsAspectRatio": "",
-            "youtubeVideo": ""
-        },
-        "locales": {
-            "en": {
-                "title": "Time & Attendance System",
-                "text": "A <b>Time & Attendance System</b> to track employee working hours, manage shifts, and generate automated reports with real-time monitoring and secure data management.",
-                "tags": ["Angular", "MySQL", "NodeJS", "ExpressJS"]
+                "tags": ["JAVA", "JAR", "JSON", "Excel", "Apache POI"]
             }
         }
     },
@@ -374,21 +315,19 @@ export const caseStudies: CaseStudy[] = [
         "id": 5,
         "slug": "scholar-counter",
         "categoryId": "category_web",
-        "img": "/images/portfolio/sc.png",
-        "faIcon": "",
-        "faIconColors": {"bg": "", "fill": ""},
+        "img": "https://picsum.photos/seed/cs5/600/400",
+        "challenge": "An academic publisher required a COUNTER-compliant reporting platform to provide libraries with standardized usage statistics for their digital resources. The system needed to process massive log files and present data in a clear, filterable dashboard.",
+        "solution": "Built a full-stack web application using Angular for the frontend and a Node.js/Express backend. The system processes and aggregates usage data into a MySQL database, exposing it through a GraphQL API for detailed and flexible reporting.",
+        "testimonial": { "text": "The Scholar Counter platform has been invaluable for our institutional clients. The reliability and accuracy of the data have greatly improved our relationships with libraries.", "author": "Head of Publishing, Academic Press" },
+        "results": ["Achieved 100% COUNTER Code of Practice compliance", "Provided data analytics for over 500 institutions", "Reduced report generation time by 85%"],
         "preview": {
             "links": [
-                {"href": "https://sc.gindowa.com/", "tooltipString": "open_website", "faIcon": "fa-solid fa-link"}
+                {"href": "#", "tooltipString": "open_website", "faIcon": "fa-solid fa-link"}
             ],
             "screenshots": [
-                "/images/portfolio/sc/10001.png",
-                "/images/portfolio/sc/10002.jpg",
-                "/images/portfolio/sc/10003.jpg",
-                "/images/portfolio/sc/10004.jpg",
-                "/images/portfolio/sc/10005.jpg",
-                "/images/portfolio/sc/10006.jpg",
-                "/images/portfolio/sc/10007.jpg"
+                "https://picsum.photos/seed/cs5-ss1/1280/720",
+                "https://picsum.photos/seed/cs5-ss2/1280/720",
+                "https://picsum.photos/seed/cs5-ss3/1280/720"
             ],
             "screenshotsAspectRatio": "16:9",
             "youtubeVideo": ""
@@ -396,52 +335,27 @@ export const caseStudies: CaseStudy[] = [
         "locales": {
             "en": {
                 "title": "Scholar Counter",
-                "text": "<b>Scholar Counter</b> follows the <b>COUNTER Code of Practice</b> to provide standardized, credible, and comparable usage data for scholarly electronic resources. It ensures libraries, publishers, and vendors have consistent insights into how academic content is accessed and used.",
+                "text": "<b>Scholar Counter</b> follows the <b>COUNTER Code of Practice</b> to provide standardized, credible, and comparable usage data for scholarly electronic resources.",
                 "tags": ["Angular", "MySQL", "NodeJS", "ExpressJS", "GraphQL"]
             }
         }
     },
-    {
-        "id": 6,
-        "slug": "maker-checker",
-        "categoryId": "category_web",
-        "img": "/images/portfolio/maker-checker.png",
-        "faIcon": "",
-        "faIconColors": {"bg": "", "fill": ""},
-        "preview": {
-            "links": [
-                {"href": "https://github.com", "tooltipString": "see_on_github", "faIcon": "fa-brands fa-github"}
-            ],
-            "screenshots": [
-
-            ],
-            "screenshotsAspectRatio": "",
-            "youtubeVideo": ""
-        },
-        "locales": {
-            "en": {
-                "title": "Maker Checker",
-                "text": "A <b>Maker-Checker</b> system implementing <b>dual-authorization workflow,</b> where one user (Maker) creates or initiates a transaction/request and another user (Checker) reviews and approves it. Ensures <b>accuracy, accountability, and compliance</b> in critical operations.",
-                "tags": ["PL/SQL", "Core Java", "Servlet", "JSP", "Spring", "Hibernate" ]
-            }
-        }
-    },
-    {
+     {
         "id": 7,
         "slug": "tripbookkar",
         "categoryId": "category_web",
-        "img": "/images/portfolio/trip.png",
-        "faIcon": "",
-        "faIconColors": {"bg": "", "fill": ""},
+        "img": "https://picsum.photos/seed/cs7/600/400",
+        "challenge": "TripBookKar aimed to disrupt the travel market with a one-stop booking platform but faced challenges with integrating various travel APIs and offering personalized recommendations in a competitive space.",
+        "solution": "Developed a comprehensive travel portal using React for a dynamic frontend and Node.js for the backend. The platform integrates multiple third-party APIs for flights, hotels, and buses. An AI model was integrated to provide users with personalized travel suggestions based on their search history and preferences.",
+        "testimonial": { "text": "Trionex Digital brought our vision to life. The AI-powered recommendations are a huge hit with our users, and the platform is incredibly robust and scalable.", "author": "CEO, TripBookKar" },
+        "results": ["Unified 5+ travel booking APIs into one platform", "Increased user engagement by 40% with AI recommendations", "Processed over 10,000 bookings in the first six months"],
         "preview": {
             "links": [
-                {"href": "https://tripbookkar.com/", "tooltipString": "open_website", "faIcon": "fa-solid fa-link"}
+                {"href": "#", "tooltipString": "open_website", "faIcon": "fa-solid fa-link"}
             ],
             "screenshots": [
-                "/images/portfolio/trip/10001.png",
-                "/images/portfolio/trip/10002.png",
-                "/images/portfolio/trip/10003.png",
-                "/images/portfolio/trip/10004.png"
+                "https://picsum.photos/seed/cs7-ss1/1280/720",
+                "https://picsum.photos/seed/cs7-ss2/1280/720"
             ],
             "screenshotsAspectRatio": "16:9",
             "youtubeVideo": ""
@@ -449,8 +363,8 @@ export const caseStudies: CaseStudy[] = [
         "locales": {
             "en": {
                 "title": "TripBookKar",
-                "text": "<b>TripBookKar</b> is one-stop travel booking platform for <b>holiday packages, flights, hotels, trains, buses, cabs, and helicopter services.</b> Discover trending destinations, explore budget-friendly deals, and book your perfect trip with ease.",
-                "tags": ["React", "ExpressJS", "NodeJS", "MongoDB", "AI Model Integration"]
+                "text": "<b>TripBookKar</b> is a one-stop travel booking platform for <b>holiday packages, flights, hotels, trains, buses, cabs, and more.</b>",
+                "tags": ["React", "ExpressJS", "NodeJS", "MongoDB", "AI/ML"]
             }
         }
     },
@@ -458,122 +372,82 @@ export const caseStudies: CaseStudy[] = [
         "id": 8,
         "slug": "finnone-neo-cas",
         "categoryId": "category_web",
-        "img": "/images/portfolio/cas.png",
-        "faIcon": "",
-        "faIconColors": {"bg": "", "fill": ""},
+        "img": "https://picsum.photos/seed/cs8/600/400",
+        "challenge": "A leading financial software provider needed to modernize their loan origination system (CAS) to create a more efficient, digital-first experience for banks and lending institutions.",
+        "solution": "As part of the core team, I contributed to the development of FinnOne Neo CAS, a web-based platform using React and Java. My role involved developing key UI components, integrating with the backend PL/SQL engine, and conducting penetration testing to ensure enterprise-grade security.",
+         "testimonial": { "text": "The new CAS platform has reduced loan processing times by over 50% for our clients. The user interface is modern, intuitive, and highly secure.", "author": "Product Manager, Nucleus Software" },
+        "results": ["Contributed to a platform used by top-tier banks globally", "Improved UI performance and responsiveness", "Identified and patched critical security vulnerabilities"],
         "preview": {
             "links": [
-                {"href": "https://www.nucleussoftware.com/finnone-neo/loan-origination-system/", "tooltipString": "open_website", "faIcon": "fa-solid fa-link"}
+                {"href": "#", "tooltipString": "open_website", "faIcon": "fa-solid fa-link"}
             ],
             "screenshots": [
-
+                "https://picsum.photos/seed/cs8-ss1/1280/720",
+                "https://picsum.photos/seed/cs8-ss2/1280/720"
             ],
-            "screenshotsAspectRatio": "",
+            "screenshotsAspectRatio": "16:9",
             "youtubeVideo": "https://www.youtube.com/watch?v=-JbofnRpV0U"
         },
         "locales": {
             "en": {
                 "title": "FinnOne Neo CAS",
-                "text": "<b>FinnOne Neo CAS (Customer Acquisition System)</b> by Nucleus Software is a digital loan origination platform. It helps <b>banks and NBFCs</b> manage the entire customer onboarding and lending journey from <b>lead capture and eKYC to credit scoring, verification, approval, and disbursement.</b>",
-                "tags": ["React", "NodeJS", "Java", "PL/SQL", "Penetration Testing", "Documentation"]
+                "text": "<b>FinnOne Neo CAS</b> is a digital loan origination platform for banks and NBFCs, covering the entire journey from lead capture to disbursement.",
+                "tags": ["React", "NodeJS", "Java", "PL/SQL", "Security Testing"]
             }
         }
     },
     {
-        "id": 9,
-        "slug": "finnone-neo-lms",
-        "categoryId": "category_web",
-        "img": "/images/portfolio/lms.png",
-        "faIcon": "",
-        "faIconColors": {"bg": "", "fill": ""},
+        "id": 13,
+        "slug": "local-bakery-seo",
+        "categoryId": "category_seo",
+        "img": "https://picsum.photos/seed/cs13/600/400",
+        "challenge": "A local bakery with delicious products was struggling to attract foot traffic and online orders. They were virtually invisible on local Google searches and Google Maps.",
+        "solution": "Executed a hyper-local SEO strategy. This included optimizing their Google Business Profile, building local citations, creating location-specific landing pages, and generating content around local events and keywords like 'best cakes in [City]'.",
+        "testimonial": { "text": "We went from obscurity to the #1 spot on Google Maps for 'bakery near me'. Our phone is ringing off the hook, and online orders have tripled. It's been transformative!", "author": "Owner, The Sweet Spot Bakery" },
+        "results": ["Achieved #1 ranking in Google Map Pack for target keywords", "300% increase in online orders", "50% increase in daily foot traffic"],
         "preview": {
             "links": [
-                {"href": "https://www.nucleussoftware.com/finnone-neo/loan-management-system/", "tooltipString": "open_website", "faIcon": "fa-solid fa-link"}
+                {"href": "#", "tooltipString": "open_website", "faIcon": "fa-solid fa-link"}
             ],
             "screenshots": [
-
+                "https://picsum.photos/seed/cs13-ss1/1280/720",
+                "https://picsum.photos/seed/cs13-ss2/1280/720"
             ],
-            "screenshotsAspectRatio": "",
-            "youtubeVideo": "https://www.youtube.com/watch?v=9NgOjw2ZFBQ"
+            "screenshotsAspectRatio": "16:9",
+            "youtubeVideo": ""
         },
         "locales": {
             "en": {
-                "title": "FinnOne Neo LMS",
-                "text": "<b>FinnOne Neo LMS (Loan Management System)</b> by Nucleus Software is a comprehensive loan servicing platform. It helps <b>banks and NBFCs</b> manage the entire loan lifecycle from <b>disbursement and repayment scheduling to interest calculation, accounting, monitoring, and closure</b> ensuring accuracy, compliance, and customer satisfaction.",
-                "tags": ["React", "NodeJS", "Java", "PL/SQL", "Penetration Testing", "Documentation"]
-            }
-        }
-    },
-     {
-        "id": 10,
-        "slug": "finnone-neo-collections",
-        "categoryId": "category_web",
-        "img": "/images/portfolio/coll.png",
-        "faIcon": "",
-        "faIconColors": {"bg": "", "fill": ""},
-        "preview": {
-            "links": [
-                {"href": "https://www.nucleussoftware.com/finnone-neo/collections/", "tooltipString": "open_website", "faIcon": "fa-solid fa-link"}
-            ],
-            "screenshots": [
-
-            ],
-            "screenshotsAspectRatio": "",
-            "youtubeVideo": "https://www.youtube.com/watch?v=OkCsQaTH3G4"
-        },
-        "locales": {
-            "en": {
-                "title": "FinnOne Neo Collections",
-                "text": "<b>FinnOne Neo Collections</b> by Nucleus Software is a digital debt recovery and management solution. It empowers financial institutions to <b>streamline collections</b> with <b>intelligent strategies, digital reminders, field tracking, and analytics</b> reducing delinquencies, improving recovery rates, and enhancing borrower engagement.",
-                "tags": ["React", "NodeJS", "Java", "PL/SQL", "Penetration Testing", "Documentation"]
+                "title": "Local Bakery SEO Dominance",
+                "text": "A hyper-local SEO campaign that took a bakery from obscurity to the <b>top of local search results</b>, driving a massive increase in both foot traffic and online sales.",
+                "tags": ["Local SEO", "Google Business Profile", "Content Marketing", "Keyword Research"]
             }
         }
     },
     {
-        "id": 11,
-        "slug": "e-commerce-store",
-        "categoryId": "category_apps",
-        "img": "/images/portfolio/ecom.png",
-        "faIcon": "",
-        "faIconColors": {"bg": "", "fill": ""},
+        "id": 14,
+        "slug": "b2b-saas-ppc-campaign",
+        "categoryId": "category_marketing",
+        "img": "https://picsum.photos/seed/cs14/600/400",
+        "challenge": "A B2B SaaS startup had a groundbreaking product but struggled to generate qualified leads. Their initial ad campaigns were attracting the wrong audience and had a high cost-per-acquisition (CPA).",
+        "solution": "Restructured their Google and LinkedIn Ads campaigns. Focused on high-intent keywords, competitor targeting, and precise audience segmentation on LinkedIn based on job titles and company size. Created highly-targeted ad copy and landing pages for each segment.",
+         "testimonial": { "text": "Their PPC strategy was a game-changer. Our lead quality improved overnight, and our CPA dropped by 60%. We're now signing clients we could only dream of before.", "author": "CMO, DataStream Innovations" },
+        "results": ["Reduced Cost-Per-Acquisition (CPA) by 60%", "Increased qualified marketing leads by 150%", "Achieved a 4x Return on Ad Spend (ROAS)"],
         "preview": {
-            "links": [
-            ],
+            "links": [],
             "screenshots": [
-
+                "https://picsum.photos/seed/cs14-ss1/1280/720",
+                "https://picsum.photos/seed/cs14-ss2/1280/720",
+                "https://picsum.photos/seed/cs14-ss3/1280/720"
             ],
-            "screenshotsAspectRatio": "",
+            "screenshotsAspectRatio": "16:9",
             "youtubeVideo": ""
         },
         "locales": {
             "en": {
-                "title": "E-Commerce Store",
-                "text": "A modern, full-stack e-commerce Android app built with <b>React (Vite)</b> for a fast and responsive user interface, powered by <b>Node.js with Express as the backend server.</b> The application leverages <b>MongoDB</b> as the primary database for managing products, users, orders, and inventory, while <b>Firebase</b> is integrated for authentication, real-time notifications, and secure backend services.",
-               "tags": ["React", "Vite", "NodeJS", "Express", "MongoDB", "Firebase", "Android", "E-Commerce", "Full Stack Development"]
-            }
-        }
-    },
-     {
-        "id": 12,
-        "slug": "finnone-neo-mobile-apps",
-        "categoryId": "category_apps",
-        "img": "/images/portfolio/mFinnOne.jpg",
-        "faIcon": "",
-        "faIconColors": {"bg": "", "fill": ""},
-        "preview": {
-            "links": [
-            ],
-            "screenshots": [
-
-            ],
-            "screenshotsAspectRatio": "",
-            "youtubeVideo": ""
-        },
-        "locales": {
-            "en": {
-                "title": "FinnOne Neo Mobile Apps (mCAS, Mcollect, mFinn, mServe/mApply)",
-                "text": "A suite of mobile apps under <b>Nucleus Software’s FinnOne Neo digital lending platform,</b> built to simplify lending and customer servicing. <b>mCAS</b> – Digital customer onboarding with KYC & application processing. <b>mCollect</b> – Real-time collections & payment tracking. <b>mFinn</b> – Customer loan management & service requests. <b>mServe/mApply</b> – Loan applications & servicing through mobile. Ensures secure, real-time, and seamless integration for banks & NBFCs.",
-               "tags": ["mCAS", "mCollect", "mServe", "mApply", "mFinn", "Frida", "Android", "Penetration Testing", "Backend APIs"]
+                "title": "B2B SaaS PPC Lead Generation",
+                "text": "A targeted PPC campaign on Google and LinkedIn that <b>slashed the Cost-Per-Acquisition</b> and dramatically increased the volume of qualified leads for a B2B SaaS startup.",
+                "tags": ["PPC", "Google Ads", "LinkedIn Ads", "Conversion Rate Optimization"]
             }
         }
     }
@@ -703,3 +577,4 @@ export const clients: Client[] = [
   { id: '7', name: 'StartUpCo', imageId: 'client-logo-1' },
   { id: '8', name: 'FutureGadget', imageId: 'client-logo-2' },
 ];
+

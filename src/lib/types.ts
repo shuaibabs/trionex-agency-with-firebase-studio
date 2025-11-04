@@ -30,14 +30,18 @@ export interface CaseStudy {
   slug: string;
   categoryId: string;
   img: string;
-  faIcon: string;
-  faIconColors: { bg: string; fill: string };
+  challenge: string;
+  solution: string;
+  testimonial: {
+    text: string;
+    author: string;
+  };
+  results: string[];
   preview: {
     links: { href: string; tooltipString: string; faIcon: string }[];
     screenshots: string[];
     screenshotsAspectRatio: string;
     youtubeVideo: string;
-
   };
   locales: {
     en: {
