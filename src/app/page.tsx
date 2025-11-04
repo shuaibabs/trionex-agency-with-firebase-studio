@@ -249,32 +249,26 @@ export default function Home() {
                 return (
                 <CarouselItem key={testimonial.id} className="pl-4 md:basis-1/2 lg:basis-1/2">
                   <div className="p-1 h-full">
-                    <Card className="overflow-hidden h-full">
-                       <CardContent className="p-0 flex flex-col md:flex-row items-stretch h-full">
-                          <div className="relative w-full md:w-2/5 aspect-[4/3] md:aspect-auto flex-shrink-0">
-                             {avatarImage && (
-                                <Image
-                                    src={avatarImage.imageUrl}
-                                    alt={testimonial.name}
-                                    fill
-                                    className="object-cover"
-                                    data-ai-hint={avatarImage.imageHint}
-                                />
-                             )}
-                          </div>
-                          <div className="p-6 md:p-8 flex flex-col justify-center">
-                             <MessageSquareQuote className="w-8 h-8 text-primary/30 mb-4" />
-                            <p className="mb-6 text-base md:text-lg italic text-foreground/90">
-                              &quot;{testimonial.quote}&quot;
-                            </p>
-                            <div>
-                                <p className="font-semibold font-headline text-primary">{testimonial.name}</p>
-                                <p className="text-sm text-muted-foreground">
-                                  {testimonial.title}
-                                </p>
-                            </div>
-                          </div>
-                       </CardContent>
+                    <Card className="h-full bg-gradient-to-br from-background to-secondary/30 dark:from-background dark:to-secondary/20 p-8 rounded-lg text-center">
+                      {avatarImage && (
+                          <Avatar className="w-20 h-20 mx-auto mb-4 border-4 border-primary">
+                              <AvatarImage src={avatarImage.imageUrl} alt={testimonial.name} data-ai-hint={avatarImage.imageHint} />
+                              <AvatarFallback>{testimonial.name.substring(0,2)}</AvatarFallback>
+                          </Avatar>
+                      )}
+                      <div className="relative">
+                          <MessageSquareQuote className="w-12 h-12 text-primary/10 absolute -top-4 -left-4" />
+                          <p className="mb-6 text-base italic text-foreground/90 relative z-10">
+                          &quot;{testimonial.quote}&quot;
+                          </p>
+                          <MessageSquareQuote className="w-12 h-12 text-primary/10 absolute -bottom-4 -right-4 transform scale-x-[-1]" />
+                      </div>
+                      <div>
+                          <p className="font-semibold font-headline text-primary">{testimonial.name}</p>
+                          <p className="text-sm text-muted-foreground">
+                          {testimonial.title}
+                          </p>
+                      </div>
                     </Card>
                   </div>
                 </CarouselItem>
@@ -410,6 +404,8 @@ export default function Home() {
     </div>
   );
 }
+
+    
 
     
 
