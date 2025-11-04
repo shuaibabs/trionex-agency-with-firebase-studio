@@ -51,7 +51,7 @@ const serviceIcons: { [key: string]: React.ElementType } = {
 
 export default function Home() {
   const featuredServices = services.filter(s => 
-    ['business-website-development', 'seo-optimization', 'ecommerce-website', 'custom-web-application'].includes(s.id)
+    ['business-website-development', 'portfolio-personal-branding-websites', 'ppc-advertising', 'seo-optimization'].includes(s.id)
   );
   const cardVariants = {
     hidden: { opacity: 0, y: 20 },
