@@ -207,13 +207,6 @@ export default function CaseStudyPage() {
                       </CardHeader>
                       <CardContent className="space-y-4 text-sm">
                           <div className="flex items-center">
-                              <Briefcase className="h-5 w-5 mr-3 text-muted-foreground"/>
-                              <div>
-                                  <span className="font-semibold">My Role:</span>
-                                  <p className="text-muted-foreground">{study.overview.role}</p>
-                              </div>
-                          </div>
-                          <div className="flex items-center">
                               <Clock className="h-5 w-5 mr-3 text-muted-foreground"/>
                               <div>
                                   <span className="font-semibold">Timeline:</span>
