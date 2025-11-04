@@ -63,7 +63,7 @@ export default function ContactPage() {
       name: '',
       email: '',
       phone: '',
-      interest: '',
+      interest: interestParam || '',
       message: '',
     },
   });
@@ -162,11 +162,11 @@ export default function ContactPage() {
                 </div>
               </div>
             </div>
-             <div className="h-80 w-full rounded-lg overflow-hidden border">
+             <div className="relative h-80 w-full rounded-lg overflow-hidden border">
                 <iframe
                   width="100%"
                   height="100%"
-                  className="absolute inset-0"
+                  className="absolute inset-0 w-full h-full"
                   title="map"
                   src="https://maps.google.com/maps?width=100%&amp;height=600&amp;hl=en&amp;q=Jalalabad,%20Shamli,%20Uttar%20Pradesh,%20247772&amp;ie=UTF8&amp;t=&amp;z=14&amp;iwloc=B&amp;output=embed"
                   style={{ filter: 'grayscale(1) contrast(1.2) opacity(0.8)' }}
@@ -322,3 +322,5 @@ export default function ContactPage() {
     </div>
   );
 }
+
+    
