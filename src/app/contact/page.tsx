@@ -1,4 +1,3 @@
-
 'use client';
 
 import { zodResolver } from '@hookform/resolvers/zod';
@@ -286,7 +285,7 @@ export default function ContactPage() {
 
                 <Button type="submit" disabled={loading} className="w-full">
                   {loading && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
-                  {loading ? 'Submitting...' : 'Send Message'}
+                  {loading ? 'Submitting...' : 'Submit'}
                 </Button>
               </form>
             </Form>
@@ -322,5 +321,3 @@ export default function ContactPage() {
     </div>
   );
 }
-
-    
