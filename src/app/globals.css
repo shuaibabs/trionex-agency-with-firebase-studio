@@ -238,7 +238,7 @@
   .testimonial-card::after {
     content: "";
     @apply absolute inset-0 z-0 rounded-2xl opacity-0 transition-all duration-500;
-    background: radial-gradient(circle at center, hsl(var(--primary) / 0.15), transparent 60%);
+    background: radial-gradient(circle at center, hsl(var(--primary) / 0.1), transparent 70%);
   }
 
   .testimonial-avatar {
@@ -252,7 +252,11 @@
   }
 
   .motion-safe [data-active="true"] .testimonial-card::before {
-      border-color: hsl(var(--primary) / 0.5);
+      border-color: hsl(var(--primary) / 0.3);
+  }
+  
+  .motion-safe [data-active="true"] .testimonial-avatar {
+     box-shadow: 0 0 0 4px hsl(var(--primary-foreground)), 0 0 15px 4px hsl(var(--primary));
   }
 }
 
@@ -299,6 +303,10 @@
   .map-container iframe {
     filter: none;
     mix-blend-mode: normal;
+  }
+
+  html.light .map-container iframe {
+    filter: none;
   }
 
   html.dark .map-container iframe {
